@@ -1,2 +1,2 @@
 # cyberlock_web
-Python django, Postgre project for website
+  # Python django, Postgresql project for website
