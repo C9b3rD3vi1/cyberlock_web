@@ -1,0 +1,136 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - CyberTech  Company</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Static CSS (optional custom styles) -->
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+</head>
+<body>
+
+    <!-- Include Navbar -->
+    {% include 'base.html' %}
+
+    <!-- Hero Section -->
+    <section class="hero bg-light py-5 text-center">
+        <div class="container">
+            <h1 class="display-4">Welcome to Cyberlock Technology </h1>
+
+            <p class="lead">Innovative Solutions for Your Digital Success</p>
+
+           <!-- <a href="{% url 'contact_form' %}" class="btn btn-primary btn-lg">Get In Touch</a> -->
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Services</h2>
+            <div class="row">
+                {% for service in services %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="{{ service.service_image.url }}" class="card-img-top" alt="{{ service.name }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ service.name }}</h5>
+                                <p class="card-text">{{ service.description|truncatewords:50 }}</p>
+                                <a href="{% url 'service_list' %}" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Portfolio</h2>
+            <div class="row">
+                {% for project in projects %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="{{ project.project_image.url }}" class="card-img-top" alt="{{ project.title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ project.title }}</h5>
+                                <p class="card-text">{{ project.description|truncatewords:20 }}</p>
+                                <a href="{% url 'portfolio' %}" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Latest Blog Posts</h2>
+            <div class="row">
+                {% for post in blog_posts %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img src="{{ blogpost.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.content|truncatewords:50 }}</p>
+                                <a href="{% url 'blog_list' %}" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">What Our Clients Say</h2>
+            <div class="row">
+                {% for testimonial in testimonials %}
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <p class="card-text">"{{ testimonial.feedback }}"</p>
+                                <p class="text-muted">- {{ testimonial.name }}, {{ testimonial.company }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact py-5">
+        <div class="container text-center">
+            <h2 class="mb-4">Contact Us</h2>
+            <p>If you have any questions, feel free to reach out!</p>
+            <a href="{% url 'contact_form' %}" class="btn btn-primary btn-lg">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Cyberlock Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (with Popper.js for dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Services - Cyberlock Tech{% endblock %}
+
+{% block content %}
+<section class="services py-5">
+    <h2 class="text-center mb-4">Our Services</h2>
+
+
+    <div class="row">
+        {% for service in services %}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="{{ service.service_image.url }}" class="card-img-top" alt="{{ service.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ service.name }}</h5>
+                        <p class="card-text">{{ service.description|truncatewords:30 }}</p>
+
+                        
+                        <a href="{% url 'service_detail' service.id %}" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,68 @@
+
+{% include 'base.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+
+
+    <style>
+        .testimonial {
+            border: 1px solid #f5f2f2;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: rgba(233, 231, 229, 0.904);
+        
+        }
+        .testimonial img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .testimonial h3 {
+            margin: 0 0 10px;
+        }
+    
+    
+        .testimonial .rating {
+            color: gold;
+    
+        }
+       
+
+    </style>
+
+
+</head>
+<body>
+    <h1>Testimonials</h1>
+    {% for testimonial in testimonials %}
+    <div class="testimonial">
+        {% if testimonial.profile_picture %}
+        <img src="{{ testimonial.profile_picture.url }}" alt="{{ testimonial.name }}">
+        {% endif %}
+        <h3>{{ testimonial.name }}{% if testimonial.company %} - {{ testimonial.company }}{% endif %}</h3>
+        <div class="rating">
+            
+            {% for i in "12345" %}
+                {% if i|slice:":1" <= testimonial.rating|stringformat:"i" %}
+                ★
+                {% else %}
+                ☆
+                {% endif %}
+            {% endfor %}
+        </div>
+        <p>{{ testimonial.feedback }}</p>
+        
+        <p><em>Published on: {{ testimonial.published_date }}</em></p>
+    </div>
+    {% empty %}
+    <p>No testimonials available.</p>
+    {% endfor %}
+</body>
+</html>

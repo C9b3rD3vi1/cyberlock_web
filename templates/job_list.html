@@ -1,0 +1,28 @@
+
+{% load static %}
+
+
+{% include 'base.html' %}
+
+{% block title %}Careers - CyberLock Tech {% endblock %}
+
+{% block content %}
+
+<section class="careers py-5">
+    <h2 class="text-center mb-4">Join Our Team</h2>
+    <div class="row">
+        {% for job in jobs %}
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ job.title }}</h5>
+                        <p class="card-text">{{ job.description|truncatewords:30 }}</p>
+                        <p><strong>Location:</strong> {{ job.location }}</p>
+                        <a href="{% url 'job_detail' job.id %}" class="btn btn-primary">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
