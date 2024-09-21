@@ -50,33 +50,28 @@ def service_list(request):
     :return: A Django response object. The function returns a rendered HTTP response containing the 'service_list.html' template with the services as a context variable.
     :rtype: django.http.HttpResponse
     """
-    services = Service.objects.filter(is_active=True)[:3]  # Get the latest 3 services
+    services = Service.objects.filter(is_active=True)  # Get the latest 3 services
 
-    all_services = {'services': services}
 
     # Fetch the service based on its slug
-    return render(request, 'service_list.html', all_services)
+    return render(request, 'service_list.html', {"services": services})
 
 
 
 
 def portfolio(request):
 
-    project = Project.objects.all().order_by('-completion_date')[:3]  # Get the latest 3 blog posts
+    projects = Project.objects.all()
 
-    all_project = {
-
-        'project': project,
-    }
-
-
-    return render(request, 'portfolio.html', all_project)
+    return render(request, 'portfolio.html', {'projects': projects})
 
 
 
 
 def blog_list(request):
-    return render(request, 'blog_post.html')
+
+    blog_post = BlogPost.objects.all()
+    return render(request, 'blog_post.html', {"blog_post":blog_post})
 
 
 
@@ -93,11 +88,8 @@ def job_list(request):
     :return: A Django response object. The function returns a rendered HTTP response containing the 'job_list.html' template with the job listings as a context variable.
     :rtype: django.http.HttpResponse
     """
-    job_list = Job.objects.all().order_by('-is_open')[:1]
-    job = {
-        'job_list': job_list,
-    }
-    return render(request, 'job_list.html', job)
+    jobs = Job.objects.all().order_by('-is_open')
+    return render(request, 'job_list.html',{"jobs": jobs})
 
 
 
@@ -171,7 +163,7 @@ def contact_success(request):
 
 
 
-@login_required
+# @login_required
 def blog_post_create(request):
     """
     This function handles the creation of a new blog post.
@@ -198,7 +190,7 @@ def blog_post_create(request):
 
 
 
-@login_required
+# @login_required
 def blog_post_update(request, pk):
     """
     This function handles the update of a blog post.

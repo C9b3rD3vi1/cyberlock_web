@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ project.title }}</h5>
                             <p class="card-text">{{ project.description|truncatewords:20 }}</p>
-                            <a href="{% url 'portfolio_detail' project.id %}" class="btn btn-primary">View Project</a>
+                            <a href="{% url 'portfolio' %}" class="btn btn-primary">View Project</a>
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.utils import timezone
+from django.urls import reverse
+from django.utils.text import slugify
+
 
 
 
@@ -22,7 +26,6 @@ class Profile(models.Model):
 
 
 # Blog Post, This will contain blogs and information about my company
-
 class BlogPost(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -31,7 +34,26 @@ class BlogPost(models.Model):
     published_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     tags = models.CharField(max_length=100, blank=True)
-    
+    slug = models.SlugField(unique=True, max_length=200, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:  # Only generate slug if it's empty
+            self.slug = slugify(self.title)
+            unique_slug = self.slug
+            num = 1
+            # Ensure slug uniqueness by appending a number if it already exists
+            while BlogPost.objects.filter(slug=unique_slug).exists():
+                unique_slug = f'{self.slug}-{num}'
+                num += 1
+            self.slug = unique_slug
+        super(BlogPost, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('blog_post_detail', args=[str(self.pk)])
+
+    class Meta:
+        ordering = ['-published_date']
+
     def __str__(self):
         return self.title
 

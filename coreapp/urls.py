@@ -17,7 +17,7 @@ urlpatterns = [
     path('contact/', views.contact_form, name='contact_form'),
     path('success/', views.contact_success, name='contact_success'),
 
-    path('post/<int:pk>/', views.blog_list, name='blog_post_detail'),
+    path('post/<int:pk>/', views.blog_post_detail, name='blog_post_detail'),
     path('post/new/', views.blog_post_create, name='blog_post_create'),
     path('post/<int:pk>/edit/', views.blog_post_update, name='blog_post_update'),
 ]

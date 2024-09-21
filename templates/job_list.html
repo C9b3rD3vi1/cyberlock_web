@@ -8,6 +8,7 @@
 
 {% block content %}
 
+
 <section class="careers py-5">
     <h2 class="text-center mb-4">Join Our Team</h2>
     <div class="row">
@@ -18,7 +19,7 @@
                         <h5 class="card-title">{{ job.title }}</h5>
                         <p class="card-text">{{ job.description|truncatewords:30 }}</p>
                         <p><strong>Location:</strong> {{ job.location }}</p>
-                        <a href="{% url 'job_detail' job.id %}" class="btn btn-primary">Apply Now</a>
+                        <a href="{% url 'job_list' %}" class="btn btn-primary">Apply Now</a>
                     </div>
                 </div>
             </div>
