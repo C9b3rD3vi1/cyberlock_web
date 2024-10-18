@@ -16,6 +16,11 @@ urlpatterns = [
     path('testimonials/', views.testimonial_list, name='testimonial_list'),
     path('contact/', views.contact_form, name='contact_form'),
     path('success/', views.contact_success, name='contact_success'),
+    path('login/', views.user_login, name='user_login'),
+    #path('accounts/logout/', views.user_logout, name='user_logout'),
+    #path('accounts/register/', views.user_register, name='user_register'),
+    #path('accounts/profile/<int:pk>/', views.user_profile, name='user_profile'),
+    #path('accounts/password_change/', views.password_change, name='password_change
 
     path('post/<int:pk>/', views.blog_post_detail, name='blog_post_detail'),
     path('post/new/', views.blog_post_create, name='blog_post_create'),
