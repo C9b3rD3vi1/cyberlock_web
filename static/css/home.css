@@ -1,0 +1,122 @@
+
+
+
+    /* General Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+
+    h1, h2 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    p {
+        color: #666666;
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(to bottom right, #007bff, #6c757d);
+        color: white;
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 30px;
+    }
+
+    /* Services Section */
+    .services .card {
+        border: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .services .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .services .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+        background-color: #a79d9d;
+    }
+
+    .portfolio .card {
+        border: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .portfolio .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .portfolio .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* Blog Section */
+    .blog .card {
+        border: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .blog .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    /* Testimonials Section */
+    .testimonials .card {
+        background-color: #8181f3;
+        border: none;
+        padding: 20px;
+    }
+
+    .testimonials .card p {
+        font-style: italic;
+        font-size: 1.1rem;
+    }
+
+    .testimonials .text-muted {
+        color: #888;
+    }
+
+    /* Contact Section */
+    .contact {
+        background-color: #f9f9f9;
+        padding: 50px 0;
+    }
+
+    .contact a.btn {
+        padding: 15px 30px;
+        font-size: 1.25rem;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #343a40;
+        color: white;
+    }
+
+    footer p {
+        margin: 0;
+    }

@@ -1,0 +1,89 @@
+
+
+{% load static %}
+{% include 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        .post img {
+            max-width: 20%;  /* Set image to take 40% of the width */
+            margin-right: 20px;  /* Add some space between the image and the content */
+        }
+        .post-content {
+            max-width: 80%;  /* Set content to take 60% of the width */
+        }
+        .post h2 {
+            margin: 0 0 10px 0;
+        }
+        .post-date {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .tags {
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .post p {
+            margin-bottom: 1em;
+        }
+    </style>
+
+
+<body>
+    <div class="container">
+        <h1>Blog Posts</h1>
+        {% for post in blog_post %}
+            <div class="post">
+                <h2><a href="{% url 'blog_post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                <p class="post-date">Published on {{ post.published_date }}</p>
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                {% endif %}
+                <!-- Add breaks and paragraphs -->
+                <p>{{ post.content| linebreaks }}</p> <!-- |truncatewords:30 -->
+                {% if post.tags %}
+                    <p class="tags">Tags: {{ post.tags }}</p>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p>No blog posts available.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+    <!-- loop through the posts and pass the pk value to the URL: -->
+
+    {% for post in posts %}
+    <a href="{% url 'blog_post_detail' pk=post.pk %}">{{ post.title }}</a>
+    <a href="{% url 'blog_post_update' pk=post.pk %}">Edit</a>
+     <a href="{% url 'blog_post_list' %}">Back to list</a>
+{% endfor %}
+
+
+    
+
+   
+</body>
+</html>

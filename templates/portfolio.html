@@ -1,0 +1,37 @@
+
+{% load static %}
+
+{% include 'base.html' %}
+
+{% block title %}Our Portfolio - CyberLock Tech {% endblock %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}"> 
+
+</head>
+<!-- Portfolio Section -->
+<section class="portfolio py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Portfolio</h2>
+
+        <div class="row">
+            {% for project in projects %}
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ project.project_image.url }}" class="card-img-top" alt="{{ project.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <p class="card-text">{{ project.description|truncatewords:20 }}</p>
+                            <a href="{% url 'portfolio' %}" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
