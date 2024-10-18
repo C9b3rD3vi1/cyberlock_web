@@ -9,6 +9,9 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+from .forms import CustomUserCreationForm
+
+
 
 
 
@@ -263,13 +266,14 @@ def user_login(request):
 
 # user creation and registration forms
 def user_register(request):
-    
+
     """
     Handles user registration.
     """
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        
+        #form = UserCreationForm(request.POST)
+        # custom user form
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()  # Save the new user
             username = form.cleaned_data.get('username')
