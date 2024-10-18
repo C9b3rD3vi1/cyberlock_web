@@ -3,6 +3,9 @@
 
 from django import forms
 from.models import ContactMessage, BlogPost
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 
 # Contact form for sending messages to the company
 
@@ -23,3 +26,20 @@ class BlogPostForm(forms.ModelForm):
         widgets = {
             'content': forms.Textarea(attrs={'rows': 10}),
         }
+
+
+
+# Create the user logins form using CustomUser
+class CustomUserCreationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2')
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data.get('email')
+        if commit:
+            user.save()
+        return user
