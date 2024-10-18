@@ -262,7 +262,8 @@ def user_login(request):
 
 
 # user creation and registration forms
-def register(request):
+def user_register(request):
+    
     """
     Handles user registration.
     """
@@ -285,3 +286,4 @@ def register(request):
         form = UserCreationForm()
     
     return render(request, 'register.html', {'form': form})
+    
