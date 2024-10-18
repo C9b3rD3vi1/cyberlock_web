@@ -218,6 +218,8 @@ def blog_post_update(request, pk):
     return render(request, 'blog_post_form.html', {'form': form})
 
 
+
+
 # user login with remember me form function
 def user_login(request):
     """
