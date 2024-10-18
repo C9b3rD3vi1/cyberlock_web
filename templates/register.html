@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Django will auto-render the form -->
+            <button type="submit" class="register-button">Sign Up</button>
+        </form>
+
+        <p>Already have an account? <a href="{% url 'user_login' %}">Login here</a></p>
+    </div>
+</body>
+</html>
