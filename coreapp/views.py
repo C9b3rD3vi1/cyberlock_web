@@ -287,7 +287,7 @@ def user_register(request):
         else:
             messages.error(request, "Please correct the error below.")
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     
     return render(request, 'register.html', {'form': form})
     
