@@ -3,8 +3,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import User, Service, BlogPost, Testimonial, ContactMessage, Job, Project
 from .forms import ContactMessageForm, BlogPostForm
-
+from django.contrib import messages
 from django.contrib.auth import login, authenticate
+
 
 
 
@@ -217,7 +218,6 @@ def blog_post_update(request, pk):
 
 
 
-
 def user_login(request):
     """
     This function handles user login.
@@ -228,28 +228,27 @@ def user_login(request):
     The function checks if the request method is POST. If it is, it retrieves the username and password from the POST data. 
     It then authenticates the user using the provided credentials.
     If the user is authenticated and their account is active, the function logs the user in and redirects them to the home page. 
-    If the user is not active, an error message is displayed. 
-    If the user is not authenticated, an error message is displayed.
+    Otherwise, it provides feedback on why login failed (e.g., account not active or invalid credentials).
 
     :return: A Django response object. If the user is authenticated and their account is active, it redirects to the home page. 
-    If the user is not active, it renders the login template with an error message. If the user is not authenticated, 
-    it renders the login template with an error message.
+    If the user is not active or authentication fails, it renders the login template with appropriate error messages.
 
     :rtype: django.http.HttpResponse
     """
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        username = request.POST.get('username', '')
+        password = request.POST.get('password', '')
 
         user = authenticate(username=username, password=password)
 
         if user is not None:
             if user.is_active:
                 login(request, user)
+                messages.success(request, 'You have successfully logged in.')
                 return redirect('home')
             else:
-                return render(request, 'login.html', {'error': 'Your account is not active'})
+                messages.error(request, 'Your account is inactive. Please contact support.')
         else:
-            return render(request, 'login.html', {'error': 'Invalid username or password'})
-        
+            messages.error(request, 'Invalid username or password. Please try again.')
 
+    return render(request, 'login.html')
