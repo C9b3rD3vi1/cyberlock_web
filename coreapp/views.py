@@ -6,6 +6,9 @@ from .forms import ContactMessageForm, BlogPostForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 
 
@@ -255,3 +258,30 @@ def user_login(request):
             messages.error(request, 'Invalid username or password. Please try again.')
 
     return render(request, 'login.html', {'next': next_url})
+
+
+
+# user creation and registration forms
+def register(request):
+    """
+    Handles user registration.
+    """
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        
+        if form.is_valid():
+            user = form.save()  # Save the new user
+            username = form.cleaned_data.get('username')
+            
+            # Automatically log in the new user
+            login(request, user)
+            messages.success(request, f"Account created successfully for {username}!")
+            
+            # Redirect to a welcome or home page
+            return redirect('home')
+        else:
+            messages.error(request, "Please correct the error below.")
+    else:
+        form = UserCreationForm()
+    
+    return render(request, 'register.html', {'form': form})

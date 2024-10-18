@@ -1,7 +1,5 @@
 {% load static %}
 
-{% include base.html %}
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +20,7 @@
             </ul>
         {% endif %}
 
-        <form method="POST" action="{% url 'login' %}?next={{ next }}">
+        <form method="POST" action="{% url 'user_login' %}?next={{ next }}">
             {% csrf_token %}
             <div class="form-group">
                 <label for="username">Username:</label>
