@@ -5,6 +5,7 @@ from .models import User, Service, BlogPost, Testimonial, ContactMessage, Job, P
 from .forms import ContactMessageForm, BlogPostForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
+from django.http import HttpResponseRedirect
 
 
 
@@ -217,38 +218,38 @@ def blog_post_update(request, pk):
     return render(request, 'blog_post_form.html', {'form': form})
 
 
-
+# user login with remember me form function
 def user_login(request):
     """
-    This function handles user login.
-
-    :param request: The HTTP request object containing the login form data.
-    :type request: django.http.HttpRequest
-
-    The function checks if the request method is POST. If it is, it retrieves the username and password from the POST data. 
-    It then authenticates the user using the provided credentials.
-    If the user is authenticated and their account is active, the function logs the user in and redirects them to the home page. 
-    Otherwise, it provides feedback on why login failed (e.g., account not active or invalid credentials).
-
-    :return: A Django response object. If the user is authenticated and their account is active, it redirects to the home page. 
-    If the user is not active or authentication fails, it renders the login template with appropriate error messages.
-
-    :rtype: django.http.HttpResponse
+    Handles user login with optional "Remember Me" functionality and redirects to the previous page after login.
     """
+    # Get the 'next' parameter to redirect back after login
+    next_url = request.GET.get('next', 'home')  # Default to 'home' if no next parameter
+
     if request.method == 'POST':
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
+        remember_me = request.POST.get('remember_me', False)  # Get the 'Remember Me' checkbox value
 
         user = authenticate(username=username, password=password)
 
         if user is not None:
             if user.is_active:
                 login(request, user)
+                
+                # Set session expiry based on "Remember Me"
+                if not remember_me:
+                    request.session.set_expiry(0)  # Session expires when the browser is closed
+                else:
+                    request.session.set_expiry(1209600)  # 2 weeks
+
                 messages.success(request, 'You have successfully logged in.')
-                return redirect('home')
+                
+                # Redirect to the next URL or home
+                return HttpResponseRedirect(next_url)
             else:
                 messages.error(request, 'Your account is inactive. Please contact support.')
         else:
             messages.error(request, 'Invalid username or password. Please try again.')
 
-    return render(request, 'login.html')
+    return render(request, 'login.html', {'next': next_url})
