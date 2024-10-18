@@ -15,7 +15,7 @@ class ContactMessageForm(forms.ModelForm):
         }
 
 
-
+# blog post form
 class BlogPostForm(forms.ModelForm):
     class Meta:
         model = BlogPost
