@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 import logging
+from is_safe_url import is_safe_url
 
 from .forms import CustomUserCreationForm
 
@@ -137,6 +138,7 @@ def blog_post_list(request):
     posts = BlogPost.objects.all().order_by('-published_date')
     return render(request, 'blog_post_list.html', {'posts': posts})
 
+
 def blog_post_detail(request, pk):
     post = get_object_or_404(BlogPost, pk=pk)
     return render(request, 'blog_post_detail.html', {'post': post})
@@ -211,6 +213,7 @@ def blog_post_create(request):
 
 
 
+
  # User should be logged in and have all permissions
 @login_required
 @user_passes_test(is_staff_or_high_user)
@@ -241,6 +244,7 @@ def blog_post_update(request, pk):
 
 
 
+
 # user login with remember me form function
 def user_login(request):
     """
@@ -252,7 +256,7 @@ def user_login(request):
     if request.method == 'POST':
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
-        remember_me = request.POST.get('remember_me', False)  # Get the 'Remember Me' checkbox value
+        remember_me = request.POST.get('remember_me') == 'on'  # Check if checkbox is checked
 
         user = authenticate(username=username, password=password)
 
@@ -261,15 +265,15 @@ def user_login(request):
                 login(request, user)
                 
                 # Set session expiry based on "Remember Me"
-                if not remember_me:
-                    request.session.set_expiry(0)  # Session expires when the browser is closed
-                else:
-                    request.session.set_expiry(1209600)  # 2 weeks
+                request.session.set_expiry(0 if not remember_me else 1209600)  # 0 for session-only, 2 weeks for "Remember Me"
 
                 messages.success(request, 'You have successfully logged in.')
                 
-                # Redirect to the next URL or home
-                return HttpResponseRedirect(next_url)
+                # Validate next_url
+                if is_safe_url(next_url, allowed_hosts={request.get_host()}):
+                    return redirect(next_url)
+                else:
+                    return redirect('home')
             else:
                 messages.error(request, 'Your account is inactive. Please contact support.')
         else:
@@ -279,30 +283,27 @@ def user_login(request):
 
 
 
+
 # user creation and registration forms
 def user_register(request):
-
     """
     Handles user registration.
     """
     if request.method == 'POST':
-        #form = UserCreationForm(request.POST)
-        # custom user form
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()  # Save the new user
+            user = form.save()
             username = form.cleaned_data.get('username')
             
-            # Automatically log in the new user
             login(request, user)
             messages.success(request, f"Account created successfully for {username}!")
-            
-            # Redirect to a welcome or home page
             return redirect('home')
         else:
-            messages.error(request, "Please correct the error below.")
+            # Provide specific feedback for form errors
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"Error in {field}: {error}")
     else:
         form = CustomUserCreationForm()
     
     return render(request, 'register.html', {'form': form})
-    
