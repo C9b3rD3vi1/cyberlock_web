@@ -27,6 +27,7 @@ urlpatterns = [
     path('post/<int:pk>/', views.blog_post_detail, name='blog_post_detail'),
     path('post/<int:pk>/', views.blog_post_list, name='blog_post_list'),
     path('posts/', views.blog_post_list, name='blog_post_list'),
+    path('services/<int:service_id>/', views.service_detail, name='service_detail'),
 
     path('post/new/', views.blog_post_create, name='blog_post_create'),
     path('post/<int:pk>/edit/', views.blog_post_update, name='blog_post_update'),

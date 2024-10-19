@@ -61,7 +61,7 @@
                     <img src="{{ post.image.url }}" alt="{{ post.title }}">
                 {% endif %}
                 <!-- Add breaks and paragraphs -->
-                <p>{{ post.content| linebreaks }}</p> <!-- |truncatewords:30 -->
+                <p>{{ post.content }}</p> <!-- |truncatewords:30 {linebreaks}-->
                 {% if post.tags %}
                     <p class="tags">Tags: {{ post.tags }}</p>
                 {% endif %}

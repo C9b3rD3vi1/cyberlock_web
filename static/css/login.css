@@ -3,23 +3,29 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4; /* Light background color */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+    margin: auto;
+    padding: 50;
+    justify-content: 300px;
     align-items: flex-start; /* Aligns items at the top */
     height: 100vh;
-    padding-top: 70px; /* Adjust space for navbar if needed */
+    padding-top: 0px; /* Adjust space for navbar if needed */
 }
 
+
 .login-container {
-    background: rgb(24, 17, 17);
-    margin: 100;
-    padding: 30px; /* Padding inside the container */
+    background: rgb(232, 231, 231);
+    margin: 100px auto; /* Optional margin */
+    padding: 20px; /* Padding inside the container */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: auto; /* Fixed width */
+    width: 300px; /* Set a fixed width */
+    max-width: 600px;
+    width: 400px; /* Set a fixed width */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    
 }
+
+
 
 h2 {
     text-align: center; /* Center the heading */

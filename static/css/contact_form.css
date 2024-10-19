@@ -4,8 +4,9 @@
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
-            padding-top: 60px; /* Adjust this value based on your navigation bar height */
+            padding-top: 0px; /* Adjust this value based on your navigation bar height */
         }
+        
         .container {
             background: #f8f6f6;
             padding: 20px;
@@ -13,7 +14,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 600px;
-            margin: 70; /* Center the container */
+            margin: auto; /* Center the container */
         }
         h1 {
             margin-bottom: 20px;
