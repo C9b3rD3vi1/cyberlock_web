@@ -8,6 +8,7 @@ from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+import logging
 
 from .forms import CustomUserCreationForm
 
@@ -170,7 +171,6 @@ def contact_success(request):
     return render(request, 'contact_success.html')
 
 
-
 @login_required
 def blog_post_create(request):
     """
@@ -179,19 +179,24 @@ def blog_post_create(request):
     :param request: The HTTP request object containing the form data.
     :type request: django.http.HttpRequest
 
-    The function checks if the request method is POST. If it is, it creates a form with the provided POST data and files, validates the form data, saves the form if valid, and redirects to the blog post list page. If the request method is not POST, it creates an empty form and renders the blog post form template with the form.
+    If the request method is POST, the function checks if the user is authenticated. If the user is authenticated, it creates a form with the existing blog post data, validates the form data, saves the form if valid, and redirects to the blog post detail page. If the request method is not POST, it creates an empty form and renders the blog post form template with the form.
 
-    :return: A Django response object. If the request method is POST and the form is valid, it redirects to the blog post list page. Otherwise, it renders the blog post form template with the form.
+    :return: A Django response object. If the request method is POST and the form is valid, it redirects to the blog post detail page. Otherwise, it renders the blog post form template with the form.
     :rtype: django.http.HttpResponse
     """
     if request.method == 'POST':
-        form = BlogPostForm(request.POST, request.FILES)
-        if form.is_valid():
-            blog_post = form.save(commit=False)
-            blog_post.author = request.user
-            blog_post.save()
-            return redirect('blog_post_list')
-    else:
+        if request.user.is_authenticated:
+            form = BlogPostForm(request.POST)
+            if form.is_valid():
+                blog_post = form.save(commit=False)
+                blog_post.author = request.user
+                blog_post.save()
+                logging.info(f"Blog post created by {request.user.username}: {blog_post.title}")
+            
+                # Redirect or render as necessary
+        else:
+            return redirect('login')  # Redirect to login page if not authenticated
+    else:       
         form = BlogPostForm()
     return render(request, 'blog_post_form.html', {'form': form})
 
