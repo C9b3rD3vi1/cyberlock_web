@@ -1,0 +1,25 @@
+{% include 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ service.name }}</title>
+</head>
+<body>
+
+<h1>{{ service.name }}</h1>
+
+{% if service.service_image %}
+    <img src="{{ service.service_image.url }}" alt="{{ service.name }}" style="max-width: 300px;">
+{% endif %}
+
+<p><strong>Description:</strong> {{ service.description }}</p>
+<p><strong>Price:</strong> ${{ service.price }}</p>
+<p><strong>Type:</strong> {{ service.get_service_type_display }}</p>
+
+<a href="{% url 'service_list' %}">Back to Services</a>
+
+</body>
+</html>

@@ -33,7 +33,7 @@
                             Services
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="#">All Services</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_list' %}">All Services</a></li>
                             <li><a class="dropdown-item" href="#">Custom Development</a></li>
                             <li><a class="dropdown-item" href="#">Cloud Solutions</a></li>
                             <!-- Add more service links as needed -->
@@ -63,7 +63,7 @@
                     <li class="name-item">
                         <a class="nav-link" href="{% url 'user_logout' %}">Logout</a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>

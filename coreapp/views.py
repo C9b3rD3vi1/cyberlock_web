@@ -55,24 +55,19 @@ def home(request):
 
 
 
-
+# All services offered by our applicationdef service_list(request):
 def service_list(request):
-    """
-    This function renders the service list page.
-
-    :param request: The HTTP request object containing the necessary information for rendering the page.
-    :type request: django.http.HttpRequest
-
-    The function retrieves the latest 3 active services from the database and passes them to the template context for display. It then renders the 'service_list.html' template with the services as a context variable.
-
-    :return: A Django response object. The function returns a rendered HTTP response containing the 'service_list.html' template with the services as a context variable.
-    :rtype: django.http.HttpResponse
-    """
-    services = Service.objects.filter(is_active=True)  # Get the latest 3 services
-
-
-    # Fetch the service based on its slug
-    return render(request, 'service_list.html', {"services": services})
+    Services = Service.objects.all()
+    custom_services = Service.objects.filter(service_type='custom')
+    cloud_services = Service.objects.filter(service_type='cloud')
+    
+    context = {
+        'services': Services,
+        'custom_services': custom_services,
+        'cloud_services': cloud_services,
+    }
+    
+    return render(request, 'service_list.html', context)
 
 
 

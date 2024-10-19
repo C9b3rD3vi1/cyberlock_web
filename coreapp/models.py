@@ -68,16 +68,26 @@ class BlogPost(models.Model):
 
 # Products or Services
 # Contains servers and price and availability of th services
-
 class Service(models.Model):
+    SERVICE_TYPE_CHOICES = [
+        ('custom', 'Custom Services'),
+        ('cloud', 'Cloud Services'),
+        ('standard', 'Standard Services'),  # For any other services
+    ]
+    
     name = models.CharField(max_length=200)
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     service_image = models.ImageField(upload_to='service_images/', blank=True)
     is_active = models.BooleanField(default=True)
+    service_type = models.CharField(max_length=10, choices=SERVICE_TYPE_CHOICES, default='standard')
+
+    class Meta:
+        verbose_name_plural = "Services"
+        ordering = ['name']
 
     def __str__(self):
-        return self.name
+        return f"{self.name} - ${self.price if self.price is not None else 'N/A'}"
 
 
 

@@ -1,27 +1,52 @@
 {% include 'base.html' %}
 
-{% block title %}Our Services - Cyberlock Tech{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+</head>
+<body>
 
-{% block content %}
-<section class="services py-5">
-    <h2 class="text-center mb-4">Our Services</h2>
+<h1>All Services</h1>
+<ul>
+    {% for service in services %}
+        <li>
+            <a href="{% url 'service_detail' service.id %}">
+                <strong>{{ service.name }}</strong>
+            </a>: {{ service.description }} - ${{ service.price }}
+        </li>
+    {% empty %}
+        <li>No services available.</li>
+    {% endfor %}
+</ul>
 
-    <div class="row">
-        {% for service in services %}
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="{{ service.service_image.url }}" class="card-img-top" alt="{{ service.name }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ service.name }}</h5>
-                        <p class="card-text">{{ service.description|truncatewords:30 }}</p>
-                        
-                        <a href="{% url 'service_detail' service.slug %}" class="btn btn-primary">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        {% empty %}
-            <p class="text-center">No services available.</p>
-        {% endfor %}
-    </div>
-</section>
-{% endblock %}
+<h2>Custom Services</h2>
+<ul>
+    {% for service in custom_services %}
+        <li>
+            <a href="{% url 'service_detail' service.id %}">
+                <strong>{{ service.name }}</strong>
+            </a>: {{ service.description }} - ${{ service.price }}
+        </li>
+    {% empty %}
+        <li>No custom services available.</li>
+    {% endfor %}
+</ul>
+
+<h2>Cloud Services</h2>
+<ul>
+    {% for service in cloud_services %}
+        <li>
+            <a href="{% url 'service_detail' service.id %}">
+                <strong>{{ service.name }}</strong>
+            </a>: {{ service.description }} - ${{ service.price }}
+        </li>
+    {% empty %}
+        <li>No cloud services available.</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
