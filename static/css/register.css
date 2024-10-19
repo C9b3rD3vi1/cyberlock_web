@@ -1,19 +1,17 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
 }
 
 .register-container {
-    background: rgb(240, 238, 238);
+    max-width: 400px;
+    margin: 100px auto;
     padding: 20px;
+    background: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -21,29 +19,87 @@ h2 {
     margin-bottom: 20px;
 }
 
-form {
+.form-group {
     margin-bottom: 15px;
 }
 
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* style email address field */
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+input[type="email"]:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* styles for passwords */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* register styles */
 .register-button {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
 }
 
 .register-button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 .messages {
+    list-style: none;
+    padding: 0;
     margin-bottom: 15px;
+}
+
+.messages li {
+    margin: 5px 0;
     padding: 10px;
-    border-radius: 5px;
-    background-color: #f8d7da;
+    border-radius: 4px;
+}
+
+.success {
+    background-color: #d4edda; /* Green for success */
+    color: #155724;
+}
+
+.error {
+    background-color: #f8d7da; /* Red for errors */
     color: #721c24;
 }
 
@@ -51,10 +107,11 @@ p {
     text-align: center;
 }
 
-a {
+p a {
     color: #007bff;
     text-decoration: none;
 }
-a:hover {
+
+p a:hover {
     text-decoration: underline;
 }
