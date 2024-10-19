@@ -23,6 +23,9 @@ urlpatterns = [
     #path('accounts/password_change/', views.password_change, name='password_change
 
     path('post/<int:pk>/', views.blog_post_detail, name='blog_post_detail'),
+    path('post/<int:pk>/', views.blog_post_list, name='blog_post_list'),
+    path('posts/', views.blog_post_list, name='blog_post_list'),
+
     path('post/new/', views.blog_post_create, name='blog_post_create'),
     path('post/<int:pk>/edit/', views.blog_post_update, name='blog_post_update'),
 ]

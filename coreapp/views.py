@@ -171,7 +171,7 @@ def contact_success(request):
 
 
 
-# @login_required
+@login_required
 def blog_post_create(request):
     """
     This function handles the creation of a new blog post.
@@ -198,7 +198,7 @@ def blog_post_create(request):
 
 
 
-# @login_required
+@login_required
 def blog_post_update(request, pk):
     """
     This function handles the update of a blog post.
