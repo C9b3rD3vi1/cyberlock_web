@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import User, Service, BlogPost, Testimonial, ContactMessage, Job, Project
 from .forms import ContactMessageForm, BlogPostForm
 from django.contrib import messages
@@ -13,6 +13,12 @@ import logging
 from .forms import CustomUserCreationForm
 
 
+
+
+
+
+def is_staff_or_high_user(user):
+    return user.is_staff or user.has_perm('coreapp.can_create_post')
 
 
 
@@ -171,7 +177,10 @@ def contact_success(request):
     return render(request, 'contact_success.html')
 
 
+
+# User should be logged in and have all permissions
 @login_required
+@user_passes_test(is_staff_or_high_user)
 def blog_post_create(request):
     """
     This function handles the creation of a new blog post.
@@ -202,8 +211,9 @@ def blog_post_create(request):
 
 
 
-
+ # User should be logged in and have all permissions
 @login_required
+@user_passes_test(is_staff_or_high_user)
 def blog_post_update(request, pk):
     """
     This function handles the update of a blog post.

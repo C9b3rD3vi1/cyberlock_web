@@ -53,9 +53,16 @@ class BlogPost(models.Model):
 
     class Meta:
         ordering = ['-published_date']
+        permissions = [
+            ("can_create_post", "Can create blog post"),
+            ("can_update_post", "Can update blog post"),
+            ("can_delete_post", "Can delete blog post"),
+        ]
+
 
     def __str__(self):
         return self.title
+
 
 
 
