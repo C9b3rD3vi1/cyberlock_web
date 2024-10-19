@@ -17,6 +17,8 @@ urlpatterns = [
     path('contact/', views.contact_form, name='contact_form'),
     path('success/', views.contact_success, name='contact_success'),
     path('login/', views.user_login, name='user_login'),
+    path('logout/', views.user_logout, name='user_logout'),
+
     #path('accounts/logout/', views.user_logout, name='user_logout'),
     path('register/', views.user_register, name='user_register'),
     #path('accounts/profile/<int:pk>/', views.user_profile, name='user_profile'),

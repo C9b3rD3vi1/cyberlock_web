@@ -1,11 +1,10 @@
-{% extends 'base.html' %}
+{% include 'base.html' %}
 
 {% block title %}Our Services - Cyberlock Tech{% endblock %}
 
 {% block content %}
 <section class="services py-5">
     <h2 class="text-center mb-4">Our Services</h2>
-
 
     <div class="row">
         {% for service in services %}
@@ -15,12 +14,13 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ service.name }}</h5>
                         <p class="card-text">{{ service.description|truncatewords:30 }}</p>
-
                         
-                        <a href="{% url 'service_list' service.id %}" class="btn btn-primary">Learn More</a>
+                        <a href="{% url 'service_detail' service.slug %}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
+        {% empty %}
+            <p class="text-center">No services available.</p>
         {% endfor %}
     </div>
 </section>

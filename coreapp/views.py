@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import logout
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 import logging
 from is_safe_url import is_safe_url
@@ -307,3 +309,10 @@ def user_register(request):
         form = CustomUserCreationForm()
     
     return render(request, 'register.html', {'form': form})
+
+
+
+# user logout functionality
+def user_logout(request):
+    logout(request)
+    return redirect('home')
