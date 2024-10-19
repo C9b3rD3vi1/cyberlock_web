@@ -7,13 +7,13 @@
             padding-top: 60px; /* Adjust this value based on your navigation bar height */
         }
         .container {
-            background: #bea7a7;
+            background: #f8f6f6;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 600px;
-            margin: 0 auto; /* Center the container */
+            margin: 70; /* Center the container */
         }
         h1 {
             margin-bottom: 20px;
