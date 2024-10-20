@@ -18,6 +18,9 @@ urlpatterns = [
     path('success/', views.contact_success, name='contact_success'),
     path('login/', views.user_login, name='user_login'),
     path('logout/', views.user_logout, name='user_logout'),
+    path('submit-testimonial/', views.submit_testimonial, name='submit_testimonial'),
+    path('testimonial-success/', views.testimonial_success, name='testimonial_success'),
+    
 
     #path('accounts/logout/', views.user_logout, name='user_logout'),
     path('register/', views.user_register, name='user_register'),

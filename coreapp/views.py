@@ -318,8 +318,9 @@ def user_logout(request):
     return redirect('home')
 
 
+
 # Allow users to create and submit forms for testimonies while logged in.
-@login_required
+@login_required(login_url='/login/')
 def submit_testimonial(request):
     if request.method == 'POST':
         form = TestimonialForm(request.POST, request.FILES)
@@ -331,3 +332,9 @@ def submit_testimonial(request):
         form = TestimonialForm()
     
     return render(request, 'submit_testimonial.html', {'form': form})
+
+
+
+# success when user successfully submitted a testimonial
+def testimonial_success(request):
+    return render(request, 'success_testimonial.html')
