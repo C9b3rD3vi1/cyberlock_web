@@ -146,3 +146,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 LOGOUT_REDIRECT_URL = 'home'  # Change 'home' to the desired URL name
+
+'''
+# The default django mailing system configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # e.g., smtp.gmail.com # email address providers
+EMAIL_PORT = 587  # Common ports are 587 (TLS) or 465 (SSL)
+EMAIL_USE_TLS = True  # Use TLS if supported
+EMAIL_HOST_USER = 'your_email@example.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'your_email_password'  # Your email password
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+'''
