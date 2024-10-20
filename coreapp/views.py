@@ -355,6 +355,7 @@ def edit_profile(request):
 
 
 
+
 # User profile creation and viewing
 @login_required
 def user_profile(request):
