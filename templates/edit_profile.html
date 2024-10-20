@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% include 'base.html' %}
 
 {% block content %}
   <div class="container mt-4">
@@ -7,19 +7,59 @@
     
     <form method="post" enctype="multipart/form-data" class="border p-4 rounded bg-light">
       {% csrf_token %}
-      {{ form.as_p }}
+      
+      <!-- Render the profile picture field first -->
+      <div class="mb-3">
+        <label for="{{ form.profile_picture.id_for_label }}" class="form-label">Profile Picture</label>
+        {{ form.profile_picture }}
+        {% if form.profile_picture.errors %}
+          <div class="alert alert-danger">{{ form.profile_picture.errors }}</div>
+        {% endif %}
+      </div>
+
+      <!-- Render other fields -->
+      <div class="mb-3">
+        <label for="{{ form.bio.id_for_label }}" class="form-label">Bio</label>
+        {{ form.bio }}
+        {% if form.bio.errors %}
+          <div class="alert alert-danger">{{ form.bio.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mb-3">
+        <label for="{{ form.website.id_for_label }}" class="form-label">Website</label>
+        {{ form.website }}
+        {% if form.website.errors %}
+          <div class="alert alert-danger">{{ form.website.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mb-3">
+        <label for="{{ form.github.id_for_label }}" class="form-label">GitHub</label>
+        {{ form.github }}
+        {% if form.github.errors %}
+          <div class="alert alert-danger">{{ form.github.errors }}</div>
+        {% endif %}
+      </div>
+
+      <div class="mb-3">
+        <label for="{{ form.linkedin.id_for_label }}" class="form-label">LinkedIn</label>
+        {{ form.linkedin }}
+        {% if form.linkedin.errors %}
+          <div class="alert alert-danger">{{ form.linkedin.errors }}</div>
+        {% endif %}
+      </div>
+      
       <button type="submit" class="btn btn-primary">Update Profile</button>
     </form>
 
-    {% if form.errors %}
+    {% if form.non_field_errors %}
       <div class="alert alert-danger mt-3">
-        {{ form.errors }}
+        {{ form.non_field_errors }}
       </div>
     {% endif %}
   </div>
 {% endblock %}
 
-
-
+<!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
