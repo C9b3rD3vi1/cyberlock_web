@@ -312,8 +312,18 @@ def user_register(request):
 
 # user logout functionality
 def user_logout(request):
+    # Log the user out
     logout(request)
-    return redirect('home')
+
+    # Set a success message for logout
+    messages.success(request, "You have been logged out successfully.")
+
+    # Redirect to the home page or a specific URL
+    next_url = request.GET.get('next', 'home')  # Check if there is a 'next' parameter in the URL
+    if is_safe_url(url=next_url, allowed_hosts={request.get_host()}):
+        return redirect(next_url)
+    
+    return redirect('home')  # Default fallback
 
 
 
