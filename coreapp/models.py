@@ -153,12 +153,23 @@ class Testimonial(models.Model):
 
 # Contact Information and how to reach us directly
 class ContactMessage(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    subject = models.CharField(max_length=200)
-    message = models.TextField()
+    name = models.CharField(max_length=100, verbose_name="Full Name")
+    email = models.EmailField(verbose_name="Email Address")
+    subject = models.CharField(max_length=200, verbose_name="Subject")
+    message = models.TextField(verbose_name="Message")
+
     sent_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Message from {self.name} - {self.email}"
+
+    class Meta:
+        ordering = ['-sent_at']  # Order messages by most recent first
+        verbose_name = "Contact Message"
+        verbose_name_plural = "Contact Messages"
+
+    def clean(self):
+        # Example of custom validation for message length
+        if len(self.message) < 10:
+            raise ValidationError("Message must be at least 10 characters long.")
 
