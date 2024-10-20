@@ -1,0 +1,14 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Your Profile</h2>
+  <p><strong>Username:</strong> {{ profile.user.username }}</p>
+  <p><strong>Bio:</strong> {{ profile.bio }}</p>
+  <p><strong>Website:</strong> <a href="{{ profile.website }}">{{ profile.website }}</a></p>
+  <p><strong>GitHub:</strong> <a href="{{ profile.github }}">{{ profile.github }}</a></p>
+  <p><strong>LinkedIn:</strong> <a href="{{ profile.linkedin }}">{{ profile.linkedin }}</a></p>
+  <a href="{% url 'edit_profile' %}">Edit Profile</a>
+{% endblock %}

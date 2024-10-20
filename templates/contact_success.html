@@ -1,7 +1,5 @@
-
 {% load static %}
 
-{% include 'base.html' %}
 
 
 <!DOCTYPE html>
@@ -10,9 +8,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success</title>
+    <link rel="stylesheet" href="{% static 'css/contact_success.css' %}">  <!-- Link to your CSS file -->
 </head>
 <body>
-    <h1>Thank You!</h1>
-    <p>Your message has been sent successfully.</p>
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>Your message has been sent successfully.</p>
+        <a href="{% url 'contact_form' %}" class="button">Go back to the contact form</a>
+    </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
-from .models import User, Service, BlogPost, Testimonial, ContactMessage, Job, Project
+from .models import User, Service, BlogPost, Testimonial, ContactMessage, Job, Project, Profile
 from .forms import ContactMessageForm, BlogPostForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
@@ -15,7 +15,7 @@ from .utils import save_contact_message
 
 from is_safe_url import is_safe_url
 
-from .forms import CustomUserCreationForm, TestimonialForm
+from .forms import CustomUserCreationForm, TestimonialForm, ProfileForm
 
 
 
@@ -337,3 +337,26 @@ def submit_testimonial(request):
 def testimonial_success(request):
     return render(request, 'success_testimonial.html')
 
+
+# Function to allow users to submit and edit profile only when theyre authenticated
+@login_required
+def edit_profile(request):
+    profile, created = Profile.objects.get_or_create(user=request.user)
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('user_profile')  # Redirect to a profile view or success page
+    else:
+        form = ProfileForm(instance=profile)
+
+    return render(request, 'edit_profile.html', {'form': form})
+
+
+
+# User profile creation and viewing
+@login_required
+def user_profile(request):
+    profile = Profile.objects.get(user=request.user)
+    return render(request, 'profile.html', {'profile': profile})

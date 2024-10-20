@@ -20,6 +20,8 @@ urlpatterns = [
     path('logout/', views.user_logout, name='user_logout'),
     path('submit-testimonial/', views.submit_testimonial, name='submit_testimonial'),
     path('testimonial-success/', views.testimonial_success, name='testimonial_success'),
+    path('profile/', views.user_profile, name='profile'),
+    path('edit-profile/', views.edit_profile, name='edit_profile'),
     
 
     #path('accounts/logout/', views.user_logout, name='user_logout'),

@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.urls import reverse
 from django.utils.text import slugify
+from django.core.validators import URLValidator
 
 
 
@@ -16,12 +17,17 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True)
-    website = models.URLField(blank=True)
-    github = models.URLField(blank=True)
-    linkedin = models.URLField(blank=True)
+    # validation rules for the profile urls and website
+    website = models.URLField(blank=True, validators=[URLValidator()])
+    github = models.URLField(blank=True, validators=[URLValidator()])
+    linkedin = models.URLField(blank=True, validators=[URLValidator()])
 
     def __str__(self):
         return self.user.username
+
+    def is_complete(self):
+        return all([self.bio, self.profile_picture, self.website, self.github, self.linkedin])
+
 
 
 
