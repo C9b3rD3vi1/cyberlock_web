@@ -11,6 +11,8 @@ from django.contrib.auth import logout
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 import logging
+from .utils import save_contact_message
+
 from is_safe_url import is_safe_url
 
 from .forms import CustomUserCreationForm, TestimonialForm
@@ -152,26 +154,22 @@ def blog_post_detail(request, pk):
 def contact_form(request):
     """
     This function handles the contact form submission and rendering.
-
-    :param request: The HTTP request object containing the form data.
-    :type request: django.http.HttpRequest
-
-    If the request method is POST, the function validates the form data, saves the form if valid, and redirects to the success page.
-    If the request method is not POST, the function creates an empty form and renders the contact form template with the form.
-
-    :return: A Django response object. If the request method is POST and the form is valid, it redirects to the success page. Otherwise, it renders the contact form template with the form.
-    :rtype: django.http.HttpResponse
     """
     if request.method == 'POST':
         form = ContactMessageForm(request.POST)
         if form.is_valid():
-            form.save()
+            # Save the message and send an email
+            save_contact_message(
+                name=form.cleaned_data['name'],
+                email=form.cleaned_data['email'],
+                subject=form.cleaned_data['subject'],
+                message=form.cleaned_data['message']
+            )
             return redirect('contact_success')
     else:
-        form = ContactMessageForm()
-    
-    return render(request, 'contact_form.html', {'form': form})
+        form = ContactMessageForm()  # No need to change this part
 
+    return render(request, 'contact_form.html', {'form': form})
 
 
 
@@ -338,3 +336,4 @@ def submit_testimonial(request):
 # success when user successfully submitted a testimonial
 def testimonial_success(request):
     return render(request, 'success_testimonial.html')
+
