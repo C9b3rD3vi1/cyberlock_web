@@ -1,6 +1,13 @@
+{% load static %}
+
 {% include 'base.html' %}
 
+
+
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/edit_profile.css' %}"> 
+
   <div class="container mt-4">
     <h1>Hello, {{ user.username }}!</h1>
     <h2>Edit Profile</h2>

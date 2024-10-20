@@ -1,6 +1,9 @@
+{% load static %}
+
 {% include 'base.html' %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
   <div class="container mt-4">
     <h1 class="mb-4">{{ profile.user.username }}'s Profile</h1>
     
