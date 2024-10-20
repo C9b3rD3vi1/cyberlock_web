@@ -338,19 +338,26 @@ def testimonial_success(request):
     return render(request, 'success_testimonial.html')
 
 
+
+
 # Function to allow users to submit and edit profile only when theyre authenticated
 @login_required
 def edit_profile(request):
+    # Retrieve the user's profile or create one if it doesn't exist
     profile, created = Profile.objects.get_or_create(user=request.user)
 
     if request.method == 'POST':
+        # Create a form instance with the submitted data and the user's profile instance
         form = ProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
+            # Save the form and redirect to the user profile view
             form.save()
-            return redirect('user_profile')  # Redirect to a profile view or success page
+            return redirect('user_profile')  # Change 'user_profile' to the appropriate view name
     else:
+        # If the request is a GET, instantiate the form with the user's profile data
         form = ProfileForm(instance=profile)
 
+    # Render the edit profile template with the form
     return render(request, 'edit_profile.html', {'form': form})
 
 
@@ -358,6 +365,6 @@ def edit_profile(request):
 
 # User profile creation and viewing
 @login_required
-def user_profile(request):
-    profile = Profile.objects.get(user=request.user)
+def user_profiles(request):
+    profile = get_object_or_404(Profile, user=request.user)
     return render(request, 'profile.html', {'profile': profile})
