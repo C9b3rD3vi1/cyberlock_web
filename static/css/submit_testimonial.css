@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;          /* Full viewport height */
+    margin: 0;              /* Remove default margin */
+    font-family: Arial, sans-serif; /* Optional: Change font */
+}
+
+
+.testimonial-form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;    /* Center items */
+    width: 500px;          /* Set a width for the form */
+    padding: 20px;         /* Add padding */
+    border: 1px solid #ccc; /* Optional: border around the form */
+    border-radius: 10px;   /* Optional: rounded corners */
+    background-color: #fefbfb; /* Optional: background color */
+}
+
+
+.testimonial-form textarea {
+    width: 90%;         /* Full width for the textarea */
+    height: 150px;      /* Set a height for the textarea */
+    padding: 15px;      /* Increased padding for comfort */
+    font-size: 18px;    /* Increased font size */
+    border: 1px solid #ccc; /* Optional: border styling */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+.testimonial-form div {
+    margin-bottom: 30px; /* Space between form fields */
+    width: 100%;         /* Full width for inputs */
+    font-size: 18px;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.testimonial-form input {
+    width: 90%;         /* Full width for inputs */
+    padding: 15px;      /* Increased padding for larger size */
+    font-size: 18px;    /* Increased font size for better visibility */
+    border: 1px solid #ccc; /* Optional: border styling */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+
+label {
+    display: block; /* Make labels block-level */
+    margin-bottom: 10px; /* Space between label and input */
+}
+
+.star-rating {
+    direction: rtl; /* Reverse order of stars */
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.star-rating input {
+    display: none; /* Hide radio buttons */
+}
+
+.star-rating label {
+    font-size: 30px; /* Size of the stars */
+    color: lightgray; /* Default star color */
+    cursor: pointer;
+}
+
+.star-rating input:checked ~ label {
+    color: gold; /* Color when selected */
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: gold; /* Change color on hover */
+}

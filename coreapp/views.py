@@ -319,7 +319,7 @@ def user_logout(request):
 
 
 
-# Allow users to create and submit forms for testimonies while logged in.
+# Allow users to create and submit forms for testimonies only while logged in.
 @login_required(login_url='/login/')
 def submit_testimonial(request):
     if request.method == 'POST':

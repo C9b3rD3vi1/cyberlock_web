@@ -1,7 +1,47 @@
 
 
-<form method="post" enctype="multipart/form-data">
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/submit_testimonial.css' %}">
+</head>
+
+
+
+
+<form method="post" enctype="multipart/form-data" class="testimonial-form">
     {% csrf_token %}
-    {{ form.as_p }}
+
+    <h2>Feedback Form</h2> <!-- Add your title here -->
+
+    <div>
+        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+        {{ form.name }}
+    </div>
+
+    <div>
+        <label for="{{ form.company.id_for_label }}">{{ form.company.label }}</label>
+        {{ form.company }}
+    </div>
+
+    <div>
+        <label for="{{ form.feedback.id_for_label }}">{{ form.feedback.label }}</label>
+        {{ form.feedback }}
+    </div>
+
+    <!-- Custom Star Rating Implementation -->
+    <div class="star-rating">
+        <input type="radio" id="star5" name="rating" value="5" />
+        <label for="star5" class="star">★</label>
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label for="star4" class="star">★</label>
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label for="star3" class="star">★</label>
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label for="star2" class="star">★</label>
+        <input type="radio" id="star1" name="rating" value="1" />
+        <label for="star1" class="star">★</label>
+    </div>
+
     <button type="submit">Submit Testimonial</button>
 </form>
