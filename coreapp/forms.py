@@ -2,7 +2,7 @@
 # import and create django form for contact page and conversation
 
 from django import forms
-from.models import ContactMessage, BlogPost
+from.models import ContactMessage, BlogPost, Testimonial
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -43,3 +43,9 @@ class CustomUserCreationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+    
+# Testimonial form from admin and different users based on their expectations and experience
+class TestimonialForm(forms.ModelForm):
+    class Meta:
+        model = Testimonial
+        fields = ['name', 'company', 'feedback', 'rating', 'profile_picture']

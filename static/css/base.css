@@ -28,3 +28,14 @@
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f9; /* Light background for body */
         }
+
+
+         /* Footer */
+    footer {
+        background-color: #343a40;
+        color: white;
+    }
+
+    footer p {
+        margin: 0;
+    }

@@ -13,7 +13,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import logging
 from is_safe_url import is_safe_url
 
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, TestimonialForm
 
 
 
@@ -316,3 +316,18 @@ def user_register(request):
 def user_logout(request):
     logout(request)
     return redirect('home')
+
+
+# Allow users to create and submit forms for testimonies while logged in.
+@login_required
+def submit_testimonial(request):
+    if request.method == 'POST':
+        form = TestimonialForm(request.POST, request.FILES)
+        if form.is_valid():
+            testimonial = form.save(commit=False)
+            testimonial.save()  # Save the testimonial to the database
+            return redirect('testimonial_success')  # Redirect to a success page
+    else:
+        form = TestimonialForm()
+    
+    return render(request, 'submit_testimonial.html', {'form': form})
