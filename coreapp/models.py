@@ -73,7 +73,7 @@ class BlogPost(models.Model):
 
 
 # Products or Services
-# Contains servers and price and availability of th services
+# Contains services and price and availability of th services
 class Service(models.Model):
     SERVICE_TYPE_CHOICES = [
         ('custom', 'Custom Services'),

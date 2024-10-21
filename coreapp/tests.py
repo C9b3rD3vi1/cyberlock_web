@@ -6,6 +6,7 @@ from django.conf import settings
 
 
 
+# Test the email settings and send functionality for any errors that may occur during development 
 def test_email():
     send_mail(
         'Test Email Subject',
