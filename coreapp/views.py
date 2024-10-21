@@ -8,23 +8,16 @@ from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
-
 from django.contrib.auth.mixins import LoginRequiredMixin
 import logging
 from .utils import save_contact_message
-
 from is_safe_url import is_safe_url
-
 from .forms import CustomUserCreationForm, TestimonialForm, ProfileForm
-
-
-
 
 
 
 def is_staff_or_high_user(user):
     return user.is_staff or user.has_perm('coreapp.can_create_post')
-
 
 
 
@@ -71,6 +64,8 @@ def service_list(request):
     
     return render(request, 'service_list.html', context)
 
+
+
 # show service detaila
 def service_detail(request, service_id):
     service = get_object_or_404(Service, id=service_id)
@@ -78,7 +73,7 @@ def service_detail(request, service_id):
 
 
 
-
+# render portfolio details project details
 def portfolio(request):
 
     projects = Project.objects.all()
@@ -87,12 +82,10 @@ def portfolio(request):
 
 
 
-
 def blog_list(request):
 
     blog_post = BlogPost.objects.all()
     return render(request, 'blog_post.html', {"blog_post":blog_post})
-
 
 
 
@@ -110,7 +103,6 @@ def job_list(request):
     """
     jobs = Job.objects.all().order_by('-is_open')
     return render(request, 'job_list.html',{"jobs": jobs})
-
 
 
 
@@ -170,7 +162,6 @@ def contact_form(request):
         form = ContactMessageForm()  # No need to change this part
 
     return render(request, 'contact_form.html', {'form': form})
-
 
 
 
@@ -343,6 +334,7 @@ def submit_testimonial(request):
 
 
 
+
 # success when user successfully submitted a testimonial
 def testimonial_success(request):
     return render(request, 'success_testimonial.html')
@@ -365,7 +357,7 @@ def edit_profile(request):
         form = ProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
-            return redirect('user_profile')  # Ensure 'user_profile' is defined in urls.py
+            return redirect('user_profile')
     else:
         form = ProfileForm(instance=profile)
 

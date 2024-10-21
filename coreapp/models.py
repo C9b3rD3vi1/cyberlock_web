@@ -115,7 +115,6 @@ class Project(models.Model):
 
 # Job Listings
 # Lists all jobs and opening available at the company
-
 class Job(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -132,8 +131,6 @@ class Job(models.Model):
 
 
 # Testimonials and company reviews
-
-
 class Testimonial(models.Model):
     name = models.CharField(max_length=100)
     company = models.CharField(max_length=100, blank=True)
