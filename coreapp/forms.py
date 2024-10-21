@@ -51,8 +51,11 @@ class TestimonialForm(forms.ModelForm):
         model = Testimonial
         fields = ['name', 'company', 'feedback', 'rating', 'profile_picture']
 
+
+
 # profile form  fields to allow user to enter and update their profile
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['bio', 'profile_picture', 'website', 'github', 'linkedin']
+        
