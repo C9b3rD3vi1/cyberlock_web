@@ -10,8 +10,6 @@ from django.core.validators import URLValidator
 
 
 
-
-
 # 1. User Profile (Team members or clients)
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -27,7 +25,6 @@ class Profile(models.Model):
 
     def is_complete(self):
         return all([self.bio, self.profile_picture, self.website, self.github, self.linkedin])
-
 
 
 
@@ -76,9 +73,9 @@ class BlogPost(models.Model):
 # Contains services and price and availability of th services
 class Service(models.Model):
     SERVICE_TYPE_CHOICES = [
-        ('custom', 'Custom Services'),
+        ('custom', 'Custom Services'),# Custom Services
         ('cloud', 'Cloud Services'),
-        ('standard', 'Standard Services'),  # For any other services
+        ('standard', 'Standard Services'),  # All other services not classified should be treated as standard
     ]
     
     name = models.CharField(max_length=200)
