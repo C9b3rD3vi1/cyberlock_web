@@ -169,7 +169,7 @@ class ContactMessage(models.Model):
         verbose_name_plural = "Contact Messages"
 
     def clean(self):
-        # Example of custom validation for message length
+        # Custom validation for message length
         if len(self.message) < 10:
             raise ValidationError("Message must be at least 10 characters long.")
 
