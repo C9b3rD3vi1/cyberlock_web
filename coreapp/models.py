@@ -173,3 +173,16 @@ class ContactMessage(models.Model):
         if len(self.message) < 10:
             raise ValidationError("Message must be at least 10 characters long.")
 
+
+
+# job application models, 
+# Save job application  and allowing user to make job application
+class JobApplication(models.Model):
+    name = models.CharField(max_length=100, blank=False)
+    email = models.EmailField(blank=False)
+    resume = models.FileField(upload_to='resumes/', blank=False)
+    cover_letter = models.TextField(blank=True, blank=False)
+    applied_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

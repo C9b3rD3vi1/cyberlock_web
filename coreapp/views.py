@@ -12,8 +12,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import logging
 from .utils import save_contact_message
 from is_safe_url import is_safe_url
-from .forms import CustomUserCreationForm, TestimonialForm, ProfileForm
-
+from .forms import CustomUserCreationForm, TestimonialForm, ProfileForm, JobApplicationForm
 
 
 def is_staff_or_high_user(user):
@@ -103,6 +102,24 @@ def job_list(request):
     """
     jobs = Job.objects.all().order_by('-is_open')
     return render(request, 'job_list.html',{"jobs": jobs})
+
+
+# functions to allow logged in users to apply for available jobs
+@login_required
+def apply_job(request):
+    if request.method == 'POST':
+        form = JobApplicationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your application has been submitted successfully!')
+            return redirect('apply_job')
+        else:
+            messages.error(request, 'Please correct the errors below.')
+
+    else:
+        form = JobApplicationForm()
+
+    return render(request, 'accounts/apply_job.html', {'form': form})
 
 
 

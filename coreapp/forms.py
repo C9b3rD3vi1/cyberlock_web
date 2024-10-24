@@ -5,6 +5,7 @@ from django import forms
 from.models import ContactMessage, BlogPost, Testimonial, Profile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from.models import JobApplication
 
 
 # Contact form for sending messages to the company
@@ -58,4 +59,10 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['bio', 'profile_picture', 'website', 'github', 'linkedin']
-        
+
+
+# job application form  
+class JobApplicationForm(forms.ModelForm):
+    class Meta:
+        model = JobApplication
+        fields = ['name', 'email', 'resume', 'cover_letter']
