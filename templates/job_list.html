@@ -19,7 +19,7 @@
                         <h5 class="card-title">{{ job.title }}</h5>
                         <p class="card-text">{{ job.description|truncatewords:30 }}</p>
                         <p><strong>Location:</strong> {{ job.location }}</p>
-                        <a href="{% url 'job_list' %}" class="btn btn-primary">Apply Now</a>
+                        <a href="{% url 'apply_job' %}" class="btn btn-primary">Apply Now</a>
                     </div>
                 </div>
             </div>

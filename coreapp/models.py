@@ -181,7 +181,7 @@ class JobApplication(models.Model):
     name = models.CharField(max_length=100, blank=False)
     email = models.EmailField(blank=False)
     resume = models.FileField(upload_to='resumes/', blank=False)
-    cover_letter = models.TextField(blank=True, blank=False)
+    cover_letter = models.TextField(blank=False)
     applied_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
