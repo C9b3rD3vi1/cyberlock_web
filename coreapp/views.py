@@ -119,7 +119,7 @@ def apply_job(request):
     else:
         form = JobApplicationForm()
 
-    return render(request, 'accounts/apply_job.html', {'form': form})
+    return render(request, 'apply_job.html', {'form': form})
 
 
 
