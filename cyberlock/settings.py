@@ -144,7 +144,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+# The default redirect url
 LOGOUT_REDIRECT_URL = 'home'  # Change 'home' to the desired URL name
 
 '''
