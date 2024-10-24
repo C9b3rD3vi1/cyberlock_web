@@ -65,4 +65,4 @@ class ProfileForm(forms.ModelForm):
 class JobApplicationForm(forms.ModelForm):
     class Meta:
         model = JobApplication
-        fields = ['name', 'email', 'resume', 'cover_letter']
+        fields = ['name', 'email', 'cover_letter', 'resume']

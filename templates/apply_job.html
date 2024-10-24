@@ -1,10 +1,17 @@
 
+
+{% load static %}
+
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Job Application</title>
+    <link rel="stylesheet" href="{% static 'css/apply_job.css' %}">
+
 </head>
+
 <body>
     <h1>Job Application</h1>
     {% if messages %}
