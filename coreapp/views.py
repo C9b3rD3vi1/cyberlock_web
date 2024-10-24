@@ -13,6 +13,7 @@ import logging
 from .utils import save_contact_message
 from is_safe_url import is_safe_url
 from .forms import CustomUserCreationForm, TestimonialForm, ProfileForm, JobApplicationForm
+from colorama import Fore, Style
 
 
 def is_staff_or_high_user(user):
