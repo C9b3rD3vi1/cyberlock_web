@@ -184,6 +184,7 @@ def contact_form(request):
 
 
 
+
 # Return rresponse after successful contact and information sharing
 def contact_success(request):
     return render(request, 'contact_success.html')
