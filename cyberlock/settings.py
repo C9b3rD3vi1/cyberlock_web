@@ -103,6 +103,7 @@ DATABASES = {
 }
 '''
 
+
 # Set up secure cookies and HSTS
 """
 # Use secure cookies
