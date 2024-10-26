@@ -19,6 +19,7 @@ from django.views.decorators.http import require_POST
 
 
 
+
 def is_staff_or_high_user(user):
     return user.is_staff or user.has_perm('coreapp.can_create_post')
 
