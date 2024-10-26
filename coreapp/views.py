@@ -260,6 +260,12 @@ def blog_post_update(request, pk):
 def user_login(request):
     """
     Handles user login with optional "Remember Me" functionality and redirects to the previous page after login.
+
+    Parameters:
+    request (django.http.HttpRequest): The HTTP request object containing the necessary information for login.
+
+    Returns:
+    django.http.HttpResponse: A Django response object. If the request method is POST and the form is valid, it redirects to the specified next page. Otherwise, it renders the login template with the next page URL.
     """
     # Get the 'next' parameter to redirect back after login
     next_url = request.GET.get('next', 'home')  # Default to 'home' if no next parameter
@@ -274,12 +280,12 @@ def user_login(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                
+
                 # Set session expiry based on "Remember Me"
                 request.session.set_expiry(0 if not remember_me else 1209600)  # 0 for session-only, 2 weeks for "Remember Me"
 
                 messages.success(request, 'You have successfully logged in.')
-                
+
                 # Validate next_url
                 if is_safe_url(next_url, allowed_hosts={request.get_host()}):
                     return redirect(next_url)
