@@ -103,6 +103,19 @@ DATABASES = {
 }
 '''
 
+# Set up secure cookies and HSTS
+"""
+# Use secure cookies
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# HSTS settings
+SECURE_HSTS_SECONDS = 3600  # 1 hour
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
+"""
+
 
 
 
