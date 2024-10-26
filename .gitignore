@@ -1,0 +1,33 @@
+
+#environment
+.env
+
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Environment variable file
+.env
+
+# Database files
+*.sqlite3
+db.sqlite3
+
+# Media files (user uploads)
+media/
+
+# Static files
+staticfiles/
+
+# Local settings (if you have any local settings files)
+local_settings.py
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Other files you want to ignore
+*.log
+*.pot
+*.pyc
