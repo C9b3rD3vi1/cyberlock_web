@@ -328,18 +328,24 @@ def user_register(request):
 
 
 # user logout functionality
+@require_POST  # Require POST requests for logout
 def user_logout(request):
-    # Log the user out
-    logout(request)
+    # Check if the user is authenticated
+    if request.user.is_authenticated:
+        # Log the user out
+        logout(request)
 
-    # Set a success message for logout
-    messages.success(request, "You have been logged out successfully.")
+        # Set a success message for logout
+        messages.success(request, "You have been logged out successfully.")
+    else:
+        # Set an info message if the user was not logged in
+        messages.info(request, "You were not logged in.")
 
-    # Redirect to the home page or a specific URL
-    next_url = request.GET.get('next', 'home')  # Check if there is a 'next' parameter in the URL
+    # Redirect to the next URL or home
+    next_url = request.GET.get('next', 'home')
     if is_safe_url(url=next_url, allowed_hosts={request.get_host()}):
         return redirect(next_url)
-    
+
     return redirect('home')  # Default fallback
 
 
