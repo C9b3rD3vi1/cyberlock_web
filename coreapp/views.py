@@ -311,7 +311,7 @@ def user_register(request):
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data.get('username')
-            
+
             login(request, user)
             messages.success(request, f"Account created successfully for {username}!")
             return redirect('home')
@@ -322,7 +322,7 @@ def user_register(request):
                     messages.error(request, f"Error in {field}: {error}")
     else:
         form = CustomUserCreationForm()
-    
+
     return render(request, 'register.html', {'form': form})
 
 
