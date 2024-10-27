@@ -332,7 +332,7 @@ def user_register(request):
 
 
 # user logout functionality
-@require_POST  # Require POST requests for logout
+#@require_POST  # Require POST requests for logout
 def user_logout(request):
     # Check if the user is authenticated
     if request.user.is_authenticated:
