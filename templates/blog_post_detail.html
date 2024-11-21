@@ -14,11 +14,28 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <p><h2>{{ post.title }}</h2></p>
-                <img src="{{ post.image.url }}" class="img-fluid mb-3" alt="{{ post.title }}">
-                <p>{{ post.content }}</p>
-                <div class="text-center mt-4">
-                    <a href="{% url 'blog_list' %}" class="btn btn-secondary">Back to Blog</a>
+                <!-- Title -->
+                <h2 class="text-center mb-4">{{ post.title }}</h2>
+                
+                <!-- Image -->
+                {% if post.image %}
+                    <strong><img src="{{ post.image.url }}" class="img-fluid mb-4 rounded shadow" alt="{{ post.title }}"></strong>
+                {% else %}
+                    <img src="{% static 'images/default.jpg' %}" class="img-fluid mb-4 rounded shadow" alt="Default Image">
+                {% endif %}
+
+                <!-- Content -->
+                <div class="blog-content">
+                    {% for paragraph in post.content.splitlines %}
+                        {% if paragraph.strip %}
+                            <p class="mb-3">{{ paragraph }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+                <!-- Back Button -->
+                <div class="text-center mt-5">
+                    <a href="{% url 'blog_list' %}" class="btn btn-secondary btn-lg">Back to Blog</a>
                 </div>
             </div>
         </div>
