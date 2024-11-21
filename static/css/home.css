@@ -76,7 +76,7 @@
 
         /* Icons */
         .icons a {
-            color: #333;
+            color: #333333;
             font-size: 1.5rem;
             margin: 0 10px;
             transition: color 0.3s;
@@ -97,6 +97,16 @@
             margin: 0;
         }
 
-        footer .icons {
+        footer .icons a {
             margin: 10px 0;
+            margin-right: 40px;  /* Add space between icons */
         }
+
+        .footer .icons a:last-child {
+            margin-right: 0; /* Remove space after the last icon */
+        }
+
+        .carousel-item {
+            transition: transform 0.5s ease; /* Adjust the transition speed */
+        }
+        
