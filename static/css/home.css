@@ -1,151 +1,102 @@
 
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
 
+        a {
+            text-decoration: none;
+        }
 
-    /* General Styles */
-    body {
-        font-family: 'Arial', sans-serif;
-    }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
 
-    h1, h2 {
-        font-weight: bold;
-        color: #333;
-    }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url("{% static 'images/hero-bg.jpg' %}") no-repeat center center/cover;
+            color: white;
+            padding: 100px 0;
+        }
 
-    p {
-        color: #666666;
-    }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
 
-    /* Hero Section */
-    .hero {
-        background: linear-gradient(to bottom right, hsla(216, 11%, 91%, 0.898), #6c757d);
-        color: white;
-        padding: 60px 0;
-    }
+        .hero .btn {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+        }
 
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-    }
+        /* Cards Styling */
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    .hero p {
-        font-size: 1.25rem;
-        margin-bottom: 30px;
-    }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
-    /* Services Section */
-    .services .card {
-        border: none;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-    .services .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
+        .card-text {
+            font-size: 0.9rem;
+        }
 
-    .services .card-img-top {
-        height: 200px;
-        object-fit: cover;
-    }
+        /* Testimonials Section */
+        .testimonials .card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-    /* Portfolio Section */
-    .portfolio {
-        background-color: #a79d9d;
-    }
+        .testimonials .card-text {
+            font-style: italic;
+        }
 
-    .portfolio .card {
-        border: none;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
+        /* Video Section */
+        .video-container iframe {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
 
-    .portfolio .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
+        /* Icons */
+        .icons a {
+            color: #333;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
 
-    .portfolio .card-img-top {
-        height: 200px;
-        object-fit: cover;
-    }
+        .icons a:hover {
+            color: #007BFF;
+        }
 
-    /* Blog Section */
-    .blog .card {
-        border: none;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
+        /* Footer */
+        footer {
+            background-color: #f6e0e0e5;
+            color: white;
+            padding: 20px 0;
+        }
 
-    .blog .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
+        footer p {
+            margin: 0;
+        }
 
-    .blog .card-img-top {
-        height: 200px;
-        object-fit: cover;
-    }
-
-    /* Testimonials Section */
-    .testimonials .card {
-        background-color: #8181f3;
-        border: none;
-        padding: 20px;
-    }
-
-    .testimonials .card p {
-        font-style: italic;
-        font-size: 1.1rem;
-    }
-
-    .testimonials .text-muted {
-        color: #888;
-    }
-
-    /* Contact Section */
-    .contact {
-        background-color: #f9f9f9;
-        padding: 50px 0;
-    }
-
-    .contact a.btn {
-        padding: 15px 30px;
-        font-size: 1.25rem;
-    }
-
-    /* Footer */
-    footer {
-        background-color: #343a40;
-        color: white;
-    }
-
-    footer p {
-        margin: 0;
-    }
-
-    .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* Maintains a 16:9 aspect ratio */
-        height: 0;
-        overflow: hidden;
-        margin: 20px;
-        width: 15%; /* Reduced width of video container to 15% */
-    }
-    
-    .video-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* icons */
-    .icons a {
-        margin: 0 10px;
-        color: white;
-        font-size: 1.5rem;
-        transition: color 0.3s;
-    }
-    .icons a:hover {
-        color: #007BFF;
-    }
-    
+        footer .icons {
+            margin: 10px 0;
+        }

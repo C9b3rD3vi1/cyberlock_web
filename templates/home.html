@@ -1,20 +1,20 @@
-
 {% load static %}
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - CyberTech  Company</title>
+    <title>Home - CyberTech Company</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Static CSS (optional custom styles) -->
-
+    <!-- Font Awesome for Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 
+    <!-- Static CSS -->
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 
 </head>
@@ -24,14 +24,10 @@
     {% include 'base.html' %}
 
     <!-- Hero Section -->
-    <section class="hero bg-light py-5 text-center">
+    <section class="hero text-center">
         <div class="container">
-            <h1 class="display-4">Welcome to Cyberlock Technologies </h1>
-
+            <h1 class="display-4">Welcome to Cyberlock Technologies</h1>
             <p class="lead">Innovative Solutions for Your Digital Success</p>
-
-           <!-- <a href="{% url 'contact_form' %}" class="btn btn-primary btn-lg">Get In Touch</a> -->
-
         </div>
     </section>
 
@@ -117,45 +113,23 @@
         </div>
     </section>
 
-
-    <section class="video-container">
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/" frameborder="0" allowfullscreen></iframe>
-        </div>
-        
-    </section>
-    <!-- Contact Section -->
-    <section class="contact py-5">
-        <div class="container text-center">
-            <h2 class="mb-4">Contact Us</h2>
-            <p>If you have any questions, feel free to reach out!</p>
-            <a href="{% url 'contact_form' %}" class="btn btn-primary btn-lg">Get In Touch</a>
-        </div>
-    </section>
-    
-
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
+    <footer class="text-center">
+        <div class="container">
             <p>&copy; 2024 Cyberlock Tech. All rights reserved.</p>
-        </div>
-
-        <section class="hero bg-light py-5 text-center" style="background: url('{% static 'images/hero-bg.jpg' %}') no-repeat center center/cover;">
-            <div class="container text-white">
-                <h1 class="display-4">Welcome to Cyberlock Technologies</h1>
-                <p class="lead">Innovative Solutions for Your Digital Success</p>
+            <div class="icons">
+                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" title="Youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" title="Pinterest"><i class="fab fa-pinterest"></i></a>
                 <a href="{% url 'contact_form' %}" class="btn btn-primary btn-lg">Get In Touch</a>
             </div>
-        </section>
-        
-        <div class="icons text-center">
-            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
-        
+    </footer>
 
-    <!-- Bootstrap JS (with Popper.js for dropdowns) -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
