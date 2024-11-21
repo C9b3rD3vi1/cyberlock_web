@@ -1,154 +1,154 @@
 
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            color: #c2c0c0e4;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #c2c0c0e4;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
 
-        a {
-            text-decoration: none;
-        }
+a {
+    text-decoration: none;
+}
 
-        h1, h2, h3 {
-            font-weight: 700;
-        }
+h1, h2, h3 {
+    font-weight: 700;
+}
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                        url("{% static 'images/hero-bg.jpg' %}") no-repeat center center/cover;
-            color: white;
-            padding: 50px 0;
-        }
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url("{% static 'images/hero-bg.jpg' %}") no-repeat center center/cover;
+    color: white;
+    padding: 50px 0;
+}
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            color: #93d0ea;
-            font-size: 1.1rem;
-        }
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.hero p {
+    color: #93d0ea;
+    font-size: 1.1rem;
+}
 
-        .hero .btn {
-            font-size: 1.2rem;
-            padding: 10px 20px;
-        }
+.hero .btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
 
-        /* Cards Styling */
-        .card {
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+/* Cards Styling */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
-        .card-text {
-            font-size: 0.9rem;
-        }
+.card-text {
+    font-size: 0.9rem;
+}
 
-        /* Testimonials Section */
-        .testimonials .card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+/* Testimonials Section */
+.testimonials .card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
-        .testimonials .card-text {
-            font-style: italic;
-        }
+.testimonials .card-text {
+    font-style: italic;
+}
 
-        /* Video Section */
-        .video-container iframe {
-            max-width: 100%;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
+/* Video Section */
+.video-container iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
 
-        /* Icons */
-        .icons a {
-            color: #333333;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
+/* Icons */
+.icons a {
+    color: #333333;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
 
-        .icons a:hover {
-            color: #007BFF;
-        }
+.icons a:hover {
+    color: #007BFF;
+}
 
-        /* Footer */
-        footer {
-            background-color: #f6e0e0e5;
-            color: white;
-            padding: 20px 0;
-        }
+/* Footer */
+footer {
+    background-color: #f6e0e0e5;
+    color: white;
+    padding: 20px 0;
+}
 
-        footer p {
-            margin: 0;
-        }
+footer p {
+    margin: 0;
+}
 
-        footer .icons a {
-            margin: 10px 0;
-            margin-right: 40px;  /* Add space between icons */
-        }
+footer .icons a {
+    margin: 10px 0;
+    margin-right: 40px;  /* Add space between icons */
+}
 
-        .footer .icons a:last-child {
-            margin-right: 0; /* Remove space after the last icon */
-        }
+.footer .icons a:last-child {
+    margin-right: 0; /* Remove space after the last icon */
+}
 
-        .carousel-item {
-            transition: transform 0.5s ease; /* Adjust the transition speed */
-        }
-        
+.carousel-item {
+    transition: transform 0.5s ease; /* Adjust the transition speed */
+}
 
-        #blog-posts-container {
-            width: 100%;
-            height: 300px; /* Adjust height as needed */
-            overflow: hidden;
-        }
-        
-        #blog-posts-list {
-            transition: transform 1s ease;
-            white-space: nowrap;
-            will-change: transform;
-        }
-        
-        .blog-post {
-            flex: 0 0 auto;
-            width: 300px; /* Width of each post */
-        }
 
-        @keyframes scrollPosts {
-            0% {
-                transform: translateX(0);
-            }
-            20% {
-                transform: translateX(-300px); /* Move by one post */
-            }
-            40% {
-                transform: translateX(-600px); /* Move by two posts */
-            }
-            60% {
-                transform: translateX(-900px); /* Move by three posts */
-            }
-            80% {
-                transform: translateX(-1200px); /* Move by four posts */
-            }
-            100% {
-                transform: translateX(0); /* Reset to the start */
-            }
-        }
+#blog-posts-container {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+#blog-posts-list {
+    transition: transform 1s ease;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.blog-post {
+    flex: 0 0 auto;
+    width: 300px; /* Width of each post */
+}
+
+@keyframes scrollPosts {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-300px); /* Move by one post */
+    }
+    40% {
+        transform: translateX(-600px); /* Move by two posts */
+    }
+    60% {
+        transform: translateX(-900px); /* Move by three posts */
+    }
+    80% {
+        transform: translateX(-1200px); /* Move by four posts */
+    }
+    100% {
+        transform: translateX(0); /* Reset to the start */
+    }
+}

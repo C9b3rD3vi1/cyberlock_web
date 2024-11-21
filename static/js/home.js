@@ -1,14 +1,23 @@
 
-    let posts = document.querySelectorAll(".blog-post");
-    let currentPostIndex = 0;
+let postsContainer = document.getElementById("blog-posts-list");
+let currentPosition = 0;
+let postWidth = 300; // Width of one post (adjust if needed)
+let posts = document.querySelectorAll(".col-md-4");
+let totalWidth = postWidth * posts.length; // Total width of all posts
 
-    function autoScroll() {
-        if (currentPostIndex < posts.length) {
-            posts[currentPostIndex].scrollIntoView({ behavior: "smooth", block: "center" });
-            currentPostIndex++;
-        } else {
-            currentPostIndex = 0; // Reset to the first post
-        }
+// Function to move the posts container
+function autoScroll() {
+    if (currentPosition + postWidth >= totalWidth) {
+        // Reset to the beginning if we've reached the end
+        currentPosition = 0;
+    } else {
+        // Move the container by one post's width
+        currentPosition += postWidth;
     }
 
-    setInterval(autoScroll, 5000); // Scroll every 5 seconds
+    // Apply the new position with a smooth transition
+    postsContainer.style.transform = `translateX(-${currentPosition}px)`;
+}
+
+// Scroll every 5 seconds
+setInterval(autoScroll, 5000);
