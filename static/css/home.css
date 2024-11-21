@@ -2,7 +2,7 @@
         /* General Styling */
         body {
             font-family: Arial, sans-serif;
-            color: #333;
+            color: #c2c0c0e4;
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -21,13 +21,15 @@
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                         url("{% static 'images/hero-bg.jpg' %}") no-repeat center center/cover;
             color: white;
-            padding: 100px 0;
+            padding: 50px 0;
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
         }
+        .hero p {
+            color: #93d0ea;
 
         .hero .btn {
             font-size: 1.2rem;
