@@ -85,11 +85,18 @@ def portfolio(request):
     return render(request, 'portfolio.html', {'projects': projects})
 
 
-
+# Retrieve Blog details
 def blog_list(request):
 
     blog_post = BlogPost.objects.all()
     return render(request, 'blog_post.html', {"blog_post":blog_post})
+
+
+# blog post detail page
+def blog_detail(request, id):
+    # Retrieve the blog post by ID
+    post = get_object_or_404(BlogPost, id=id)
+    return render(request, 'blog_post_detail.html', {'post': post})
 
 
 
@@ -107,6 +114,7 @@ def job_list(request):
     """
     jobs = Job.objects.all().order_by('-is_open')
     return render(request, 'job_list.html',{"jobs": jobs})
+
 
 
 # functions to allow logged in users to apply for available jobs

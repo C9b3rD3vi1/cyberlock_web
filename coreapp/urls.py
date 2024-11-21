@@ -47,5 +47,8 @@ urlpatterns = [
 
     # project in details
     path('project/<int:id>/', views.project_details, name='project_detail'),
+
+    # blog in details
+    path('blog/<int:id>/', views.blog_detail, name='blog_detail'),
 ]
 
