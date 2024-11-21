@@ -20,7 +20,8 @@
 
     <!-- Static CSS -->
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <script src="{% static 'js/home.js' %}"></script>
+
+    <!-- <script src="{% static 'js/home.js' %}" defer></script> -->
 
 </head>
 
@@ -83,27 +84,22 @@
 <section class="blog py-5">
     <div class="container">
         <h2 class="text-center mb-4">Latest Blog Posts</h2>
-        <div id="blog-posts-container" class="row overflow-hidden">
-            <div id="blog-posts-list" class="d-flex flex-row">
-                {% for post in blog_posts %}
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.content|truncatewords:50 }}</p>
-                                <a href="{% url 'blog_list' %}" class="btn btn-primary">Read More</a>
-                            </div>
+        <div class="row">
+            {% for post in blog_posts %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.title }}</h5>
+                            <p class="card-text">{{ post.content|truncatewords:50 }}</p>
+                            <a href="{% url 'blog_list' %}" class="btn btn-primary">Read More</a>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
-
-
-
 
 <!-- Testimonials Section -->
 <section class="testimonials bg-light py-5">

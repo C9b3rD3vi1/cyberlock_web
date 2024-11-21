@@ -114,41 +114,28 @@ footer .icons a {
     transition: transform 0.5s ease; /* Adjust the transition speed */
 }
 
-
 #blog-posts-container {
     width: 100%;
-    height: 300px; /* Adjust height as needed */
-    overflow: hidden;
+    height: 300px; /* Adjust this height to fit your design */
+    overflow: hidden; /* Hide content outside the visible area */
 }
 
 #blog-posts-list {
-    transition: transform 1s ease;
-    white-space: nowrap;
-    will-change: transform;
+    display: flex;
+    gap: 20px; /* Space between each post */
+    animation: scroll 15s linear infinite; /* 15 seconds for a full scroll, infinite loop */
 }
 
-.blog-post {
-    flex: 0 0 auto;
-    width: 300px; /* Width of each post */
+.col-md-4 {
+    flex: 0 0 33.33%; /* Adjust this width for the number of posts per row */
+    padding: 0 10px; /* Optional padding to space out the posts */
 }
 
-@keyframes scrollPosts {
+@keyframes scroll {
     0% {
-        transform: translateX(0);
-    }
-    20% {
-        transform: translateX(-300px); /* Move by one post */
-    }
-    40% {
-        transform: translateX(-600px); /* Move by two posts */
-    }
-    60% {
-        transform: translateX(-900px); /* Move by three posts */
-    }
-    80% {
-        transform: translateX(-1200px); /* Move by four posts */
+        transform: translateX(0); /* Start from the first post */
     }
     100% {
-        transform: translateX(0); /* Reset to the start */
+        transform: translateX(-100%); /* Scroll to the left by 100% of the container's width */
     }
 }

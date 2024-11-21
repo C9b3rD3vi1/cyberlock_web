@@ -1,0 +1,41 @@
+
+{% load static %}
+
+{% include 'base.html' %}
+
+{% block title %}{{ project.title }} - CyberLock Tech{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/project_detail.css' %}">
+</head>
+
+<!-- Project Detail Section -->
+<section class="project-detail py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ project.project_image.url }}" class="img-fluid" alt="{{ project.title }}">
+            </div>
+            <div class="col-md-6">
+                <h2>{{ project.title }}</h2>
+                <p class="project-description">{{ project.description }}</p>
+                <p><strong>Technologies Used:</strong> {{ project.technologies }}</p>
+                <p><strong>Project URL:</strong> <a href="{{ project.project_url }}" target="_blank">{{ project.project_url }}</a></p>
+                <p><strong>Client:</strong> {{ project.client_name }}</p>
+                <p><strong>Date:</strong> {{ project.date }}</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <h4>Project Details</h4>
+                <p>{{ project.full_description }}</p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{% url 'portfolio' %}" class="btn btn-secondary">Back to Portfolio</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
