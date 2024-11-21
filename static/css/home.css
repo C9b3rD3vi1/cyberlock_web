@@ -30,6 +30,8 @@
         }
         .hero p {
             color: #93d0ea;
+            font-size: 1.1rem;
+        }
 
         .hero .btn {
             font-size: 1.2rem;
