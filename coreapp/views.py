@@ -88,14 +88,14 @@ def portfolio(request):
 # Retrieve Blog details
 def blog_list(request):
 
-    blog_post = BlogPost.objects.all()
+    blog_post = BlogPost.objects.all().order_by('-published_date')[:3]  # Get the latest 3 blog posts
     return render(request, 'blog_post.html', {"blog_post":blog_post})
 
 
 # blog post detail page
-def blog_detail(request, id):
+def blog_detail(request, slug):
     # Retrieve the blog post by ID
-    post = get_object_or_404(BlogPost, id=id)
+    post = get_object_or_404(BlogPost, slug=slug)
     return render(request, 'blog_post_detail.html', {'post': post})
 
 

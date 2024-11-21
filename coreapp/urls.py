@@ -49,6 +49,6 @@ urlpatterns = [
     path('project/<int:id>/', views.project_details, name='project_detail'),
 
     # blog in details
-    path('blog/<int:id>/', views.blog_detail, name='blog_detail'),
+    path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),
 ]
 

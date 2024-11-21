@@ -1,0 +1,32 @@
+/* blog_detail.css */
+.blog-detail {
+    background-color: #f8f9fa;
+}
+
+.blog-detail h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-detail img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-detail p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.blog-detail .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.blog-detail .btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
