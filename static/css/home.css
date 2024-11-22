@@ -22,14 +22,20 @@ h1, h2, h3 {
                 url("{% static 'images/hero-bg.jpg' %}") no-repeat center center/cover;
     color: white;
     padding: 50px 0;
+    
+}
+
+.hero .container {
+    max-width: 300px;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(7, 166, 246, 0.5);
 }
 .hero p {
-    color: #93d0ea;
+    color: #04a4e9;
     font-size: 1.1rem;
 }
 
@@ -71,12 +77,16 @@ h1, h2, h3 {
     font-style: italic;
 }
 
+
+
 /* Video Section */
 .video-container iframe {
     max-width: 100%;
     border-radius: 10px;
     margin: 20px 0;
 }
+
+
 
 /* Icons */
 .icons a {
@@ -89,6 +99,9 @@ h1, h2, h3 {
 .icons a:hover {
     color: #007BFF;
 }
+
+
+
 
 /* Footer */
 footer {
@@ -137,5 +150,17 @@ footer .icons a {
     }
     100% {
         transform: translateX(-100%); /* Scroll to the left by 100% of the container's width */
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 }
