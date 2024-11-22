@@ -6,6 +6,7 @@ from.models import ContactMessage, BlogPost, Testimonial, Profile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from.models import JobApplication
+from ckeditor.widgets import CKEditorWidget
 
 
 # Contact form for sending messages to the company
@@ -14,6 +15,7 @@ class ContactMessageForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
         fields = ['name', 'email', 'subject', 'message']
+        #content = forms.CharField(widget=CKEditorWidget())
         widgets = {
             'message': forms.Textarea(attrs={'rows': 4}),
         }

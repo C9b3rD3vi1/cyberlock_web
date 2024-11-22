@@ -4,16 +4,18 @@
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
-            padding-top: 60px; /* Adjust this value based on your navigation bar height */
+            padding-top: 0px; /* Adjust this value based on your navigation bar height */
         }
+        
         .container {
-            background: #bea7a7;
+            background: #f8f6f6;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 600px;
-            margin: 0 auto; /* Center the container */
+            margin: auto; /* Center the container */
+            margin-top: 10px; /* Add this line to move it down */
         }
         h1 {
             margin-bottom: 20px;
@@ -31,8 +33,9 @@
             font-weight: bold;
             color: #333;
         }
+
         input, textarea {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;

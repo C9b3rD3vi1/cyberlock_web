@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'coreapp', 
+    'ckeditor',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -203,3 +204,20 @@ EMAIL_HOST_PASSWORD = 'your_email_password'  # Your email password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 '''
+# content displayed and styled from backend
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 'auto',
+        'resize_enabled': False,
+        'toolbar': 'full',
+        'extraPlugins': 'highlight',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', 'Highlight'],
+            ['BulletedList', 'NumberedList'],
+            ['Link', 'Unlink', 'Image', 'Table'],
+            ['Source']
+        ],
+    }
+}
