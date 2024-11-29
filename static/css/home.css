@@ -50,6 +50,11 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
+/* Services, Portfolio, Blog, Testimonials Sections */
+.services, .portfolio, .blog, .testimonials {
+    background-color: rgba(10, 11, 11, 0.872);
+}
+
 /* animation */
 .custom-delay {
     animation-delay: 5s;

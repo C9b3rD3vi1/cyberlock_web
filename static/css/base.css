@@ -43,10 +43,11 @@ flex-direction: column;
 flex: 1;
 }
 
+
 /* Footer Styling */
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #b4d2eb17;
+    color: hsl(0, 0%, 100%);
     padding-top: 20px; /* Reduced padding-top */
     padding-bottom: 20px; /* Reduced padding-bottom */
     font-family: 'Arial', sans-serif;
@@ -73,12 +74,12 @@ flex: 1;
 /* Social Icons */
 .social-icons a {
     font-size: 1.5rem;
-    color: #fff;
+    color: #1717f0;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #00aced; /* Twitter blue color */
+    color: #47f29d; /* Twitter blue color */
     transform: scale(1.2);
 }
 
@@ -92,7 +93,7 @@ flex: 1;
 footer p {
     margin-top: 20px;
     font-size: 0.9rem; /* Reduced font size */
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(17, 16, 16, 0.7);
 }
 
 /* Animation for Fade-in Effect */
