@@ -17,10 +17,12 @@
 
         <link rel="icon" href="{% static 'favicons/favicon.ico' %}" type="image/x-icon">
 
-     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png'%}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png'%}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">
+        <link rel="icon" href="{% static 'favicons/favicon.ico' %}" type="image/x-icon">
+        
 
 </head>
 <body>
@@ -74,10 +76,10 @@
                         <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
                     </li>
 
-                    <li class="name-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'user_logout' %}">Logout</a>
                     </li>
-2
+
                     {% else %}
 
                      </li>
