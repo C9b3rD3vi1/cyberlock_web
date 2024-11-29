@@ -82,15 +82,12 @@ h1, h2, h3 {
     font-style: italic;
 }
 
-
-
 /* Video Section */
 .video-container iframe {
     max-width: 100%;
     border-radius: 10px;
     margin: 20px 0;
 }
-
 
 .carousel-item {
     transition: transform 0.5s ease; /* Adjust the transition speed */
@@ -122,11 +119,10 @@ h1, h2, h3 {
     }
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .hero p {
