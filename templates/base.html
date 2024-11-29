@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,19 +10,17 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
-     <link rel="manifest" href="{% static 'manifest.json' %}">
+    <link rel="manifest" href="{% static 'manifest.json' %}">
 
-        <!-- favicon -->
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">
+    <link rel="icon" href="{% static 'favicons/favicon.ico' %}" type="image/x-icon">
 
-        <link rel="icon" href="{% static 'favicons/favicon.ico' %}" type="image/x-icon">
-
-        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
-        <link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">
-        <link rel="icon" href="{% static 'favicons/favicon.ico' %}" type="image/x-icon">
-        
-
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -36,10 +33,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+                    <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'about' %}">About Us</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -50,7 +47,6 @@
                             <li><a class="dropdown-item" href="{% url 'service_list' %}">All Services</a></li>
                             <li><a class="dropdown-item" href="#">Custom Development</a></li>
                             <li><a class="dropdown-item" href="#">Cloud Solutions</a></li>
-                            <!-- Add more service links as needed -->
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -67,44 +63,29 @@
                     </li>
 
                     {% if user.is_authenticated %}
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact_form' %}">Contact Us</a>
-                   
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user_logout' %}">Logout</a>
-                    </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact_form' %}">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'user_profile' %}">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'user_logout' %}">Logout</a>
+                        </li>
                     {% else %}
-
-                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user_login' %}">Login</a>
-                    </li>2
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user_register' %}">Register</a>
-                    </li>
-    
-                    
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'user_login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'user_register' %}">Register</a>
+                        </li>
                     {% endif %}
-
-
                 </ul>
             </div>
         </div>
     </nav>
 
-
-    
-    <!-- Bootstrap JS (with Popper.js for dropdowns) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
