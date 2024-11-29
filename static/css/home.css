@@ -23,7 +23,7 @@ h1, h2, h3 {
     background: linear-gradient(to right, #4c6ef5, #00c6ff); /* Gradient background */
     color: white; /* Text color */
     padding: 80px 0; /* Added padding for better spacing */
-    text-align: center;
+    text-align: left;
     position: relative;
     z-index: 1;
 }
