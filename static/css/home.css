@@ -19,9 +19,9 @@ h1, h2, h3 {
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url("{% static 'images/hero-bg.jpg' %}") no-repeat center center/cover;
+                url("{% static 'images/hero-bg.png' %}") no-repeat center center/cover;
     color: white;
-    padding: 50px 0;
+    padding: 0px 0;
     
 }
 
