@@ -170,6 +170,7 @@ def blog_post_detail(request, pk):
     post = get_object_or_404(BlogPost, pk=pk)
     return render(request, 'blog_post_detail.html', {'post': post})
 
+
 def project_details(request, id):
     # Retrieve the project by ID
     project = get_object_or_404(Project, id=id)
