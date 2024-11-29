@@ -16,32 +16,42 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-/* Hero Section */
+
+
+/* Hero Section Styling */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url("{% static 'images/hero-bg.jpg' %}") no-repeat center center/cover;
-    color: white;
-    padding: 50px 0;
-    
+    background: linear-gradient(to right, #4c6ef5, #00c6ff); /* Gradient background */
+    color: white; /* Text color */
+    padding: 80px 0; /* Added padding for better spacing */
+    text-align: left;
+    position: relative;
+    z-index: 1;
 }
 
 .hero .container {
-    max-width: 300px;
+    margin: 0 auto; /* Center align */
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Larger font size for heading */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 2s ease-out; /* Animation effect */
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(7, 166, 246, 0.5);
-}
-.hero p {
-    color: #04a4e9;
-    font-size: 1.1rem;
 }
 
-.hero .btn {
-    font-size: 1.2rem;
-    padding: 10px 20px;
+.hero p {
+    font-size: 1.25rem; /* Adjusted font size */
+    font-weight: 300;
+    line-height: 1.6;
+    animation: fadeInUp 2s ease-out; /* Animation effect */
+    margin-top: 0;
+}
+
+/* Services, Portfolio, Blog, Testimonials Sections */
+.services, .portfolio, .blog, .testimonials {
+    background-color: rgba(10, 11, 11, 0.872);
 }
 
 /* animation */
@@ -110,22 +120,43 @@ h1, h2, h3 {
     padding: 0 10px; /* Optional padding to space out the posts */
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0); /* Start from the first post */
+
+/* Animation for Fade-in Effects */
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
     }
-    100% {
-        transform: translateX(-100%); /* Scroll to the left by 100% of the container's width */
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-/* Responsive Design */
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styling */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: 2.5rem; /* Smaller font size on mobile */
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem; /* Smaller font size on mobile */
+    }
+
+    .hero {
+        padding: 60px 0; /* Reduced padding on smaller screens */
     }
 }
+

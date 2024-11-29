@@ -1,52 +1,123 @@
 
-    /* Styling for the navbar */
-    .navbar {
-        background-color: #343a40 !important; /* Dark background for navbar */
-    }
-    .navbar-brand, .nav-link {
-        color: #f8f9fa !important; /* White text for links */
-    }
-    .navbar-brand {
-        font-weight: bold;
-        font-size: 1.5rem;
-    }
-    .nav-link:hover {
-        color: #adb5bd !important; /* Light gray on hover */
-    }
-    .dropdown-menu {
-        background-color: #495057; /* Darker background for dropdown */
-    }
-    .dropdown-item {
-        color: #f8f9fa !important; /* White text for dropdown */
-    }
-    .dropdown-item:hover {
-        background-color: #6c757d; /* Darker gray on hover */
-        color: white !important;
-    }
-    /* General body styling */
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f4f4f9; /* Light background for body */
-    }
+/* Styling for the navbar */
+.navbar {
+    background-color: #1f7cd9 !important; /* Dark background for navbar */
+}
+.navbar-brand, .nav-link {
+    color: #f8f9fa !important; /* White text for links */
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.nav-link:hover {
+    color: #adb5bd !important; /* Light gray on hover */
+}
+.dropdown-menu {
+    background-color: #495057; /* Darker background for dropdown */
+}
+.dropdown-item {
+    color: #f8f9fa !important; /* White text for dropdown */
+}
+.dropdown-item:hover {
+    background-color: #6c757d; /* Darker gray on hover */
+    color: white !important;
+}
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Light background for body */
+}
 
 
-    html, body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
+/* Ensure the HTML and body occupy the full viewport height */
+html, body {
+height: 100%;
+margin: 0;
+display: flex;
+flex-direction: column;
+}
+
+/* The main content area will stretch to push the footer down */
+.main-content {
+flex: 1;
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #b4d2eb17;
+    color: hsl(0, 0%, 100%);
+    padding-top: 20px; /* Reduced padding-top */
+    padding-bottom: 20px; /* Reduced padding-bottom */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+.container {
+    max-width: 960px; /* Reduced the width of the container */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Footer Title */
+.footer-title {
+    font-size: 1.25rem; /* Reduced font size */
+    font-weight: bold;
+    margin-bottom: 15px; /* Reduced margin */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Social Icons */
+.social-icons a {
+    font-size: 1.5rem;
+    color: #1717f0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #47f29d; /* Twitter blue color */
+    transform: scale(1.2);
+}
+
+/* Social Icons Spacing */
+.icon-link {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* Footer Copy */
+footer p {
+    margin-top: 20px;
+    font-size: 0.9rem; /* Reduced font size */
+    color: rgba(17, 16, 16, 0.7);
+}
+
+/* Animation for Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    
-    body {
-        display: flex;
-        flex-direction: column;
+    to {
+        opacity: 1;
     }
-    
-    .container {
-        flex: 1; /* Pushes the footer to the bottom if content is less */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .footer {
+        padding-top: 15px; /* Reduced padding for smaller screens */
+        padding-bottom: 15px;
     }
-    
-    footer {
-        flex-shrink: 0; /* Ensures the footer doesn't shrink and stays visible */
+
+    .social-icons {
+        flex-wrap: wrap;
     }
-    
+
+    .social-icons a {
+        margin-bottom: 10px;
+    }
+}

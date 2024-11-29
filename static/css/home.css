@@ -19,36 +19,48 @@ h1, h2, h3 {
 
 
 /* Hero Section Styling */
+/* Hero Section Styling */
 .hero {
     background: linear-gradient(to right, #4c6ef5, #00c6ff); /* Gradient background */
     color: white; /* Text color */
-    padding: 80px 0; /* Added padding for better spacing */
-    text-align: left;
+    padding: 100px 0; /* Reduced padding for better fit */
+    text-align: center; /* Centered text alignment */
     position: relative;
     z-index: 1;
 }
 
 .hero .container {
-    max-width: 1200px; /* Set max width */
-    margin: 0 auto; /* Center align */
+    max-width: 90%; /* Use a percentage for responsiveness */
+    width: 850px; /* Set a fixed width for larger screens */
+    margin: 0 auto; /* Center align the container */
 }
 
 .hero h1 {
-    font-size: 3.5rem; /* Larger font size for heading */
+    font-size: 2.0rem; /* Adjusted font size for better fit */
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    animation: fadeInDown 2s ease-out; /* Animation effect */
-    margin-bottom: 20px;
+    text-transform: uppercase; /* Uppercase for emphasis */
+    animation: fadeInDown 2s ease-out; /* Fade-in animation */
+    margin-bottom: 20px; /* Margin below the heading */
+    display: inline-block;
+    border-right: 3px solid white; /* Simulates a typing cursor */
+    padding-right: 5px; /* Space for the cursor */
+    white-space: nowrap; /* Prevent text from wrapping */
+    word-wrap: break-word; /* Break words if needed */
 }
 
 .hero p {
-    font-size: 1.25rem; /* Adjusted font size */
-    font-weight: 300;
+    font-size: 1.25rem; /* Adjusted font size for better fit */
+    font-weight: 300; /* Lighter font weight for the paragraph */
     line-height: 1.6;
-    animation: fadeInUp 2s ease-out; /* Animation effect */
+    animation: fadeInUp 2s ease-out 2s; /* Fade-in with delay */
     margin-top: 0;
+    display: inline-block; /* Keeps the paragraph on the same line */
+    opacity: 0; /* Initially hidden for fade-in effect */
+    white-space: nowrap; /* Prevent text from wrapping */
+    word-wrap: break-word; /* Break words if needed */
 }
+
 
 /* Services, Portfolio, Blog, Testimonials Sections */
 .services, .portfolio, .blog, .testimonials {
@@ -63,7 +75,7 @@ h1, h2, h3 {
 /* Cards Styling */
 .card {
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -75,6 +87,7 @@ h1, h2, h3 {
 
 .card-title {
     font-size: 1.5rem;
+    color: black;
     font-weight: bold;
 }
 
@@ -118,31 +131,30 @@ h1, h2, h3 {
 
 .col-md-4 {
     flex: 0 0 33.33%; /* Adjust this width for the number of posts per row */
-    padding: 0 10px; /* Optional padding to space out the posts */
+    padding: 0 5px; /* Optional padding to space out the posts */
 }
 
 
 /* Animation for Fade-in Effects */
 @keyframes fadeInDown {
-    from {
-        transform: translateY(-100px);
+    0% {
         opacity: 0;
+        transform: translateY(-20px);
     }
-    to {
-        transform: translateY(0);
+    100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* Animation */
 @keyframes fadeInUp {
-    from {
-        transform: translateY(100px);
+    0% {
         opacity: 0;
+        transform: translateY(20px);
     }
-    to {
-        transform: translateY(0);
+    100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
