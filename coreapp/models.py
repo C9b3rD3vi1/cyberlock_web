@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.urls import reverse
+from django.utils.timezone import now
 from django.utils.text import slugify
 from django.core.validators import URLValidator
 from ckeditor.fields import RichTextField
@@ -67,7 +68,16 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 
+# Allow users to comment on blog posts content
+class Comment(models.Model):
+    post = models.ForeignKey('BlogPost', on_delete=models.CASCADE, related_name='comments')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField()
+    created_at = models.DateTimeField(default=now)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f'Comment by {self.user.username} on {self.post.title}'
 
 
 # Products or Services
