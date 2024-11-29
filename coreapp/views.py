@@ -166,6 +166,7 @@ def blog_post_list(request):
     return render(request, 'blog_post_list.html', {'posts': posts})
 
 
+
 def blog_post_detail(request, pk):
     post = get_object_or_404(BlogPost, pk=pk)
     return render(request, 'blog_post_detail.html', {'post': post})
