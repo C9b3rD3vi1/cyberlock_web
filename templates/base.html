@@ -12,6 +12,7 @@
 
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"> 
     
     <link rel="manifest" href="{% static 'manifest.json' %}">
 
@@ -25,7 +26,7 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="d-flex flex-column" style="min-height: 100vh;">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,29 +43,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">About Us</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <li><a class="dropdown-item" href="{% url 'service_list' %}">All Services</a></li>
-                            <li><a class="dropdown-item" href="#">Custom Development</a></li>
-                            <li><a class="dropdown-item" href="#">Cloud Solutions</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog_list' %}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'job_list' %}">Careers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'testimonial_list' %}">Testimonials</a>
-                    </li>
-
+                    <!-- Add other navigation items here -->
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'contact_form' %}">Contact Us</a>
@@ -89,7 +68,7 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container mt-5">
+    <div class="container mt-5 flex-grow-1">
         {% block content %}
         {% endblock %}
     </div>

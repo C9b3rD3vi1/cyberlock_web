@@ -1,9 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
 
-{% include 'base.html' %}
-
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,5 +56,4 @@
 
         <p>Already have an account? <a href="{% url 'user_login' %}">Login here</a></p>
     </div>
-</body>
-</html>
+    {% endblock %}
