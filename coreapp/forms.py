@@ -5,7 +5,7 @@ from django import forms
 from.models import ContactMessage, BlogPost, Testimonial, Profile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from.models import JobApplication
+from.models import JobApplication, Comment
 from ckeditor.widgets import CKEditorWidget
 
 
@@ -68,3 +68,12 @@ class JobApplicationForm(forms.ModelForm):
     class Meta:
         model = JobApplication
         fields = ['name', 'email', 'cover_letter', 'resume']
+
+# User blog comment form
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+        widgets = {
+            'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+        }
