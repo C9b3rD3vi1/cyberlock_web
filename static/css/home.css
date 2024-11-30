@@ -17,7 +17,6 @@ h1, h2, h3 {
 }
 
 
-
 /* Hero Section Styling */
 /* Hero Section Styling */
 .hero {
@@ -30,13 +29,14 @@ h1, h2, h3 {
 }
 
 .hero .container {
-    max-width: 90%; /* Use a percentage for responsiveness */
-    width: 850px; /* Set a fixed width for larger screens */
+    max-width: 100%; /* Use a percentage for responsiveness */
+    width: 750px; /* Set a fixed width for larger screens */
     margin: 0 auto; /* Center align the container */
+    padding: 10;
 }
 
 .hero h1 {
-    font-size: 2.0rem; /* Adjusted font size for better fit */
+    font-size: 2.5rem; /* Adjusted font size for better fit */
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase; /* Uppercase for emphasis */
@@ -53,18 +53,40 @@ h1, h2, h3 {
     font-size: 1.25rem; /* Adjusted font size for better fit */
     font-weight: 300; /* Lighter font weight for the paragraph */
     line-height: 1.6;
-    animation: fadeInUp 2s ease-out 2s; /* Fade-in with delay */
+    animation: fadeInUp 2s ease-out 2s forwards; /* Fade-in with delay and keeps visible */
     margin-top: 0;
     display: inline-block; /* Keeps the paragraph on the same line */
-    opacity: 0; /* Initially hidden for fade-in effect */
     white-space: nowrap; /* Prevent text from wrapping */
     word-wrap: break-word; /* Break words if needed */
 }
 
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 /* Services, Portfolio, Blog, Testimonials Sections */
 .services, .portfolio, .blog, .testimonials {
-    background-color: rgba(10, 11, 11, 0.872);
+    background-color: hsl(180, 5%, 4%);
 }
 
 /* animation */
@@ -92,12 +114,13 @@ h1, h2, h3 {
 }
 
 .card-text {
+    color: #000;
     font-size: 0.9rem;
 }
 
 /* Testimonials Section */
 .testimonials .card {
-    background: #f8f9fa;
+    background: #d2e3f4;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -113,7 +136,7 @@ h1, h2, h3 {
     margin: 20px 0;
 }
 
-.carousel-item {
+.testimonials.carousel-item {
     transition: transform 0.5s ease; /* Adjust the transition speed */
 }
 
@@ -134,29 +157,6 @@ h1, h2, h3 {
     padding: 0 5px; /* Optional padding to space out the posts */
 }
 
-
-/* Animation for Fade-in Effects */
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* Responsive Styling */
 @media (max-width: 768px) {

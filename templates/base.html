@@ -43,6 +43,20 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">About Us</a>
                     </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Custom Services</a></li>
+                            <li><a class="dropdown-item" href="#">Cloud Services</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blog_list' %}">Blog</a>
+                    </li>
                     <!-- Add other navigation items here -->
                     {% if user.is_authenticated %}
                         <li class="nav-item">
