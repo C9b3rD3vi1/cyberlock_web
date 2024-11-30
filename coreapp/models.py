@@ -93,6 +93,7 @@ class Service(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     service_image = models.ImageField(upload_to='service_images/', blank=True)
+   # slug = models.SlugField(unique=True, max_length=200, blank=True)
     is_active = models.BooleanField(default=True)
     service_type = models.CharField(max_length=10, choices=SERVICE_TYPE_CHOICES, default='standard')
 
