@@ -32,7 +32,7 @@ h1, h2, h3 {
     max-width: 100%; /* Use a percentage for responsiveness */
     width: 750px; /* Set a fixed width for larger screens */
     margin: 0 auto; /* Center align the container */
-    padding: 10;
+    padding: 20px 0;
 }
 
 .hero h1 {

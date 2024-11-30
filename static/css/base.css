@@ -17,7 +17,7 @@
     background-color: #84b7ea; /* Darker background for dropdown */
 }
 .dropdown-item {
-    color: #f8f9fa !important; /* White text for dropdown */
+    color: #9fc5ea !important; /* White text for dropdown */
 }
 .dropdown-item:hover {
     background-color: #24b6af; /* Darker gray on hover */

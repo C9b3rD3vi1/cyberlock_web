@@ -1,117 +1,102 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Light background color */
-    margin: 0; /* Reset margin to ensure full-width content */
-    padding: 0; /* Reset padding */
-    display: flex; /* Flexbox for layout (optional) */
-    flex-direction: column; /* Stack items vertically */
-    min-height: 100vh; /* Ensure the body fills the viewport */
-}
 
+
+/* Styling for the login container */
 .login-container {
-    background: rgb(232, 231, 231);
-    margin: 100px auto; /* Center vertically and horizontally */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Responsive width */
-    max-width: 400px; /* Set a reasonable max width */
+    max-width: 400px; /* Container width */
+    width: 100%;
+    margin: 50px auto; /* Center the container with some margin from top */
+    background-color: #fff; /* White background for the container */
+    padding: 30px; /* Padding inside the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
 }
 
-h2 {
+/* Title of the form */
+.login-container h2 {
     text-align: center;
+    font-size: 28px;
     margin-bottom: 20px;
-    color: #333;
+    color: #333; /* Dark color for the heading */
 }
 
-.form-group {
+/* Styling for form groups */
+.login-container .form-group {
     margin-bottom: 15px;
 }
 
-.form-group label {
+.login-container label {
     display: block;
-    margin-bottom: 5px;
-    color: #555;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555; /* Dark gray color for labels */
 }
 
-.form-group input {
+.login-container input[type="text"],
+.login-container input[type="password"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    border: 1px solid #ddd; /* Light border color */
+    border-radius: 5px; /* Rounded corners for input fields */
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9; /* Light background for input fields */
 }
 
-.form-group input:focus {
-    border-color: #007bff;
-    outline: none;
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove the default outline */
+    background-color: #fff; /* White background on focus */
 }
 
-.remember-me {
+/* Styling for the 'Remember Me' checkbox section */
+.login-container .remember-me {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-.login-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+.login-container .remember-me label {
+    font-size: 14px;
+}
+
+/* Login button styles */
+.login-container .login-button {
+    width: 100%; /* Full width */
+    padding: 12px;
+    background-color: #007bff; /* Blue background */
     color: white;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 5px; /* Rounded corners for the button */
     font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.login-button:hover {
-    background-color: #0056b3;
+.login-container .login-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-.extra-links {
+.login-container .login-button:active {
+    background-color: #003f7f; /* Even darker blue when button is clicked */
+}
+
+/* Extra links (e.g., Sign up, Forgot password) */
+.login-container .extra-links {
+    margin-top: 20px;
     text-align: center;
-    margin-top: 15px;
 }
 
-.extra-links a {
-    color: #007bff;
-    text-decoration: none;
+.login-container .extra-links p {
+    font-size: 14px;
 }
 
-.extra-links a:hover {
-    text-decoration: underline;
+.login-container .extra-links a {
+    color: #007bff; /* Blue color for links */
+    font-weight: bold;
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        display: none;
-    }
-}
-
-.messages {
-    list-style: none; /* Remove default list style */
-    padding: 0;
-    margin-bottom: 15px;
-}
-
-.messages li {
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 4px;
-    background-color: #f8d7da; /* Light red background for messages */
-    color: #721c24; /* Dark red text color */
-    animation: fadeOut 5s ease-in-out forwards; /* Apply fade-out animation */
-    opacity: 1; /* Ensure messages start fully visible */
-}
-
-footer {
-    width: 100%;
-    margin: 0;
-    padding: 10px 0;
-    background: #222;
-    color: #fff;
-    text-align: center;
+.login-container .extra-links a:hover {
+    color: #0056b3; /* Darker blue on hover */
 }
