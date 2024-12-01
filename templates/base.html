@@ -52,11 +52,12 @@
                         </a>
                         
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{% url 'custom_services' %}">Custom Services</a></li>
-                            <li><a class="dropdown-item" href="{% url 'cloud_services' %}">Cloud Services</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_list' %}?type=custom">Custom Services</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_list' %}?type=cloud">Cloud Services</a></li>
+                            <li><a class="dropdown-item" href="{% url 'service_list' %}?type=standard">Standard Services</a></li>
                         </ul>
-                        
                     </li>
+                    
 
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'blog_list' %}">Blog</a>

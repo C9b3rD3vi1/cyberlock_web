@@ -1,16 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Services</h1>
+    <h1>All Services</h1>
 
-    <!-- Dropdown or Links to Filter Services by Type -->
-    <ul>
-        <li><a href="{% url 'service_list' %}">All Services</a></li>
-        <li><a href="?type=custom">Custom Services</a></li>
-        <li><a href="?type=cloud">Cloud Services</a></li>
-        <li><a href="?type=standard">Standard Services</a></li>
-    </ul>
-
+    <!-- Display Filter Type -->
     <h2>
         {% if service_type == 'custom' %}
             Custom Services
@@ -31,7 +24,7 @@
                 </a>: {{ service.description }} - ${{ service.price }}
             </li>
         {% empty %}
-            <li>No services available.</li>
+            <li>No services available in this category.</li>
         {% endfor %}
     </ul>
 {% endblock %}
