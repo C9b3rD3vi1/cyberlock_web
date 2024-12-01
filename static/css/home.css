@@ -19,7 +19,7 @@ h1, h2, h3 {
 .hero {
     background: linear-gradient(to right, #4c6ef5, #00c6ff);
     color: white;
-    padding: 100px 0;
+    padding: 60px 0;
     text-align: center;
     position: relative;
     z-index: 1;
