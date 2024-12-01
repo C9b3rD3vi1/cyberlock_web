@@ -2,26 +2,33 @@
 
 {% block title %}{{ service.name }}{% endblock %}
 
+{% load static %}
+
+
 {% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/service_detail.css' %}">
+</head>
+
     <section class="service-detail py-5">
         <div class="container">
             <div class="row">
                 <!-- Main service details -->
                 <div class="col-md-8">
-                    <h2>{{ service.name }}</h2>
-                    <img src="{{ service.service_image.url }}" class="img-fluid mb-4" alt="{{ service.name }}">
+                    <h2 class="service-title">{{ service.name }}</h2>
+                    <img src="{{ service.service_image.url }}" class="img-fluid mb-4 service-image" alt="{{ service.name }}">
                     <p><strong>Description:</strong> {{ service.description }}</p>
                     <p><strong>Price:</strong> ${{ service.price }}</p>
-                    <p><strong>Details:</strong> {{ service.details }}</p>  <!-- Display additional details if any -->
+                    <p><strong>Details:</strong> {{ service.details }}</p>
                     
-                    <a href="{% url 'service_list' %}" class="btn btn-secondary">Back to Services</a>
+                    <a href="{% url 'service_list' %}" class="btn btn-secondary btn-back">Back to Services</a>
                 </div>
                 
                 <!-- Contact section -->
                 <div class="col-md-4">
                     <h3>Contact Us for More Information</h3>
                     <p>If you're interested in this service, feel free to contact us!</p>
-                    <a href="{% url 'contact_form' %}" class="btn btn-primary">Contact Us</a>
+                    <a href="{% url 'contact_form' %}" class="btn btn-primary btn-contact">Contact Us</a>
                 </div>
             </div>
         </div>
