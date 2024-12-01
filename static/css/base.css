@@ -14,14 +14,14 @@
     color: #35c55b !important; /* Light gray on hover */
 }
 .dropdown-menu {
-    background-color: #84b7ea; /* Darker background for dropdown */
+    background-color: #1011110d; /* Darker background for dropdown */
 }
 .dropdown-item {
-    color: #9fc5ea !important; /* White text for dropdown */
+    color: #037df7 !important; /* White text for dropdown */
 }
 .dropdown-item:hover {
-    background-color: #24b6af; /* Darker gray on hover */
-    color: white !important;
+    background-color: hsl(171, 16%, 91%); /* Darker gray on hover */
+    color: rgb(4, 61, 248) !important;
 }
 /* General body styling */
 body {
