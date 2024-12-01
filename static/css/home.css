@@ -130,4 +130,8 @@ h1, h2, h3 {
     .col-md-4 {
         flex: 0 0 100%;
     }
+    .hero {
+        padding: 40px 0; /* Further reduced padding for smaller screens */
+    }
+
 }
