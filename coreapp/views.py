@@ -77,6 +77,15 @@ def service_list(request):
     return render(request, 'service_list.html', context)
 
 
+def custom_services(request):
+    services = Service.objects.filter(service_type='custom')
+    return render(request, 'services_list.html', {'services': services, 'category_name': 'Custom'})
+
+def cloud_services(request):
+    services = Service.objects.filter(service_type='cloud')
+    return render(request, 'services_list.html', {'services': services, 'category_name': 'Cloud'})
+
+
 
 # show service detaila
 def service_detail(request, service_id):

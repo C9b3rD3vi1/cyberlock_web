@@ -1,58 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <h1>Services</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Services</title>
-</head>
-<body>
+    <!-- Dropdown or Links to Filter Services by Type -->
+    <ul>
+        <li><a href="{% url 'service_list' %}">All Services</a></li>
+        <li><a href="?type=custom">Custom Services</a></li>
+        <li><a href="?type=cloud">Cloud Services</a></li>
+        <li><a href="?type=standard">Standard Services</a></li>
+    </ul>
 
-<h1>All Services</h1>
+    <h2>
+        {% if service_type == 'custom' %}
+            Custom Services
+        {% elif service_type == 'cloud' %}
+            Cloud Services
+        {% elif service_type == 'standard' %}
+            Standard Services
+        {% else %}
+            All Services
+        {% endif %}
+    </h2>
 
-<!-- Standard Services -->
-<h2>Standard Services</h2>
-<ul>
-    {% for service in services %}
-        <li>
-            <a href="{% url 'service_detail' service.id %}">
-                <strong>{{ service.name }}</strong>
-            </a>: {{ service.description }} - ${{ service.price }}
-        </li>
-    {% empty %}
-        <li>No standard services available.</li>
-    {% endfor %}
-</ul>
-
-<!-- Custom Services -->
-<h2>Custom Services</h2>
-<ul>
-    {% for service in custom_services %}
-        <li>
-            <a href="{% url 'service_detail' service.id %}">
-                <strong>{{ service.name }}</strong>
-            </a>: {{ service.description }} - ${{ service.price }}
-        </li>
-    {% empty %}
-        <li>No custom services available.</li>
-    {% endfor %}
-</ul>
-
-<!-- Cloud Services -->
-<h2>Cloud Services</h2>
-<ul>
-    {% for service in cloud_services %}
-        <li>
-            <a href="{% url 'service_detail' service.id %}">
-                <strong>{{ service.name }}</strong>
-            </a>: {{ service.description }} - ${{ service.price }}
-        </li>
-    {% empty %}
-        <li>No cloud services available.</li>
-    {% endfor %}
-</ul>
-
-</body>
-
+    <ul>
+        {% for service in services %}
+            <li>
+                <a href="{% url 'service_detail' service.id %}">
+                    <strong>{{ service.name }}</strong>
+                </a>: {{ service.description }} - ${{ service.price }}
+            </li>
+        {% empty %}
+            <li>No services available.</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
