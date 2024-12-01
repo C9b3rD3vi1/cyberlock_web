@@ -1,25 +1,24 @@
-{% include 'base.html' %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ service.name }}</title>
-</head>
-<body>
+{% block title %}{{ service.name }}{% endblock %}
 
-<h1>{{ service.name }}</h1>
-
-{% if service.service_image %}
-    <img src="{{ service.service_image.url }}" alt="{{ service.name }}" style="max-width: 300px;">
-{% endif %}
-
-<p><strong>Description:</strong> {{ service.description }}</p>
-<p><strong>Price:</strong> ${{ service.price }}</p>
-<p><strong>Type:</strong> {{ service.get_service_type_display }}</p>
-
-<a href="{% url 'service_list' %}">Back to Services</a>
-
-</body>
-</html>
+{% block content %}
+    <section class="service-detail py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>{{ service.name }}</h2>
+                    <img src="{{ service.service_image.url }}" class="img-fluid mb-4" alt="{{ service.name }}">
+                    <p><strong>Description:</strong> {{ service.description }}</p>
+                    <p><strong>Details:</strong> {{ service.details }}</p>  <!-- Add more details as per your model -->
+                    <a href="{% url 'service_list' %}" class="btn btn-secondary">Back to Services</a>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contact Us for More Information</h3>
+                    <p>If you are interested in this service, please reach out to us!</p>
+                    <a href="{% url 'contact_form' %}" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
