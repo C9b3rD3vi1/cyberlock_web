@@ -56,25 +56,25 @@ def home(request):
 
 # All services offered by our applicationdef service_list(request):
 def service_list(request):
-    Services = Service.objects.all()
-    custom_services = Service.objects.filter(service_type='custom')
-    cloud_services = Service.objects.filter(service_type='cloud')
-    
+    # Get the 'type' query parameter, defaulting to 'all' if not provided
+    service_type = request.GET.get('type', 'all')
+
+    # Fetch services based on the type filter
+    if service_type == 'custom':
+        services = Service.objects.filter(service_type='custom')
+    elif service_type == 'cloud':
+        services = Service.objects.filter(service_type='cloud')
+    elif service_type == 'standard':
+        services = Service.objects.filter(service_type='standard')
+    else:
+        services = Service.objects.all()
+
     context = {
-        'services': Services,
-        'custom_services': custom_services,
-        'cloud_services': cloud_services,
+        'services': services,
+        'service_type': service_type,
     }
-    
+
     return render(request, 'service_list.html', context)
-
-def custom_services(request):
-    services = Service.objects.filter(category='custom')
-    return render(request, 'services_list.html', {'services': services, 'category_name': 'Custom'})
-
-def cloud_services(request):
-    services = Service.objects.filter(category='cloud')
-    return render(request, 'services_list.html', {'services': services, 'category_name': 'Cloud'})
 
 
 
