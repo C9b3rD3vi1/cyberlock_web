@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>All Services</title>
 </head>
 <body>
 
 <h1>All Services</h1>
+
+<!-- Standard Services -->
+<h2>Standard Services</h2>
 <ul>
     {% for service in services %}
         <li>
@@ -19,10 +21,11 @@
             </a>: {{ service.description }} - ${{ service.price }}
         </li>
     {% empty %}
-        <li>No services available.</li>
+        <li>No standard services available.</li>
     {% endfor %}
 </ul>
 
+<!-- Custom Services -->
 <h2>Custom Services</h2>
 <ul>
     {% for service in custom_services %}
@@ -36,6 +39,7 @@
     {% endfor %}
 </ul>
 
+<!-- Cloud Services -->
 <h2>Cloud Services</h2>
 <ul>
     {% for service in cloud_services %}
@@ -50,4 +54,5 @@
 </ul>
 
 </body>
+
 {% endblock %}

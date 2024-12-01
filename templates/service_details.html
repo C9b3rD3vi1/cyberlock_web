@@ -6,16 +6,21 @@
     <section class="service-detail py-5">
         <div class="container">
             <div class="row">
+                <!-- Main service details -->
                 <div class="col-md-8">
                     <h2>{{ service.name }}</h2>
                     <img src="{{ service.service_image.url }}" class="img-fluid mb-4" alt="{{ service.name }}">
                     <p><strong>Description:</strong> {{ service.description }}</p>
-                    <p><strong>Details:</strong> {{ service.details }}</p>  <!-- Add more details as per your model -->
+                    <p><strong>Price:</strong> ${{ service.price }}</p>
+                    <p><strong>Details:</strong> {{ service.details }}</p>  <!-- Display additional details if any -->
+                    
                     <a href="{% url 'service_list' %}" class="btn btn-secondary">Back to Services</a>
                 </div>
+                
+                <!-- Contact section -->
                 <div class="col-md-4">
                     <h3>Contact Us for More Information</h3>
-                    <p>If you are interested in this service, please reach out to us!</p>
+                    <p>If you're interested in this service, feel free to contact us!</p>
                     <a href="{% url 'contact_form' %}" class="btn btn-primary">Contact Us</a>
                 </div>
             </div>
