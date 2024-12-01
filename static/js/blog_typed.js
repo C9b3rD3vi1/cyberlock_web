@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const colors = ['#4c6ef5', '#00c6ff', '#f54291']; // Array of colors for each string
 
     new Typed('.display-4', {
-        strings: ['Welcome to Cyberlock Technologies', 'Innovative Solutions for Your Digital Success'],
+        strings: ['Welcome to Cyberlock Technologies Blog', 'Explore Our Latest Posts', 'Stay Updated!'],
         typeSpeed: 100, // Typing speed in milliseconds
         backSpeed: 30, // Backspacing speed in milliseconds
         loop: true,    // Loops through the strings
