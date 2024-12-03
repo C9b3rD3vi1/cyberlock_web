@@ -2,41 +2,89 @@
 .blog-detail {
     background-color: #f9f9f9;
     padding: 50px 0;
+    border-radius: 8px; /* Soft corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Blog Title */
 .blog-detail h2 {
     font-size: 36px;
     font-weight: bold;
     color: #333;
+    margin-bottom: 20px; /* Space below title */
+    text-align: center;  /* Center the title for a modern look */
 }
 
+/* Blog Image */
 .blog-detail img {
     width: 100%;
     height: auto;
     object-fit: cover;
     border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
+/* Blog Content */
 .blog-content {
-    font-size: 16px;
+    font-size: 18px; /* Slightly larger text for better readability */
     line-height: 1.8;
     color: #555;
     text-align: justify;
+    margin-bottom: 30px; /* Space after paragraphs */
 }
 
 .blog-content p {
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* More spacing between paragraphs */
 }
 
+/* Button Styling */
 .blog-detail .btn-secondary {
-    padding: 10px 30px;
+    padding: 12px 30px;
     font-size: 16px;
     border-radius: 5px;
     background-color: #6c757d;
     border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
 }
 
 .blog-detail .btn-secondary:hover {
     background-color: #5a6268;
     color: #fff;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Back Button Styling */
+.blog-detail .btn-back {
+    margin-top: 30px;
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.blog-detail .btn-back:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design: Mobile-Friendly */
+@media (max-width: 768px) {
+    .blog-detail h2 {
+        font-size: 28px; /* Smaller title on mobile */
+    }
+
+    .blog-content {
+        font-size: 16px; /* Smaller text on mobile */
+    }
+
+    .blog-detail img {
+        max-height: 400px; /* Limit image height on mobile */
+    }
+
+    .blog-detail .btn-secondary, .blog-detail .btn-back {
+        width: 100%; /* Full-width buttons on smaller screens */
+        padding: 15px; /* Larger buttons on mobile */
+    }
 }
