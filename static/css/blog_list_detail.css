@@ -1,9 +1,9 @@
-/* Blog Detail Section Styles */
+/* Blog Detail Section */
 .blog-detail {
     background-color: #f9f9f9;
     padding: 50px 0;
-    border-radius: 8px; /* Soft corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Blog Title */
@@ -11,80 +11,83 @@
     font-size: 36px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 20px; /* Space below title */
-    text-align: center;  /* Center the title for a modern look */
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-/* Blog Image */
-.blog-detail img {
+/* Blog Content Wrapper - Flexbox */
+.blog-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;  /* Allows content to wrap on smaller screens */
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Image Styling */
+.blog-image {
+    flex: 1;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.blog-image img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border: 1px solid #ddd;
-    border-radius: 8px; /* Rounded corners for image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog Content */
-.blog-content {
-    font-size: 18px; /* Slightly larger text for better readability */
+/* Text Content Styling */
+.blog-text {
+    flex: 2; /* Text takes up twice the space as the image */
+    font-size: 18px;
     line-height: 1.8;
     color: #555;
     text-align: justify;
-    margin-bottom: 30px; /* Space after paragraphs */
 }
 
-.blog-content p {
-    margin-bottom: 25px; /* More spacing between paragraphs */
-}
-
-/* Button Styling */
+/* Back Button Styling */
 .blog-detail .btn-secondary {
     padding: 12px 30px;
     font-size: 16px;
     border-radius: 5px;
     background-color: #6c757d;
     border: none;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .blog-detail .btn-secondary:hover {
     background-color: #5a6268;
     color: #fff;
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px);
 }
 
-/* Back Button Styling */
-.blog-detail .btn-back {
-    margin-top: 30px;
-    padding: 12px 30px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    text-transform: uppercase;
-}
-
-.blog-detail .btn-back:hover {
-    background-color: #0056b3;
-}
-
-/* Responsive Design: Mobile-Friendly */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .blog-detail h2 {
-        font-size: 28px; /* Smaller title on mobile */
+    .blog-content-wrapper {
+        flex-direction: column; /* Stack image and text on smaller screens */
+        align-items: center;
     }
 
-    .blog-content {
-        font-size: 16px; /* Smaller text on mobile */
+    .blog-image {
+        margin-right: 0; /* Remove right margin on mobile */
+        margin-bottom: 20px; /* Space between image and text */
+    }
+
+    .blog-detail h2 {
+        font-size: 28px;
+    }
+
+    .blog-text {
+        font-size: 16px;
     }
 
     .blog-detail img {
-        max-height: 400px; /* Limit image height on mobile */
+        max-height: 400px;
     }
 
-    .blog-detail .btn-secondary, .blog-detail .btn-back {
-        width: 100%; /* Full-width buttons on smaller screens */
-        padding: 15px; /* Larger buttons on mobile */
+    .blog-detail .btn-secondary {
+        width: 100%;
     }
 }

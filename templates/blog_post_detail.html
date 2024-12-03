@@ -16,23 +16,27 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <!-- Title -->
                 <h2 class="text-center mb-4">{{ post.title }}</h2>
                 
-                <!-- Image -->
-                {% if post.image %}
-                    <strong><img src="{{ post.image.url }}" class="img-fluid mb-4 rounded shadow" alt="{{ post.title }}"></strong>
-                {% else %}
-                    <img src="{% static 'images/default.jpg' %}" class="img-fluid mb-4 rounded shadow" alt="Default Image">
-                {% endif %}
-
-                <!-- Content -->
-                <div class="blog-content">
-                    {% for paragraph in post.content.splitlines %}
-                        {% if paragraph.strip %}
-                            <p class="mb-3">{{ paragraph }}</p>
+                <!-- Blog Content with Image on Left and Text on Right -->
+                <div class="blog-content-wrapper">
+                    <!-- Image on Left -->
+                    <div class="blog-image">
+                        {% if post.image %}
+                            <img src="{{ post.image.url }}" class="img-fluid rounded shadow" alt="{{ post.title }}">
+                        {% else %}
+                            <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded shadow" alt="Default Image">
                         {% endif %}
-                    {% endfor %}
+                    </div>
+
+                    <!-- Text Content on Right -->
+                    <div class="blog-text">
+                        {% for paragraph in post.content.splitlines %}
+                            {% if paragraph.strip %}
+                                <p class="mb-3">{{ paragraph }}</p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
                 
                 <!-- Back Button -->
@@ -43,5 +47,6 @@
         </div>
     </div>
 </section>
+
 
 {% endblock %}
