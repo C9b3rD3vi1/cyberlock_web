@@ -1,33 +1,35 @@
-/* Blog Detail Section */
+/* Ensure full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .blog-detail {
     background-color: #f9f9f9;
     padding: 50px 0;
+    min-height: 100vh;  /* Ensures the section takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures space between content and footer */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog Title */
-.blog-detail h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Blog Content Wrapper - Flexbox */
 .blog-content-wrapper {
     display: flex;
-    flex-wrap: wrap;  /* Allows content to wrap on smaller screens */
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%;  /* Ensures it takes full width */
     margin-top: 20px;
 }
 
-/* Image Styling */
 .blog-image {
-    flex: 1;
-    margin-right: 20px; /* Space between image and text */
+    flex: 0 0 40%;  /* Image takes up 40% of the space */
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .blog-image img {
@@ -38,16 +40,18 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Text Content Styling */
 .blog-text {
-    flex: 2; /* Text takes up twice the space as the image */
+    flex: 1;
     font-size: 18px;
     line-height: 1.8;
     color: #555;
     text-align: justify;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Back Button Styling */
 .blog-detail .btn-secondary {
     padding: 12px 30px;
     font-size: 16px;
@@ -71,16 +75,19 @@
     }
 
     .blog-image {
-        margin-right: 0; /* Remove right margin on mobile */
-        margin-bottom: 20px; /* Space between image and text */
-    }
-
-    .blog-detail h2 {
-        font-size: 28px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        flex: 0 0 100%; /* Image takes up full width on small screens */
     }
 
     .blog-text {
         font-size: 16px;
+        flex: 1;
+        margin-top: 0;  /* Remove margin-top on mobile */
+    }
+
+    .blog-detail h2 {
+        font-size: 28px;
     }
 
     .blog-detail img {
