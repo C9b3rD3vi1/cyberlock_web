@@ -204,7 +204,9 @@ EMAIL_HOST_PASSWORD = 'your_email_password'  # Your email password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 '''
-# content displayed and styled from backend
+
+
+# content displayed and styled from backend using ckeditor framework
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
@@ -221,3 +223,8 @@ CKEDITOR_CONFIGS = {
         ],
     }
 }
+
+
+
+# Path for storing uploaded files using ckeditor
+CKEDITOR_UPLOAD_PATH = "uploads/"
