@@ -1,7 +1,7 @@
 
 /* Styling for the navbar */
 .navbar {
-    background-color: #1f7cd9 !important; /* Dark background for navbar */
+    background-color: #1f7cd9 !important; /* blue background for navbar */
 }
 .navbar-brand, .nav-link {
     color: #f8f9fa !important; /* White text for links */
@@ -11,17 +11,17 @@
     font-size: 1.5rem;
 }
 .nav-link:hover {
-    color: #adb5bd !important; /* Light gray on hover */
+    color: #35c55b !important; /* Light gray on hover */
 }
 .dropdown-menu {
-    background-color: #495057; /* Darker background for dropdown */
+    background-color: #1011110d; /* Darker background for dropdown */
 }
 .dropdown-item {
-    color: #f8f9fa !important; /* White text for dropdown */
+    color: #037df7 !important; /* White text for dropdown */
 }
 .dropdown-item:hover {
-    background-color: #6c757d; /* Darker gray on hover */
-    color: white !important;
+    background-color: hsl(171, 16%, 91%); /* Darker gray on hover */
+    color: rgb(4, 61, 248) !important;
 }
 /* General body styling */
 body {
@@ -43,58 +43,78 @@ flex-direction: column;
 flex: 1;
 }
 
-
-/* Footer Styling */
-.footer {
-    background-color: #b4d2eb17;
-    color: hsl(0, 0%, 100%);
-    padding-top: 20px; /* Reduced padding-top */
-    padding-bottom: 20px; /* Reduced padding-bottom */
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    width: 100%;
-}
-
 .container {
-    max-width: 960px; /* Reduced the width of the container */
+    max-width: 1250px; /* Reduced the width of the container */
     margin: 0 auto; /* Center the container */
 }
 
-/* Footer Title */
-.footer-title {
-    font-size: 1.25rem; /* Reduced font size */
-    font-weight: bold;
-    margin-bottom: 15px; /* Reduced margin */
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #fff;
-    animation: fadeIn 1s ease-out;
+/* Footer Styling */
+footer {
+    background-color: #333; /* Dark background color for the footer */
+    color: white; /* White text color */
+    padding: 50px 0; /* Reduced padding to make the footer shorter */
+    text-align: center; /* Center align text */
+    font-size: 1rem; /* Font size for text */
 }
 
-/* Social Icons */
-.social-icons a {
-    font-size: 1.5rem;
-    color: #1717f0;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #47f29d; /* Twitter blue color */
-    transform: scale(1.2);
-}
-
-/* Social Icons Spacing */
-.icon-link {
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-/* Footer Copy */
 footer p {
-    margin-top: 20px;
-    font-size: 0.9rem; /* Reduced font size */
-    color: rgba(17, 16, 16, 0.7);
+    margin: 5px 0; /* Reduced margin to make the footer more compact */
 }
+
+footer .container {
+    max-width: 1200px; /* Ensure the footer content doesn’t stretch too wide */
+    margin: 0 auto; /* Center the content */
+}
+
+footer .d-flex {
+    justify-content: center; /* Center the icons horizontally */
+    gap: 15px; /* Reduced space between the icons */
+}
+
+footer .d-flex a {
+    font-size: 22px; /* Reduced icon size */
+    color: white; /* Default icon color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+footer .d-flex a:hover {
+    color: #00c6ff; /* Change color on hover */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+/* Specific Icon Colors */
+footer .fab.fa-facebook-f {
+    color: #3b5998; /* Facebook blue */
+}
+
+footer .fab.fa-twitter {
+    color: #1da1f2; /* Twitter blue */
+}
+
+footer .fab.fa-linkedin-in {
+    color: #0077b5; /* LinkedIn blue */
+}
+
+footer .fab.fa-instagram {
+    color: #e1306c; /* Instagram pink */
+}
+
+footer .fab.fa-youtube {
+    color: #ff0000; /* YouTube red */
+}
+
+footer .d-flex a:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+/* Optional: Make the footer more compact on smaller screens */
+@media (max-width: 768px) {
+    footer .d-flex {
+        flex-wrap: wrap; /* Stack icons vertically on small screens */
+        justify-content: center;
+    }
+}
+
 
 /* Animation for Fade-in Effect */
 @keyframes fadeIn {

@@ -1,105 +1,102 @@
 
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Light background color */
-    margin: auto;
-    padding: 50;
-    justify-content: 300px;
-    align-items: flex-start; /* Aligns items at the top */
-    height: 100vh;
-    padding-top: 0px; /* Adjust space for navbar if needed */
-}
-
-
+/* Styling for the login container */
 .login-container {
-    background: rgb(232, 231, 231);
-    margin: 100px auto; /* Optional margin */
-    padding: 20px; /* Padding inside the container */
+    max-width: 400px; /* Container width */
+    width: 100%;
+    margin: 50px auto; /* Center the container with some margin from top */
+    background-color: #fff; /* White background for the container */
+    padding: 30px; /* Padding inside the container */
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 300px; /* Set a fixed width */
-    max-width: 600px;
-    width: 400px; /* Set a fixed width */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
 }
 
-
-
-h2 {
-    text-align: center; /* Center the heading */
-    margin-bottom: 20px; /* Space below the heading */
-    color: #333; /* Darker text color */
+/* Title of the form */
+.login-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333; /* Dark color for the heading */
 }
 
-.form-group {
-    margin-bottom: 15px; /* Space between form groups */
+/* Styling for form groups */
+.login-container .form-group {
+    margin-bottom: 15px;
 }
 
-.form-group label {
-    display: block; /* Block display for labels */
-    margin-bottom: 5px; /* Space below labels */
-    color: #555; /* Lighter text color for labels */
+.login-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555; /* Dark gray color for labels */
 }
 
-.form-group input {
-    width: 100%; /* Full width inputs */
-    padding: 10px; /* Padding inside inputs */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 4px; /* Rounded corners for inputs */
-    box-sizing: border-box; /* Include padding and border in width */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd; /* Light border color */
+    border-radius: 5px; /* Rounded corners for input fields */
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9; /* Light background for input fields */
 }
 
-.form-group input:focus {
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
     border-color: #007bff; /* Blue border on focus */
-    outline: none; /* Remove default outline */
+    outline: none; /* Remove the default outline */
+    background-color: #fff; /* White background on focus */
 }
 
-.remember-me {
-    display: flex; /* Flexbox for checkbox and label */
-    align-items: center; /* Center items vertically */
+/* Styling for the 'Remember Me' checkbox section */
+.login-container .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.login-button {
-    width: 100%; /* Full width button */
-    padding: 10px; /* Padding inside button */
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white; /* White text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Pointer on hover */
-    font-size: 16px; /* Font size */
+.login-container .remember-me label {
+    font-size: 14px;
 }
 
-.login-button:hover {
+/* Login button styles */
+.login-container .login-button {
+    width: 100%; /* Full width */
+    padding: 12px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container .login-button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
-.extra-links {
-    text-align: center; /* Center the extra links */
-    margin-top: 15px; /* Space above extra links */
+.login-container .login-button:active {
+    background-color: #003f7f; /* Even darker blue when button is clicked */
 }
 
-.extra-links a {
-    color: #007bff; /* Link color */
-    text-decoration: none; /* Remove underline */
+/* Extra links (e.g., Sign up, Forgot password) */
+.login-container .extra-links {
+    margin-top: 20px;
+    text-align: center;
 }
 
-.extra-links a:hover {
-    text-decoration: underline; /* Underline on hover */
+.login-container .extra-links p {
+    font-size: 14px;
 }
 
-.messages {
-    list-style: none; /* Remove default list style */
-    padding: 0; /* Remove padding */
-    margin-bottom: 15px; /* Space below messages */
+.login-container .extra-links a {
+    color: #007bff; /* Blue color for links */
+    font-weight: bold;
 }
 
-.messages li {
-    margin: 5px 0; /* Space between messages */
-    padding: 10px; /* Padding inside messages */
-    border-radius: 4px; /* Rounded corners for messages */
-    background-color: #f8d7da; /* Light red background for messages */
-    color: #721c24; /* Dark red text color */
+.login-container .extra-links a:hover {
+    color: #0056b3; /* Darker blue on hover */
 }

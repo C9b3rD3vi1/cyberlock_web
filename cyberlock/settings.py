@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'coreapp', 
-    'ckeditor',
+    'django_ckeditor_5',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -209,17 +209,16 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # content displayed and styled from backend using ckeditor framework
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'full',
+        'toolbar': 'Custom',  # Use the custom toolbar
         'height': 300,
         'width': 'auto',
         'resize_enabled': False,
-        'toolbar': 'full',
-        'extraPlugins': 'highlight',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline', 'Highlight'],
-            ['BulletedList', 'NumberedList'],
-            ['Link', 'Unlink', 'Image', 'Table'],
-            ['Source']
+        'extraPlugins': 'highlight',  # Add highlight plugin
+        'toolbar_Custom': [  # Define custom toolbar
+            ['Bold', 'Italic', 'Underline', 'Highlight'],  # Text formatting
+            ['BulletedList', 'NumberedList'],  # Lists
+            ['Link', 'Unlink', 'Image', 'Table'],  # Links, media, and tables
+            ['Source'],  # Source editor
         ],
     }
 }

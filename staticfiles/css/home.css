@@ -1,4 +1,3 @@
-
 /* General Styling */
 body {
     font-family: Arial, sans-serif;
@@ -16,55 +15,63 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-
-
 /* Hero Section Styling */
 .hero {
-    background: linear-gradient(to right, #4c6ef5, #00c6ff); /* Gradient background */
-    color: white; /* Text color */
-    padding: 80px 0; /* Added padding for better spacing */
-    text-align: left;
+    background: linear-gradient(to right, #4c6ef5, #00c6ff);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
     position: relative;
     z-index: 1;
 }
 
 .hero .container {
-    margin: 0 auto; /* Center align */
+    max-width: 100%;
+    width: 750px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
 .hero h1 {
-    font-size: 3.5rem; /* Larger font size for heading */
+    font-size: 2.5rem;
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    animation: fadeInDown 2s ease-out; /* Animation effect */
+    text-transform: uppercase;
+    animation: fadeInDown 2s ease-out;
     margin-bottom: 20px;
+    display: inline-block;
+    border-right: 3px solid white;
+    padding-right: 5px;
+    white-space: nowrap;
 }
 
 .hero p {
-    font-size: 1.25rem; /* Adjusted font size */
+    font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.6;
-    animation: fadeInUp 2s ease-out; /* Animation effect */
-    margin-top: 0;
+    animation: fadeInUp 2s ease-out 2s forwards;
 }
 
-/* Services, Portfolio, Blog, Testimonials Sections */
+/* Sections */
 .services, .portfolio, .blog, .testimonials {
-    background-color: rgba(10, 11, 11, 0.872);
+    background-color: hsl(180, 5%, 4%);
 }
 
-/* animation */
-.custom-delay {
-    animation-delay: 5s;
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
-/* Cards Styling */
 .card {
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card:hover {
@@ -72,91 +79,59 @@ h1, h2, h3 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.card-body {
+    text-align: center;
+    padding: 20px;
+}
+
 .card-title {
     font-size: 1.5rem;
+    color: black;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .card-text {
+    color: #333;
     font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
 
-/* Testimonials Section */
+/* Testimonials */
 .testimonials .card {
-    background: #f8f9fa;
+    background: #d2e3f4;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
 }
 
 .testimonials .card-text {
     font-style: italic;
-}
-
-/* Video Section */
-.video-container iframe {
-    max-width: 100%;
-    border-radius: 10px;
-    margin: 20px 0;
-}
-
-.carousel-item {
-    transition: transform 0.5s ease; /* Adjust the transition speed */
-}
-
-#blog-posts-container {
-    width: 100%;
-    height: 300px; /* Adjust this height to fit your design */
-    overflow: hidden; /* Hide content outside the visible area */
-}
-
-#blog-posts-list {
-    display: flex;
-    gap: 20px; /* Space between each post */
-    animation: scroll 15s linear infinite; /* 15 seconds for a full scroll, infinite loop */
-}
-
-.col-md-4 {
-    flex: 0 0 33.33%; /* Adjust this width for the number of posts per row */
-    padding: 0 10px; /* Optional padding to space out the posts */
-}
-
-
-/* Animation for Fade-in Effects */
-@keyframes fadeInDown {
-    from {
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Animation */
-@keyframes fadeInUp {
-    from {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    font-size: 1rem;
+    color: #555;
 }
 
 /* Responsive Styling */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5rem; /* Smaller font size on mobile */
+        font-size: 2rem;
     }
 
     .hero p {
-        font-size: 1.1rem; /* Smaller font size on mobile */
+        font-size: 1.1rem;
     }
 
     .hero {
-        padding: 60px 0; /* Reduced padding on smaller screens */
+        padding: 60px 0;
     }
-}
 
+    .col-md-4 {
+        flex: 0 0 100%;
+    }
+    .hero {
+        padding: 40px 0; /* Further reduced padding for smaller screens */
+    }
+
+}
