@@ -1,14 +1,13 @@
 
-#environment
+#environment variable files
 .env
+config.json
 
 
 # Python cache files
 __pycache__/
 *.py[cod]
 
-# Environment variable file
-.env
 
 # Database files
 *.sqlite3
