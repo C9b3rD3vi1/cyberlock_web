@@ -34,7 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'coreapp', 
-    'django_ckeditor_5',
+    'ckeditor',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',

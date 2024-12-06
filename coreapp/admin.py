@@ -3,15 +3,17 @@ from django.contrib import admin
 # import my models
 from django.db import models
 from . models import Project
+from django import forms
 from . models import Testimonial, Profile, BlogPost
 from . models import Service, ContactMessage, Job, JobApplication
 from ckeditor.widgets import CKEditorWidget
 
 
 class BlogPostAdmin(admin.ModelAdmin):  # Use the regular ModelAdmin
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget},
-    }
+    content = forms.CharField(widget=CKEditorWidget())
+    class Meta:
+        model = BlogPost
+        fields = '__all__'
 
 
 
