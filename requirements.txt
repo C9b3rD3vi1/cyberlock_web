@@ -1,4 +1,4 @@
 colorama==0.4.6
-Django==4.2.14
+Django==4.2.16
 is_safe_url==1.0
-gunicorn
+python-decouple==3.8
