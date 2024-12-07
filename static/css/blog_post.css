@@ -1,123 +1,126 @@
-/* Blog Section Styles */
+/* General Styling */
+html, body {
+    font-family: Arial, sans-serif;
+    color: #c2c0c0e4;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    width: 100%;  /* Ensure the page takes up full width */
+}
+
+/* Blog Section Styling */
 .blog {
-    background-color: #f9f9f9;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    background-color: hsl(180, 5%, 4%);
+    padding: 50px 0;
+    width: 100%;  /* Make the blog section take up the full width */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
 }
 
 .blog h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 30px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
 }
 
-.blog .card {
+/* Card Styling */
+.card {
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%; /* Ensure cards take up full available height */
 }
 
-.blog .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.blog .card-img-top {
+.card-img-top {
+    width: 100%;
     height: 200px;
     object-fit: cover;
-    border-bottom: 2px solid #e0e0e0;
 }
 
-.blog .card-body {
+.card-body {
     padding: 20px;
-    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ensures card body content grows to fill available space */
+    justify-content: space-between;
 }
 
-.blog .card-title {
-    font-size: 22px;
+.card-title {
+    font-size: 1.5rem;
     font-weight: bold;
     color: #333;
     margin-bottom: 15px;
 }
 
-.blog .card-text {
-    font-size: 14px;
-    color: hsl(0, 0%, 3%);
-    margin-bottom: 20px;
+.card-text {
+    font-size: 1rem;
+    color: hsla(0, 3%, 7%, 0.927);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Ensures the text doesn't overflow */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Truncate text after 3 lines */
+    -webkit-box-orient: vertical;
 }
 
-.blog .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    padding: 10px 20px;
-    font-size: 14px;
-    text-transform: uppercase;
-    border-radius: 25px;
-}
-
-.blog .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
-}
-
-/* Default Image if None Exists */
-.card-img-top[alt="Default Image"] {
-    background-color: #e0e0e0;
-    color: #fff;
+.card-footer {
+    padding: 15px;
     text-align: center;
-    font-size: 18px;
-    padding: 60px 0;
+    background-color: #f8f9fa;
 }
 
-.card-img-top[alt="Default Image"]:after {
-    content: "No Image Available";
-    color: #fff;
-    font-weight: bold;
+.card-footer .btn {
+    padding: 10px 20px;
+    background-color: #4c6ef5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
 }
 
-/* Custom Pagination Styling */
-.pagination .page-link {
-    color: #007bff;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
+.card-footer .btn:hover {
+    background-color: #00c6ff;
 }
 
-.pagination .page-item.active .page-link {
-    color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+/* Grid Styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.pagination .page-item.disabled .page-link {
-    color: #6c757d;
-    pointer-events: none;
-    background-color: #fff;
-    border-color: #dee2e6;
+.col-md-4 {
+    flex: 1 1 calc(33.33% - 20px);
+    box-sizing: border-box;
 }
 
-
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .blog .card-body {
-        padding: 15px;
+    .col-md-4 {
+        flex: 1 1 100%;
     }
+}
 
-    .blog h2 {
-        font-size: 30px;
-    }
+/* Pagination Styling */
+.pagination {
+    margin-top: 40px;
+    justify-content: center;
+}
 
-    .blog .card-title {
-        font-size: 20px;
-    }
+.page-item.active .page-link {
+    background-color: #4c6ef5;
+    border-color: #4c6ef5;
+}
 
-    .blog .card-text {
-        font-size: 12px;
-    }
+.page-link {
+    color: #4c6ef5;
+}
 
-    .blog .btn-primary {
-        font-size: 12px;
-    }
+.page-item.disabled .page-link {
+    color: #ccc;
 }

@@ -106,7 +106,7 @@ def portfolio(request):
 # Retrieve Blog details
 def blog_list(request):
     blog_posts = BlogPost.objects.all().order_by('-published_date')#[:3]  # Retrieves all blog posts
-    paginator = Paginator(blog_posts, 6)  # Show 6 blog posts per page
+    paginator = Paginator(blog_posts, 8)  # Show 6 blog posts per page
 
     page_number = request.GET.get('page')  # Get the page number from GET parameters
 
