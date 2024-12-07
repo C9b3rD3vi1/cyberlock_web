@@ -14,7 +14,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 # 1. User Profile (Team members or clients)
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField(max_length=500, blank=True)
+    bio = RichTextUploadingField(max_length=500, blank=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True)
     # validation rules for the profile urls and website
     website = models.URLField(blank=True, validators=[URLValidator()])
@@ -90,7 +90,7 @@ class Service(models.Model):
     ]
     
     name = models.CharField(max_length=200)
-    description = models.TextField()
+    description = RichTextUploadingField(blank=False, null=True) 
     price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     service_image = models.ImageField(upload_to='service_images/', blank=True)
    # slug = models.SlugField(unique=True, max_length=200, blank=True)
@@ -109,7 +109,7 @@ class Service(models.Model):
 # Portfolio/Projects (Case studies)
 class Project(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = RichTextUploadingField(null=True, blank=True)
     client = models.CharField(max_length=200)
     project_image = models.ImageField(upload_to='project_images/', blank=True)
     completion_date = models.DateField()
@@ -126,7 +126,7 @@ class Project(models.Model):
 # Lists all jobs and opening available at the company
 class Job(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = RichTextUploadingField(blank=False, null=False)
     requirements = models.TextField()
     location = models.CharField(max_length=200)
     salary = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
