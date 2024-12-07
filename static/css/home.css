@@ -5,7 +5,8 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 100%; /* Ensure the page takes up full width */
+    height: 100%; /* Ensure the page takes up full height */
 }
 
 /* Remove the container's max-width restriction */
