@@ -3,28 +3,45 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Arial', sans-serif; /* Add a clean default font */
 }
 
+/* Blog Detail Section */
 .blog-detail {
     background-color: #f9f9f9;
-    padding: 50px 0;
+    padding: 50px 20px; /* Added horizontal padding for better spacing */
     min-height: 100vh;  /* Ensures the section takes at least full viewport height */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures space between content and footer */
+    justify-content: space-between;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-detail h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.blog-detail .blog-meta {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
 }
 
 .blog-content-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: flex-start;
-    width: 100%;  /* Ensures it takes full width */
+    width: 100%;  /* Ensures full width */
     margin-top: 20px;
 }
 
+/* Blog Image Styling */
 .blog-image {
     flex: 0 0 40%;  /* Image takes up 40% of the space */
     margin-right: 20px;
@@ -40,25 +57,42 @@ html, body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Blog Text Styling */
 .blog-text {
-    flex: 1;
+    flex: 1; /* Content expands to the remaining width */
     font-size: 18px;
     line-height: 1.8;
     color: #555;
     text-align: justify;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    margin-top: 0; /* Aligns with the image */
+    word-break: break-word; /* Prevent overflow for long text without spaces */
 }
 
+.blog-text p {
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.blog-text a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-text a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Back Button Styling */
 .blog-detail .btn-secondary {
     padding: 12px 30px;
     font-size: 16px;
     border-radius: 5px;
     background-color: #6c757d;
     border: none;
+    color: white;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase; /* Optional: Uppercase for button text */
 }
 
 .blog-detail .btn-secondary:hover {
@@ -81,8 +115,8 @@ html, body {
     }
 
     .blog-text {
+        flex: 0 0 100%; /* Content also takes full width on small screens */
         font-size: 16px;
-        flex: 1;
         margin-top: 0;  /* Remove margin-top on mobile */
     }
 
