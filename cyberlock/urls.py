@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import include
+from django.urls import include, re_path
 
 
 
@@ -12,6 +12,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('coreapp.urls')),  # Include app's urls.py
     path('ckeditor/', include('ckeditor_uploader.urls')),
+     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
 ]
 
 
