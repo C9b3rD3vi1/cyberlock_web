@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     messages.forEach(function(message) {
         setTimeout(function() {
             message.style.opacity = '0';  // Begin fade-out
-        }, 4500);  // 4.5 seconds before fading out
+        }, 4000);  // 4.5 seconds before fading out
         
         setTimeout(function() {
             message.remove();  // Remove the message from the DOM after it fades
-        }, 5000);  // After 5 seconds (fade-out duration)
+        }, 4500);  // After 5 seconds (fade-out duration)
     });
 });
