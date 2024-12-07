@@ -1,4 +1,5 @@
 colorama==0.4.6
 Django==4.2.16
+django_ckeditor==6.7.1
 is_safe_url==1.0
 python-decouple==3.8
