@@ -107,6 +107,13 @@ footer .d-flex a:focus {
     outline: none; /* Remove outline on focus */
 }
 
+.nav-link.active {
+    font-weight: bold; /* Make active link bold */
+    color: #ff00e6;    /* Highlight active link with this color */
+    border-bottom: 2px solid #ff00fb; /* Optional: underline active link */
+}
+
+
 /* Optional: Make the footer more compact on smaller screens */
 @media (max-width: 768px) {
     footer .d-flex {
