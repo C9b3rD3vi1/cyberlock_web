@@ -193,6 +193,9 @@ LOGIN_URL = '/login/'
 # The default redirect url
 LOGOUT_REDIRECT_URL = 'home'  # Change 'home' to the desired URL name
 
+#ckeditor upload path
+CKEDITOR_UPLOAD_PATH="uploads/"
+
 '''
 # The default django mailing system configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -205,7 +208,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 '''
 
-
+'''
 # content displayed and styled from backend using ckeditor framework
 CKEDITOR_CONFIGS = {
     'default': {
@@ -227,3 +230,4 @@ CKEDITOR_CONFIGS = {
 
 # Path for storing uploaded files using ckeditor
 CKEDITOR_UPLOAD_PATH = "uploads/"
+'''
