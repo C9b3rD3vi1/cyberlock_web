@@ -1,29 +1,29 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
 
 {% block content %}
-
 <head>
     <meta charset="utf-8">
-    <title>Job Application</title>
-    <link rel="stylesheet" href="{% static 'css/apply_job.css' %}">
-
+    <title>Job Application - {{ job.title }}</title>
+    <!--<link rel="stylesheet" href="{% static 'css/apply_job.css' %}"> -->
 </head>
 
 <body>
-    <h1>Job Application</h1>
-    {% if messages %}
-        {% for message in messages %}
-            <div>{{ message }}</div>
-        {% endfor %}
-    {% endif %}
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit Application</button>
-    </form>
+    <div class="job-application-page">
+        <h1>Apply for the job: {{ job.title }}</h1>  <!-- Display the job title -->
+        
+        {% if messages %}
+            {% for message in messages %}
+                <div class="{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
 </body>
-
 {% endblock %}

@@ -152,6 +152,7 @@ def job_list(request):
 # functions to allow logged in users to apply for available jobs
 @login_required
 def apply_job(request):
+    job = get_object_or_404(Job, id=id)  # Fetch the job using the job ID
     if request.method == 'POST':
         form = JobApplicationForm(request.POST, request.FILES)
         if form.is_valid():

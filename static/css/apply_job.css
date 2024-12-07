@@ -1,73 +1,95 @@
-body {
+/* General Body and Layout Styling for the Job Application Page */
+.job-application-page {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center elements horizontally */
-    justify-content: center; /* Center elements vertically */
-    height: 100vh; /* Full viewport height */
+    padding: 0;
+    color: #333;
 }
 
-h1 {
+/* Centering the content and setting max width */
+.job-application-page h1 {
     text-align: center;
-    color: #080808;
-    margin-bottom: 20px; /* Space between the heading and the container */
+    margin-top: 50px;
+    font-size: 32px;
+    color: #333;
 }
 
-.container {
-    max-width: 600px; /* Set max-width for the container */
-    width: 100%; /* Make it responsive */
-    background: #5f5e5e;
-    padding: 20px;
+/* Container for the form */
+.job-application-page form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    display: flex; /* Enable flexbox for the container */
-    flex-direction: column; /* Stack contents vertically */
-    align-items: stretch; /* Ensure children stretch to container width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.alert {
-    padding: 10px;
+/* Styling for the form inputs and labels */
+.job-application-page form p {
     margin-bottom: 20px;
-    border-radius: 5px;
-    width: 100%; /* Ensure alerts take full width */
+    font-size: 14px;
 }
 
-.alert.success {
-    background-color: #ebeeec;
-    color: #1cd848;
-}
-
-.alert.error {
-    background-color: #faf8f8;
-    color: #721c24;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input, 
-form textarea, 
-form button {
-    margin-bottom: 25px;
-    padding: 10px;
+/* Style form elements */
+.job-application-page input[type="text"],
+.job-application-page input[type="email"],
+.job-application-page input[type="password"],
+.job-application-page textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 20px;
-    width: 100%; /* Ensure form elements take full width */
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
-form button {
-    background-color: #28a745;
+/* Focus effect on inputs */
+.job-application-page input[type="text"]:focus,
+.job-application-page input[type="email"]:focus,
+.job-application-page input[type="password"]:focus,
+.job-application-page textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button Styling */
+.job-application-page button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
     color: white;
     border: none;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-form button:hover {
-    background-color: #2677a6;
+/* Button hover effect */
+.job-application-page button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Message Styling */
+.job-application-page div {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Styling for success messages */
+.job-application-page div.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Styling for error messages */
+.job-application-page div.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
 }
