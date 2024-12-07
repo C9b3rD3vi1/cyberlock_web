@@ -25,7 +25,7 @@
                         <p><strong>Location:</strong> {{ job.location }}</p>
                         <p><strong>Published Date:</strong>{{job.published_date}}</p>
                         <p><strong>Active: </strong>{{ job.is_open}}</p>
-                        <a href="{% url 'apply_job' %}" class="btn btn-primary">Apply Now</a>
+                        <a href="{% url 'apply_job' job.id %}" class="btn btn-primary">Apply Now</a>
                     </div>
                 </div>
             </div>
