@@ -127,7 +127,7 @@ class Project(models.Model):
 class Job(models.Model):
     title = models.CharField(max_length=200)
     description = RichTextUploadingField(blank=False, null=False)
-    requirements = models.TextField()
+    requirements = RichTextUploadingField(blank=False, null=False)
     location = models.CharField(max_length=200)
     salary = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     published_date = models.DateTimeField(auto_now_add=True)
