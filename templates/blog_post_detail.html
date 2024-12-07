@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
@@ -29,13 +28,9 @@
                         {% endif %}
                     </div>
 
-                    <!-- Text Content on Right -->
+                    <!-- Rendered HTML Content from CKEditor -->
                     <div class="blog-text">
-                        {% for paragraph in post.content.splitlines %}
-                            {% if paragraph.strip %}
-                                <p class="mb-3">{{ paragraph }}</p>
-                            {% endif %}
-                        {% endfor %}
+                        {{ post.content|safe }}
                     </div>
                 </div>
                 
@@ -47,6 +42,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}
