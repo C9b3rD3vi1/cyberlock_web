@@ -30,7 +30,7 @@
                         {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.content|truncatewords:50 }}</p>
+                            <p class="card-text">{{ post.content|safe|truncatewords:50 }}</p>
                             <a href="{% url 'blog_detail' post.slug %}" class="btn btn-primary">Read More</a>
                         </div>
                     </div>
