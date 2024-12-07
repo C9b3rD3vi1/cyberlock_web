@@ -11,8 +11,8 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('coreapp.urls')),  # Include app's urls.py
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
+    #path('ckeditor/', include('ckeditor_uploader.urls')),
+    re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
 ]
 
 
