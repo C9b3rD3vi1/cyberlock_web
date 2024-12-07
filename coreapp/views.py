@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import User, Service, BlogPost, Testimonial, ContactMessage, Job, Project, Profile
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import ContactMessageForm, BlogPostForm
 from django.contrib import messages
 from django.contrib.auth import login, authenticate
@@ -104,9 +105,23 @@ def portfolio(request):
 
 # Retrieve Blog details
 def blog_list(request):
+    blog_posts = BlogPost.objects.all().order_by('-published_date')#[:3]  # Retrieves all blog posts
+    paginator = Paginator(blog_posts, 6)  # Show 6 blog posts per page
 
-    blog_post = BlogPost.objects.all().order_by('-published_date')[:3]  # Get the latest 3 blog posts
-    return render(request, 'blog_post.html', {"blog_post":blog_post})
+    page_number = request.GET.get('page')  # Get the page number from GET parameters
+
+    try:
+        page_obj = paginator.page(page_number)
+    except PageNotAnInteger:
+        page_obj = paginator.page(1)  # If page is not an integer, deliver first page.
+    except EmptyPage:
+        page_obj = paginator.page(paginator.num_pages)  # If page is out of range, deliver last page.
+
+    context = {
+        "page_obj": page_obj
+    }
+    return render(request, 'blog_post.html', context)
+
 
 
 # blog post detail page

@@ -78,6 +78,27 @@
     font-weight: bold;
 }
 
+/* Custom Pagination Styling */
+.pagination .page-link {
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .blog .card-body {
