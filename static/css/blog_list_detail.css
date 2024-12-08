@@ -16,8 +16,21 @@ html, body {
     justify-content: space-between;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Ensures it spans the full height of the parent */
 }
 
+/* Ensure Blog Content takes available space */
+.blog-text {
+    flex-grow: 1;  /* This will ensure the blog text takes up remaining space */
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+    margin-top: 0; /* Aligns with the image */
+    word-break: break-word; /* Prevent overflow for long text without spaces */
+}
+
+/* Heading and Blog Meta Styling */
 .blog-detail h2 {
     font-size: 36px;
     font-weight: bold;
@@ -58,16 +71,6 @@ html, body {
 }
 
 /* Blog Text Styling */
-.blog-text {
-    flex: 1; /* Content expands to the remaining width */
-    font-size: 18px;
-    line-height: 1.8;
-    color: #555;
-    text-align: justify;
-    margin-top: 0; /* Aligns with the image */
-    word-break: break-word; /* Prevent overflow for long text without spaces */
-}
-
 .blog-text p {
     margin-bottom: 15px; /* Space between paragraphs */
 }

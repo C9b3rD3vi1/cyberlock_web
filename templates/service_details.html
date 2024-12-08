@@ -17,7 +17,7 @@
                 <div class="col-md-8">
                     <h2 class="service-title">{{ service.name }}</h2>
                     <img src="{{ service.service_image.url }}" class="img-fluid mb-4 service-image" alt="{{ service.name }}">
-                    <p><strong>Description:</strong> {{ service.description }}</p>
+                    <p><strong>Description:</strong> {{ service.description|safe }}</p>
                     <p><strong>Price:</strong> ${{ service.price }}</p>
                     <p><strong>Details:</strong> {{ service.details }}</p>
                     
