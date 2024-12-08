@@ -199,7 +199,7 @@ class JobApplication(models.Model):
     def __str__(self):
         return self.name
     
-    
+
 
 #  Ticketing system for user to create and report issues or enquiry issues
 # Define categories for tickets (optional)
@@ -215,6 +215,7 @@ class TicketPriority(models.Model):
 
     def __str__(self):
         return self.name
+
 
 # Define the ticket model
 class Ticket(models.Model):
