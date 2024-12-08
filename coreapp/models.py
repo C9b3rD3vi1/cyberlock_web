@@ -198,3 +198,50 @@ class JobApplication(models.Model):
 
     def __str__(self):
         return self.name
+    
+    
+
+#  Ticketing system for user to create and report issues or enquiry issues
+# Define categories for tickets (optional)
+class TicketCategory(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+# Define the priority levels for tickets (optional)
+class TicketPriority(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+# Define the ticket model
+class Ticket(models.Model):
+    STATUS_CHOICES = [
+        ('open', 'Open'),
+        ('in_progress', 'In Progress'),
+        ('resolved', 'Resolved'),
+    ]
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    subject = models.CharField(max_length=255)
+    description = models.TextField()
+    category = models.ForeignKey(TicketCategory, on_delete=models.SET_NULL, null=True, blank=True)
+    priority = models.ForeignKey(TicketPriority, on_delete=models.SET_NULL, null=True, blank=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='open')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.subject
+
+# Define comments on tickets
+class TicketComment(models.Model):
+    ticket = models.ForeignKey(Ticket, related_name='comments', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Comment by {self.user.username} on {self.ticket.subject}"
