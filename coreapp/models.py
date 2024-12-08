@@ -199,7 +199,7 @@ class JobApplication(models.Model):
     def __str__(self):
         return self.name
     
-
+'''
 
 #  Ticketing system for user to create and report issues or enquiry issues
 # Define categories for tickets (optional)
@@ -246,3 +246,5 @@ class TicketComment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.user.username} on {self.ticket.subject}"
+
+        '''
