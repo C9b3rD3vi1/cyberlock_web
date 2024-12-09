@@ -5,7 +5,7 @@ from django import forms
 from.models import ContactMessage, BlogPost, Testimonial, Profile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from.models import JobApplication, Comment, Ticket, TicketComment
+from.models import JobApplication, Comment #Ticket, TicketComment
 from ckeditor.widgets import CKEditorWidget
 
 
@@ -78,7 +78,7 @@ class CommentForm(forms.ModelForm):
             'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
 
-
+'''
 # User ticket form
 # Form for submitting a new ticket
 class TicketForm(forms.ModelForm):
@@ -91,3 +91,5 @@ class TicketCommentForm(forms.ModelForm):
     class Meta:
         model = TicketComment
         fields = ['comment']
+
+'''

@@ -1,4 +1,5 @@
 
+import logging
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import User, Service, BlogPost, Testimonial, ContactMessage, Job, Project, Profile
@@ -10,7 +11,6 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-import logging
 from .utils import save_contact_message
 from is_safe_url import is_safe_url
 from .forms import CustomUserCreationForm, TestimonialForm, ProfileForm, JobApplicationForm
@@ -275,7 +275,6 @@ def blog_post_create(request):
 
 
 
-
  # User should be logged in and have all permissions
 @login_required
 @user_passes_test(is_staff_or_high_user)
@@ -302,7 +301,6 @@ def blog_post_update(request, pk):
     else:
         form = BlogPostForm(instance=post)
     return render(request, 'blog_post_form.html', {'form': form})
-
 
 
 
