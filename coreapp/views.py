@@ -1,5 +1,6 @@
 
 import logging
+from colorama import Fore, Style
 from django.contrib import messages
 from is_safe_url import is_safe_url
 from .utils import save_contact_message
@@ -11,11 +12,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import ContactMessageForm, BlogPostForm
 from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
+from django.views.decorators.http import require_POST
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import CustomUserCreationForm, TestimonialForm, ProfileForm, JobApplicationForm
-from colorama import Fore, Style
-from django.views.decorators.http import require_POST
 
 
 
