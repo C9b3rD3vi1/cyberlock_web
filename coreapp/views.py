@@ -1,18 +1,18 @@
 
 import logging
+from django.contrib import messages
+from is_safe_url import is_safe_url
+from .utils import save_contact_message
+from django.contrib.auth import logout
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
 from .models import User, Service, BlogPost, Testimonial, ContactMessage, Job, Project, Profile
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import ContactMessageForm, BlogPostForm
-from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .utils import save_contact_message
-from is_safe_url import is_safe_url
 from .forms import CustomUserCreationForm, TestimonialForm, ProfileForm, JobApplicationForm
 from colorama import Fore, Style
 from django.views.decorators.http import require_POST
