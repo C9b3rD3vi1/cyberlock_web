@@ -4,19 +4,18 @@
 {% block content %}
 <head>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    
 </head>
+
 <!-- Hero Section -->
-<section class="hero text-center">
+<section class="hero full-screen text-center">
     <div class="container">
         <h1 class="display-4 animate__animated animate__fadeInDown">Welcome to Cyberlock Technologies</h1>
         <p class="lead animate__animated animate__fadeInUp">Innovative Solutions for Your Digital Success</p>
     </div>
 </section>
 
-
 <!-- Services Section -->
-<section class="services py-5">
+<section class="services full-screen py-5">
     <div class="container">
         <h2 class="text-center mb-4">Our Services</h2>
         <div class="row">
@@ -26,7 +25,7 @@
                         <img src="{{ service.service_image.url }}" class="card-img-top" alt="{{ service.name }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ service.name }}</h5>
-                            <p class="card-text">{{ service.description|truncatewords:50 }}</p>
+                            <p class="card-text">{{ service.description|safe|truncatewords:20 }}</p>
                             <a href="{% url 'service_list' %}" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
@@ -37,7 +36,7 @@
 </section>
 
 <!-- Portfolio Section -->
-<section class="portfolio bg-light py-5">
+<section class="portfolio full-screen bg-light py-5">
     <div class="container">
         <h2 class="text-center mb-4">Our Portfolio</h2>
         <div class="row">
@@ -57,8 +56,9 @@
     </div>
 </section>
 
+
 <!-- Blog Section -->
-<section class="blog py-5">
+<section class="blog full-screen py-5">
     <div class="container">
         <h2 class="text-center mb-4">Latest Blog Posts</h2>
         <div class="row">
@@ -79,7 +79,7 @@
 </section>
 
 <!-- Testimonials Section -->
-<section class="testimonials bg-light py-5">
+<section class="testimonials full-screen bg-light py-5">
     <div class="container">
         <h2 class="text-center mb-4">What Our Clients Say</h2>
         <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-wrap="true">
@@ -111,4 +111,5 @@
         </div>
     </div>
 </section>
+
 {% endblock %}

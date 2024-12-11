@@ -13,7 +13,7 @@
     font-size: 1.5rem;
 }
 .nav-link:hover, .nav-link.active {
-    color: #35c55b !important; 
+    color: #0cf74a !important; 
     font-weight: bold;
     border-bottom: 2px solid #ff00fb; 
 }

@@ -1,16 +1,25 @@
-/*  General Styling  */
+/* Ensure no conflicts with base.css and maintain full width */
+
+/* General Styling */
 html, body {
     font-family: Arial, sans-serif;
-    color: #333; /* Improved contrast */
+    color: #333;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    height: 100%; /* Ensures full-page height*/
+    height: 100%;
+}
+
+/* Ensure sections with full-screen width are styled properly */
+.full-screen {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
 }
 
 
 * {
-    box-sizing: border-box; /* Consistent box-sizing for all elements */
+    box-sizing: border-box;
 }
 
 /* Hero Section Styling */
@@ -21,8 +30,10 @@ html, body {
     text-align: center;
     position: relative;
     z-index: 1;
-    width: 100%; /* Ensures full width */
+    /* width: 100%;*/
 }
+
+
 
 .hero h1 {
     font-size: 2.5rem;
@@ -31,8 +42,6 @@ html, body {
     text-transform: uppercase;
     animation: fadeInDown 1s ease-out;
     margin-bottom: 20px;
-    display: inline-block;
-    white-space: nowrap;
 }
 
 .hero p {
@@ -56,7 +65,7 @@ html, body {
 /* Section Styling */
 .services, .portfolio, .blog, .testimonials {
     background-color: hsl(180, 5%, 4%);
-    width: 100%; /* Ensures full width */
+    width: 100%;
     padding: 30px 0;
 }
 
@@ -69,9 +78,10 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* Uniform height */
-    margin: 15px; /* Prevent overlap */
+    height: 100%;
+    margin: 15px;
 }
+
 
 .card:hover {
     transform: scale(1.05);
@@ -94,6 +104,7 @@ html, body {
     flex-grow: 1;
 }
 
+
 .card-title {
     font-size: 1.5rem;
     color: black;
@@ -106,10 +117,10 @@ html, body {
     font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 15px;
-    overflow: hidden; /* Prevent overflow */
+    overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limits to 3 lines */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 
@@ -156,10 +167,12 @@ html, body {
     }
 
     .hero {
-        padding: 40px 0; /* Adjust padding for smaller screens */
+        padding: 40px 0;
     }
 
     .col-md-4 {
-        flex: 0 0 100%; /* Responsive column */
+        flex: 0 0 100%;
     }
 }
+
+
