@@ -1,6 +1,9 @@
 
 /* Styling for the navbar */
 .navbar {
+    top: 0;
+    position: sticky; /* Key property for sticky navbar */
+    z-index: 1000;    /* Ensures it appears above other elements */
     background-color: #1f7cd9 !important; /* blue background for navbar */
 }
 .navbar-brand, .nav-link {
@@ -109,7 +112,7 @@ footer .d-flex a:focus {
 
 .nav-link.active {
     font-weight: bold; /* Make active link bold */
-    color: #ff00e6;    /* Highlight active link with this color */
+    color: #510a77;    /* Highlight active link with this color */
     border-bottom: 2px solid #ff00fb; /* Optional: underline active link */
 }
 

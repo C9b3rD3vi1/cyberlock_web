@@ -5,14 +5,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    width: 100%; /* Ensure the page takes up full width */
+    /* width: 100%;  /* Ensure the page takes up full width */
     height: 100%; /* Ensure the page takes up full height */
 }
 
 /* Remove the container's max-width restriction */
 .hero .container {
     max-width: 100%; /* Remove max-width to allow full width */
-    width: 100%; /* Ensure it uses the full width */
+    width: 100%; /*100%;  Ensure it uses the full width */
     padding: 20px 0; /* Optional: Adjust padding to suit */
     box-sizing: border-box; /* Make sure padding is included in the width */
 }
@@ -25,7 +25,7 @@ body {
     text-align: center;
     position: relative;
     z-index: 1;
-    width: 100%; /* Ensure the hero section takes the full width */
+    /* width: 100%; Ensure the hero section takes the full width */
     box-sizing: border-box;
 }
 
