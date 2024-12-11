@@ -1,153 +1,103 @@
-
 /* Styling for the navbar */
 .navbar {
+    position: sticky;
     top: 0;
-    position: sticky; /* Key property for sticky navbar */
-    z-index: 1000;    /* Ensures it appears above other elements */
-    background-color: #1f7cd9 !important; /* blue background for navbar */
+    z-index: 1000;
+    background-color: #1f7cd9 !important; 
 }
 .navbar-brand, .nav-link {
-    color: #f8f9fa !important; /* White text for links */
+    color: #f8f9fa !important; 
 }
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
 }
-.nav-link:hover {
-    color: #35c55b !important; /* Light gray on hover */
+.nav-link:hover, .nav-link.active {
+    color: #35c55b !important; 
+    font-weight: bold;
+    border-bottom: 2px solid #ff00fb; 
 }
 .dropdown-menu {
-    background-color: #1011110d; /* Darker background for dropdown */
+    background-color: #1011110d; 
 }
 .dropdown-item {
-    color: #037df7 !important; /* White text for dropdown */
+    color: #037df7 !important; 
 }
 .dropdown-item:hover {
-    background-color: hsl(171, 16%, 91%); /* Darker gray on hover */
+    background-color: hsl(171, 16%, 91%);
     color: rgb(4, 61, 248) !important;
 }
+
 /* General body styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9; /* Light background for body */
+    background-color: #f4f4f9; 
 }
 
-
-/* Ensure the HTML and body occupy the full viewport height */
 html, body {
-height: 100%;
-margin: 0;
-display: flex;
-flex-direction: column;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-/* The main content area will stretch to push the footer down */
 .main-content {
-flex: 1;
-}
-
-.container {
-    max-width: 1250px; /* Reduced the width of the container */
-    margin: 0 auto; /* Center the container */
+    flex: 1;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #333; /* Dark background color for the footer */
-    color: white; /* White text color */
-    padding: 50px 0; /* Reduced padding to make the footer shorter */
-    text-align: center; /* Center align text */
-    font-size: 1rem; /* Font size for text */
+    background-color: #333;
+    color: white;
+    padding: 30px 0; 
+    text-align: center;
+    font-size: 1rem;
 }
 
 footer p {
-    margin: 5px 0; /* Reduced margin to make the footer more compact */
+    margin: 5px 0; 
 }
 
 footer .container {
-    max-width: 1200px; /* Ensure the footer content doesn’t stretch too wide */
-    margin: 0 auto; /* Center the content */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 footer .d-flex {
-    justify-content: center; /* Center the icons horizontally */
-    gap: 15px; /* Reduced space between the icons */
+    justify-content: center;
+    gap: 15px;
 }
 
 footer .d-flex a {
-    font-size: 22px; /* Reduced icon size */
-    color: white; /* Default icon color */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 22px; 
+    color: white; 
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 footer .d-flex a:hover {
-    color: #00c6ff; /* Change color on hover */
-    transform: translateY(-3px); /* Slight lift effect on hover */
+    color: #00c6ff; 
+    transform: translateY(-3px); 
 }
 
 /* Specific Icon Colors */
-footer .fab.fa-facebook-f {
-    color: #3b5998; /* Facebook blue */
-}
+footer .fab.fa-facebook-f { color: #3b5998; }
+footer .fab.fa-twitter { color: #1da1f2; }
+footer .fab.fa-linkedin-in { color: #0077b5; }
+footer .fab.fa-instagram { color: #e1306c; }
+footer .fab.fa-youtube { color: #ff0000; }
 
-footer .fab.fa-twitter {
-    color: #1da1f2; /* Twitter blue */
-}
-
-footer .fab.fa-linkedin-in {
-    color: #0077b5; /* LinkedIn blue */
-}
-
-footer .fab.fa-instagram {
-    color: #e1306c; /* Instagram pink */
-}
-
-footer .fab.fa-youtube {
-    color: #ff0000; /* YouTube red */
-}
-
-footer .d-flex a:focus {
-    outline: none; /* Remove outline on focus */
-}
-
-.nav-link.active {
-    font-weight: bold; /* Make active link bold */
-    color: #510a77;    /* Highlight active link with this color */
-    border-bottom: 2px solid #ff00fb; /* Optional: underline active link */
-}
-
-
-/* Optional: Make the footer more compact on smaller screens */
+/* Responsive Styling */
 @media (max-width: 768px) {
+    .navbar-toggler {
+        border-color: white;
+    }
     footer .d-flex {
-        flex-wrap: wrap; /* Stack icons vertically on small screens */
+        flex-wrap: wrap; 
         justify-content: center;
     }
 }
 
-
-/* Animation for Fade-in Effect */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .footer {
-        padding-top: 15px; /* Reduced padding for smaller screens */
-        padding-bottom: 15px;
-    }
-
-    .social-icons {
-        flex-wrap: wrap;
-    }
-
-    .social-icons a {
-        margin-bottom: 10px;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
