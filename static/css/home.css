@@ -1,32 +1,27 @@
-/* General Styling */
-body {
+/*  General Styling  */
+html, body {
     font-family: Arial, sans-serif;
-    color: #c2c0c0e4;
+    color: #333; /* Improved contrast */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    /* width: 100%;  /* Ensure the page takes up full width */
-    height: 100%; /* Ensure the page takes up full height */
+    height: 100%; /* Ensures full-page height*/
 }
 
-/* Remove the container's max-width restriction */
-.hero .container {
-    max-width: 100%; /* Remove max-width to allow full width */
-    width: 100%; /*100%;  Ensure it uses the full width */
-    padding: 20px 0; /* Optional: Adjust padding to suit */
-    box-sizing: border-box; /* Make sure padding is included in the width */
+
+* {
+    box-sizing: border-box; /* Consistent box-sizing for all elements */
 }
 
 /* Hero Section Styling */
 .hero {
     background: linear-gradient(to right, #4c6ef5, #00c6ff);
     color: white;
-    padding: 30px 0;
+    padding: 50px 0;
     text-align: center;
     position: relative;
     z-index: 1;
-    /* width: 100%; Ensure the hero section takes the full width */
-    box-sizing: border-box;
+    width: 100%; /* Ensures full width */
 }
 
 .hero h1 {
@@ -34,11 +29,9 @@ body {
     font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
-    animation: fadeInDown 2s ease-out;
+    animation: fadeInDown 1s ease-out;
     margin-bottom: 20px;
     display: inline-block;
-    border-right: 3px solid white;
-    padding-right: 5px;
     white-space: nowrap;
 }
 
@@ -46,24 +39,28 @@ body {
     font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.6;
-    animation: fadeInUp 2s ease-out 2s forwards;
+    animation: fadeInUp 1s ease-out 1s forwards;
 }
 
-/* Ensure all sections take full width */
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section Styling */
 .services, .portfolio, .blog, .testimonials {
     background-color: hsl(180, 5%, 4%);
-    width: 100%; /* Ensure these sections are full width */
-    padding: 30px 0; /* Optional: Adjust padding as needed */
+    width: 100%; /* Ensures full width */
+    padding: 30px 0;
 }
 
 /* Card Styling */
-.card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
 .card {
     border: none;
     border-radius: 8px;
@@ -72,12 +69,20 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* Ensures all cards are the same height */
+    height: 100%; /* Uniform height */
+    margin: 15px; /* Prevent overlap */
 }
 
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
 }
 
 .card-body {
@@ -86,7 +91,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex-grow: 1; /* Ensures proper spacing for content */
+    flex-grow: 1;
 }
 
 .card-title {
@@ -109,7 +114,7 @@ body {
 }
 
 .btn {
-    margin-top: auto; /* Ensures the button is aligned at the bottom */
+    margin-top: auto;
     padding: 10px 20px;
     font-size: 1rem;
     background-color: #4c6ef5;
@@ -151,14 +156,10 @@ body {
     }
 
     .hero {
-        padding: 60px 0;
+        padding: 40px 0; /* Adjust padding for smaller screens */
     }
 
     .col-md-4 {
-        flex: 0 0 100%;
-    }
-
-    .hero {
-        padding: 40px 0; /* Further reduced padding for smaller screens */
+        flex: 0 0 100%; /* Responsive column */
     }
 }
