@@ -169,11 +169,9 @@ def apply_job(request, id):
 
 
 
-
 def about(request):
 
     return render(request, 'about.html')
-
 
 
 def testimonial_list(request):
@@ -193,11 +191,9 @@ def testimonial_list(request):
 
 
 
-
 def blog_post_list(request):
     posts = BlogPost.objects.all().order_by('-published_date')
     return render(request, 'blog_post_list.html', {'posts': posts})
-
 
 
 def blog_post_detail(request, pk):
@@ -304,7 +300,6 @@ def blog_post_update(request, pk):
 
 
 
-
 # user login with remember me form function
 def user_login(request):
     """
@@ -346,7 +341,6 @@ def user_login(request):
             messages.error(request, 'Invalid username or password. Please try again.')
 
     return render(request, 'login.html', {'next': next_url})
-
 
 
 
