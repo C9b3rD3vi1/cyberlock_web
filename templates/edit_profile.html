@@ -5,69 +5,67 @@
     <link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
 </head>
 
-<div class="edit-profile-page container mt-4 shadow-sm p-4 bg-white rounded">
-    <h1 class="text-center text-primary">Hello, {{ user.username }}!</h1>
-    <h2 class="text-center text-secondary mb-4">Edit Profile</h2>
-    
-    <form method="post" enctype="multipart/form-data" class="p-4">
-        {% csrf_token %}
-        
-        <!-- Profile Picture Field -->
-        <div class="mb-4">
-            <label for="{{ form.profile_picture.id_for_label }}" class="form-label fw-bold">Profile Picture</label>
-            {{ form.profile_picture }}
-            {% if form.profile_picture.errors %}
-            <div class="alert alert-danger mt-2">{{ form.profile_picture.errors }}</div>
-            {% endif %}
+<div class="edit-profile-page d-flex align-items-center justify-content-center vh-100">
+    <div class="content container shadow-lg bg-white rounded">
+        <!-- Header Section -->
+        <div class="header text-center mb-4">
+            <img src="{% static 'images/profile-placeholder.png' %}" alt="Profile Placeholder" class="profile-img rounded-circle shadow-sm mb-3">
+            <h1 class="text-primary">Hello, {{ user.username }}!</h1>
+            <p class="text-muted">Customize your profile to showcase your personality and skills.</p>
         </div>
 
-        <!-- Bio Field -->
-        <div class="mb-4">
-            <label for="{{ form.bio.id_for_label }}" class="form-label fw-bold">Bio</label>
-            {{ form.bio }}
-            {% if form.bio.errors %}
-            <div class="alert alert-danger mt-2">{{ form.bio.errors }}</div>
-            {% endif %}
-        </div>
+        <!-- Form Section -->
+        <h2 class="text-secondary mb-4">Edit Profile</h2>
+        <form method="post" enctype="multipart/form-data" class="edit-form">
+            {% csrf_token %}
+            
+            <!-- Profile Picture -->
+            <div class="form-group grid-item">
+                <label for="{{ form.profile_picture.id_for_label }}">Profile Picture</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-camera"></i></span>
+                    {{ form.profile_picture }}
+                </div>
+            </div>
 
-        <!-- Website Field -->
-        <div class="mb-4">
-            <label for="{{ form.website.id_for_label }}" class="form-label fw-bold">Website</label>
-            {{ form.website }}
-            {% if form.website.errors %}
-            <div class="alert alert-danger mt-2">{{ form.website.errors }}</div>
-            {% endif %}
-        </div>
+            <!-- Bio -->
+            <div class="form-group grid-item">
+                <label for="{{ form.bio.id_for_label }}">Bio</label>
+                {{ form.bio }}
+            </div>
 
-        <!-- GitHub Field -->
-        <div class="mb-4">
-            <label for="{{ form.github.id_for_label }}" class="form-label fw-bold">GitHub</label>
-            {{ form.github }}
-            {% if form.github.errors %}
-            <div class="alert alert-danger mt-2">{{ form.github.errors }}</div>
-            {% endif %}
-        </div>
+            <!-- Website -->
+            <div class="form-group grid-item">
+                <label for="{{ form.website.id_for_label }}">Website</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-link-45deg"></i></span>
+                    {{ form.website }}
+                </div>
+            </div>
 
-        <!-- LinkedIn Field -->
-        <div class="mb-4">
-            <label for="{{ form.linkedin.id_for_label }}" class="form-label fw-bold">LinkedIn</label>
-            {{ form.linkedin }}
-            {% if form.linkedin.errors %}
-            <div class="alert alert-danger mt-2">{{ form.linkedin.errors }}</div>
-            {% endif %}
-        </div>
+            <!-- GitHub -->
+            <div class="form-group grid-item">
+                <label for="{{ form.github.id_for_label }}">GitHub</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-github"></i></span>
+                    {{ form.github }}
+                </div>
+            </div>
 
-        <!-- Submit Button -->
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-lg px-5">Update Profile</button>
-        </div>
-    </form>
+            <!-- LinkedIn -->
+            <div class="form-group grid-item">
+                <label for="{{ form.linkedin.id_for_label }}">LinkedIn</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-linkedin"></i></span>
+                    {{ form.linkedin }}
+                </div>
+            </div>
 
-    <!-- Non-field Errors -->
-    {% if form.non_field_errors %}
-    <div class="alert alert-danger mt-4">
-        {{ form.non_field_errors }}
+            <!-- Submit Button -->
+            <div class="text-center grid-item">
+                <button type="submit" class="btn btn-primary btn-lg px-5">Save Changes</button>
+            </div>
+        </form>
     </div>
-    {% endif %}
 </div>
 {% endblock %}
