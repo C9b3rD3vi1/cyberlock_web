@@ -87,7 +87,7 @@ def cloud_services(request):
 
 
 
-# show service detaila
+# show service details
 def service_detail(request, service_id):
     service = get_object_or_404(Service, id=service_id)
     return render(request, 'service_details.html', {'service': service})
@@ -105,7 +105,7 @@ def portfolio(request):
 # Retrieve Blog details
 def blog_list(request):
     blog_posts = BlogPost.objects.all().order_by('-published_date')#[:3]  # Retrieves all blog posts
-    paginator = Paginator(blog_posts, 8)  # Show 6 blog posts per page
+    paginator = Paginator(blog_posts, 8)  # Show 8 blog posts per page
 
     page_number = request.GET.get('page')  # Get the page number from GET parameters
 
@@ -214,6 +214,7 @@ def contact_form(request):
     """
     if request.method == 'POST':
         form = ContactMessageForm(request.POST)
+        # validate the form
         if form.is_valid():
             # Save the message and send an email
             save_contact_message(
@@ -224,7 +225,7 @@ def contact_form(request):
             )
             return redirect('contact_success')
     else:
-        form = ContactMessageForm()  # No need to change this part
+        form = ContactMessageForm()  # create form object
 
     return render(request, 'contact_form.html', {'form': form})
 
