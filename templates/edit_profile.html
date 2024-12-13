@@ -9,8 +9,9 @@
     <div class="container py-5">
         <!-- Header Section -->
         <div class="text-center mb-5">
-            <img src="{% static 'images/profile-placeholder.png' %}" alt="Profile Placeholder" class="profile-img rounded-circle shadow-lg mb-3">
+            <img src="{% static 'images/hero-bg.jpeg' %}" alt="Profile Placeholder" class="profile-img rounded-circle shadow-lg mb-3">
             <h1 class="fw-bold text-dark">Welcome, {{ user.username }}!</h1>
+
             <p class="text-muted fs-5">Let's refine your profile to represent your personality and skills.</p>
         </div>
 
@@ -18,6 +19,7 @@
         <div class="card shadow-lg">
             <div class="card-body p-5">
                 <h2 class="card-title text-center text-secondary mb-4">Edit Profile</h2>
+                
                 <form method="post" enctype="multipart/form-data" class="row g-4">
                     {% csrf_token %}
 
@@ -29,7 +31,9 @@
                             {{ form.profile_picture }}
                         </div>
                         {% if form.profile_picture.errors %}
+
                             <small class="text-danger">{{ form.profile_picture.errors }}</small>
+
                         {% endif %}
                     </div>
 
