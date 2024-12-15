@@ -408,8 +408,6 @@ def submit_testimonial(request):
     return render(request, 'submit_testimonial.html', {'form': form})
 
 
-
-
 # success when user successfully submitted a testimonial
 def testimonial_success(request):
     return render(request, 'success_testimonial.html')

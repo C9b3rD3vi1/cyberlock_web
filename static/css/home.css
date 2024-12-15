@@ -3,9 +3,9 @@
 /* General Styling */
 html, body {
     font-family: Arial, sans-serif;
-    color: #121721df;
+    color: #0c1933df;
     line-height: 1.6;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     width: 100%;
     height: 100%;
@@ -14,10 +14,19 @@ html, body {
 
 
 /* Ensure sections with full-screen width are styled properly */
+/* Full-screen section styling */
 .full-screen {
     width: 100%;
     padding: 0;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
 }
 
 
