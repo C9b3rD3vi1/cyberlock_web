@@ -392,7 +392,6 @@ def user_logout(request):
     return redirect('home')  # Default fallback
 
 
-
 # Allow users to create and submit forms for testimonies only while logged in.
 @login_required(login_url='/login/')
 def submit_testimonial(request):
