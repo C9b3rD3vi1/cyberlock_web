@@ -86,7 +86,6 @@ def cloud_services(request):
     return render(request, 'services_list.html', {'services': services, 'category_name': 'Cloud'})
 
 
-
 # show service details
 def service_detail(request, service_id):
     service = get_object_or_404(Service, id=service_id)
@@ -167,7 +166,7 @@ def apply_job(request, id):
     return render(request, 'apply_job.html', {'form': form})
 
 
-
+# company about page documentation
 def about(request):
 
     return render(request, 'about.html')
