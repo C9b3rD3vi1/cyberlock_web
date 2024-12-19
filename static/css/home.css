@@ -1,6 +1,4 @@
-
 /* General Styling */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,52 +7,39 @@
 
 /* Global Styles */
 html, body {
-    font-family: Arial, sans-serif;
-    color: #0c1933df;
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
     line-height: 1.6;
     margin: 0 auto;
     padding: 0;
     width: 100%;
-    background-image: linear-gradient(relative, left top, rgba(0, 0, 0, 0.),url(../cyberlock_web/static/images/hero-bg.jpeg) center center no-repeat);
-   
+    background-color: #f8f9fa;
 }
 
-
-
-/* Ensure sections with full-screen width are styled properly */
-/* Full-screen section styling */
-.section-fullscreen {
-    width: 100%;
-    height: 100vh;
+.container-fluid {
     padding: 0;
-    margin: 0;
-    background-size: cover;
-    background-position: center;
 }
 
-* {
-    box-sizing: border-box;
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-/* Hero Section Styling */
+/* Hero Section */
 .hero {
     background: linear-gradient(to right, #4c6ef5, #00c6ff);
     color: white;
     padding: 50px 0;
     text-align: center;
     position: relative;
-    z-index: 1;
-    width: 100%;
 }
-
 
 .hero h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    animation: fadeInDown 1s ease-out;
     margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
 }
 
 .hero p {
@@ -62,6 +47,117 @@ html, body {
     font-weight: 300;
     line-height: 1.6;
     animation: fadeInUp 1s ease-out 1s forwards;
+}
+
+/* Services Section */
+.services {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4c6ef5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00c6ff;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 60px 0;
+}
+
+.portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.card img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.blog {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.blog h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.testimonials {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.carousel-inner {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-item {
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+}
+
+.card-text {
+    font-style: italic;
+    color: #555;
 }
 
 /* Keyframe Animations */
@@ -75,101 +171,7 @@ html, body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Section Styling */
-.services, .portfolio, .blog, .testimonials {
-    background-color: hsl(180, 5%, 4%);
-    width: 100%;
-    padding: 30px 0;
-}
-
-/* Card Styling */
-.card {
-    border: none;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    margin: 15px;
-}
-
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-}
-
-.card-body {
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-
-
-.card-title {
-    font-size: 1.5rem;
-    color: black;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.card-text {
-    color: #333;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-
-.btn {
-    margin-top: auto;
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #4c6ef5;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #00c6ff;
-    text-decoration: none;
-}
-
-/* Testimonials */
-.testimonials .card {
-    background: #d2e3f4;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    text-align: center;
-}
-
-.testimonials .card-text {
-    font-style: italic;
-    font-size: 1rem;
-    color: #0f0e0e;
-}
-
-/* Responsive Styling */
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -179,13 +181,7 @@ html, body {
         font-size: 1.1rem;
     }
 
-    .hero {
-        padding: 40px 0;
-    }
-
-    .col-md-4 {
-        flex: 0 0 100%;
+    .services .card, .portfolio .card, .blog .card, .testimonials .card {
+        margin-bottom: 20px;
     }
 }
-
-
