@@ -1,6 +1,13 @@
-/* Ensure no conflicts with base.css and maintain full width */
 
 /* General Styling */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
 html, body {
     font-family: Arial, sans-serif;
     color: #0c1933df;
@@ -15,20 +22,14 @@ html, body {
 
 /* Ensure sections with full-screen width are styled properly */
 /* Full-screen section styling */
-.full-screen {
+.section-fullscreen {
     width: 100%;
+    height: 100vh;
     padding: 0;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
     background-size: cover;
     background-position: center;
-    position: relative;
-    z-index: 1;
-    max-width: 100%;
 }
-
 
 * {
     box-sizing: border-box;
@@ -42,9 +43,8 @@ html, body {
     text-align: center;
     position: relative;
     z-index: 1;
-    /* width: 100%;*/
+    width: 100%;
 }
-
 
 
 .hero h1 {
