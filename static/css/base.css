@@ -1,10 +1,18 @@
 /* Styling for the navbar */
+
+.main{
+    background-color: linear-gradient(to top,rgba(0,0,0,0,5)50%);
+    background-position: center;
+
+}
+
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: #1f7cd9 !important; 
 }
+
 .navbar-brand, .nav-link {
     color: #f8f9fa !important; 
 }
@@ -17,9 +25,11 @@
     font-weight: bold;
     border-bottom: 2px solid #ff00fb; 
 }
+
 .dropdown-menu {
     background-color: #1011110d; 
 }
+
 .dropdown-item {
     color: #037df7 !important; 
 }
