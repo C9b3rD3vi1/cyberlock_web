@@ -56,8 +56,10 @@ html, body {
 }
 
 .services h2 {
+    text-align: center;
     font-size: 2rem;
     margin-bottom: 30px;
+    color: #000;
 }
 
 /* Card Styling */
@@ -154,6 +156,7 @@ html, body {
 }
 
 .portfolio h2 {
+    text-align: center;
     font-size: 2rem;
     margin-bottom: 30px;
 }
@@ -165,6 +168,7 @@ html, body {
 }
 
 .blog h2 {
+    text-align: center;
     font-size: 2rem;
     margin-bottom: 30px;
 }
@@ -176,6 +180,7 @@ html, body {
 }
 
 .testimonials h2 {
+    text-align: center;
     font-size: 2rem;
     margin-bottom: 30px;
 }
