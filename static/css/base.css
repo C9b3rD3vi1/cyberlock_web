@@ -32,11 +32,24 @@
     color: rgb(4, 61, 248) !important;
 }
 
-/* General body styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: linear-gradient(to bottom,rgba(255, 255, 255, 0)); 
+
+/* Full Page Content Styling */
+.full-page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width of the viewport */
+    height: 100%; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Keep the padding and margin consistent with the container */
+    padding: 20px; /* Optional padding for inner spacing */
+    background-color: #f8f9fa; /* Background color for the page */
+    overflow: hidden; /* Prevent scrolling if content fits within the viewport */
 }
+
+
 
 
 /* Footer Styling */
@@ -53,7 +66,7 @@ footer p {
 }
 
 footer .container {
-    max-width: 1200px;
+    max-width: 2000px;
     margin: 0 auto;
 }
 
