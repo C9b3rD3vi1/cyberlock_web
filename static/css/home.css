@@ -15,7 +15,8 @@ html, body {
     margin: 0 auto;
     padding: 0;
     width: 100%;
-    height: 100%;
+    background-image: linear-gradient(relative, left top, rgba(0, 0, 0, 0.),url(../cyberlock_web/static/images/hero-bg.jpeg) center center no-repeat);
+   
 }
 
 
@@ -165,7 +166,7 @@ html, body {
 .testimonials .card-text {
     font-style: italic;
     font-size: 1rem;
-    color: #555;
+    color: #0f0e0e;
 }
 
 /* Responsive Styling */

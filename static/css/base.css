@@ -1,11 +1,5 @@
 /* Styling for the navbar */
 
-.main{
-    background-color: linear-gradient(to top,rgba(0,0,0,0,5)50%);
-    background-position: center;
-
-}
-
 .navbar {
     position: sticky;
     top: 0;
@@ -41,19 +35,9 @@
 /* General body styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9; 
+    background-color: linear-gradient(to bottom,rgba(255, 255, 255, 0)); 
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.main-content {
-    flex: 1;
-}
 
 /* Footer Styling */
 footer {
@@ -95,6 +79,7 @@ footer .fab.fa-twitter { color: #1da1f2; }
 footer .fab.fa-linkedin-in { color: #0077b5; }
 footer .fab.fa-instagram { color: #e1306c; }
 footer .fab.fa-youtube { color: #ff0000; }
+
 
 /* Responsive Styling */
 @media (max-width: 768px) {
