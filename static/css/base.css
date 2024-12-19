@@ -33,22 +33,39 @@
 }
 
 
-/* Full Page Content Styling */
+/* Resetting Margin and Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Adjust as needed */
+}
+
+/* Main Section for Content */
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Full-Page Content Styling */
 .full-page-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Full width of the viewport */
-    height: 100%; /* Full height of the viewport */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    box-sizing: border-box; /* Keep the padding and margin consistent with the container */
-    padding: 20px; /* Optional padding for inner spacing */
-    background-color: #f8f9fa; /* Background color for the page */
-    overflow: hidden; /* Prevent scrolling if content fits within the viewport */
+    width: 100%;
+    padding: 20px;
 }
-
 
 
 
