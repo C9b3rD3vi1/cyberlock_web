@@ -38,9 +38,9 @@ def home(request):
     :return: A Django response object. The function returns a rendered HTTP response containing the 'home.html' template with the services, projects, blog posts, and testimonials as context variables.
     :rtype: django.http.HttpResponse
     """
-    services = Service.objects.filter(is_active=True)[:3]  # Get the latest 3 services
-    projects = Project.objects.all()[:3]  # Get the latest 3 projects
-    blog_posts = BlogPost.objects.all().order_by('-published_date')[:3]  # Get the latest 3 blog posts
+    services = Service.objects.filter(is_active=True)[:4]  # Get the latest 3 services
+    projects = Project.objects.all()[:4]  # Get the latest 3 projects
+    blog_posts = BlogPost.objects.all().order_by('-published_date')[:4]  # Get the latest 3 blog posts
     testimonials = Testimonial.objects.all()[:3]  # Get the latest 3 testimonials
 
     context = {
