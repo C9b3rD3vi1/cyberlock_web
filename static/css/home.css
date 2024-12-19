@@ -1,3 +1,54 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+html, body {
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #4c6ef5, #00c6ff);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-out 1s forwards;
+}
+
 /* Services Section */
 .services {
     padding: 60px 0;
@@ -11,17 +62,22 @@
 
 .card {
     position: relative;
-    width: 600px;
-    height: 254px;
+    width: calc(33.33% - 10px); /* 3 cards per row with a 20px gap */
+    max-width: 600px;
     background-color: #000;
     display: flex;
     flex-direction: column;
     justify-content: end;
-    padding: 12px;
-    gap: 20px;  /* Vertical spacing */
+    padding: 20px;
+    gap: 20px;
     border-radius: 8px;
     cursor: pointer;
     color: white;
+    margin-right: 20px;
+}
+
+.card:last-child {
+    margin-right: 0; /* Remove right margin for the last card in row */
 }
 
 .card::before {
@@ -30,8 +86,8 @@
     inset: 0;
     left: -5px;
     margin: auto;
-    width: 200px;
-    height: 264px;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
     z-index: -10;
@@ -56,6 +112,7 @@
 
 .card img {
     border-bottom: 1px solid #ddd;
+    width: 100%;
 }
 
 .card-body {
