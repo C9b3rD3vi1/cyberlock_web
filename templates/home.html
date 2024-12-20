@@ -3,34 +3,29 @@
 {% block content %}
 <head>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">-->
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <!-- Hero Section -->
-<section class="hero container-fluid text-center">
+<section class="hero">
     <div class="container">
-        <h1 class="display-4 animate__animated animate__fadeInDown">Welcome to Cyberlock Technologies</h1>
-        <p class="lead animate__animated animate__fadeInUp">Innovative Solutions for Your Digital Success</p>
+        <h1>Welcome to Cyberlock Technologies</h1>
+        <p>Innovative Solutions for Your Digital Success</p>
     </div>
 </section>
 
 <!-- Services Section -->
-<section class="services container-fluid py-5">
+<section class="services">
     <div class="container">
-        <h2 class="text-center mb-4">Our Services</h2>
-        <div class="row gx-3 gy-4 justify-content-start">
+        <h2>Our Services</h2>
+        <div class="row">
             {% for service in services %}
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ service.service_image.url }}" class="card-img-top" alt="{{ service.name }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ service.name }}</h5>
-                            <p class="card-text">{{ service.description|safe|truncatewords:20 }}</p>
-                            <a href="{% url 'service_list' %}" class="btn btn-primary">Learn More</a>
-                        </div>
+                <div class="card">
+                    <img src="{{ service.service_image.url }}" alt="{{ service.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ service.name }}</h5>
+                        <p class="card-text">{{ service.description|safe|truncatewords:30 }}</p>
+                        <a href="{% url 'service_list' %}" class="btn">Learn More</a>
                     </div>
                 </div>
             {% endfor %}
@@ -39,19 +34,17 @@
 </section>
 
 <!-- Portfolio Section -->
-<section class="portfolio container-fluid bg-light py-5">
+<section class="portfolio">
     <div class="container">
-        <h2 class="text-center mb-4">Our Portfolio</h2>
-        <div class="row gx-3 gy-4 justify-content-start">
+        <h2>Our Portfolio</h2>
+        <div class="row">
             {% for project in projects %}
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ project.project_image.url }}" class="card-img-top" alt="{{ project.title }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ project.title }}</h5>
-                            <p class="card-text">{{ project.description|safe|truncatewords:30 }}</p>
-                            <a href="{% url 'portfolio' %}" class="btn btn-primary">View Project</a>
-                        </div>
+                <div class="card">
+                    <img src="{{ project.project_image.url }}" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description|safe|truncatewords:30 }}</p>
+                        <a href="{% url 'portfolio' %}" class="btn">View Project</a>
                     </div>
                 </div>
             {% endfor %}
@@ -60,19 +53,17 @@
 </section>
 
 <!-- Blog Section -->
-<section class="blog container-fluid py-5">
+<section class="blog">
     <div class="container">
-        <h2 class="text-center mb-4">Latest Blog Posts</h2>
-        <div class="row gx-3 gy-4 justify-content-start">
+        <h2>Latest Blog Posts</h2>
+        <div class="row">
             {% for post in blog_posts %}
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="card h-100">
-                        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.content|safe|truncatewords:30 }}</p>
-                            <a href="{% url 'blog_detail' post.slug %}" class="btn btn-primary">Read More</a>
-                        </div>
+                <div class="card">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.content|safe|truncatewords:30 }}</p>
+                        <a href="{% url 'blog_detail' post.slug %}" class="btn">Read More</a>
                     </div>
                 </div>
             {% endfor %}
@@ -81,17 +72,15 @@
 </section>
 
 <!-- Testimonials Section -->
-<section class="testimonials container-fluid bg-light py-5">
+<section class="testimonials">
     <div class="container">
-        <h2 class="text-center mb-4">What Our Clients Say</h2>
-        <div class="row gx-3 gy-4 justify-content-start">
+        <h2>What Our Clients Say</h2>
+        <div class="row">
             {% for testimonial in testimonials %}
-                <div class="col-12 col-sm-6 col-md-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <p class="card-text">"{{ testimonial.feedback }}"</p>
-                            <p class="text-muted">- {{ testimonial.name }}, {{ testimonial.company }}</p>
-                        </div>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-text">"{{ testimonial.feedback }}"</p>
+                        <p class="text-muted">- {{ testimonial.name }}, {{ testimonial.company }}</p>
                     </div>
                 </div>
             {% endfor %}
