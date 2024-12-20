@@ -1,113 +1,146 @@
-/* Scoped styles for Cyberlock Page */
-.cyberlock-page * {
-    box-sizing: border-box;
-    padding: 0;
+/* Reset and Global Styles */
+body, html {
     margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
 }
 
-.cyberlock-page {
-    font-family: 'Helvetica', sans-serif;
-    color: #333;
-    line-height: 1.6;
+.container {
+    width: 90%;
     margin: 0 auto;
-    width: 100%;
-    overflow-x: hidden;
-    background-color: #f8f9fa;
+    max-width: 1200px;
 }
 
-/* Navbar Styling */
-.cyberlock-page .navbar {
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f7cd9;
+    color: #fff;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #1f7cd9 !important; 
 }
 
-.cyberlock-page .navbar-brand, 
-.cyberlock-page .nav-link {
-    color: #f8f9fa !important; 
-}
-
-.cyberlock-page .navbar-brand {
-    font-weight: bold;
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
     font-size: 1.5rem;
-}
-
-.cyberlock-page .nav-link:hover, 
-.cyberlock-page .nav-link.active {
-    color: #0cf74a !important; 
     font-weight: bold;
-    border-bottom: 2px solid #ff00fb; 
 }
 
-/* Dropdown Menu */
-.cyberlock-page .dropdown-menu {
-    background-color: #1011110d; 
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
-.cyberlock-page .dropdown-item {
-    color: #037df7 !important; 
+/* Navbar Links */
+.navbar-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
 }
 
-.cyberlock-page .dropdown-item:hover {
-    background-color: hsl(171, 16%, 91%);
-    color: rgb(4, 61, 248) !important;
+.navbar-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 12px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-/* Footer Styling */
-.cyberlock-page footer {
-    background-color: #333;
+.navbar-links a:hover, .navbar-links a.active {
+    color: #0cf74a;
+    border-bottom: 2px solid #ff00fb;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    min-width: 150px;
+}
+
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #1f7cd9;
+    color: #fff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Mobile Navbar */
+.navbar-toggler {
+    display: none;
+    background: none;
     color: white;
-    padding: 30px 0; 
-    text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
 }
 
-.cyberlock-page footer p {
-    margin: 5px 0; 
-}
-
-.cyberlock-page footer .container {
-    max-width: 2000px;
-    margin: 0 auto;
-}
-
-.cyberlock-page footer .d-flex {
-    justify-content: center;
-    gap: 15px;
-}
-
-.cyberlock-page footer .d-flex a {
-    font-size: 22px; 
-    color: white; 
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.cyberlock-page footer .d-flex a:hover {
-    color: #00c6ff; 
-    transform: translateY(-3px); 
-}
-
-/* Specific Icon Colors */
-.cyberlock-page footer .fab.fa-facebook-f { color: #3b5998; }
-.cyberlock-page footer .fab.fa-twitter { color: #1da1f2; }
-.cyberlock-page footer .fab.fa-linkedin-in { color: #0077b5; }
-.cyberlock-page footer .fab.fa-instagram { color: #e1306c; }
-.cyberlock-page footer .fab.fa-youtube { color: #ff0000; }
-
-
-/* Responsive Styling */
 @media (max-width: 768px) {
-    .cyberlock-page .navbar-toggler {
-        border-color: white;
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #1f7cd9;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        padding: 20px;
     }
-    .cyberlock-page footer .d-flex {
-        flex-wrap: wrap; 
-        justify-content: center;
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        display: block;
     }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0cf74a;
 }
