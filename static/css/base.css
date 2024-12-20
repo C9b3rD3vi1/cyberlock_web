@@ -1,5 +1,24 @@
 /* Styling for the navbar */
 
+
+/* General Styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Global Styles */
+html, body {
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+}
+
 .navbar {
     position: sticky;
     top: 0;
@@ -30,41 +49,6 @@
 .dropdown-item:hover {
     background-color: hsl(171, 16%, 91%);
     color: rgb(4, 61, 248) !important;
-}
-
-
-/* Resetting Margin and Padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Style */
-body {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f8f9fa; /* Adjust as needed */
-}
-
-/* Main Section for Content */
-main {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Full-Page Content Styling */
-.full-page-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
 }
 
 

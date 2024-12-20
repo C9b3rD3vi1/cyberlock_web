@@ -12,6 +12,7 @@ html, body {
     line-height: 1.6;
     margin: 0 auto;
     width: 100%;
+    overflow-x: hidden;
     background-color: #f8f9fa;
 }
 
@@ -20,6 +21,8 @@ html, body {
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
+    max-width: 100%;
+
 }
 
 .container-fluid {
@@ -53,7 +56,7 @@ html, body {
 .services {
     margin: 0;
     padding: 10px 0;
-    background-color: #fff;
+    background-color: white;
 }
 
 .services h2 {
@@ -91,10 +94,11 @@ html, body {
 .card-body {
     padding: 20px;
     text-align: center;
+    overflow: visible; /* Ensure text stays visible */
 }
 
 .card-title {
-    color: #000;
+    color: #08bef1;
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 15px;
@@ -105,6 +109,7 @@ html, body {
     color: #000;
     margin-bottom: 20px;
     line-height: 1.6;
+    z-index: 2; /* Ensure text is above background */
 }
 
 .card:hover {
@@ -136,23 +141,63 @@ html, body {
 }
 
 /* Button Styling */
+/* From Uiverse.io by nikk7007 */ 
 .btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #4c6ef5;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    --color: #00A97F;
+    --color2: rgb(10, 25, 30);
+    padding: 0.8em 1.75em;
+    background-color: transparent;
+    border-radius: 6px;
+    border: .3px solid var(--color);
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 17px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
     text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-}
-
-.btn:hover {
-    background-color: #00c6ff;
-}
-
+    color: var(--color);
+   }
+   
+   .btn::after, .btn::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color);
+   }
+   
+   .btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover {
+    color: var(--color2);
+   }
+   
+   .btn:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+   }
+   
 /* Portfolio Section */
 .portfolio {
     padding: 60px 0;

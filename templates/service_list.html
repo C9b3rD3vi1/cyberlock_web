@@ -41,7 +41,7 @@
                         {% endif %}
                         <div class="card-body">
                             <h5 class="card-title">{{ service.name }}</h5>
-                            <p class="card-text">{{ service.description|truncatewords:20 }}</p>
+                            <p class="card-text">{{ service.description|safe|truncatewords:20 }}</p>
                             <p class="card-text text-muted">${{ service.price }}</p>
                             <a href="{% url 'service_detail' service.id %}" class="btn btn-primary">View Details</a>
                         </div>
