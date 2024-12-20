@@ -1,15 +1,11 @@
-/* Styling for the navbar */
-
-
-/* General Styling */
-* {
+/* Scoped styles for Cyberlock Page */
+.cyberlock-page * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-/* Global Styles */
-html, body {
+.cyberlock-page {
     font-family: 'Helvetica', sans-serif;
     color: #333;
     line-height: 1.6;
@@ -19,42 +15,47 @@ html, body {
     background-color: #f8f9fa;
 }
 
-.navbar {
+/* Navbar Styling */
+.cyberlock-page .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: #1f7cd9 !important; 
 }
 
-.navbar-brand, .nav-link {
+.cyberlock-page .navbar-brand, 
+.cyberlock-page .nav-link {
     color: #f8f9fa !important; 
 }
-.navbar-brand {
+
+.cyberlock-page .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
 }
-.nav-link:hover, .nav-link.active {
+
+.cyberlock-page .nav-link:hover, 
+.cyberlock-page .nav-link.active {
     color: #0cf74a !important; 
     font-weight: bold;
     border-bottom: 2px solid #ff00fb; 
 }
 
-.dropdown-menu {
+/* Dropdown Menu */
+.cyberlock-page .dropdown-menu {
     background-color: #1011110d; 
 }
 
-.dropdown-item {
+.cyberlock-page .dropdown-item {
     color: #037df7 !important; 
 }
-.dropdown-item:hover {
+
+.cyberlock-page .dropdown-item:hover {
     background-color: hsl(171, 16%, 91%);
     color: rgb(4, 61, 248) !important;
 }
 
-
-
 /* Footer Styling */
-footer {
+.cyberlock-page footer {
     background-color: #333;
     color: white;
     padding: 30px 0; 
@@ -62,45 +63,45 @@ footer {
     font-size: 1rem;
 }
 
-footer p {
+.cyberlock-page footer p {
     margin: 5px 0; 
 }
 
-footer .container {
+.cyberlock-page footer .container {
     max-width: 2000px;
     margin: 0 auto;
 }
 
-footer .d-flex {
+.cyberlock-page footer .d-flex {
     justify-content: center;
     gap: 15px;
 }
 
-footer .d-flex a {
+.cyberlock-page footer .d-flex a {
     font-size: 22px; 
     color: white; 
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-footer .d-flex a:hover {
+.cyberlock-page footer .d-flex a:hover {
     color: #00c6ff; 
     transform: translateY(-3px); 
 }
 
 /* Specific Icon Colors */
-footer .fab.fa-facebook-f { color: #3b5998; }
-footer .fab.fa-twitter { color: #1da1f2; }
-footer .fab.fa-linkedin-in { color: #0077b5; }
-footer .fab.fa-instagram { color: #e1306c; }
-footer .fab.fa-youtube { color: #ff0000; }
+.cyberlock-page footer .fab.fa-facebook-f { color: #3b5998; }
+.cyberlock-page footer .fab.fa-twitter { color: #1da1f2; }
+.cyberlock-page footer .fab.fa-linkedin-in { color: #0077b5; }
+.cyberlock-page footer .fab.fa-instagram { color: #e1306c; }
+.cyberlock-page footer .fab.fa-youtube { color: #ff0000; }
 
 
 /* Responsive Styling */
 @media (max-width: 768px) {
-    .navbar-toggler {
+    .cyberlock-page .navbar-toggler {
         border-color: white;
     }
-    footer .d-flex {
+    .cyberlock-page footer .d-flex {
         flex-wrap: wrap; 
         justify-content: center;
     }

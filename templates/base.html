@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyberlock Technologies</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
@@ -20,11 +18,9 @@
     <link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">
     <link rel="icon" href="{% static 'favicons/favicon.ico' %}" type="image/x-icon">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     
 </head>
-<body class="d-flex flex-column {% block body_class %}default-body{% endblock %}" style="min-height: 100vh;">
+<body class="cyberlock-page">
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
@@ -110,4 +106,5 @@
 
 
 </body>
+
 </html>
