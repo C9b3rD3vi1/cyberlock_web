@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    margin-left: 0%;
 }
 
 /* Global Styles */
@@ -16,21 +17,23 @@ html, body {
     background-color: #f8f9fa;
 }
 
-.container-fluid {
-    padding: 0;
+.row {
+    margin: 0; /* Reset margins */
+    gap: 10px; /* Maintain spacing between cards */
 }
 
-.container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
 }
+
 
 /* Hero Section */
 .hero {
     background: linear-gradient(to right, #4c6ef5, #00c6ff);
     color: white;
-    padding: 50px 0;
+    padding:20px 0;
     text-align: center;
     position: relative;
 }
@@ -51,7 +54,9 @@ html, body {
 
 /* Services Section */
 .services {
-    padding: 60px 0;
+    margin: 0; /* Reset margins */
+    padding-left: 0;
+    padding: 10px 0;
     background-color: #fff;
 }
 
@@ -90,6 +95,7 @@ html, body {
 }
 
 .card-title {
+    color: #000;
     font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 15px;
@@ -97,7 +103,7 @@ html, body {
 
 .card-text {
     font-size: 1rem;
-    color: #666;
+    color: #000;
     margin-bottom: 20px;
     line-height: 1.6;
 }
@@ -151,7 +157,7 @@ html, body {
 
 /* Portfolio Section */
 .portfolio {
-    padding: 60px 0;
+    padding: 4% 0;
     background-color: #fff;
 }
 
