@@ -124,7 +124,7 @@ def blog_list(request):
 
 # blog post detail page
 def blog_detail(request, slug):
-    # Retrieve the blog post by ID
+    # Retrieve the blog post by ID(slug)
     post = get_object_or_404(BlogPost, slug=slug)
     return render(request, 'blog_post_detail.html', {'post': post})
 
