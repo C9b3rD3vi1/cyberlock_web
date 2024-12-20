@@ -20,6 +20,9 @@ html, body {
 .row {
     margin: 0; /* Reset margins */
     gap: 10px; /* Maintain spacing between cards */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -73,10 +76,13 @@ html, body {
     background-color: #000;
     color: white;
     display: flex;
+    flex: 1 1 auto; /* Allow cards to grow based on available space */
+    margin: 0;      /* Remove auto-centering */
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
     gap: 20px;
+    flex: 0 0 auto; /* Allow Bootstrap classes to control layout */
     border-radius: 8px;
     cursor: pointer;
     margin-bottom: 20px;
