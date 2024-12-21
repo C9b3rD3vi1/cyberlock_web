@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'coreapp', 
+    'crispy_forms',
     'ckeditor',
     'rest_framework',
     'django.contrib.admin',
