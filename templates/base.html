@@ -75,10 +75,13 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Footer -->
-    <footer class="custom-footer">
-        <div class="footer-container">
-            <p>Follow Us</p>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="custom-footer">
+    <div class="footer-container">
+        <div class="footer-content">
+            <h4>Connect With Us</h4>
             <div class="social-icons">
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -86,9 +89,14 @@
                 <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
+        </div>
+        <div class="footer-bottom">
             <p>&copy; {% now "Y" %} CyberLock Technologies. All rights reserved.</p>
         </div>
-    </footer>
+    </div>
+</footer>
+
+
 
     <!-- Custom JavaScript -->
     <script src="{% static 'js/navbar.js' %}"></script>

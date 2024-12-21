@@ -82,11 +82,112 @@
 .dropdown-menu a {
     display: block;
     padding: 0.5rem;
-    color: #fff;
+    color: #e7edfa;
     text-decoration: none;
     transition: background 0.3s;
 }
 
 .dropdown-menu a:hover {
-    background-color: #555;
+    background-color: #e280ee;
+}
+
+/* Footer Styling */
+.custom-footer {
+    background-color: black;
+    color: #fefefe;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 0.5rem; /* Reduced padding */
+    font-family: 'Arial', sans-serif;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Center the footer content */
+    align-items: center; /* Align items vertically */
+}
+
+.custom-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: 0.5; /* Transparent background */
+}
+
+
+.footer-container {
+    max-width: 1200px; /* Limit footer width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Reduced spacing between sections */
+    text-align: center;
+}
+
+.footer-content h4 {
+    font-size: 1.2rem; /* Slightly smaller heading */
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex; /* Inline social icons */
+    gap: 2.0rem; /* Reduced spacing between icons */
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.3rem; /* Adjust icon size */
+    transition: color 0.3s ease;
+}
+
+.social-icons a.facebook {
+    color: #3b5998; /* Facebook */
+}
+
+.social-icons a.twitter {
+    color: #00acee; /* Twitter */
+}
+
+.social-icons a.linkedin {
+    color: #0e76a8; /* LinkedIn */
+}
+
+.social-icons a.instagram {
+    color: #E4405F; /* Instagram */
+}
+
+.social-icons a.youtube {
+    color: #FF0000; /* YouTube */
+}
+
+.social-icons a:hover {
+    color: #00bcd4; /* Highlight color on hover */
+}
+
+.footer-bottom {
+    font-size: 0.9rem; /* Smaller text for the bottom section */
+    opacity: 0.8; /* Slight transparency for a subtle effect */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 0.8rem; /* Adjust padding for smaller screens */
+    }
+
+    .social-icons {
+        justify-content: center; /* Center icons on mobile */
+    }
+
+    .social-icons a {
+        font-size: 1rem; /* Adjust icon size on smaller screens */
+    }
 }

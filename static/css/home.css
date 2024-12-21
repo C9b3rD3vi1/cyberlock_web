@@ -33,7 +33,7 @@ html, body {
 .hero {
     background: linear-gradient(to right, #4c6ef5, #00c6ff);
     color: white;
-    padding: 20px 0;
+    padding: 80px 0;
     text-align: center;
     position: relative;
 }
