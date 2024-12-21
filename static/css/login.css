@@ -164,7 +164,7 @@ form {
   right: 0;
   top: 20%;
   flex-direction: column; /* Stack GIFs vertically */
-  gap: 25px; /* Space between the GIFs */
+  gap: 15px; /* Space between the GIFs */
   justify-content: center; /* Center GIFs within the container */
   align-items: center; /* Align GIFs horizontally */
 }
