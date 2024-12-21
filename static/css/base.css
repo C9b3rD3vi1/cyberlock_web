@@ -1,25 +1,23 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
-
+/* Navbar Styling */
 .custom-navbar {
     background-color: #333;
     color: #fff;
     padding: 1rem;
-    position: relative;
+    position: fixed; /* Keep the navbar fixed at the top */
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure the navbar stays on top */
+    display: flex;
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Align items vertically */
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between logo and menu */
     align-items: center;
+    width: 100%;
+    color: #248df6;
 }
 
 .navbar-brand {
@@ -32,22 +30,19 @@ body {
 .navbar-brand img {
     width: 40px;
     height: 40px;
-    margin-right: 0.5rem;
-}
-
-.navbar-toggler {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
+    margin-right: 0.5rem; /* Space between logo and text */
 }
 
 .navbar-menu {
     display: flex;
     list-style: none;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Push the menu to the far right */
+}
+
+.navbar-menu li {
+    margin-left: 1rem; /* Add spacing between menu items */
 }
 
 .navbar-menu a {
@@ -63,28 +58,35 @@ body {
     border-radius: 5px;
 }
 
+/* Dropdown Styling */
 .dropdown-menu {
     display: none;
     position: absolute;
     background-color: #444;
     list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    z-index: 1000;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block;
+    display: block; /* Show dropdown menu on hover */
 }
 
-@media (max-width: 768px) {
-    .navbar-toggler {
-        display: block;
-    }
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
 
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-    }
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
 
-    .navbar-menu.show {
-        display: flex;
-    }
+.dropdown-menu a:hover {
+    background-color: #555;
 }
