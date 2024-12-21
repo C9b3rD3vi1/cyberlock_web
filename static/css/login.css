@@ -141,14 +141,30 @@ form {
 .gif-container {
   position: absolute;
   left: 0;
+  margin-left: 100px;  /* Half the width of the GIF container */
   top: 50%;
   transform: translateY(-50%);
   z-index: -1;  /* Ensure it's behind other content */
-  width: 200px;  /* Set the width of the GIF container */
+  width: 400px;  /* Set the width of the GIF container */
+  gap: 25px;  /* Space between the GIFs */
   height: auto;
 }
 
 .responsive-gif {
   width: 100%;
   height: auto;
+}
+
+.gif-containers1 {
+  position: absolute;
+  width: 400px; /* Adjust GIF container width */
+  height: auto;
+  display: flex;
+  margin-right: 100px;
+  right: 0;
+  top: 20%;
+  flex-direction: column; /* Stack GIFs vertically */
+  gap: 25px; /* Space between the GIFs */
+  justify-content: center; /* Center GIFs within the container */
+  align-items: center; /* Align GIFs horizontally */
 }
