@@ -1,106 +1,119 @@
-/* Styling for the login container */
-.login-container {
-    max-width: 400px; /* Container width */
-    width: 100%;
-    margin: 50px auto; /* Center the container with some margin from top */
-    background-color: #fff; /* White background for the container */
-    padding: 30px; /* Padding inside the container */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
-    animation: fadeIn 1s ease-out; /* Fade-in effect for login container */
+/* From Uiverse.io by mahiatlinux */ 
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #1f1f1f;
+  padding: 30px;
+  width: 450px;
+  border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/* Title of the form */
-.login-container h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333; /* Dark color for the heading */
-    animation: fadeInUp 1s ease-out; /* Fade-in and move up animation */
+::placeholder {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #aaa;
 }
 
-/* Styling for form groups */
-.login-container .form-group {
-    margin-bottom: 15px;
+.form button {
+  align-self: flex-end;
 }
 
-/* Styling for input fields */
-.login-container input[type="text"],
-.login-container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd; /* Light border color */
-    border-radius: 5px; /* Rounded corners for input fields */
-    font-size: 14px;
-    color: #333;
-    background-color: #f9f9f9; /* Light background for input fields */
-    animation: fadeIn 0.5s ease-in-out; /* Fade-in effect for inputs */
+.flex-column > label {
+  color: #f1f1f1;
+  font-weight: 600;
 }
 
-/* Login button styles */
-.login-container .login-button {
-    width: 100%; /* Full width */
-    padding: 12px;
-    background-color: #007bff; /* Blue background */
-    color: white;
-    border: none;
-    border-radius: 5px; /* Rounded corners for the button */
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    animation: pulse 1.5s infinite; /* Pulsing effect for the button */
+.inputForm {
+  border: 1.5px solid #333;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  transition: 0.2s ease-in-out;
+  background-color: #2b2b2b;
 }
 
-/* Extra links (e.g., Sign up, Forgot password) */
-.login-container .extra-links {
-    margin-top: 20px;
-    text-align: center;
+.input {
+  margin-left: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  height: 100%;
+  background-color: #2b2b2b;
+  color: #f1f1f1;
 }
 
-.login-container .extra-links p {
-    font-size: 14px;
+.input:focus {
+  outline: none;
 }
 
-.login-container .extra-links a {
-    color: #007bff; /* Blue color for links */
-    font-weight: bold;
+.inputForm:focus-within {
+  border: 1.5px solid #2d79f3;
 }
 
-.login-container .extra-links a:hover {
-    color: #0056b3; /* Darker blue on hover */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
 }
 
-/* Keyframes for fade-in effect */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.flex-row > div > label {
+  font-size: 14px;
+  color: #f1f1f1;
+  font-weight: 400;
 }
 
-/* Keyframes for fade-up effect */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.span {
+  font-size: 14px;
+  margin-left: 5px;
+  color: #2d79f3;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-/* Keyframes for pulse effect */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+.button-submit {
+  margin: 20px 0 10px 0;
+  background-color: #2d79f3;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.p {
+  text-align: center;
+  color: #f1f1f1;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  gap: 10px;
+  border: 1px solid #333;
+  background-color: #2b2b2b;
+  color: #f1f1f1;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  border: 1px solid #2d79f3;
 }
