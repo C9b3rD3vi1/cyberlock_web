@@ -9,7 +9,7 @@
     <title>Cyberlock Technologies</title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
@@ -49,14 +49,23 @@
                 </li>
                 <li><a href="{% url 'portfolio' %}" class="{% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}">Portfolio</a></li>
                 <li><a href="{% url 'blog_list' %}" class="{% if request.resolver_match.url_name == 'blog_list' %}active{% endif %}">Blog</a></li>
+
                 {% if user.is_authenticated %}
+
                 <li><a href="{% url 'job_list' %}" class="{% if request.resolver_match.url_name == 'job_list' %}active{% endif %}">Jobs</a></li>
+
                 <li><a href="{% url 'contact_form' %}" class="{% if request.resolver_match.url_name == 'contact_form' %}active{% endif %}">Contact Us</a></li>
+
                 <li><a href="{% url 'user_profile' %}" class="{% if request.resolver_match.url_name == 'user_profile' %}active{% endif %}">Profile</a></li>
+
                 <li><a href="{% url 'user_logout' %}">Logout</a></li>
+
                 {% else %}
+
                 <li><a href="{% url 'user_login' %}" class="{% if request.resolver_match.url_name == 'user_login' %}active{% endif %}">Login</a></li>
+                
                 <li><a href="{% url 'user_register' %}" class="{% if request.resolver_match.url_name == 'user_register' %}active{% endif %}">Register</a></li>
+
                 {% endif %}
             </ul>
         </div>
