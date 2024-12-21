@@ -1,0 +1,74 @@
+/* Inline styling for quick enhancements */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.about {
+    margin-top: 60px; /* Adjust this value as needed */
+    background-color: #f9f9f9;
+    padding: 3rem 1.5rem;
+    margin-left: 0%;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0073e6;
+    margin-bottom: 2rem;
+}
+
+.about h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #005bb5;
+    margin-bottom: 1.5rem;
+}
+
+.about p.lead {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.py-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about h1 {
+        font-size: 2rem;
+    }
+
+    .about h2 {
+        font-size: 1.5rem;
+    }
+
+    .about p {
+        font-size: 0.9rem;
+    }
+}

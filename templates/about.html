@@ -1,28 +1,15 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}About Us - CyberLoch Tech{% endblock %}
 
 {% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}"> 
+</head>
 
-<style>
-    h1.text-center {
-        color:cadetblue
-    }
-    p.lead.text-center {
-
-        color: cadetblue;
-    }
-
-
-    h2{
-        color: rgb(68, 101, 201);
-        font: bold 11px;
-        
-    }
-
-
-</style>
-
+<!-- About Us Section -->
 <section class="about py-5">
     <h1 class="text-center mb-5"> Cyberlock Technologies</h1>
 
