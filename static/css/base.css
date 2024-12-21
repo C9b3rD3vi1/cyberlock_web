@@ -1,10 +1,8 @@
-
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
-
 
 /* Navbar Styling */
 .custom-navbar {
@@ -103,17 +101,18 @@
 .custom-footer {
     background-color: black;
     color: #fefefe;
-    position: fixed;
+    padding: 1rem 0.5rem; /* Reduced padding */
+    font-family: 'Arial', sans-serif;
     width: 100%;
     bottom: 0;
     left: 0;
-    padding: 1rem 0.5rem; /* Reduced padding */
-    font-family: 'Arial', sans-serif;
-    position: absolute;
     box-sizing: border-box;
     display: flex;
     justify-content: center; /* Center the footer content */
     align-items: center; /* Align items vertically */
+    position: fixed; /* Default position */
+    /* z-index: 100; /* Ensures footer is on top of other content */
+    height: 100px; /* Fixed height */
 }
 
 .custom-footer::before {
@@ -126,7 +125,6 @@
     background-color: #333;
     opacity: 0.5; /* Transparent background */
 }
-
 
 .footer-container {
     max-width: 1200px; /* Limit footer width */
@@ -184,7 +182,6 @@
     opacity: 0.8; /* Slight transparency for a subtle effect */
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .footer-container {
@@ -198,4 +195,17 @@
     .social-icons a {
         font-size: 1rem; /* Adjust icon size on smaller screens */
     }
+}
+
+/* Ensure footer stays at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 80px; /* Space for footer height */
+}
+
+.content {
+    flex-grow: 1;
+    padding-bottom: 60px; /* Space for footer */
 }
