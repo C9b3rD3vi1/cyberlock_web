@@ -137,3 +137,18 @@ form {
   width: 1.25rem;
   fill: #fff;
 }
+
+.gif-container {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;  /* Ensure it's behind other content */
+  width: 200px;  /* Set the width of the GIF container */
+  height: auto;
+}
+
+.responsive-gif {
+  width: 100%;
+  height: auto;
+}
