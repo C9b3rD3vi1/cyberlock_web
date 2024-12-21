@@ -13,7 +13,7 @@ html, body {
     margin: 0 auto;
     width: 100%;
     overflow-x: hidden;
-    background-color: #f8f9fa;
+    background-color: #1c252e;
 }
 
 .row {
@@ -36,12 +36,13 @@ h1, h2 {
     width: 100%;
     margin: 0 auto;
     margin-top: 60px;
+    margin-left: 0%;
 }
 
 /* Service Cards */
 .card {
     position: relative;
-    background-color: #000;
+    background-color: whitesmoke;
     color: white;
     display: flex;
     flex: 1 1 calc(25% - 15px);
