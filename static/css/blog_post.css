@@ -1,13 +1,20 @@
 /* General Styling */
-html, body {
-    font-family: Arial, sans-serif;
-    color: #c2c0c0e4;
-    line-height: 1.6;
-    margin: 0;
+* {
+    box-sizing: border-box;
     padding: 0;
-    width: 100%;  /* Ensure the page takes up full width */
+    margin: 0;
 }
 
+/* Global Styles */
+html, body {
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+}
 /* Blog Section Styling */
 .blog {
     background-color: hsl(180, 5%, 4%);
