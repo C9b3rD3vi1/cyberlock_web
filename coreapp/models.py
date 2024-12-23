@@ -1,5 +1,5 @@
 
-
+# my database models 
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
@@ -10,6 +10,7 @@ from django.utils.text import slugify
 from django.core.validators import URLValidator
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+
 
 # 1. User Profile (Team members or clients)
 class Profile(models.Model):
@@ -67,6 +68,7 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+    
 
 # Allow users to comment on blog posts content
 class Comment(models.Model):
@@ -157,7 +159,6 @@ class Testimonial(models.Model):
         ordering = ['-published_date']
         verbose_name = "Testimonial"
         verbose_name_plural = "Testimonials"
-
 
 
 
