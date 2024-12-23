@@ -121,7 +121,6 @@ class Project(models.Model):
 
 
 
-
 # Job Listings
 # Lists all jobs and opening available at the company
 class Job(models.Model):
@@ -136,7 +135,6 @@ class Job(models.Model):
     def __str__(self):
         return self.title
     
-
 
 
 # Testimonials and company reviews
