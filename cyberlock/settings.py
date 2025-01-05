@@ -241,6 +241,13 @@ JAZZMIN_SETTINGS = {
     'welcome_sign': 'Welcome to Cyberlock Admin',
     'theme': 'dark',
 
+    # language settings
+   # 'language_chooser': True,
+
+   # related modal popups 
+   "related_modal_active": True,
+
+
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
     "login_logo": None,
