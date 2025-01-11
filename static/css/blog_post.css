@@ -1,8 +1,8 @@
 /* General Styling */
 * {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 /* Global Styles */
@@ -10,12 +10,25 @@ html, body {
     font-family: 'Helvetica', sans-serif;
     color: #333;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
     width: 100%;
     overflow-x: hidden;
     background-color: #f8f9fa;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    max-width: 100%;
+
+}
+
+.container-fluid {
+    padding: 0;
+}
+
 
 /* Blog Section Title */
 .blog h2 {
@@ -83,6 +96,29 @@ html, body {
     -webkit-box-orient: vertical;
 }
 
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+    z-index: -10;
+    pointer-events: none;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    transform: scale(0.95);
+    filter: blur(20px);
+    z-index: -1;
+}
+
 .card-footer {
     padding: 15px;
     text-align: center;
@@ -121,19 +157,48 @@ html, body {
     padding-right: 0;
 }
 
-/* Adjust for medium screens (2 cards per row) */
-@media (max-width: 1024px) {
-    .col-md-4 {
+@media (max-width: 992px) { 
+    .card {
+        flex: 1 1 calc(33.33% - 15px);
+    }
+}
+
+@media (max-width: 768px) { 
+    .card {
         flex: 1 1 calc(50% - 15px);
     }
 }
 
-/* Adjust for small screens (1 card per row) */
-@media (max-width: 768px) {
-    .col-md-4 {
+@media (max-width: 576px) { 
+    .card {
         flex: 1 1 100%;
     }
 }
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 /* Pagination Styling */
 .pagination {
