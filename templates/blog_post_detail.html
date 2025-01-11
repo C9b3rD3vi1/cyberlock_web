@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 
 {% load static %}
@@ -7,6 +8,8 @@
 {% block content %}
 <head>
     <link rel="stylesheet" href="{% static 'css/blog_list_detail.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 
 <!-- Blog Post Detail Section -->
@@ -16,34 +19,33 @@
             <div class="col-md-10 offset-md-1">
                 <!-- Blog Title -->
                 <h2 class="blog-title text-center mb-4">{{ post.title }}</h2>
-                
-            
+
                 <!-- Blog Content Section -->
                 <div class="blog-content-wrapper d-flex flex-column flex-md-row align-items-start">
                     <!-- Image Section -->
-                    <div class="blog-image mr-md-4 mb-4 mb-md-0">
+                    <div class="blog-image mb-4 mb-md-0 col-md-4">
                         {% if post.image %}
-                            <img src="{{ post.image.url }}" class="img-fluid rounded shadow" alt="{{ post.title }}">
+                            <img src="{{ post.image.url }}" class="img-fluid rounded shadow-lg" alt="{{ post.title }}">
                         {% else %}
-                            <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded shadow" alt="Default Image">
+                            <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded shadow-lg" alt="Default Image">
                         {% endif %}
                     </div>
 
                     <!-- Content Section -->
-                    <div class="blog-text">
-                        {{ post.content|safe }}
+                    <div class="blog-text col-md-8">
+                        <p>{{ post.content|safe }}</p>
                     </div>
                 </div>
+
                 <!-- Blog Meta -->
                 <div class="blog-meta text-center mb-4">
                     <span class="post-date"><i class="fas fa-calendar-alt"></i> {{ post.published_date|date:"F j, Y" }}</span>
                     <span class="post-author"><i class="fas fa-user"></i> {{ post.author }}</span>
                 </div>
 
-                
                 <!-- Back Button -->
                 <div class="text-center mt-5">
-                    <a href="{% url 'blog_list' %}" class="btn btn-secondary btn-lg">Back to Blog</a>
+                    <a href="{% url 'blog_list' %}" class="btn btn-gradient btn-lg">Back to Blog</a>
                 </div>
             </div>
         </div>
