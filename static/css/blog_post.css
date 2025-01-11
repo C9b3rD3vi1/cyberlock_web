@@ -10,13 +10,14 @@ html, body {
     font-family: 'Helvetica', sans-serif;
     color: #333;
     line-height: 1.6;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     width: 100%;
     overflow-x: hidden;
     background-color: #f8f9fa;
 }
 
-
+/* Blog Section Title */
 .blog h2 {
     color: #111111;
     font-size: 2.5rem;
@@ -24,14 +25,13 @@ html, body {
     text-align: center;
 }
 
-
 /* Card Styling */
 .card {
     position: relative;
     background-color: #000;
     color: white;
     display: flex;
-    flex: 1 1 calc(25% - 15px);
+    flex: 1 1 calc(25% - 15px);  /* Ensures 4 cards per row */
     box-sizing: border-box;
     margin: 0;
     flex-direction: column;
@@ -107,16 +107,18 @@ html, body {
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    max-width: 100%;
-
+    justify-content: flex-start;  /* Ensures cards align from the left */
+    width: 100%;                  /* Ensure row takes full width */
+    padding: 0;                   /* Remove any padding */
+    margin: 0;                    /* Remove margin */
 }
 
 /* For 4 cards in a row */
-.col-md-4 {
-    flex: 1 1 calc(25% - 15px);
+.col-lg-3, .col-md-4 {
+    flex: 1 1 calc(25% - 15px);   /* Ensure 4 cards per row */
     box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* Adjust for medium screens (2 cards per row) */
@@ -132,7 +134,6 @@ html, body {
         flex: 1 1 100%;
     }
 }
-
 
 /* Pagination Styling */
 .pagination {
