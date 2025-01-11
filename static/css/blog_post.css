@@ -21,14 +21,24 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: flex-start; /* Align cards from the left */
+    justify-content: space-between; /* Align cards from the left */
     width: 100%;  /* Ensure row takes full width */
     padding: 0;
     margin: 0;
 }
 
 .container-fluid {
+    display: grid;
+    gap: 15px;
     padding: 0;
+}
+
+.blog {
+    visibility: visible;
+}
+
+.blog.loaded {
+    visibility: visible;
 }
 
 .col-lg-3 {
@@ -43,7 +53,6 @@ html, body {
     position: relative;
     background-color: rgba(255, 0, 0, 0.1); /* Temporary background to check layout */
     color: white;
-    display: flex;
     flex: 1 1 calc(25% - 30px);  /* Ensures 4 cards per row */
     box-sizing: border-box;
     margin-bottom: 15px;

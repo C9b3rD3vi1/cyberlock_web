@@ -18,3 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.blog').classList.add('loaded');
+});
