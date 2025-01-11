@@ -1,8 +1,8 @@
 /* General Styling */
 * {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 /* Global Styles */
@@ -15,30 +15,38 @@ html, body {
     overflow-x: hidden;
     background-color: #f8f9fa;
 }
-/* Blog Section Styling */
-.blog {
-    background-color: hsl(180, 5%, 4%);
-    padding: 50px 0;
-    width: 100%;  /* Make the blog section take up the full width */
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
-}
+
 
 .blog h2 {
-    color: #ffffff;
+    color: #111111;
     font-size: 2.5rem;
     margin-bottom: 40px;
+    text-align: center;
 }
+
 
 /* Card Styling */
 .card {
-    border: none;
-    border-radius: 8px;
-    overflow: hidden;
+    position: relative;
+    background-color: #000;
+    color: white;
     display: flex;
+    flex: 1 1 calc(25% - 15px);
+    box-sizing: border-box;
+    margin: 0;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s, box-shadow 0.3s;
-    height: 100%; /* Ensure cards take up full available height */
+    padding: 20px;
+    gap: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
@@ -51,7 +59,7 @@ html, body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Ensures card body content grows to fill available space */
+    flex-grow: 1;
     justify-content: space-between;
 }
 
@@ -67,11 +75,11 @@ html, body {
     color: hsla(0, 3%, 7%, 0.927);
     line-height: 1.5;
     margin-bottom: 15px;
-    flex-grow: 1; /* Ensures the text doesn't overflow */
+    flex-grow: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Truncate text after 3 lines */
+    -webkit-line-clamp: 3; /* Limit text to 3 lines */
     -webkit-box-orient: vertical;
 }
 
@@ -99,19 +107,32 @@ html, body {
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
+    justify-content: center;
+    max-width: 100%;
+
 }
 
+/* For 4 cards in a row */
 .col-md-4 {
-    flex: 1 1 calc(33.33% - 20px);
+    flex: 1 1 calc(25% - 15px);
     box-sizing: border-box;
 }
 
+/* Adjust for medium screens (2 cards per row) */
+@media (max-width: 1024px) {
+    .col-md-4 {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+/* Adjust for small screens (1 card per row) */
 @media (max-width: 768px) {
     .col-md-4 {
         flex: 1 1 100%;
     }
 }
+
 
 /* Pagination Styling */
 .pagination {
@@ -122,12 +143,20 @@ html, body {
 .page-item.active .page-link {
     background-color: #4c6ef5;
     border-color: #4c6ef5;
+    color: white;
 }
 
 .page-link {
     color: #4c6ef5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.page-link:hover {
+    color: #00c6ff;
 }
 
 .page-item.disabled .page-link {
     color: #ccc;
+    pointer-events: none;
 }
