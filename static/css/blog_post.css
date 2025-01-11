@@ -17,6 +17,7 @@ html, body {
 }
 
 .row {
+    border: 1px solid red; /* Debug border */
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -30,15 +31,22 @@ html, body {
     padding: 0;
 }
 
+.col-lg-3 {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+
+
 /* Card Styling */
 .card {
     position: relative;
-    background-color: #000;
+    background-color: rgba(255, 0, 0, 0.1); /* Temporary background to check layout */
     color: white;
     display: flex;
-    flex: 1 1 calc(25% - 15px);  /* Ensures 4 cards per row */
+    flex: 1 1 calc(25% - 30px);  /* Ensures 4 cards per row */
     box-sizing: border-box;
-    margin: 0;
+    margin-bottom: 15px;
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
