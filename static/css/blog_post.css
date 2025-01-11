@@ -22,13 +22,11 @@ html, body {
     gap: 15px;
     justify-content: center;
     max-width: 100%;
-
 }
 
 .container-fluid {
     padding: 0;
 }
-
 
 /* Blog Section Title */
 .blog h2 {
@@ -160,18 +158,21 @@ html, body {
 @media (max-width: 992px) { 
     .card {
         flex: 1 1 calc(33.33% - 15px);
+        margin-bottom: 15px;
     }
 }
 
 @media (max-width: 768px) { 
     .card {
         flex: 1 1 calc(50% - 15px);
+        margin-bottom: 15px;
     }
 }
 
 @media (max-width: 576px) { 
     .card {
         flex: 1 1 100%;
+        margin-bottom: 20px;
     }
 }
 
@@ -198,8 +199,6 @@ html, body {
     }
 }
 
-
-
 /* Pagination Styling */
 .pagination {
     margin-top: 40px;
@@ -216,6 +215,8 @@ html, body {
     color: #4c6ef5;
     text-decoration: none;
     transition: color 0.3s ease;
+    padding: 10px 20px;
+    font-size: 1.1rem;
 }
 
 .page-link:hover {
