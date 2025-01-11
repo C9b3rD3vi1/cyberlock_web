@@ -20,20 +20,14 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: center;
-    max-width: 100%;
+    justify-content: flex-start; /* Align cards from the left */
+    width: 100%;  /* Ensure row takes full width */
+    padding: 0;
+    margin: 0;
 }
 
 .container-fluid {
     padding: 0;
-}
-
-/* Blog Section Title */
-.blog h2 {
-    color: #111111;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    text-align: center;
 }
 
 /* Card Styling */
@@ -111,7 +105,7 @@ html, body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    background: linear-gradient(-45deg, #d7f6f7 0%, #00dbde 100%);
     transform: scale(0.95);
     filter: blur(20px);
     z-index: -1;
@@ -137,42 +131,33 @@ html, body {
     background-color: #00c6ff;
 }
 
-/* Grid Styling */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;  /* Ensures cards align from the left */
-    width: 100%;                  /* Ensure row takes full width */
-    padding: 0;                   /* Remove any padding */
-    margin: 0;                    /* Remove margin */
+/* Responsive Grid Styles */
+
+/* For 4 cards per row on large screens */
+@media (min-width: 1200px) {
+    .card {
+        flex: 1 1 calc(25% - 15px);  /* 4 cards per row */
+    }
 }
 
-/* For 4 cards in a row */
-.col-lg-3, .col-md-4 {
-    flex: 1 1 calc(25% - 15px);   /* Ensure 4 cards per row */
-    box-sizing: border-box;
-    padding-left: 0;
-    padding-right: 0;
-}
-
+/* For 3 cards per row on medium screens */
 @media (max-width: 992px) { 
     .card {
-        flex: 1 1 calc(33.33% - 15px);
-        margin-bottom: 15px;
+        flex: 1 1 calc(33.33% - 15px); /* 3 cards per row */
     }
 }
 
+/* For 2 cards per row on smaller screens */
 @media (max-width: 768px) { 
     .card {
-        flex: 1 1 calc(50% - 15px);
-        margin-bottom: 15px;
+        flex: 1 1 calc(50% - 15px);  /* 2 cards per row */
     }
 }
 
+/* For 1 card per row on very small screens */
 @media (max-width: 576px) { 
     .card {
-        flex: 1 1 100%;
-        margin-bottom: 20px;
+        flex: 1 1 100%;  /* 1 card per row */
     }
 }
 
