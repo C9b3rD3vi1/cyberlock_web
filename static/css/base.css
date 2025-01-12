@@ -5,12 +5,10 @@
     margin: 0;
 }
 
-
-
 /* Navbar Styling */
 .custom-navbar {
     background-color: #333;
-    color: #fff;
+    color: hwb(180 98% 0% / 0.964);
     padding: 1rem;
     position: fixed; /* Keep the navbar fixed at the top */
     top: 0;
@@ -33,7 +31,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #fff;
+    color: #17e0f2;
 }
 
 .navbar-brand img {
@@ -56,7 +54,7 @@
 
 .navbar-menu a {
     text-decoration: none;
-    color: #fff;
+    color: #1b97fc;
     padding: 0.5rem 1rem;
     transition: background 0.3s;
 }
@@ -205,8 +203,7 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    padding-bottom: 80px; /* Space for footer height */
+    padding-bottom: 100px; /* Space for footer height */
 }
 
 .content {
