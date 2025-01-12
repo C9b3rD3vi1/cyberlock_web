@@ -1,9 +1,14 @@
-/* Inline styling for quick enhancements */
-body {
-    font-family: 'Roboto', sans-serif;
+
+/* Global Styles */
+html, body {
+    font-family: 'Helvetica', sans-serif;
     color: #333;
     line-height: 1.6;
+    margin: 0 auto;
+    width: 100%;
     padding-top: 40px; /* Moves everything down, leaving space for the navbar */
+    overflow-x: hidden;
+    background-color: #f8f9fa;
 }
 
 .about {
