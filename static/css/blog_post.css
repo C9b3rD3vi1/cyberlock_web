@@ -12,6 +12,7 @@ html, body {
     line-height: 1.6;
     margin: 0 auto;
     width: 100%;
+    padding-top: 40px; /* Moves everything down, leaving space for the navbar */
     overflow-x: hidden;
     background-color: #f8f9fa;
 }
@@ -34,6 +35,7 @@ html, body {
 }
 
 .blog {
+    margin-top: 40px;
     visibility: visible;
 }
 
@@ -200,6 +202,17 @@ html, body {
         transform: translateY(0);
     }
 }
+
+.content-wrapper {
+    margin-top: 200px; /* Adjust this value based on the height of your navbar */
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        margin-top: 80px; /* Slightly smaller margin for smaller screens */
+    }
+}
+
 
 /* Pagination Styling */
 .pagination {

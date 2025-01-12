@@ -3,6 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #333;
     line-height: 1.6;
+    padding-top: 40px; /* Moves everything down, leaving space for the navbar */
 }
 
 .about {
