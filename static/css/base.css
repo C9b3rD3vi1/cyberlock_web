@@ -1,8 +1,11 @@
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
+
+
 
 /* Navbar Styling */
 .custom-navbar {
@@ -101,7 +104,7 @@
 .custom-footer {
     background-color: black;
     color: #fefefe;
-    padding: 1rem 0.5rem; /* Reduced padding */
+    padding: 1rem 1.0rem; /* Reduced padding */
     font-family: 'Arial', sans-serif;
     width: 100%;
     bottom: 0;
@@ -110,7 +113,8 @@
     display: flex;
     justify-content: center; /* Center the footer content */
     align-items: center; /* Align items vertically */
-    position: fixed; /* Default position */
+    position: contents; /* Default position */
+    margin-top: auto; /* Push the footer to the bottom when there's extra space */
     /* z-index: 100; /* Ensures footer is on top of other content */
     height: 100px; /* Fixed height */
 }
@@ -132,7 +136,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem; /* Reduced spacing between sections */
+    gap: 0.7rem; /* Reduced spacing between sections */
     text-align: center;
 }
 
