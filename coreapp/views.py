@@ -24,7 +24,6 @@ def is_staff_or_high_user(user):
     return user.is_staff or user.has_perm('coreapp.can_create_post')
 
 
-
 # Home page view functions
 def home(request):
     """
@@ -76,11 +75,12 @@ def service_list(request):
 
     return render(request, 'service_list.html', context)
 
-
+# custom services offered by our application
 def custom_services(request):
     services = Service.objects.filter(service_type='custom')
     return render(request, 'services_list.html', {'services': services, 'category_name': 'Custom'})
 
+# cloud services offered by our application
 def cloud_services(request):
     services = Service.objects.filter(service_type='cloud')
     return render(request, 'services_list.html', {'services': services, 'category_name': 'Cloud'})
