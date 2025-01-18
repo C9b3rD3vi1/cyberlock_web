@@ -100,8 +100,8 @@
 
 /* Footer Styling */
 .custom-footer {
-    background-color: black;
-    color: #fefefe;
+    background-color: white;
+    color:black;
     padding: 1rem 1.0rem; /* Reduced padding */
     font-family: 'Arial', sans-serif;
     width: 100%;
@@ -201,6 +201,7 @@
 
 /* Ensure footer stays at the bottom */
 body {
+    /*background-color: white; /* Set background color for all the pages */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
