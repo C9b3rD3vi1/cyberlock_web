@@ -16,20 +16,13 @@
     margin: 0;
 }
 
-/* Ensure body content doesn't overlap with footer */
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    min-height: 100vh; /* Ensure the body fills the full viewport height */
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 100px; /* Space for footer */
+    font-family: var(--font-family);
 }
-
-.content {
-    flex-grow: 1; /* Make the content take up the remaining space */
-}
-
 
 /* Navbar Styling */
 .custom-navbar {

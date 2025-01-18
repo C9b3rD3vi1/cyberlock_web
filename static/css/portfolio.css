@@ -1,56 +1,162 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    /* General styling for the portfolio section */
-    .portfolio {
-        background-color: #f9f9f9; /* Light background for the portfolio section */
-        padding: 50px 0;
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7; /* Increased line-height for readability */
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Portfolio Section */
+.portfolio {
+    background: linear-gradient(135deg, #f0f4f8, #d1e0e9); /* Subtle background gradient */
+    padding: 3rem 0;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.portfolio h2::after {
+    content: '✦'; /* Icon for visual interest */
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Card Styling */
+.card {
+    background-color: #e7f0fa;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px); /* Cards start off below the normal position */
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lifts the card slightly */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Softer and larger shadow */
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #007bff;
+}
+
+.card-body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.3rem; /* Slightly larger title for emphasis */
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.btn {
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #0056b3, #007bff);
+    transform: translateY(-3px); /* Slight hover lift effect */
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px;
     }
 
     .portfolio h2 {
-        font-family: 'Arial', sans-serif;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 40px;
+        font-size: 2rem;
     }
 
-    /* Styling for each card in the portfolio */
+    .card-body {
+        padding: 0.8rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 20px; /* More padding on large screens */
+    }
+
+    .portfolio h2 {
+        font-size: 3rem; /* Larger font size for bigger screens */
+    }
+
     .card {
-        border: none;
-        border-radius: 10px;
-        transition: transform 0.3s, box-shadow 0.3s; /* Smooth animation on hover */
+        max-width: 350px; /* Limit card width to avoid overly stretched cards */
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio h2 {
+        font-size: 1.8rem; /* Smaller heading */
+        margin-bottom: 1.5rem;
     }
 
-    .card:hover {
-        transform: translateY(-10px); /* Slight lift effect on hover */
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+    .card {
+        width: 100%;
+        padding: 0.5rem; /* Adjust padding for smaller screens */
     }
 
     .card-title {
-        font-size: 1.25rem;
-        color: #2c3e50; /* Darker color for the title */
-        margin-bottom: 15px;
+        font-size: 1.1rem; /* Smaller title font */
     }
-
-    .card-text {
-        font-size: 1rem;
-        color: #6c757d; /* Light gray for the description text */
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .btn-primary:hover {
-        background-color: #0056b3;
-        box-shadow: 0 2px 10px rgba(0, 123, 255, 0.5); /* Highlight button on hover */
-    }
-
-    /* Spacing between portfolio cards */
-    .card-img-top {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        height: 200px;
-        object-fit: cover; /* Maintain image aspect ratio */
-    }
-
+}
