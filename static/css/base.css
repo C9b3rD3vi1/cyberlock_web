@@ -1,30 +1,55 @@
+:root {
+    --primary-color: #1b97fc;
+    --secondary-color: #e7edfa;
+    --hover-bg-color: #555;
+    --footer-bg: #333;
+    --footer-text: #e7edfa;
+    --spacing: 1rem;
+    --border-radius: 5px;
+    --font-family: 'Arial', sans-serif;
+}
 
+/* Global Styles */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+/* Ensure body content doesn't overlap with footer */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh; /* Ensure the body fills the full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex-grow: 1; /* Make the content take up the remaining space */
+}
+
+
 /* Navbar Styling */
 .custom-navbar {
     background-color: #333;
-    color: hwb(180 98% 0% / 0.964);
-    padding: 1rem;
-    position: fixed; /* Keep the navbar fixed at the top */
+    color: var(--secondary-color);
+    padding: var(--spacing);
+    position: fixed;
     top: 0;
-    width: 100%; /* Full width */
-    z-index: 1000; /* Ensure the navbar stays on top */
+    width: 100%;
+    z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Space between logo and menu */
-    align-items: center; /* Align items vertically */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar-container {
     display: flex;
-    justify-content: space-between; /* Space between logo and menu */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    color: #248df6;
 }
 
 .navbar-brand {
@@ -37,32 +62,26 @@
 .navbar-brand img {
     width: 40px;
     height: 40px;
-    margin-right: 0.5rem; /* Space between logo and text */
+    margin-right: 0.5rem;
 }
 
 .navbar-menu {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-left: auto; /* Push the menu to the far right */
-}
-
-.navbar-menu li {
-    margin-left: 1rem; /* Add spacing between menu items */
+    margin-left: auto;
 }
 
 .navbar-menu a {
     text-decoration: none;
-    color: #1b97fc;
+    color: var(--primary-color);
     padding: 0.5rem 1rem;
     transition: background 0.3s;
 }
 
 .navbar-menu a:hover,
 .navbar-menu a.active {
-    background-color: #555;
-    border-radius: 5px;
+    background-color: var(--hover-bg-color);
+    border-radius: var(--border-radius);
 }
 
 /* Dropdown Styling */
@@ -73,23 +92,23 @@
     list-style: none;
     margin: 0;
     padding: 0.5rem;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 1000;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block; /* Show dropdown menu on hover */
-}
-
-.dropdown-menu li {
-    margin: 0;
-    padding: 0;
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .dropdown-menu a {
     display: block;
     padding: 0.5rem;
-    color: #e7edfa;
+    color: var(--secondary-color);
     text-decoration: none;
     transition: background 0.3s;
 }
@@ -101,62 +120,53 @@
 /* Footer Styling */
 .custom-footer {
     background-color: white;
-    color:black;
-    padding: 1rem 1.0rem; /* Reduced padding */
+    color: black;
+    padding: 2rem;
     font-family: 'Arial', sans-serif;
-    width: 100%;
-    bottom: 0;
-    left: 0;
+    width: 100%; /* Full width */
+    position: fixed; /* Stick to the bottom */
+    bottom: 0; /* Position at the very bottom */
+    left: 0; /* Align with the left edge */
     box-sizing: border-box;
     display: flex;
-    justify-content: center; /* Center the footer content */
-    align-items: center; /* Align items vertically */
-    position: contents; /* Default position */
-    margin-top: auto; /* Push the footer to the bottom when there's extra space */
-    /* z-index: 100; /* Ensures footer is on top of other content */
-    height: 100px; /* Fixed height */
-}
-
-.custom-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #333;
-    opacity: 0.5; /* Transparent background */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Align content vertically */
+    height: 150px; /* Adjust height as needed */
+    z-index: 1000; /* Ensure it stays above other elements */
 }
 
 .footer-container {
-    max-width: 1200px; /* Limit footer width */
+    max-width: 1400px; /* Optional: Adjust as needed */
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.7rem; /* Reduced spacing between sections */
+    gap: 1.5rem; /* Space between footer sections */
     text-align: center;
 }
 
 .footer-content h4 {
-    font-size: 1.2rem; /* Slightly smaller heading */
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
 .social-icons {
-    display: flex; /* Inline social icons */
-    gap: 2.0rem; /* Reduced spacing between icons */
+    display: flex;
+    gap: 2rem;
 }
 
 .social-icons a {
     text-decoration: none;
-    font-size: 1.3rem; /* Adjust icon size */
-    transition: color 0.3s ease;
+    font-size: 1.5rem; /* Adjust icon size */
+    margin: 0 0.5rem; /* Add spacing between icons */
+    color: inherit; /* Ensure they inherit color if overridden */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .social-icons a.facebook {
-    color: #3b5998; /* Facebook */
+    color: #3b5998 !important;/* Facebook */
 }
 
 .social-icons a.twitter {
@@ -176,50 +186,37 @@
 }
 
 .social-icons a:hover {
-    color: #00bcd4; /* Highlight color on hover */
+    color: #00bcd4; /* Hover color for all icons */
 }
 
+
 .footer-bottom {
-    font-size: 1.0rem; /* Smaller text for the bottom section */
-    opacity: 0.8; /* Slight transparency for a subtle effect */
+    font-size: 1rem;
+    opacity: 0.8;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .footer-container {
-        padding: 0.8rem; /* Adjust padding for smaller screens */
-    }
-
-    .social-icons {
-        justify-content: center; /* Center icons on mobile */
-    }
-
-    .social-icons a {
-        font-size: 1rem; /* Adjust icon size on smaller screens */
-    }
-}
-
-@media (max-width: 768px) {
     .navbar-menu {
-        display: none; /* Hide menu */
+        display: none; /* Hide menu on smaller screens */
     }
+
     .hamburger {
         display: block;
         cursor: pointer;
     }
+
+    .footer-container {
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .social-icons a {
+        font-size: 1rem;
+    }
 }
 
-
-/* Ensure footer stays at the bottom */
-body {
-    /*background-color: white; /* Set background color for all the pages */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding-bottom: 100px; /* Space for footer height */
-}
-
-.content {
-    flex-grow: 1;
-    padding-bottom: 20px; /* Space for footer */
-}
