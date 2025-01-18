@@ -199,6 +199,17 @@
     }
 }
 
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide menu */
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
 /* Ensure footer stays at the bottom */
 body {
     /*background-color: white; /* Set background color for all the pages */
