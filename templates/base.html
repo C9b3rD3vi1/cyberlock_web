@@ -43,6 +43,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Services</a>
                     <ul class="dropdown-menu">
+                        <li><a href="{% url 'service_list' %}">All Services</a></li>
+                        
                         <li><a href="{% url 'service_list' %}?type=custom">Custom Services</a></li>
                         <li><a href="{% url 'service_list' %}?type=cloud">Cloud Services</a></li>
                         <li><a href="{% url 'service_list' %}?type=standard">Standard Services</a></li>
