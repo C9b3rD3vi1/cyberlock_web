@@ -1,9 +1,6 @@
-
-
 {% extends 'base.html' %}
 
 {% load static %}
-
 
 {% block title %}{{ project.title }} - CyberLock Tech{% endblock %}
 
@@ -17,25 +14,29 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ project.project_image.url }}" class="img-fluid" alt="{{ project.title }}">
+                <img src="{{ project.project_image.url }}" class="img-fluid project-image" alt="{{ project.title }}">
             </div>
             <div class="col-md-6">
-                <h2>{{ project.title }}</h2>
-                <p class="project-description">{{ project.description }}</p>
-                <p><strong>Technologies Used:</strong> {{ project.technologies_used }}</p>
-                <p><strong>Project URL:</strong> <a href="{{ project.link }}" target="_blank">{{ project.link }}</a></p>
-                <p><strong>Client:</strong> {{ project.client }}</p>
-                <p><strong>Date:</strong> {{ project.completion_date }}</p>
+                <h2 class="project-title">{{ project.title }}</h2>
+                <p class="project-description">{{ project.description|safe }}</p>
+                <ul class="project-info">
+                    <li><strong>Technologies Used:</strong> {{ project.technologies_used }}</li>
+                    <li><strong>Project URL:</strong> <a href="{{ project.link }}" target="_blank">{{ project.link }}</a></li>
+                    <li><strong>Client:</strong> {{ project.client }}</li>
+                    <li><strong>Date:</strong> {{ project.completion_date }}</li>
+                </ul>
             </div>
         </div>
+
         <div class="row mt-4">
             <div class="col-12">
-                <h4>Project Details</h4>
-                <p>{{ project.full_description }}</p>
+                <h4 class="project-details-title">Project Details</h4>
+                <p class="project-details-description">{{ project.full_description }}</p>
             </div>
         </div>
+
         <div class="text-center mt-4">
-            <a href="{% url 'portfolio' %}" class="btn btn-secondary">Back to Portfolio</a>
+            <a href="{% url 'portfolio' %}" class="btn btn-back">Back to Portfolio</a>
         </div>
     </div>
 </section>
