@@ -5,117 +5,154 @@
     box-sizing: border-box;
 }
 
-/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding-top: 80px; /* Space for navbar */
+    background-color: #f4f6f9;
+    padding-top: 80px; /* Padding to avoid navbar conflict */
+    scroll-behavior: smooth;
 }
 
-/* Service Detail Section */
-.service-detail {
-    background-color: #fff;
+/* Custom Container Style */
+.container {
+    max-width: 1200px; /* Set a custom max-width to make it narrower */
+    width: 90%; /* Ensures the container occupies 90% of the available width */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+}
+
+/* Project Detail Section */
+.project-detail {
+    background-color: #ffffff;
     padding: 4rem 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    margin-top: 80px; /* Adjust based on navbar height */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Rounded corners for modern look */
 }
 
-/* Service Title */
-.service-title {
-    font-size: 2.5rem;
+.project-title {
+    font-size: 2.8rem;
     font-weight: 700;
-    color: #333;
-    margin-bottom: 1.5rem;
+    color: #2c3e50;
     text-align: center;
-}
-
-/* Image Styling */
-.image-wrapper {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.service-image {
-    width: 100%;
-    max-width: 600px; /* Limit maximum width */
-    height: 300px; /* Uniform height */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Buttons */
-.btn-back, .btn-contact {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.btn-back {
-    background-color: #6c757d;
-    color: white;
-    text-decoration: none;
-}
-
-.btn-back:hover {
-    background-color: #5a6268;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-contact {
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-}
-
-.btn-contact:hover {
-    background-color: #0056b3;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
-}
-
-/* Contact Section */
-.contact-box {
-    background-color: #f8f9fa;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-box h3 {
-    font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #333;
 }
 
-.contact-box p {
+.project-description {
     font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.project-info {
+    list-style: none;
+    padding-left: 0;
     color: #555;
     margin-bottom: 1.5rem;
 }
 
-/* Responsive Design */
+.project-info li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.project-info a:hover {
+    text-decoration: underline;
+}
+
+/* Project Image */
+.project-image {
+    width: 100%;
+    height: 350px; /* Fixed height */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Responsiveness */
 @media (max-width: 768px) {
-    .service-detail {
-        padding: 2rem 1rem;
+    .project-detail {
+        padding: 2.5rem 1rem;
     }
 
-    .service-title {
+    .project-title {
+        font-size: 2.4rem;
+    }
+
+    .project-description {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.6rem;
+    }
+
+    .project-image {
+        height: 250px; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .project-title {
         font-size: 2rem;
     }
 
-    .service-image {
-        height: 200px; /* Smaller height for mobile */
+    .project-description {
+        font-size: 0.9rem;
     }
 
-    .btn-back, .btn-contact {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.7rem 1.4rem;
     }
+
+    .project-image {
+        height: 220px;
+    }
+}
+
+/* Accessibility Enhancements */
+a:focus, button:focus {
+    outline: 2px solid #007bff; /* Focus ring for better accessibility */
+}
+
+.project-info li:hover {
+    color: #0056b3; /* Highlight on hover */
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto; /* Maintains aspect ratio */
 }
