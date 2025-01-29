@@ -260,6 +260,7 @@ JAZZMIN_SETTINGS = {
 
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
     "site_icon": None,
+    
 
     ################################
     #                              #
