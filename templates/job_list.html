@@ -1,35 +1,41 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
 
-
-
-
-{% block title %}Careers - CyberLock Tech {% endblock %}
+{% block title %}Careers - CyberLock Tech{% endblock %}
 
 {% block content %}
-
+<head>
+    <link rel="stylesheet" href="{% static 'css/careers.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
 
 <section class="careers py-5">
-    <h2 class="text-center mb-4">Join Our Team</h2>
-    <div class="row">
-        {% for job in jobs %}
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ job.title }}</h5>
-                        <p class="card-text">{{ job.description|safe|truncatewords:50 }}</p>
-                        <p><strong>Requirements:</strong> {{ job.requirements|safe }}</p>
-                        <p><strong>Salary:</strong> {{ job.salary }}</p>
-                        <p><strong>Location:</strong> {{ job.location }}</p>
-                        <p><strong>Published Date:</strong>{{job.published_date}}</p>
-                        <p><strong>Active: </strong>{{ job.is_open}}</p>
-                        <a href="{% url 'apply_job' job.id %}" class="btn btn-primary">Apply Now</a>
+    <div class="container">
+        <h2 class="text-center mb-5">Join Our Team</h2>
+        <div class="row justify-content-center">
+            {% for job in jobs %}
+                <div class="col-lg-8 col-md-10 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ job.title }}</h5>
+                            <p class="card-text">{{ job.description|safe|truncatewords:50 }}</p>
+                            <ul class="job-details">
+                                <li><strong>Requirements:</strong> {{ job.requirements|safe }}</li>
+                                <li><strong>Salary:</strong> {{ job.salary }}</li>
+                                <li><strong>Location:</strong> {{ job.location }}</li>
+                                <li><strong>Published Date:</strong> {{ job.published_date }}</li>
+                                <li><strong>Active:</strong> {{ job.is_open|yesno:"Yes,No" }}</li>
+                            </ul>
+                            <a href="{% url 'apply_job' job.id %}" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-2"></i> Apply Now
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </section>
 {% endblock %}
