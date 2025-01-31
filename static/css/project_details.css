@@ -1,158 +1,208 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
     color: #333;
-    background-color: #f4f6f9;
-    padding-top: 80px; /* Padding to avoid navbar conflict */
-    scroll-behavior: smooth;
+    background-color: #f8f9fa;
 }
 
-/* Custom Container Style */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #007bff, #00bfff);
+    color: #fff;
+    padding: 6rem 0;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+/* Container Adjustments */
 .container {
-    max-width: 1200px; /* Set a custom max-width to make it narrower */
-    width: 90%; /* Ensures the container occupies 90% of the available width */
-    margin-left: auto; /* Center the container */
-    margin-right: auto; /* Center the container */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Project Detail Section */
 .project-detail {
-    background-color: #ffffff;
-    padding: 4rem 2rem;
-    margin-top: 80px; /* Adjust based on navbar height */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 12px; /* Rounded corners for modern look */
+    padding: 4rem 0;
 }
 
-.project-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 1rem;
+.project-image-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.project-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .project-description {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #555;
+    line-height: 1.8;
     margin-bottom: 2rem;
-    line-height: 1.7;
-    text-align: justify;
 }
 
-.project-info {
-    list-style: none;
-    padding-left: 0;
-    color: #555;
+/* Tech Stack Section */
+.tech-stack-title {
+    font-size: 1.75rem;
     margin-bottom: 1.5rem;
+    color: #2c3e50;
 }
 
-.project-info li {
+.tech-stack-badges .badge {
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+/* Testimonial Section */
+.testimonial-text {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    color: #777;
 }
 
-.project-info a {
-    color: #007bff;
-    text-decoration: none;
+/* Gallery Section */
+.gallery-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
 }
 
-.project-info a:hover {
-    text-decoration: underline;
-}
-
-/* Project Image */
-.project-image {
-    width: 100%;
-    height: 350px; /* Fixed height */
-    object-fit: cover;
+.gallery-image {
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Buttons */
-.btn {
-    background-color: #007bff;
-    color: white;
-    padding: 1rem 2rem;
+.gallery-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Call-to-Action Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #00bfff);
+    border: none;
+    color: #fff;
+    padding: 0.75rem 2rem;
     font-size: 1rem;
-    font-weight: 600;
-    border-radius: 25px;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
-    transition: all 0.3s ease-in-out;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #0056b3;
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
-    transform: translateY(-2px);
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }
 
-/* Responsiveness */
+.btn-back {
+    background: #fff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Footer Section */
+.footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer-text {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-links .social-link {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links .social-link:hover {
+    color: #00bfff;
+}
+
+.footer-copy {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .project-detail {
-        padding: 2.5rem 1rem;
+    .hero-title {
+        font-size: 2.5rem;
     }
 
-    .project-title {
-        font-size: 2.4rem;
-    }
-
-    .project-description {
-        font-size: 0.95rem;
-    }
-
-    .btn {
-        font-size: 0.9rem;
-        padding: 0.8rem 1.6rem;
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
     .project-image {
-        height: 250px; /* Adjust for smaller screens */
+        height: 250px;
     }
 }
 
 @media (max-width: 576px) {
-    .project-title {
+    .hero-title {
         font-size: 2rem;
     }
 
-    .project-description {
-        font-size: 0.9rem;
-    }
-
-    .btn {
-        font-size: 0.85rem;
-        padding: 0.7rem 1.4rem;
-    }
-
     .project-image {
-        height: 220px;
+        height: 200px;
     }
-}
-
-/* Accessibility Enhancements */
-a:focus, button:focus {
-    outline: 2px solid #007bff; /* Focus ring for better accessibility */
-}
-
-.project-info li:hover {
-    color: #0056b3; /* Highlight on hover */
-    text-decoration: underline;
-}
-
-img {
-    max-width: 100%;
-    height: auto; /* Maintains aspect ratio */
 }
