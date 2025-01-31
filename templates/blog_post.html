@@ -45,7 +45,7 @@
             <!-- Blog Cards -->
             <div class="row g-4">
                 {% for post in page_obj.object_list %}
-                    <article class="col-md-4 col-sm-6">
+                    <article class="col-lg-4 col-md-6 col-12"> <!-- Adjusted for 3 cards per row -->
                         <div class="card h-100 shadow-sm border-0">
                             <!-- Post Image -->
                             <img src="{{ post.image.url|default:'{% static "images/default.jpg" %}' }}" 
