@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
@@ -8,44 +7,59 @@
 {% block content %}
 <head>
     <link rel="stylesheet" href="{% static 'css/blog_list_detail.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <!-- Blog Post Detail Section -->
 <section class="blog-detail py-5">
     <div class="container">
         <div class="row">
-            <div class="col-md-10 offset-md-1">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                 <!-- Blog Title -->
-                <h2 class="blog-title text-center mb-4">{{ post.title }}</h2>
-
-                <!-- Blog Content Section -->
-                <div class="blog-content-wrapper d-flex flex-column flex-md-row align-items-start">
-                    <!-- Image Section -->
-                    <div class="blog-image mb-4 mb-md-0 col-md-4">
-                        {% if post.image %}
-                            <img src="{{ post.image.url }}" class="img-fluid rounded shadow-lg" alt="{{ post.title }}">
-                        {% else %}
-                            <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded shadow-lg" alt="Default Image">
-                        {% endif %}
-                    </div>
-
-                    <!-- Content Section -->
-                    <div class="blog-text col-md-8">
-                        <p>{{ post.content|safe }}</p>
-                    </div>
-                </div>
+                <h1 class="blog-title text-center mb-4">{{ post.title }}</h1>
 
                 <!-- Blog Meta -->
-                <div class="blog-meta text-center mb-4">
+                <div class="blog-meta text-center mb-5">
                     <span class="post-date"><i class="fas fa-calendar-alt"></i> {{ post.published_date|date:"F j, Y" }}</span>
                     <span class="post-author"><i class="fas fa-user"></i> {{ post.author }}</span>
                 </div>
 
+                <!-- Blog Image -->
+                <div class="blog-image mb-5">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" class="img-fluid rounded-lg shadow-lg" alt="{{ post.title }}">
+                    {% else %}
+                        <img src="{% static 'images/default.jpg' %}" class="img-fluid rounded-lg shadow-lg" alt="Default Image">
+                    {% endif %}
+                </div>
+
+                <!-- Blog Content -->
+                <div class="blog-content">
+                    <div class="blog-text">
+                        {{ post.content|safe }}
+                    </div>
+                </div>
+
+                <!-- Social Sharing Buttons -->
+                <div class="social-sharing text-center mt-5">
+                    <p class="text-muted mb-3">Share this post:</p>
+                    <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text={{ post.title }}" class="btn btn-outline-primary btn-sm mx-1" target="_blank">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" class="btn btn-outline-primary btn-sm mx-1" target="_blank">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?url={{ request.build_absolute_uri }}&title={{ post.title }}" class="btn btn-outline-primary btn-sm mx-1" target="_blank">
+                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                    </a>
+                </div>
+
                 <!-- Back Button -->
                 <div class="text-center mt-5">
-                    <a href="{% url 'blog_list' %}" class="btn btn-gradient btn-lg">Back to Blog</a>
+                    <a href="{% url 'blog_list' %}" class="btn btn-gradient btn-lg">
+                        <i class="fas fa-arrow-left me-2"></i> Back to Blog
+                    </a>
                 </div>
             </div>
         </div>

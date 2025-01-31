@@ -47,23 +47,16 @@ header p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Ensure all card images have the same size */
-.card-img-top {
-    width: 100%; /* Make the image fill the card width */
-    height: 200px; /* Set a fixed height */
-    object-fit: cover; /* Crop the image to fit the container */
-    border-radius: 10px 10px 0 0; /* Rounded corners for the top */
-}
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .card-img-top {
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    width: 100%; /* Make the image fill the card width */
+    height: 200px; /* Set a fixed height */
+    object-fit: cover; /* Crop the image to fit the container */
+    border-radius: 10px 10px 0 0; /* Rounded corners for the top */
 }
 
 .card-body {
