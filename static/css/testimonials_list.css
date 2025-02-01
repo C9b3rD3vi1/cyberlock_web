@@ -1,0 +1,175 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* Filters */
+.filters {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.filter-btn.active {
+    background: #0056b3;
+}
+
+.filter-btn:hover {
+    background: #004080;
+}
+
+/* Testimonial Carousel */
+.swiper-container {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonial h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.company {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.rating {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.feedback {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.read-more:hover {
+    background: #0056b3;
+}
+
+.published-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 15px;
+}
+
+.social-share {
+    margin-top: 15px;
+}
+
+.social-share a {
+    color: #007bff;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-share a:hover {
+    color: #0056b3;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cta-btn {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .testimonial {
+        padding: 15px;
+    }
+}

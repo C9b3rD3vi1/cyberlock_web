@@ -1,6 +1,10 @@
+{% extends 'base.html' %}
 
-{% include 'base.html'%}
 {% load static %}
+
+{% block title %}Testimonials{% endblock %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,63 +12,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials</title>
-
-
-    <style>
-        .testimonial {
-            border: 1px solid #f5f2f2;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            background-color: rgba(233, 231, 229, 0.904);
-        
-        }
-        .testimonial img {
-            max-width: 100px;
-            height: auto;
-            border-radius: 50%;
-        }
-        .testimonial h3 {
-            margin: 0 0 10px;
-        }
-    
-    
-        .testimonial .rating {
-            color: gold;
-    
-        }
-       
-
-    </style>
-
-
+    <!-- Link to FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{% static 'css/testimonials_list.css' %}">
+    <!-- Link to Swiper CSS for carousel -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
-    <h1>Testimonials</h1>
-    {% for testimonial in testimonials %}
-    <div class="testimonial">
-        {% if testimonial.profile_picture %}
-        <img src="{{ testimonial.profile_picture.url }}" alt="{{ testimonial.name }}">
-        {% endif %}
-        <h3>{{ testimonial.name }}{% if testimonial.company %} - {{ testimonial.company }}{% endif %}</h3>
-        <div class="rating">
-            
-            {% for i in "12345" %}
-                {% if i|slice:":1" <= testimonial.rating|stringformat:"i" %}
-                ★
-                {% else %}
-                ☆
-                {% endif %}
+    <header class="page-header">
+        <h1>What Our Clients Say</h1>
+        <p>Read testimonials from our satisfied customers.</p>
+    </header>
+
+    <!-- Testimonial Filters -->
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="5">5 Stars</button>
+        <button class="filter-btn" data-filter="4">4 Stars</button>
+        <button class="filter-btn" data-filter="3">3 Stars</button>
+    </div>
+
+    <!-- Testimonial Carousel -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for testimonial in testimonials %}
+            <div class="swiper-slide">
+                <div class="testimonial" data-rating="{{ testimonial.rating }}">
+                    {% if testimonial.profile_picture %}
+                    <img src="{{ testimonial.profile_picture.url }}" alt="{{ testimonial.name }}" class="testimonial-img">
+                    {% endif %}
+                    <h3>{{ testimonial.name }}</h3>
+                    {% if testimonial.company %}
+                    <p class="company">{{ testimonial.company }}</p>
+                    {% endif %}
+                    <div class="rating">
+                        {% for i in "12345" %}
+                            {% if i|slice:":1" <= testimonial.rating|stringformat:"i" %}
+                            ★
+                            {% else %}
+                            ☆
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="feedback">{{ testimonial.feedback|truncatewords:30 }}</p>
+                    <button class="read-more">Read More</button>
+                    <p class="published-date"><em>Published on: {{ testimonial.published_date }}</em></p>
+                    <div class="social-share">
+                        <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="swiper-slide">
+                <p>No testimonials available.</p>
+            </div>
             {% endfor %}
         </div>
-        <p>{{ testimonial.feedback }}</p>
-        
-        <p><em>Published on: {{ testimonial.published_date }}</em></p>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
-    {% empty %}
-    <p>No testimonials available.</p>
-    {% endfor %}
-    
-    <p>Submit your testimonial <a href="{% url 'submit_testimonial' %}">Rate Us</a></p>
+
+    <!-- Call-to-Action Section -->
+    <div class="cta-section">
+        <p>Have feedback? Share your experience with us!</p>
+        <a href="{% url 'submit_testimonial' %}" class="cta-btn">Submit Your Testimonial</a>
+    </div>
+
+    <!-- Link to Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Link to custom JS -->
+    <script src="{% static 'js/testimonials.js' %}"></script>
 </body>
 </html>
+
+{% endblock %}

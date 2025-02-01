@@ -51,9 +51,12 @@
                     </ul>
                 </li>
                 <li><a href="{% url 'portfolio' %}" class="{% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}">Portfolio</a></li>
+                
                 <li><a href="{% url 'blog_list' %}" class="{% if request.resolver_match.url_name == 'blog_list' %}active{% endif %}">Blog</a></li>
 
                 {% if user.is_authenticated %}
+
+                <li> <a href="{% url 'testimonial_list' %}" class="{% if request.resolver_match.url_name == 'testimonial_list' %}active{% endif %}">Testimonies</a></li>
 
                 <li><a href="{% url 'job_list' %}" class="{% if request.resolver_match.url_name == 'job_list' %}active{% endif %}">Jobs</a></li>
 
