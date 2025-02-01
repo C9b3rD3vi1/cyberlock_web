@@ -152,6 +152,10 @@ body {
     margin-top: 2rem;
 }
 
+.cta-text {
+    margin-bottom: 20px; /* Space between <p> and <a> */
+}
+
 .cta-btn {
     background: #007bff;
     color: #fff;

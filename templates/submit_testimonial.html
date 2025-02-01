@@ -1,47 +1,60 @@
-
+{% extends 'base.html' %}
 
 {% load static %}
 
+{% block title %}Submit Testimonial{% endblock %}
+
+{% block content %}
 <head>
     <link rel="stylesheet" href="{% static 'css/submit_testimonial.css' %}">
+    <!-- Link to FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
+<div class="form-container">
+    <form method="post" enctype="multipart/form-data" class="testimonial-form">
+        {% csrf_token %}
 
+        <h2>Feedback Form</h2> <!-- Form Title -->
 
+        <!-- Name Field -->
+        <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            {{ form.name }}
+        </div>
 
-<form method="post" enctype="multipart/form-data" class="testimonial-form">
-    {% csrf_token %}
+        <!-- Company Field -->
+        <div class="form-group">
+            <label for="{{ form.company.id_for_label }}">{{ form.company.label }}</label>
+            {{ form.company }}
+        </div>
 
-    <h2>Feedback Form</h2> <!-- Add your title here -->
+        <!-- Feedback Field -->
+        <div class="form-group">
+            <label for="{{ form.feedback.id_for_label }}">{{ form.feedback.label }}</label>
+            {{ form.feedback }}
+        </div>
 
-    <div>
-        <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-        {{ form.name }}
-    </div>
+        <!-- Custom Star Rating -->
+        <div class="form-group">
+            <label>Rating</label>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5" class="star">★</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" class="star">★</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" class="star">★</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" class="star">★</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" class="star">★</label>
+            </div>
+        </div>
 
-    <div>
-        <label for="{{ form.company.id_for_label }}">{{ form.company.label }}</label>
-        {{ form.company }}
-    </div>
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Submit Testimonial</button>
+    </form>
+</div>
 
-    <div>
-        <label for="{{ form.feedback.id_for_label }}">{{ form.feedback.label }}</label>
-        {{ form.feedback }}
-    </div>
-
-    <!-- Custom Star Rating Implementation -->
-    <div class="star-rating">
-        <input type="radio" id="star5" name="rating" value="5" />
-        <label for="star5" class="star">★</label>
-        <input type="radio" id="star4" name="rating" value="4" />
-        <label for="star4" class="star">★</label>
-        <input type="radio" id="star3" name="rating" value="3" />
-        <label for="star3" class="star">★</label>
-        <input type="radio" id="star2" name="rating" value="2" />
-        <label for="star2" class="star">★</label>
-        <input type="radio" id="star1" name="rating" value="1" />
-        <label for="star1" class="star">★</label>
-    </div>
-
-    <button type="submit">Submit Testimonial</button>
-</form>
+{% endblock %}

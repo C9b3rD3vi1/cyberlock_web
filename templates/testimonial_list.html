@@ -58,7 +58,7 @@
                     </div>
 
                     <p class="feedback">{{ testimonial.feedback|safe }}</p>
-                    
+
                     <p class="published-date"><em>Published on: {{ testimonial.published_date|safe }}</em></p>
                     <!-- Social Share Section -->
                     <div class="social-share">
@@ -83,9 +83,9 @@
 
     <!-- Call-to-Action Section -->
     <div class="cta-section">
-        <p>Have feedback? Share your experience with us!</p>
-        <a href="{% url 'submit_testimonial' %}" class="cta-btn">Submit Your Testimonial</a>
-    </div>
+    <p class="cta-text">Have feedback? Share your experience with us!</p>
+    <a href="{% url 'submit_testimonial' %}" class="cta-btn">Submit Your Testimonial</a>
+</div>
 
     <!-- Link to Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
