@@ -190,7 +190,7 @@ class ContactMessage(models.Model):
 # Save job application  and allowing user to make job application
 class JobApplication(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link to the user applying
-    job = models.ForeignKey(Job, on_delete=models.CASCADE)  # Link to the job being applied for
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, default=1)  # Link to the job being applied for
     name = models.CharField(max_length=100, blank=False)
     email = models.EmailField(blank=False)
     resume = models.FileField(upload_to='resumes/', blank=False)
@@ -198,7 +198,7 @@ class JobApplication(models.Model):
     applied_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.job.title + " - " + self.user.username
     
 '''
 
