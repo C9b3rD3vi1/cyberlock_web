@@ -127,6 +127,41 @@ a:hover {
     margin-right: 0.5rem;
 }
 
+/* Base button styles */
+.btn-view-details {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #2563eb; /* Primary color */
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.btn-view-details:hover {
+    background-color: #1d4ed8; /* Darker shade for hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); /* Subtle shadow */
+}
+
+/* Active state (when clicked) */
+.btn-view-details:active {
+    transform: translateY(0); /* Reset lift */
+    box-shadow: none; /* Remove shadow */
+}
+
+/* Focus state (for accessibility) */
+.btn-view-details:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3); /* Focus ring */
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .careers h2 {

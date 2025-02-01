@@ -8,37 +8,49 @@
     <title>{{ job.title }} | {{ site_name }}</title>
     <link rel="stylesheet" href="{% static 'css/job_details.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
     <div class="job-details-page">
         <div class="job-details-container">
             <!-- Job Title -->
-            <h1 class="job-title">{{ job.title |safe }}</h1>
+            <h1 class="job-title">{{ job.title | safe }}</h1>
+
 
             <!-- Job Description -->
-            <div class="job-description">
+            <div class="job-section">
                 <h2>Job Description</h2>
-                <p>{{ job.description | safe }}</p>
+                <div class="job-content">
+                    {{ job.description | safe }}
+                </div>
             </div>
 
             <!-- Job Requirements -->
-            <div class="job-requirements">
+            <div class="job-section">
                 <h2>Requirements</h2>
-                <p>{{ job.requirements| safe }}</p>
+                <div class="job-content">
+                    {{ job.requirements | safe }}
+                </div>
             </div>
-
-            <!-- Job Location and Salary -->
+            <!-- Job Meta Information -->
             <div class="job-meta">
-                <p><strong>Location:</strong> {{ job.location|safe }}</p>
-                <p><strong>Salary:</strong> {{ job.salary|safe }}</p>
+                <p><strong>Location:</strong> {{ job.location | safe }}</p>
+                <p><strong>Salary:</strong> {{ job.salary | safe }}</p>
+                <p><strong>Posted On:</strong> {{ job.published_date | date:"F d, Y" }}</p>
             </div>
 
-            <!-- Apply Button -->
-            <div class="apply-button">
+            <!-- Buttons Section -->
+            <div class="button-group">
                 <a href="{% url 'apply_job' id=job.id %}" class="btn-apply">
-                    Apply Now
+                    <i class="fas fa-paper-plane"></i> Apply Now
                 </a>
+                <a href="{% url 'job_list' %}" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> Back to Job List
+                </a>
+                <button class="btn-save">
+                    <i class="fas fa-bookmark"></i> Save Job
+                </button>
             </div>
         </div>
     </div>

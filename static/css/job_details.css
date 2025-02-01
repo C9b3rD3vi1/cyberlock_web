@@ -1,4 +1,4 @@
-/* job_details.css */
+/* General Styles */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f9fafb;
@@ -12,14 +12,17 @@ body {
 }
 
 .job-details-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     background: #fff;
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: auto;
 }
 
+/* Job Title */
 .job-title {
     font-size: 32px;
     font-weight: 700;
@@ -27,23 +30,9 @@ body {
     margin-bottom: 20px;
 }
 
-.job-description h2,
-.job-requirements h2 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-}
-
-.job-description p,
-.job-requirements p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-}
-
+/* Job Meta Information */
 .job-meta {
-    margin-top: 20px;
+    margin-bottom: 30px;
     font-size: 16px;
     color: #555;
 }
@@ -52,23 +41,87 @@ body {
     color: #1a1a1a;
 }
 
-.apply-button {
-    margin-top: 30px;
-    text-align: center;
+/* Job Sections (Description and Requirements) */
+.job-section {
+    margin-bottom: 30px;
 }
 
+.job-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.job-content {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Buttons Section */
+.button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Base Button Styles */
+.btn-apply,
+.btn-back,
+.btn-save {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Apply Button */
 .btn-apply {
     background-color: #2563eb;
     color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
 }
 
 .btn-apply:hover {
     background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* Back Button */
+.btn-back {
+    background-color: #6b7280;
+    color: #fff;
+}
+
+.btn-back:hover {
+    background-color: #4b5563;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 114, 128, 0.2);
+}
+
+/* Save Button */
+.btn-save {
+    background-color: #10b981;
+    color: #fff;
+}
+
+.btn-save:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+/* Icons in Buttons */
+.btn-apply i,
+.btn-back i,
+.btn-save i {
+    margin-right: 8px;
 }
