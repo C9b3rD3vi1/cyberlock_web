@@ -42,9 +42,9 @@
                     {% if testimonial.profile_picture %}
                     <img src="{{ testimonial.profile_picture.url }}" alt="{{ testimonial.name }}" class="testimonial-img">
                     {% endif %}
-                    <h3>{{ testimonial.name }}</h3>
+                    <h3>{{ testimonial.name|safe }}</h3>
                     {% if testimonial.company %}
-                    <p class="company">{{ testimonial.company }}</p>
+                    <p class="company">{{ testimonial.company|safe }}</p>
                     {% endif %}
                     <div class="rating">
                         {% for i in "12345" %}
@@ -53,11 +53,14 @@
                             {% else %}
                             ☆
                             {% endif %}
+
                         {% endfor %}
                     </div>
-                    <p class="feedback">{{ testimonial.feedback|truncatewords:30 }}</p>
+
+                    <p class="feedback">{{ testimonial.feedback|safe }}</p>
                     <button class="read-more">Read More</button>
-                    <p class="published-date"><em>Published on: {{ testimonial.published_date }}</em></p>
+                    <p class="published-date"><em>Published on: {{ testimonial.published_date|safe }}</em></p>
+                    <!-- Social Share Section -->
                     <div class="social-share">
                         <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>

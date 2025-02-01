@@ -11,7 +11,7 @@ body {
 .page-header {
     text-align: center;
     margin-bottom: 2rem;
-    padding-top: 20px; /* Ensure header is visible */
+    padding-top: 50px; /* Ensure header is visible */
 }
 
 .page-header h1 {

@@ -1,6 +1,10 @@
-// Initialize Swiper Carousel
+// Initialize Swiper Carousel with Auto-Scroll
 const swiper = new Swiper('.swiper-container', {
     loop: true,
+    autoplay: {
+        delay: 4000, // Auto-scroll every 4 seconds
+        disableOnInteraction: false, // Continue auto-scroll even after user interaction
+    },
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
