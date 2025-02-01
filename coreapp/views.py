@@ -177,6 +177,14 @@ def apply_job(request, id):
 
     return render(request, 'apply_job.html', {'form': form, 'job': job})
 
+# job details function
+def job_details(request, id):
+    # Fetch the job using the provided ID
+    job = get_object_or_404(Job, id=id)
+    
+    # Render the job details template with the job object
+    return render(request, 'job_details.html', {'job': job})
+
 
 
 # company about page documentation
