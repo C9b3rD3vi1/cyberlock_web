@@ -1,37 +1,65 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ service.name }}{% endblock %}
+{% block title %}{{ service.name }} - {{ block.super }}{% endblock %}
 
 {% load static %}
 
 {% block content %}
 <head>
+    <!-- Link to the service detail CSS file -->
     <link rel="stylesheet" href="{% static 'css/service_detail.css' %}">
 </head>
 
+<!-- Service Detail Section -->
 <section class="service-detail py-5">
     <div class="container">
         <div class="row">
-            <!-- Main service details -->
+            <!-- Main Service Details -->
             <div class="col-md-8">
-                <h2 class="service-title">{{ service.name }}</h2>
-                <div class="image-wrapper">
-                    <img src="{{ service.service_image.url }}" class="img-fluid mb-4 service-image" alt="{{ service.name }}">
+                <!-- Service Title -->
+                <h2 class="service-title mb-4">{{ service.name }}</h2>
+
+                <!-- Service Image -->
+                <div class="image-wrapper mb-4">
+                    <img src="{{ service.service_image.url }}" class="img-fluid service-image" alt="{{ service.name }}">
                 </div>
-                <p><strong>Description:</strong> {{ service.description|truncatewords:20|safe }}</p>
-                <p><strong>Details:</strong> {{ service.description|safe }}</p>
-                <p><strong>Price:</strong> ${{ service.price }}</p>
-                <p><strong>Service Type:</strong> {{ service.service_type }}</p>
-                
-                <a href="{% url 'service_list' %}" class="btn btn-secondary btn-back">Back to Services</a>
+
+                <!-- Service Description (Truncated) -->
+                <p class="mb-3">
+                    <strong>Description:</strong> {{ service.description|truncatewords:20|safe }}
+                </p>
+
+                <!-- Full Service Details -->
+                <p class="mb-3">
+                    <strong>Details:</strong> {{ service.description|safe }}
+                </p>
+
+                <!-- Service Price -->
+                <p class="mb-3">
+                    <strong>Price:</strong> ${{ service.price }}
+                </p>
+
+                <!-- Service Type -->
+                <p class="mb-4">
+                    <strong>Service Type:</strong> {{ service.service_type }}
+                </p>
+
+                <!-- Back to Services Button -->
+                <a href="{% url 'service_list' %}" class="btn btn-secondary btn-back">
+                    Back to Services
+                </a>
             </div>
 
-            <!-- Contact section -->
+            <!-- Contact Section -->
             <div class="col-md-4">
-                <div class="contact-box">
-                    <h3>Contact Us for More Information</h3>
-                    <p>If you're interested in this service, feel free to contact us!</p>
-                    <a href="{% url 'contact_form' %}" class="btn btn-primary btn-contact">Contact Us</a>
+                <div class="contact-box p-4 bg-light rounded">
+                    <h3 class="mb-3">Contact Us for More Information</h3>
+                    <p class="mb-4">If you're interested in this service, feel free to contact us!</p>
+
+                    <!-- Contact Us Button -->
+                    <a href="{% url 'contact_form' %}" class="btn btn-primary btn-contact">
+                        Contact Us
+                    </a>
                 </div>
             </div>
         </div>
