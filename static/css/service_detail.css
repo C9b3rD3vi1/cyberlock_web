@@ -1,14 +1,14 @@
-/* Service Detail Page Styles */
+/* Service Detail Page Styles - Enhanced */
 
 /* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #f9f9f9;
 }
 
 .container {
-    padding-top: 80px;
     max-width: 1200px;
     margin: 0 auto;
     padding-bottom: 100px;
@@ -20,31 +20,48 @@ body {
     font-weight: bold;
     color: #2c3e50;
     margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.service-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
 }
 
 /* Image Wrapper */
 .image-wrapper {
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    position: relative;
 }
 
 .service-image {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 15px;
 }
 
-.service-image:hover {
+.image-wrapper:hover .service-image {
     transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 /* Service Details */
 .service-detail p {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: #555;
+    line-height: 1.8;
 }
 
 .service-detail p strong {
@@ -56,55 +73,98 @@ body {
 .btn-back {
     background-color: #6c757d;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .btn-back:hover {
     background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-back:active {
+    transform: translateY(0);
 }
 
 /* Contact Box */
 .contact-box {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding-top: 50px;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .contact-box h3 {
     font-size: 1.5rem;
     font-weight: bold;
     color: #2c3e50;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.contact-box h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 40px;
+    height: 3px;
+    background-color: #007bff;
+    border-radius: 2px;
 }
 
 .contact-box p {
     font-size: 1rem;
     color: #555;
     margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 /* Contact Button */
 .btn-contact {
     background-color: #007bff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
 }
 
 .btn-contact:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-contact:active {
+    transform: translateY(0);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .service-title {
         font-size: 2rem;
+    }
+
+    .service-title::after {
+        width: 40px;
+        height: 3px;
     }
 
     .col-md-8, .col-md-4 {
@@ -115,4 +175,31 @@ body {
     .contact-box {
         margin-top: 2rem;
     }
+
+    .btn-back, .btn-contact {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Accessibility Enhancements */
+a:focus, button:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-detail, .contact-box {
+    animation: fadeIn 0.8s ease-out;
 }

@@ -8,6 +8,8 @@
 <head>
     <!-- Link to the service detail CSS file -->
     <link rel="stylesheet" href="{% static 'css/service_detail.css' %}">
+    <!-- Add FontAwesome for icons (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <!-- Service Detail Section -->
@@ -22,6 +24,10 @@
                 <!-- Service Image -->
                 <div class="image-wrapper mb-4">
                     <img src="{{ service.service_image.url }}" class="img-fluid service-image" alt="{{ service.name }}">
+                    <!-- Optional: Add a badge for special services -->
+                    {% if service.is_popular %}
+                    <span class="service-badge">Popular</span>
+                    {% endif %}
                 </div>
 
                 <!-- Service Description (Truncated) -->
@@ -30,9 +36,12 @@
                 </p>
 
                 <!-- Full Service Details -->
-                <p class="mb-3">
-                    <strong>Details:</strong> {{ service.description|safe }}
-                </p>
+                <div class="service-full-details mb-4">
+                    <p><strong>Details:</strong></p>
+                    <div class="details-content">
+                        {{ service.description|safe }}
+                    </div>
+                </div>
 
                 <!-- Service Price -->
                 <p class="mb-3">
@@ -46,7 +55,7 @@
 
                 <!-- Back to Services Button -->
                 <a href="{% url 'service_list' %}" class="btn btn-secondary btn-back">
-                    Back to Services
+                    <i class="fas fa-arrow-left"></i> Back to Services
                 </a>
             </div>
 
@@ -58,7 +67,7 @@
 
                     <!-- Contact Us Button -->
                     <a href="{% url 'contact_form' %}" class="btn btn-primary btn-contact">
-                        Contact Us
+                        <i class="fas fa-envelope"></i> Contact Us
                     </a>
                 </div>
             </div>
