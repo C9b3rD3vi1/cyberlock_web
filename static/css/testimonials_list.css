@@ -147,6 +147,7 @@ body {
 
 /* Call-to-Action Section */
 .cta-section {
+    margin-bottom: 30px;
     text-align: center;
     margin-top: 2rem;
 }
