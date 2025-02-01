@@ -189,6 +189,7 @@ class ContactMessage(models.Model):
 # job application models, 
 # Save job application  and allowing user to make job application
 class JobApplication(models.Model):
+    job = models.ForeignKey(Job, on_delete=models.CASCADE)  # Link to the job being applied for
     name = models.CharField(max_length=100, blank=False)
     email = models.EmailField(blank=False)
     resume = models.FileField(upload_to='resumes/', blank=False)
