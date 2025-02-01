@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <title>{{ job.title }} | {{ site_name }}</title>
+    <link rel="stylesheet" href="{% static 'css/job_details.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="job-details-page">
+        <div class="job-details-container">
+            <!-- Job Title -->
+            <h1 class="job-title">{{ job.title |safe }}</h1>
+
+            <!-- Job Description -->
+            <div class="job-description">
+                <h2>Job Description</h2>
+                <p>{{ job.description | safe }}</p>
+            </div>
+
+            <!-- Job Requirements -->
+            <div class="job-requirements">
+                <h2>Requirements</h2>
+                <p>{{ job.requirements| safe }}</p>
+            </div>
+
+            <!-- Job Location and Salary -->
+            <div class="job-meta">
+                <p><strong>Location:</strong> {{ job.location|safe }}</p>
+                <p><strong>Salary:</strong> {{ job.salary|safe }}</p>
+            </div>
+
+            <!-- Apply Button -->
+            <div class="apply-button">
+                <a href="{% url 'apply_job' id=job.id %}" class="btn-apply">
+                    Apply Now
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

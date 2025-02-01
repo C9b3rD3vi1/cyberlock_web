@@ -156,7 +156,7 @@ def apply_job(request, id):
     # Check if the user has already applied for this job
     if JobApplication.objects.filter(user=request.user, job=job).exists():
         messages.warning(request, 'You have already applied for this job.')
-        return redirect('job_detail', id=job.id)  # Redirect to the job detail page
+        return redirect('apply_job', id=job.id)  # Redirect to the job detail page
 
     if request.method == 'POST':
         form = JobApplicationForm(request.POST, request.FILES)
@@ -169,7 +169,7 @@ def apply_job(request, id):
             application.save()  # Save the application to the database
 
             messages.success(request, 'Your application has been submitted successfully!')
-            return redirect('job_detail', id=job.id)  # Redirect to the job detail page
+            return redirect('apply_job', id=job.id)  # Redirect to the job detail page
         else:
             messages.error(request, 'Please correct the errors below.')
     else:

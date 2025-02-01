@@ -1,0 +1,74 @@
+/* job_details.css */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+.job-details-page {
+    padding: 40px 20px;
+}
+
+.job-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.job-description h2,
+.job-requirements h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.job-description p,
+.job-requirements p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.job-meta {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.job-meta strong {
+    color: #1a1a1a;
+}
+
+.apply-button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-apply {
+    background-color: #2563eb;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-apply:hover {
+    background-color: #1d4ed8;
+}
