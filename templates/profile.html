@@ -1,36 +1,73 @@
-
 {% extends 'base.html' %}
 
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">
-  <div class="container mt-4">
-    <h1 class="mb-4">{{ profile.user.username }}'s Profile</h1>
-    
-    <div class="profile-info border p-4 rounded bg-light">
-      {% if profile.profile_picture %}
-        <h2>Profile Picture</h2>
-        <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="img-fluid mb-3 rounded-circle" style="max-width: 150px;" />
-      {% endif %}
-      
-      <h2>Bio</h2>
-      <p>{{ profile.bio|safe }}</p>
-      
-      <h2>Links</h2>
-      <ul class="list-unstyled">
-        {% if profile.website %}
-          <li><a href="{{ profile.website }}" target="_blank" class="link-primary">Website</a></li>
-        {% endif %}
-        {% if profile.github %}
-          <li><a href="{{ profile.github }}" target="_blank" class="link-primary">GitHub</a></li>
-        {% endif %}
-        {% if profile.linkedin %}
-          <li><a href="{{ profile.linkedin }}" target="_blank" class="link-primary">LinkedIn</a></li>
-        {% endif %}
-      </ul>
+<head>
+    <meta charset="utf-8">
+    <title>{{ profile.user.username }}'s Profile | {{ site_name }}</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="profile-page">
+        <div class="profile-container">
+            <!-- Profile Header -->
+            <h1 class="profile-header">{{ profile.user.username }}'s Profile</h1>
+
+            <!-- Profile Information -->
+            <div class="profile-info">
+                <!-- Profile Picture -->
+                {% if profile.profile_picture %}
+                    <div class="profile-picture">
+                        <img src="{{ profile.profile_picture.url }}" alt="Profile Picture" class="profile-img" />
+                    </div>
+                {% endif %}
+
+                <!-- Bio -->
+                <div class="profile-section">
+                    <h2 class="section-title">Bio</h2>
+                    <p class="section-content">{{ profile.bio|safe }}</p>
+                </div>
+
+                <!-- Links -->
+                <div class="profile-section">
+                    <h2 class="section-title">Links</h2>
+                    <ul class="profile-links">
+                        {% if profile.website %}
+                            <li>
+                                <a href="{{ profile.website }}" target="_blank" class="profile-link">
+                                    <i class="fas fa-globe"></i> Website
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if profile.github %}
+                            <li>
+                                <a href="{{ profile.github }}" target="_blank" class="profile-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if profile.linkedin %}
+                            <li>
+                                <a href="{{ profile.linkedin }}" target="_blank" class="profile-link">
+                                    <i class="fab fa-linkedin"></i> LinkedIn
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Edit Profile Button -->
+            <div class="profile-actions">
+                <a href="{% url 'edit_profile' %}" class="btn-edit-profile">
+                    <i class="fas fa-edit"></i> Edit Profile
+                </a>
+            </div>
+        </div>
     </div>
-    
-    <a href="{% url 'edit_profile' %}" class="btn btn-secondary mt-3">Edit Profile</a>
-  </div>
+</body>
 {% endblock %}
