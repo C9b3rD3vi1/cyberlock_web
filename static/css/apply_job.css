@@ -9,6 +9,7 @@ body {
 
 .job-application-page {
     padding-top: 80px; /* Move container down from navbar */
+    padding-bottom: 120px; /* Add space for footer */
 }
 
 .application-container {

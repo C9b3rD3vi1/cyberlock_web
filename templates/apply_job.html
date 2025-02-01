@@ -32,7 +32,7 @@
             {% endif %}
 
             <!-- Application Form -->
-            <form method="POST" enctype="multipart/form-data" class="application-form">
+            <form method="POST" action="{% url 'apply_job' id=job.id %}" enctype="multipart/form-data" class="application-form">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>

@@ -16,6 +16,7 @@ from django.views.decorators.http import require_POST
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import CustomUserCreationForm, TestimonialForm, ProfileForm, JobApplicationForm
+from .models import JobApplication
 
 
 
@@ -146,24 +147,36 @@ def job_list(request):
     return render(request, 'job_list.html',{"jobs": jobs})
 
 
-
-# functions to allow logged in users to apply for available jobs
+# ----------------------------------------------------------------
+# Functions to allow logged-in users to apply for jobs
 @login_required
 def apply_job(request, id):
     job = get_object_or_404(Job, id=id)  # Fetch the job using the job ID
+
+    # Check if the user has already applied for this job
+    if JobApplication.objects.filter(user=request.user, job=job).exists():
+        messages.warning(request, 'You have already applied for this job.')
+        return redirect('job_detail', id=job.id)  # Redirect to the job detail page
+
     if request.method == 'POST':
         form = JobApplicationForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            # Save the form without committing to the database
+            application = form.save(commit=False)
+            # Associate the application with the logged-in user and the job
+            application.user = request.user
+            application.job = job
+            application.save()  # Save the application to the database
+
             messages.success(request, 'Your application has been submitted successfully!')
-            return redirect('apply_job')
+            return redirect('job_detail', id=job.id)  # Redirect to the job detail page
         else:
             messages.error(request, 'Please correct the errors below.')
-
     else:
         form = JobApplicationForm()
 
-    return render(request, 'apply_job.html', {'form': form})
+    return render(request, 'apply_job.html', {'form': form, 'job': job})
+
 
 
 # company about page documentation
