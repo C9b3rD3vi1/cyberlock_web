@@ -5,17 +5,21 @@
 {% block content %}
 <head>
     <meta charset="utf-8">
-    <title>Job Application - {{ job.title }}</title>
+    <title>Apply for {{ job.title }} | {{ site_name }}</title>
     <link rel="stylesheet" href="{% static 'css/apply_job.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
     <div class="job-application-page">
-        <div class="container">
-            <h1 class="application-title">Apply for the Job: {{ job.title }}</h1>  <!-- Display the job title -->
-            
+        <div class="application-container">
+            <!-- Page Header -->
+            <header class="application-header">
+                <h1 class="application-title">Apply for <span class="job-title-highlight">{{ job.title }}</span></h1>
+                <p class="application-subtitle">Join our team and make an impact. Please fill out the form below to apply.</p>
+            </header>
+
             <!-- Messages -->
             {% if messages %}
                 <div class="messages">
@@ -26,25 +30,27 @@
                     {% endfor %}
                 </div>
             {% endif %}
-            
+
             <!-- Application Form -->
             <form method="POST" enctype="multipart/form-data" class="application-form">
                 {% csrf_token %}
                 <div class="form-group">
-                    {{ form.name.label_tag }}
+                    <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
                     {{ form.name }}
                 </div>
                 <div class="form-group">
-                    {{ form.email.label_tag }}
+                    <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
                     {{ form.email }}
                 </div>
                 <div class="form-group">
-                    {{ form.resume.label_tag }}
+                    <label for="{{ form.resume.id_for_label }}">{{ form.resume.label }}</label>
                     {{ form.resume }}
+                    <small class="file-hint">Upload your resume in PDF or DOC format (Max 5MB).</small>
                 </div>
                 <div class="form-group">
-                    {{ form.cover_letter.label_tag }}
+                    <label for="{{ form.cover_letter.id_for_label }}">{{ form.cover_letter.label }}</label>
                     {{ form.cover_letter }}
+                    <small class="file-hint">Optional but recommended.</small>
                 </div>
                 <button type="submit" class="btn-submit">
                     <i class="fas fa-paper-plane me-2"></i> Submit Application
