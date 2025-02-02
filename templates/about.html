@@ -2,90 +2,159 @@
 
 {% load static %}
 
-{% block title %}About Us{% endblock %}
+{% block title %}About Us - CyberLoch Tech{% endblock %}
 
 {% block content %}
 
-<!--css files -->
+<!-- css file -->
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
 
+
+<!-- Hero Section -->
 <section class="about-hero">
-    <div class="container">
-        <h1>About Us</h1>
-        <p class="subheadline">We are passionate about delivering excellence and making a difference.</p>
-    </div>
-</section>
-
-<section class="our-story">
-    <div class="container">
-        <h2>Our Story</h2>
-        <p>Founded in 2010, we started as a small team with a big dream. Over the years, we've grown into a trusted name in the industry, driven by innovation and a commitment to our customers.</p>
-        <img src="{% static 'images/office.jpg' %}" alt="Our Office" class="story-image">
-    </div>
-</section>
-
-<section class="mission-values">
-    <div class="container">
-        <h2>Our Mission & Values</h2>
-        <div class="mission">
-            <h3>Mission</h3>
-            <p>To empower businesses with innovative solutions that drive growth and success.</p>
-        </div>
-        <div class="values">
-            <h3>Values</h3>
-            <ul>
-                <li>Customer-Centric Approach</li>
-                <li>Integrity and Transparency</li>
-                <li>Innovation and Excellence</li>
-                <li>Collaboration and Teamwork</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="meet-the-team">
-    <div class="container">
-        <h2>Meet the Team</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <img src="{% static 'images/team1.jpg' %}" alt="John Doe">
-                <h3>John Doe</h3>
-                <p>CEO & Founder</p>
+    <div class="hero-overlay">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title animate__animated animate__fadeInDown">CyberLock Technologies</h1>
+                <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Innovative Solutions for Your Digital Success</p>
             </div>
-            <div class="team-member">
-                <img src="{% static 'images/team2.jpg' %}" alt="Jane Smith">
-                <h3>Jane Smith</h3>
-                <p>Chief Marketing Officer</p>
+        </div>
+    </div>
+</section>
+
+<!-- Main About Content -->
+<section class="about-content py-5">
+    <div class="container">
+
+        <!-- Our Story Section -->
+        <div class="row align-items-center mb-5 gy-5">
+            <div class="col-lg-6">
+                <div class="section-header">
+                    <span class="section-pre-title animate__animated animate__fadeIn">Our Journey</span>
+                    <h2 class="section-title mb-4 animate__animated animate__fadeIn animate__delay-1s">Our Story</h2>
+                </div>
+                <div class="timeline">
+                    <p class="lead animate__animated animate__fadeIn animate__delay-2s">Founded in 2020, CyberLoch Tech emerged from a passion for solving complex digital challenges. What began as a small team of visionary developers has evolved into a trusted global partner for digital transformation.</p>
+                    <p class="animate__animated animate__fadeIn animate__delay-3s">We combine technical mastery with strategic business insights to deliver solutions that drive measurable results and sustainable growth.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-wrapper animate__animated animate__fadeInRight animate__delay-2s">
+                    <img src="{% static 'images/about-1.jpg' %}" alt="Our Team" class="img-fluid rounded-4 shadow-lg">
+                    <div class="experience-badge animate__animated animate__fadeIn animate__delay-3s">
+                        <span>5+ Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission & Values -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-lg hover-lift animate__animated animate__fadeInLeft animate__delay-1s">
+                    <div class="card-body p-4">
+                        <div class="icon-wrapper bg-primary-soft">
+                            <i class="fas fa-bullseye fa-2x text-primary"></i>
+                        </div>
+                        <h3 class="card-title mt-4">Our Mission</h3>
+                        <p class="card-text">To empower organizations through innovative technology solutions that accelerate growth, enhance efficiency, and drive digital evolution.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow-lg hover-lift animate__animated animate__fadeInRight animate__delay-1s">
+                    <div class="card-body p-4">
+                        <div class="icon-wrapper bg-primary-soft">
+                            <i class="fas fa-chart-line fa-2x text-primary"></i>
+                        </div>
+                        <h3 class="card-title mt-4">Core Values</h3>
+                        <ul class="values-list">
+                            <li class="d-flex align-items-center">
+                                <i class="fas fa-rocket me-3 text-primary"></i>
+                                Innovation First
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="fas fa-users me-3 text-primary"></i>
+                                Client-Centric Approach
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="fas fa-certificate me-3 text-primary"></i>
+                                Technical Excellence
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="fas fa-handshake me-3 text-primary"></i>
+                                Ethical Practices
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <i class="fas fa-brain me-3 text-primary"></i>
+                                Continuous Learning
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <div class="section-header">
+                    <span class="section-pre-title animate__animated animate__fadeIn">Meet Our Experts</span>
+                    <h2 class="section-title mb-5 animate__animated animate__fadeIn animate__delay-1s">Leadership Team</h2>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="team-card text-center hover-scale animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="team-img-wrapper">
+                        <img src="{% static 'images/team1.jpg' %}" alt="CEO" class="team-img rounded-circle mb-3">
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <h4>John MacLeod</h4>
+                    <p class="text-muted">CEO & Founder</p>
+                </div>
             </div>
             <!-- Add more team members as needed -->
         </div>
-    </div>
-</section>
 
-<section class="achievements">
-    <div class="container">
-        <h2>Our Achievements</h2>
-        <div class="achievement-grid">
-            <div class="achievement">
-                <h3>500+</h3>
-                <p>Happy Clients</p>
-            </div>
-            <div class="achievement">
-                <h3>10+</h3>
-                <p>Years of Experience</p>
-            </div>
-            <div class="achievement">
-                <h3>50+</h3>
-                <p>Projects Completed</p>
+        <!-- Achievements -->
+        <div class="achievements-section">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="achievement-item bg-primary-soft animate__animated animate__fadeInLeft animate__delay-1s">
+                        <h3 data-counter="150">150+</h3>
+                        <p>Successful Projects</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="achievement-item bg-primary-soft animate__animated animate__fadeInUp animate__delay-2s">
+                        <h3 data-counter="98">98%</h3>
+                        <p>Client Satisfaction</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="achievement-item bg-primary-soft animate__animated animate__fadeInRight animate__delay-3s">
+                        <h3 data-counter="50">50+</h3>
+                        <p>Global Clients</p>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 </section>
 
-<section class="cta">
-    <div class="container">
-        <h2>Ready to Work With Us?</h2>
-        <a href="{% url 'contact_form' %}" class="cta-btn">Get in Touch</a>
+<!-- CTA Section -->
+<section class="cta-section bg-dark text-white py-5">
+    <div class="container text-center">
+        <h2 class="mb-4 animate__animated animate__fadeIn">Ready to Transform Your Business?</h2>
+        <p class="cta-sub mb-4 animate__animated animate__fadeIn animate__delay-1s">Let's discuss how we can drive your digital success.</p>
+        <a href="{% url 'contact_form' %}" class="btn btn-primary btn-lg px-5 py-3 animate__animated animate__fadeIn animate__delay-2s">
+            Get Started Now <i class="fas fa-arrow-right ms-2"></i>
+        </a>
     </div>
 </section>
+
 {% endblock %}
