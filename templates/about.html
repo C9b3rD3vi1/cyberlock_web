@@ -2,21 +2,90 @@
 
 {% load static %}
 
-{% block title %}About Us - CyberLoch Tech{% endblock %}
+{% block title %}About Us{% endblock %}
 
 {% block content %}
-<head>
-    <link rel="stylesheet" href="{% static 'css/about.css' %}"> 
-</head>
 
-<!-- About Us Section -->
-<section class="about py-5">
-    <h1 class="text-center mb-5"> Cyberlock Technologies</h1>
+<!--css files -->
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
 
-    <p class="lead text-center"> Innovative Solutions for Your Digital Success </p>
+<section class="about-hero">
+    <div class="container">
+        <h1>About Us</h1>
+        <p class="subheadline">We are passionate about delivering excellence and making a difference.</p>
+    </div>
+</section>
 
-    <h2 class="text-center mb-4">About Us</h2>
-    <p class="lead text-center">Cyberlock Tech is a leading provider of digital solutions, specializing in custom software, cloud computing, and more.</p>
-    <p class="text-center">Our mission is to help businesses grow through innovative technology. Our team of experts has decades of experience in delivering world-class solutions to clients across various industries.</p>
+<section class="our-story">
+    <div class="container">
+        <h2>Our Story</h2>
+        <p>Founded in 2010, we started as a small team with a big dream. Over the years, we've grown into a trusted name in the industry, driven by innovation and a commitment to our customers.</p>
+        <img src="{% static 'images/office.jpg' %}" alt="Our Office" class="story-image">
+    </div>
+</section>
+
+<section class="mission-values">
+    <div class="container">
+        <h2>Our Mission & Values</h2>
+        <div class="mission">
+            <h3>Mission</h3>
+            <p>To empower businesses with innovative solutions that drive growth and success.</p>
+        </div>
+        <div class="values">
+            <h3>Values</h3>
+            <ul>
+                <li>Customer-Centric Approach</li>
+                <li>Integrity and Transparency</li>
+                <li>Innovation and Excellence</li>
+                <li>Collaboration and Teamwork</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="meet-the-team">
+    <div class="container">
+        <h2>Meet the Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="{% static 'images/team1.jpg' %}" alt="John Doe">
+                <h3>John Doe</h3>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'images/team2.jpg' %}" alt="Jane Smith">
+                <h3>Jane Smith</h3>
+                <p>Chief Marketing Officer</p>
+            </div>
+            <!-- Add more team members as needed -->
+        </div>
+    </div>
+</section>
+
+<section class="achievements">
+    <div class="container">
+        <h2>Our Achievements</h2>
+        <div class="achievement-grid">
+            <div class="achievement">
+                <h3>500+</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="achievement">
+                <h3>10+</h3>
+                <p>Years of Experience</p>
+            </div>
+            <div class="achievement">
+                <h3>50+</h3>
+                <p>Projects Completed</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Ready to Work With Us?</h2>
+        <a href="{% url 'contact_form' %}" class="cta-btn">Get in Touch</a>
+    </div>
 </section>
 {% endblock %}

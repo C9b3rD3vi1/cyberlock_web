@@ -1,80 +1,211 @@
-
-/* Global Styles */
-html, body {
-    font-family: 'Helvetica', sans-serif;
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
     color: #333;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
     margin: 0 auto;
-    width: 100%;
-    padding-top: 40px; /* Moves everything down, leaving space for the navbar */
-    overflow-x: hidden;
-    background-color: #f8f9fa;
+    padding: 0 20px;
 }
 
-.about {
-    margin-top: 60px; /* Adjust this value as needed */
-    background-color: #f9f9f9;
-    padding: 3rem 1.5rem;
-    margin-left: 0%;
+/* Hero Section */
+.about-hero {
+    background: url('{% static "images/hero-bg.jpg" %}') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    padding-top: 80px;
 }
 
-.about h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #0073e6;
-    margin-bottom: 2rem;
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
-.about h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #005bb5;
-    margin-bottom: 1.5rem;
-}
-
-.about p.lead {
+.about-hero .subheadline {
     font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 1rem;
 }
 
-.about p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.text-center {
+/* Our Story Section */
+.our-story {
+    padding: 60px 0;
     text-align: center;
 }
 
-.py-5 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+.our-story h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.mb-4 {
-    margin-bottom: 1.5rem;
+.our-story p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
 }
 
-.mb-5 {
-    margin-bottom: 3rem;
+.story-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
-/* Responsive adjustments */
+/* Mission & Values Section */
+.mission-values {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.mission-values h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.mission, .values {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.mission h3, .values h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.values ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Meet the Team Section */
+.meet-the-team {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.meet-the-team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Achievements Section */
+.achievements {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.achievements h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.achievement-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.achievement {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    padding-bottom: 100px;
+}
+
+.achievement h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.achievement p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Call-to-Action Section */
+.cta {
+    background: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background: #fff;
+    color: #007bff;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #f0f0f0;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .about h1 {
+    .about-hero h1 {
         font-size: 2rem;
     }
 
-    .about h2 {
-        font-size: 1.5rem;
+    .about-hero .subheadline {
+        font-size: 1rem;
     }
 
-    .about p {
-        font-size: 0.9rem;
+    .team-grid, .achievement-grid {
+        flex-direction: column;
+        align-items: center;
     }
 }
