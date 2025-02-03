@@ -1,284 +1,258 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --primary: #007bff;
+    --primary-soft: #e3f2fd;
+    --transition: all 0.3s ease;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+/* General Styles */
+.main-container {
+    margin: 0 auto;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Hero Section */
 .about-hero {
-    background: url("{% static 'images/hero-bg.jpg' %}") no-repeat center center/cover;
-    height: 100vh;
+    background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), 
+                url('{% static "images/hero-bg.jpg" %}') center/cover;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.hero-overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    width: 100%;
-    padding: 3rem 0;
-}
-
-.hero-content {
-    color: #fff;
-    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    margin-bottom: 1.5rem;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Main Content */
-.about-content {
-    background-color: #fff;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-/* Section Header */
+/* Section Styling */
 .section-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .section-pre-title {
-    font-size: 1rem;
-    color: #6c757d;
-    text-transform: uppercase;
+    display: block;
+    color: var(--primary);
     font-weight: 600;
+    text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
-/* Timeline */
-.timeline p {
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: #555;
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
 }
 
-/* Mission & Values */
+/* Image Wrapper */
+.image-wrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: 50%;
+    transform: translateX(50%) rotate(5deg);
+    background: var(--primary);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Cards */
 .card {
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    transition: var(--transition);
+    border: none !important;
 }
 
-.card:hover {
+.hover-lift:hover {
     transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
 }
 
 .icon-wrapper {
-    background-color: #e6f7ff;
-    padding: 1.25rem;
-    border-radius: 50%;
-    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card-body {
-    text-align: center;
-    padding: 2rem;
-}
-
-.card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
-    margin-top: 1rem;
-}
-
-.card-text {
-    color: #555;
-    font-size: 1.125rem;
-    margin-top: 0.75rem;
-}
-
+/* Values List */
 .values-list {
-    list-style-type: none;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+    list-style: none;
     padding-left: 0;
 }
 
 .values-list li {
-    font-size: 1.125rem;
-    color: #555;
-    margin: 0.75rem 0;
-    display: flex;
-    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: var(--transition);
 }
 
-.values-list i {
-    font-size: 1.25rem;
-    margin-right: 1rem;
-    color: #007bff;
+.values-list li:hover {
+    transform: translateX(10px);
 }
 
 /* Team Section */
 .team-card {
-    transition: transform 0.3s ease-in-out;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 1rem;
+    transition: var(--transition);
+    max-width: 300px;
+    margin: 0 auto;
 }
 
-.team-card:hover {
-    transform: translateY(-10px);
-}
-
-.team-img-wrapper {
-    position: relative;
+.hover-scale:hover {
+    transform: scale(1.03);
 }
 
 .team-img {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #fff;
+    border: 3px solid var(--primary);
+    transition: var(--transition);
 }
 
 .social-links {
     position: absolute;
-    bottom: 15px;
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.team-card:hover .social-links {
+    opacity: 1;
+    bottom: 20px;
 }
 
 .social-link {
-    color: #333;
-    font-size: 1.25rem;
-    transition: color 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    transition: var(--transition);
 }
 
 .social-link:hover {
-    color: #007bff;
+    background: #0056b3;
+    transform: translateY(-3px);
 }
 
-/* Achievements Section */
-.achievements-section .achievement-item {
-    background-color: #f1f1f1;
-    padding: 2rem;
+/* Achievements */
+.achievement-item {
+    padding: 2.5rem;
+    border-radius: 1rem;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
-.achievements-section .achievement-item h3 {
-    font-size: 2rem;
+.achievement-item h3 {
+    font-size: 3rem;
     font-weight: 700;
-    color: #007bff;
-    margin-bottom: 0.5rem;
-}
-
-.achievements-section .achievement-item p {
-    font-size: 1.125rem;
-    color: #333;
-}
-
-.achievements-section .achievement-item:hover {
-    transform: translateY(-10px);
+    color: var(--primary);
+    margin-bottom: 1rem;
 }
 
 /* CTA Section */
 .cta-section {
-    background-color: #333;
-    color: #fff;
-    padding: 4rem 0;
+    background: linear-gradient(135deg, #0062cc, #007bff);
+    position: relative;
+    padding-bottom: 100px;
+    overflow: hidden;
 }
 
-.cta-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+.cta-sub {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem !important;
 }
 
-.cta-section p {
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
+.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: var(--transition);
 }
 
-.cta-section .btn {
-    font-size: 1.125rem;
-    padding: 0.75rem 2rem;
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-section .btn:hover {
-    background-color: #0056b3;
-}
-
-/* Responsiveness */
-@media (max-width: 992px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .card-body {
-        padding: 1.5rem;
-    }
-
-    .team-card {
-        margin-bottom: 2rem;
-    }
-
-    .achievements-section .achievement-item {
-        padding: 1.5rem;
-    }
-
-    .cta-section h2 {
-        font-size: 2rem;
-    }
+.btn-lg:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 768px) {
-    .team-card {
-        margin-bottom: 1.5rem;
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .team-img {
+        width: 150px;
+        height: 150px;
     }
 
-    .cta-section h2 {
-        font-size: 1.75rem;
+    .experience-badge {
+        position: relative;
+        transform: none;
+        margin: 20px auto;
+        right: auto;
+        width: max-content;
     }
-
-    .cta-section p {
-        font-size: 1rem;
-    }
-
-    .cta-section .btn {
-        font-size: 1rem;
+    
+    .image-wrapper {
+        margin-top: 30px;
     }
 }
