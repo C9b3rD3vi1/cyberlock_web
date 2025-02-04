@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero Section */
 .about-hero {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(135deg, #3875c1 0%, #2a5298 100%);
     padding: 100px 0;
     color: #fff;
     text-align: center;
@@ -40,24 +40,28 @@ h1, h2, h3, h4, h5, h6 {
     color: #6c757d;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
     color: #1e3c72;
+    text-align: center;
 }
 
 /* Timeline and Story Section */
 .timeline {
     font-size: 1.1rem;
-    color: #555;
+    color: #070707f9;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .timeline .lead {
     font-size: 1.25rem;
     font-weight: 500;
-    color: #1e3c72;
+    color: #394cf8;
 }
 
 .image-wrapper {
