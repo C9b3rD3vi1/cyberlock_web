@@ -1,94 +1,128 @@
 /* General Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    color: #2d3748;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #1a365d;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #3182ce;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2c5282;
 }
 
 /* Hero Section */
 .about-hero {
-    background: linear-gradient(135deg, #3875c1 0%, #2a5298 100%);
-    padding: 100px 0;
-    color: #fff;
+    background: #f7fafc;
+    padding: 120px 0;
     text-align: center;
+    width: 100%;
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a365d;
     margin-bottom: 20px;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: 1.25rem;
+    color: #4a5568;
+    font-weight: 400;
 }
 
 /* Section Header */
 .section-header {
     margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
 }
 
 .section-pre-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: #6c757d;
+    color: #718096;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
+    letter-spacing: 2px;
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
-    color: #1e3c72;
-    text-align: center;
+    color: #1a365d;
+    margin-top: 10px;
 }
 
-/* Timeline and Story Section */
+/* Our Story Section */
 .timeline {
-    font-size: 1.1rem;
-    color: #070707f9;
-    margin-bottom: 40px;
+    font-size: 1rem;
+    color: #4a5568;
     text-align: center;
+    padding-bottom: 40px;
+    padding-top: 60px;
 }
 
 .timeline .lead {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    color: #394cf8;
+    color: #1a365d;
 }
 
 .image-wrapper {
     position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    text-align: center;
 }
 
 .experience-badge {
     position: absolute;
     bottom: -20px;
     right: -20px;
-    background: #1e3c72;
+    background: #3182ce;
     color: #fff;
     padding: 10px 20px;
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 500;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-top: 30px;
 }
 
-/* Cards for Mission and Values */
+/* Mission & Values Section */
 .card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .icon-wrapper {
@@ -97,37 +131,54 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #ebf8ff;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
+}
+
+.icon-wrapper i {
+    color: #3182ce;
+    font-size: 1.5rem;
 }
 
 .values-list {
     list-style: none;
     padding-left: 0;
+    text-align: left;
+    display: inline-block;
 }
 
 .values-list li {
     margin-bottom: 10px;
     font-size: 1rem;
-    color: #555;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+}
+
+.values-list li i {
+    margin-right: 10px;
+    color: #3182ce;
 }
 
 /* Team Section */
 .team-card {
+    text-align: center;
     transition: transform 0.3s ease;
+    margin: 0 auto;
 }
 
 .team-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
 }
 
 .team-img-wrapper {
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
     width: 150px;
     height: 150px;
     margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .team-img {
@@ -137,82 +188,82 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-links {
-    position: absolute;
-    bottom: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: bottom 0.3s ease;
-}
-
-.team-card:hover .social-links {
-    bottom: 10px;
+    margin-top: 15px;
+    text-align: center;
 }
 
 .social-link {
-    color: #fff;
-    background: #1e3c72;
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+    color: #3182ce;
     margin: 0 5px;
-    text-decoration: none;
-    transition: background 0.3s ease;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
 .social-link:hover {
-    background: #2a5298;
+    color: #2c5282;
 }
 
 /* Achievements Section */
+.achievements-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between items */
+    flex-wrap: wrap; /* Allows items to wrap to the next row on smaller screens */
+    padding: 40px 0;
+}
+
 .achievement-item {
-    padding: 30px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
+    padding: 30px;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 250px; /* Flex-grow, flex-shrink, and flex-basis */
+    max-width: 300px; /* Maximum width for each item */
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .achievement-item h3 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1e3c72;
+    color: #3182ce;
     margin-bottom: 10px;
 }
 
 .achievement-item p {
-    font-size: 1.1rem;
-    color: #555;
-}
-
-.achievement-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+    color: #4a5568;
 }
 
 /* CTA Section */
 .cta-section {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: #3182ce;
     padding: 80px 0;
-    color: #fff;
     text-align: center;
+    color: #fff;
+    width: 100%;
 }
 
 .cta-section h2 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
 .cta-sub {
-    font-size: 1.25rem;
-    font-weight: 300;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin-bottom: 30px;
 }
 
 .btn-primary {
     background: #fff;
-    color: #1e3c72;
+    color: #3182ce;
     font-weight: 600;
     padding: 12px 30px;
     border-radius: 50px;
@@ -220,23 +271,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-    background: #1e3c72;
-    color: #fff;
-    border: 2px solid #fff;
+    background: #ebf8ff;
+    color: #2c5282;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
 
     .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .achievement-item h3 {
@@ -244,6 +294,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .cta-section h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 }
