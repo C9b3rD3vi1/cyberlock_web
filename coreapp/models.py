@@ -185,8 +185,6 @@ class ContactMessage(models.Model):
             raise ValidationError("Message must be at least 10 characters long.")
 
 
-
-# job application models, 
 # Save job application  and allowing user to make job application
 class JobApplication(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)  # Link to the user applying
