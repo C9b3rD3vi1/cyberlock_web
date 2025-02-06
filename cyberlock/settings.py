@@ -172,8 +172,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 
-
-
 # URL to access media files via the browser
 MEDIA_URL = '/media/'
 
@@ -274,6 +272,7 @@ JAZZMIN_SETTINGS = {
     'display_sidebar_menu': True,  # Whether to display the sidebar menu.
     'display_sidebar_brand': True,  # Whether to display the sidebar brand.
     'display_sidebar_user_menu': True,  # Whether to display the user menu in the sidebar.
+
     'display_sidebar_search': False,  # Whether to display the sidebar search input.
     'sidebar_nav_style': 'accordion',  # 'accordion' (default) or 'nested
     'navigation_expanded': True,  # Whether to expand the navigation by default.
