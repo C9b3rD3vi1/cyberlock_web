@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'coreapp', 
     'crispy_forms',
     'ckeditor',
+    'jazzmin',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -227,8 +228,104 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+'''
+
+# jazzmin configuration settings
+JAZZMIN_SETTINGS = {
+
+ # title of the window (Will default to current_admin_site.site_title if absent or None)
+    
+    'site_title': 'Cyberlock Admin',
+    'site_header': 'Cyberlock Admin',
+    'site_logo': 'static/images/logo.png',
+    'welcome_sign': 'Welcome to Cyberlock Admin',
+    'theme': 'dark',
+
+
+    # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
+    "login_logo": None,
+
+    # Logo to use for login form in dark themes (defaults to login_logo)
+    "login_logo_dark": None,
+
+    # CSS classes that are applied to the logo above
+    "site_logo_classes": "img-circle",
+
+    # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
+    "site_icon": None,
+
+    ################################
+    #                              #
+    #       Side Menu              #
+    #                              #
+    ################################
+
+    'show_sidebar': True,  # Whether to hide the sidebar.
+    'sidebar_collapse_text': 'Collapse Sidebar',  # Text for the sidebar collapse button.
+    'sidebar_expand_text': 'Expand Sidebar',  # Text for the sidebar expand button.
+    'display_sidebar_settings': True,  # Whether to display the sidebar settings button.
+    'display_sidebar_menu': True,  # Whether to display the sidebar menu.
+    'display_sidebar_brand': True,  # Whether to display the sidebar brand.
+    'display_sidebar_user_menu': True,  # Whether to display the user menu in the sidebar.
+    'display_sidebar_search': False,  # Whether to display the sidebar search input.
+    'sidebar_nav_style': 'accordion',  # 'accordion' (default) or 'nested
+    'navigation_expanded': True,  # Whether to expand the navigation by default.
+    'navigation_style':'vertical',  # 'horizontal' (default) or'vertical'
+    'navigation_icon_style': 'circle',  # 'default' (default), 'circle' or 'square'
+    'navigation_auto_collapse': True,  # Whether to automatically collapse the navigation on small screens.
+
+    ################################
+    'navigation_collapse_text': 'Collapse',  # Text for the collapse button.
+    'navigation_expand_text': 'Expand',  # Text for the expand button.
+    'display_footer': True,  # Whether to display the footer at the bottom of the page.
+    'display_brand': True,  # Whether to display the brand name at the top of the page.
+    'display_search': False,  # Whether to display the global search bar.
+
+    ################
+    # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
+    "login_logo": None,
+
+    # Logo to use for login form in dark themes (defaults to login_logo)
+    "login_logo_dark": None,
+
+    # CSS classes that are applied to the logo above
+    "site_logo_classes": "img-circle",
+
+    # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
+    "site_icon": None,
+
+
+    ############
+    # Top Menu #
+    ############
+
+    # Links to put along the top menu
+    "topmenu_links": [
+
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+
+        # external url that opens in a new window (Permissions can be added)
+        {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
+
+        # model admin to link to (Permissions checked against model)
+        {"model": "auth.User"},
+
+        # App with dropdown menu to all its models pages (Permissions checked against models)
+        {"app": "books"},
+    ],
+
+    #############
+    # User Menu #
+    #############
+
+    # Additional links to include in the user menu on the top right ("app" url type is not allowed)
+    "usermenu_links": [
+        {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
+        {"model": "auth.user"}
+    ],
+    }
 
 
 # Path for storing uploaded files using ckeditor
-CKEDITOR_UPLOAD_PATH = "uploads/"
-'''
+#CKEDITOR_UPLOAD_PATH = "uploads/"
