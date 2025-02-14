@@ -351,7 +351,7 @@ JAZZMIN_SETTINGS = {
 # jazzmin UI tweaks
 JAZZMIN_UI_TWEAKS = {
     
-    "theme": "flatly",
+    "theme": "darkly",
     "dark_mode_theme": "darkly",
 }
 
