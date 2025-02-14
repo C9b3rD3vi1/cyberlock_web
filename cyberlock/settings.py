@@ -248,7 +248,6 @@ JAZZMIN_SETTINGS = {
    "related_modal_active": True,
 
 
-
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
     "login_logo": None,
 
