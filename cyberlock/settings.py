@@ -307,8 +307,6 @@ JAZZMIN_SETTINGS = {
     "show_function_list": True,
 
 
-
-
     ############
     # Top Menu #
     ############
