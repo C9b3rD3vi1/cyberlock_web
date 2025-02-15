@@ -238,6 +238,7 @@ JAZZMIN_SETTINGS = {
     'site_logo': 'static/images/logo.png',
     'welcome_sign': 'Welcome to Cyberlock Admin',
     'theme': 'dark',
+    #'copyright': 'Cyberlock Technologies',
 
     # language settings
    # 'language_chooser': True,
@@ -299,6 +300,11 @@ JAZZMIN_SETTINGS = {
 
     # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
     "site_icon": None,
+
+    # show ui builder
+    "show_ui_builder": True,
+    # show function list on dashboard
+    "show_function_list": True,
 
 
 
