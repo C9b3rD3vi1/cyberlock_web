@@ -51,7 +51,9 @@ urlpatterns = [
         subject_template_name='password_reset_subject.txt'  # Custom subject template
     ), name='password_reset'),
 
-    path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(
+        template_name='password_reset_done.html'  # Ensure this is correct
+    ), name='password_reset_done'),
 
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
 
