@@ -76,6 +76,7 @@ def service_list(request):
 
     return render(request, 'service_list.html', context)
 
+
 # custom services offered by our application
 def custom_services(request):
     services = Service.objects.filter(service_type='custom')
