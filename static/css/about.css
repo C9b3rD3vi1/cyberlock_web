@@ -28,7 +28,7 @@ a:hover {
 /* Hero Section */
 .about-hero {
     background: linear-gradient(135deg, #3498db, #2c3e50);
-    padding: 6rem 0;
+    padding: 4rem 0;
     text-align: center;
     width: 100%;
 }
@@ -69,6 +69,12 @@ a:hover {
     width: 100%;
 }
 
+
+/* Add margin to the columns */
+.col-md-6 {
+    margin-bottom: 3rem; /* Adjust the value as needed */
+}
+
 .col-12, .col-md-6, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-8, .col-lg-10 {
     display: flex;
     flex-direction: column;
@@ -103,6 +109,7 @@ a:hover {
 /* Mission & Values Section */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 5rem; /* Increased margin for more space */
     border: none;
     border-radius: 10px;
     overflow: hidden;
@@ -191,7 +198,6 @@ a:hover {
 /* Achievements Section */
 .achievements-section {
     background: #f8f9fa;
-    padding: 4rem 0;
     text-align: center;
     width: 100%;
 }
@@ -223,8 +229,8 @@ a:hover {
 
 /* CTA Section */
 .cta-section {
-    background: #2c3e50;
-    padding: 4rem 0;
+    background: #c7d9ea;
+    padding: 2rem 0;
     text-align: center;
     width: 100%;
 }
