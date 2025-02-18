@@ -43,10 +43,18 @@ urlpatterns = [
     path('post/new/', views.blog_post_create, name='blog_post_create'),
     path('post/<int:pk>/edit/', views.blog_post_update, name='blog_post_update'),
 
+
     # password reset url
-    path('password-reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
+    path('password-reset/', auth_views.PasswordResetView.as_view(
+        template_name='password_reset.html',  # Custom template
+        email_template_name='password_reset_email.html',  # Custom email template
+        subject_template_name='password_reset_subject.txt'  # Custom subject template
+    ), name='password_reset'),
+
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 
     # project in details

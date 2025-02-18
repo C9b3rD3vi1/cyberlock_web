@@ -196,6 +196,12 @@ LOGOUT_REDIRECT_URL = 'home'  # Change 'home' to the desired URL name
 #ckeditor upload path
 CKEDITOR_UPLOAD_PATH="uploads/"
 
+# The default django mailing system configuration
+#Email backend for password reset (use console for testing)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For testing
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # For production
+
+
 '''
 # The default django mailing system configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
