@@ -197,7 +197,9 @@ class JobApplication(models.Model):
 
     def __str__(self):
         return self.job.title + " - " + self.user.username
-    
+
+
+#  Ticketing system for user to create and report issues or enquiry issues  
 '''
 
 #  Ticketing system for user to create and report issues or enquiry issues
@@ -208,6 +210,7 @@ class TicketCategory(models.Model):
     def __str__(self):
         return self.name
 
+        
 # Define the priority levels for tickets (optional)
 class TicketPriority(models.Model):
     name = models.CharField(max_length=50)
@@ -236,6 +239,7 @@ class Ticket(models.Model):
     def __str__(self):
         return self.subject
 
+        
 # Define comments on tickets
 class TicketComment(models.Model):
     ticket = models.ForeignKey(Ticket, related_name='comments', on_delete=models.CASCADE)
