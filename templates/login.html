@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block content %}
@@ -16,17 +17,33 @@
 
 <!-- Login Page -->
 <div class="login-page">
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <select id="language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+
     <!-- Centered Login Container -->
     <div class="login-container animate__animated animate__fadeIn" data-aos="zoom-in">
         <h2 class="animate__animated animate__fadeInUp">Login</h2>
 
         <!-- Messages -->
         {% if messages %}
-            <ul class="messages">
+            <div class="messages">
                 {% for message in messages %}
-                    <li class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
                 {% endfor %}
-            </ul>
+            </div>
         {% endif %}
 
         <!-- Login Form -->
@@ -42,7 +59,10 @@
             <!-- Password Field -->
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required class="animate__animated animate__fadeIn animate__delay-2s">
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required class="animate__animated animate__fadeIn animate__delay-2s">
+                    <i class="fas fa-eye" id="togglePassword"></i>
+                </div>
             </div>
 
             <!-- Remember Me Checkbox -->
@@ -50,9 +70,23 @@
                 <input type="checkbox" id="remember_me" name="remember_me">
                 <label for="remember_me">Remember Me</label>
             </div>
+
+            <!-- CAPTCHA -->
+            <div class="form-group">
+                {{ form.captcha }}
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="form-group terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="{#}">Terms and Conditions</a></label>
+            </div>
             
             <!-- Submit Button -->
-            <button type="submit" class="login-button animate__animated animate__pulse">Login</button>
+            <button type="submit" class="login-button animate__animated animate__pulse" id="loginButton">
+                <span id="loginText">Login</span>
+                <span id="loginSpinner" class="spinner"></span>
+            </button>
         </form>
 
         <!-- Social Login Divider -->
@@ -86,6 +120,27 @@
 <!-- External JS Libraries -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-    AOS.init();  // Initialize AOS animations
+    // Initialize AOS animations
+    AOS.init();
+
+    // Password visibility toggle
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        const passwordInput = document.getElementById('password');
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+
+    // Loading spinner
+    document.querySelector('form').addEventListener('submit', function () {
+        document.getElementById('loginText').style.display = 'none';
+        document.getElementById('loginSpinner').style.display = 'inline-block';
+    });
+
+    // Dark mode toggle
+    document.getElementById('darkModeToggle').addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        this.querySelector('i').classList.toggle('fa-sun');
+    });
 </script>
 {% endblock %}

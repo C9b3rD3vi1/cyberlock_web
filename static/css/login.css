@@ -4,8 +4,17 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background: linear-gradient(-45deg, #ee7752, #f8f6f7, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
   padding: 20px;
+  padding-top: 100px;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .login-container {
@@ -38,6 +47,24 @@
   font-size: 1rem;
 }
 
+/* Password Visibility Toggle */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 40px;
+}
+
+.password-wrapper i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+}
+
 /* Button Styling */
 .login-button {
   width: 100%;
@@ -55,11 +82,27 @@
   background-color: #0056b3;
 }
 
+/* Loading Spinner */
+.spinner {
+  display: none;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /* Social Icons */
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 1rem;
 }
 
@@ -70,6 +113,8 @@
   padding: 0.5rem;
   border-radius: 50%;
   transition: transform 0.3s ease;
+  font-size: 24px;
+  color: #555;
 }
 
 .social-icons .icon:hover {
@@ -89,4 +134,39 @@
 
 .extra-links a:hover {
   text-decoration: underline;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+  z-index: auto;
+}
+
+.dark-mode .login-container {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #555;
+}
+
+/* Language Selector */
+.language-selector {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.language-selector select {
+  padding: 5px;
+  border-radius: 5px;
 }
