@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 
+
 <!-- Login Page -->
 <div class="login-page">
     <!-- Dark Mode Toggle -->
@@ -30,6 +31,8 @@
             <option value="fr">Français</option>
         </select>
     </div>
+
+
 
     <!-- Centered Login Container -->
     <div class="login-container animate__animated animate__fadeIn" data-aos="zoom-in">
@@ -76,18 +79,21 @@
                 {{ form.captcha }}
             </div>
 
+
             <!-- Terms and Conditions -->
             <div class="form-group terms">
                 <input type="checkbox" id="terms" name="terms" required>
                 <label for="terms">I agree to the <a href="{#}">Terms and Conditions</a></label>
             </div>
             
+
             <!-- Submit Button -->
             <button type="submit" class="login-button animate__animated animate__pulse" id="loginButton">
                 <span id="loginText">Login</span>
                 <span id="loginSpinner" class="spinner"></span>
             </button>
         </form>
+
 
         <!-- Social Login Divider -->
         <div class="social-message">
@@ -96,6 +102,7 @@
             <div class="line"></div>
         </div>
 
+        
         <!-- Social Login Icons -->
         <div class="social-icons">
             <button aria-label="Log in with Google" class="icon">
