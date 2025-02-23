@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block content %}
@@ -15,25 +14,8 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 
-
 <!-- Login Page -->
 <div class="login-page">
-    <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle" class="dark-mode-toggle">
-        <i class="fas fa-moon"></i>
-    </button>
-
-    <!-- Language Selector -->
-    <div class="language-selector">
-        <select id="language">
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-        </select>
-    </div>
-
-
-
     <!-- Centered Login Container -->
     <div class="login-container animate__animated animate__fadeIn" data-aos="zoom-in">
         <h2 class="animate__animated animate__fadeInUp">Login</h2>
@@ -73,20 +55,7 @@
                 <input type="checkbox" id="remember_me" name="remember_me">
                 <label for="remember_me">Remember Me</label>
             </div>
-
-            <!-- CAPTCHA -->
-            <div class="form-group">
-                {{ form.captcha }}
-            </div>
-
-
-            <!-- Terms and Conditions -->
-            <div class="form-group terms">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the <a href="{#}">Terms and Conditions</a></label>
-            </div>
             
-
             <!-- Submit Button -->
             <button type="submit" class="login-button animate__animated animate__pulse" id="loginButton">
                 <span id="loginText">Login</span>
@@ -94,15 +63,13 @@
             </button>
         </form>
 
-
         <!-- Social Login Divider -->
         <div class="social-message">
             <div class="line"></div>
-            <p class="message">Login with social accounts</p>
+            <p class="message">Or login with</p>
             <div class="line"></div>
         </div>
 
-        
         <!-- Social Login Icons -->
         <div class="social-icons">
             <button aria-label="Log in with Google" class="icon">
@@ -142,12 +109,6 @@
     document.querySelector('form').addEventListener('submit', function () {
         document.getElementById('loginText').style.display = 'none';
         document.getElementById('loginSpinner').style.display = 'inline-block';
-    });
-
-    // Dark mode toggle
-    document.getElementById('darkModeToggle').addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        this.querySelector('i').classList.toggle('fa-sun');
     });
 </script>
 {% endblock %}

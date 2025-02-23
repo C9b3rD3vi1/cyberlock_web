@@ -1,21 +1,24 @@
-/* General Styling */
+/* Reset margin and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Login Page */
 .login-page {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(-45deg, #ee7752, #f8f6f7, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  padding-top: 100px;
+  padding: 20px;
+  background-color: #f5f5f5;
 }
 
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
+/* Login Container */
 .login-container {
   background: white;
   padding: 2rem;
@@ -26,9 +29,15 @@
   text-align: center;
 }
 
+.login-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+}
+
 /* Form Styling */
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: left;
 }
 
@@ -36,6 +45,7 @@
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
+  color: #555;
 }
 
 .form-group input {
@@ -44,15 +54,17 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 /* Password Visibility Toggle */
 .password-wrapper {
   position: relative;
-}
-
-.password-wrapper input {
-  padding-right: 40px;
 }
 
 .password-wrapper i {
@@ -64,7 +76,52 @@
   color: #555;
 }
 
-/* Button Styling */
+/* Remember Me Checkbox */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.remember-me input[type="checkbox"] {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.remember-me input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.remember-me input[type="checkbox"]:checked::after {
+  content: '\2713';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.remember-me label {
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.remember-me label:hover {
+  color: #007bff;
+}
+
+/* Submit Button */
 .login-button {
   width: 100%;
   padding: 0.75rem;
@@ -97,12 +154,27 @@
   100% { transform: rotate(360deg); }
 }
 
+/* Social Login Divider */
+.social-message {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: #555;
+}
+
+.social-message .line {
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
 /* Social Icons */
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .social-icons .icon {
@@ -123,7 +195,7 @@
 /* Extra Links */
 .extra-links {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .extra-links a {
@@ -133,39 +205,4 @@
 
 .extra-links a:hover {
   text-decoration: underline;
-}
-
-/* Dark Mode */
-.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-  z-index: auto;
-}
-
-.dark-mode .login-container {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-.dark-mode-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #555;
-}
-
-/* Language Selector */
-.language-selector {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-}
-
-.language-selector select {
-  padding: 5px;
-  border-radius: 5px;
 }
