@@ -7,19 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
-    <script src="{% static 'js/register.js' %}"></script>  <!-- Link to your JavaScript file -->
-    
+    <script src="{% static 'js/register.js' %}"></script>
     <script src="{% static 'js/typed.js' %}"></script>
-    
 </head>
 
-<div id="typed-output" class="text-center">
-    <h1 class="display-4"></h1>
-</div>
 
 <body>
+    <div id="typed-output" class="text-center">
+        <h1 class="display-4"></h1>
+    </div>
+
     <div class="register-container">
         <h2>Register</h2>
         
@@ -35,29 +33,28 @@
             {% csrf_token %}
             <div class="form-group">
                 <label for="{{ form.username.id_for_label }}">Username</label>
-                {{ form.username }}  <!-- Render the username field -->
+                {{ form.username }}
                 {% for error in form.username.errors %}
                     <div class="error">{{ error }}</div>
                 {% endfor %}
             </div>
             <div class="form-group">
                 <label for="{{ form.email.id_for_label }}">Email</label>
-                {{ form.email }}  <!-- Render the email field -->
+                {{ form.email }}
                 {% for error in form.email.errors %}
                     <div class="error">{{ error }}</div>
                 {% endfor %}
             </div>
-
             <div class="form-group">
                 <label for="{{ form.password1.id_for_label }}">Password</label>
-                {{ form.password1 }}  <!-- Render the password field -->
+                {{ form.password1 }}
                 {% for error in form.password1.errors %}
                     <div class="error">{{ error }}</div>
                 {% endfor %}
             </div>
             <div class="form-group">
                 <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
-                {{ form.password2 }}  <!-- Render the confirm password field -->
+                {{ form.password2 }}
                 {% for error in form.password2.errors %}
                     <div class="error">{{ error }}</div>
                 {% endfor %}
@@ -65,6 +62,7 @@
             <button type="submit" class="register-button">Sign Up</button>
         </form>
 
-        <p>Already have an account? <a href="{% url 'user_login' %}">Login here</a></p>
+        
+        <p class="login-link">Already have an account? <a href="{% url 'user_login' %}">Login here</a></p>
     </div>
-    {% endblock %}
+{% endblock %}
