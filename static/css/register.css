@@ -1,138 +1,37 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Register form */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+    background-color: #f8f9fa;
 }
-
-/* Typed.js Output Styling */
-#typed-output {
-    margin-bottom: 2rem;
-}
-
-#typed-output h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #1a1a1a;
-}
-
-/* Register Container */
 .register-container {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 500px;
-    width: 100%;
-    text-align: center;
-}
-
-.register-container h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #1a1a1a;
-}
-
-/* Form Styling */
-.form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: #555;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ddd;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
     border-radius: 8px;
-    font-size: 1rem;
-    color: #333;
-    transition: border-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-.form-group input:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-.error {
-    color: #ff4d4d;
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
-}
-
-/* Button Styling */
 .register-button {
     width: 100%;
-    padding: 0.75rem;
     background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: white;
 }
-
 .register-button:hover {
     background-color: #0056b3;
 }
-
-/* Login Link Styling */
-.login-link {
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.login-link a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.login-link a:hover {
-    text-decoration: underline;
-}
-
-/* Messages Styling */
 .messages {
     list-style: none;
-    margin-bottom: 1.5rem;
+    padding: 0;
 }
-
 .messages li {
-    padding: 0.75rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
-
-.messages .success {
-    background-color: #d4edda;
-    color: #155724;
-}
-
 .messages .error {
     background-color: #f8d7da;
     color: #721c24;
+}
+.messages .success {
+    background-color: #d4edda;
+    color: #155724;
 }

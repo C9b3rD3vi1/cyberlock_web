@@ -20,8 +20,21 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-bottom: 100px; /* Space for footer */
     font-family: var(--font-family);
+    color: var(--secondary-color);
+}
+
+/* Flexbox Container for Page Layout */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Content Wrapper */
+.content-wrap {
+    flex: 1; /* This makes the content take up the remaining space */
+    padding-top: 60px; /* Adjust for fixed navbar height */
 }
 
 /* Navbar Styling */
@@ -36,7 +49,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better separation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-container {
@@ -113,14 +126,12 @@ body {
 
 /* Footer Styling */
 .custom-footer {
-    background-color: white;
+    background-color: rgb(233, 253, 251);
     color: black;
     padding: 2rem;
     font-family: 'Arial', sans-serif;
     width: 100%; /* Full width */
-    position: fixed; /* Stick to the bottom */
-    bottom: 0; /* Position at the very bottom */
-    left: 0; /* Align with the left edge */
+    margin-top: auto; /* Pushes the footer to the bottom */
     box-sizing: border-box;
     display: flex;
     justify-content: center; /* Center content horizontally */
@@ -160,29 +171,28 @@ body {
 }
 
 .social-icons a.facebook {
-    color: #3b5998 !important;/* Facebook */
+    color: #3b5998 !important; /* Facebook */
 }
 
 .social-icons a.twitter {
-    color: #00acee; /* Twitter */
+    color: #00acee !important; /* Twitter */
 }
 
 .social-icons a.linkedin {
-    color: #0e76a8; /* LinkedIn */
+    color: #0e76a8 !important; /* LinkedIn */
 }
 
 .social-icons a.instagram {
-    color: #E4405F; /* Instagram */
+    color: #E4405F !important; /* Instagram */
 }
 
 .social-icons a.youtube {
-    color: #FF0000; /* YouTube */
+    color: #FF0000 !important; /* YouTube */
 }
 
 .social-icons a:hover {
     color: #00bcd4; /* Hover color for all icons */
 }
-
 
 .footer-bottom {
     font-size: 1rem;
@@ -213,4 +223,3 @@ body {
         font-size: 1rem;
     }
 }
-

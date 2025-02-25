@@ -20,90 +20,79 @@
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    
 </head>
 <body class="default-body">
+    <!-- Flexbox Container -->
+    <div class="page-container">
+        <!-- Navbar -->
+        <nav class="custom-navbar">
+            <div class="navbar-container">
+                <!-- Logo Section -->
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'images/icon-192x192.png' %}" alt="CyberLock Logo">
+                    <span>CyberLock Tech</span>
+                </a>
 
-    <!-- Navbar -->
-    <nav class="custom-navbar">
-        <div class="navbar-container">
-            <!-- Logo Section -->
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/icon-192x192.png' %}" alt="CyberLock Logo">
-                <span>CyberLock Tech</span>
-            </a>
+                <!-- Toggler Button for Mobile -->
+                <button class="navbar-toggler" aria-label="Toggle navigation">☰</button>
 
-            <!-- Toggler Button for Mobile -->
-            <button class="navbar-toggler" aria-label="Toggle navigation">☰</button>
+                <!-- Navigation Menu -->
+                <ul class="navbar-menu">
+                    <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+                    <li><a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'service_list' %}">All Services</a></li>
+                            <li><a href="{% url 'service_list' %}?type=custom">Custom Services</a></li>
+                            <li><a href="{% url 'service_list' %}?type=cloud">Cloud Services</a></li>
+                            <li><a href="{% url 'service_list' %}?type=standard">Standard Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'portfolio' %}" class="{% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}">Portfolio</a></li>
+                    <li><a href="{% url 'blog_list' %}" class="{% if request.resolver_match.url_name == 'blog_list' %}active{% endif %}">Blog</a></li>
 
-            <!-- Navigation Menu -->
-            <ul class="navbar-menu">
-                <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
-                <li><a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About Us</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Services</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{% url 'service_list' %}">All Services</a></li>
-                        
-                        <li><a href="{% url 'service_list' %}?type=custom">Custom Services</a></li>
-                        <li><a href="{% url 'service_list' %}?type=cloud">Cloud Services</a></li>
-                        <li><a href="{% url 'service_list' %}?type=standard">Standard Services</a></li>
-                    </ul>
-                </li>
-                <li><a href="{% url 'portfolio' %}" class="{% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}">Portfolio</a></li>
-                
-                <li><a href="{% url 'blog_list' %}" class="{% if request.resolver_match.url_name == 'blog_list' %}active{% endif %}">Blog</a></li>
-
-                {% if user.is_authenticated %}
-
-                <li> <a href="{% url 'testimonial_list' %}" class="{% if request.resolver_match.url_name == 'testimonial_list' %}active{% endif %}">Testimonies</a></li>
-
-                <li><a href="{% url 'job_list' %}" class="{% if request.resolver_match.url_name == 'job_list' %}active{% endif %}">Jobs</a></li>
-
-                <li><a href="{% url 'contact_form' %}" class="{% if request.resolver_match.url_name == 'contact_form' %}active{% endif %}">Contact Us</a></li>
-
-                <li><a href="{% url 'user_profile' %}" class="{% if request.resolver_match.url_name == 'user_profile' %}active{% endif %}">Profile</a></li>
-
-                <li><a href="{% url 'user_logout' %}">Logout</a></li>
-
-                {% else %}
-
-                <li><a href="{% url 'user_login' %}" class="{% if request.resolver_match.url_name == 'user_login' %}active{% endif %}">Login</a></li>
-                
-                <li><a href="{% url 'user_register' %}" class="{% if request.resolver_match.url_name == 'user_register' %}active{% endif %}">Register</a></li>
-
-                {% endif %}
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Page Content -->
-    {% block content %}
-    {% endblock %}
-
-
-<!-- Footer -->
-<footer class="custom-footer">
-    <div class="footer-container">
-        <div class="footer-content">
-            <h4>Connect With Us</h4>
-            <div class="social-icons">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'testimonial_list' %}" class="{% if request.resolver_match.url_name == 'testimonial_list' %}active{% endif %}">Testimonies</a></li>
+                        <li><a href="{% url 'job_list' %}" class="{% if request.resolver_match.url_name == 'job_list' %}active{% endif %}">Jobs</a></li>
+                        <li><a href="{% url 'contact_form' %}" class="{% if request.resolver_match.url_name == 'contact_form' %}active{% endif %}">Contact Us</a></li>
+                        <li><a href="{% url 'user_profile' %}" class="{% if request.resolver_match.url_name == 'user_profile' %}active{% endif %}">Profile</a></li>
+                        <li><a href="{% url 'user_logout' %}">Logout</a></li>
+                    {% else %}
+                        <li><a href="{% url 'user_login' %}" class="{% if request.resolver_match.url_name == 'user_login' %}active{% endif %}">Login</a></li>
+                        <li><a href="{% url 'user_register' %}" class="{% if request.resolver_match.url_name == 'user_register' %}active{% endif %}">Register</a></li>
+                    {% endif %}
+                </ul>
             </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="content-wrap">
+            {% block content %}
+            {% endblock %}
         </div>
-        <div class="footer-bottom">
-            <p>&copy; {% now "Y" %} CyberLock Technologies. All rights reserved.</p>
-        </div>
+
+        <!-- Footer -->
+        <footer class="custom-footer">
+            <div class="footer-container">
+                <div class="footer-content">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; {% now "Y" %} CyberLock Technologies. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-
-
 
     <!-- Custom JavaScript -->
     <script src="{% static 'js/navbar.js' %}"></script>

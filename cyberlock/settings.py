@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'ckeditor',
     'jazzmin',
+    'widget_tweaks',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',

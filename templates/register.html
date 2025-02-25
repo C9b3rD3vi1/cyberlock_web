@@ -1,68 +1,70 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <link rel="stylesheet" href="{% static 'css/register.css' %}">
     <script src="{% static 'js/register.js' %}"></script>
     <script src="{% static 'js/typed.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 </head>
 
-
 <body>
-    <div id="typed-output" class="text-center">
-        <h1 class="display-4"></h1>
-    </div>
+    <div class="container">
+        <div id="typed-output" class="text-center mt-4">
+            <h1 class="display-4">Join Us Today</h1>
+        </div>
 
-    <div class="register-container">
-        <h2>Register</h2>
-        
-        {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        
-        <form method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="{{ form.username.id_for_label }}">Username</label>
-                {{ form.username }}
-                {% for error in form.username.errors %}
-                    <div class="error">{{ error }}</div>
-                {% endfor %}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.email.id_for_label }}">Email</label>
-                {{ form.email }}
-                {% for error in form.email.errors %}
-                    <div class="error">{{ error }}</div>
-                {% endfor %}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.password1.id_for_label }}">Password</label>
-                {{ form.password1 }}
-                {% for error in form.password1.errors %}
-                    <div class="error">{{ error }}</div>
-                {% endfor %}
-            </div>
-            <div class="form-group">
-                <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
-                {{ form.password2 }}
-                {% for error in form.password2.errors %}
-                    <div class="error">{{ error }}</div>
-                {% endfor %}
-            </div>
-            <button type="submit" class="register-button">Sign Up</button>
-        </form>
-
-        
-        <p class="login-link">Already have an account? <a href="{% url 'user_login' %}">Login here</a></p>
+        <div class="register-container">
+            <h2 class="text-center">Register</h2>
+            
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            
+            <form method="POST" class="mt-4">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+                    {{ form.username|add_class:"form-control" }}
+                    {% for error in form.username.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                    {{ form.email|add_class:"form-control" }}
+                    {% for error in form.email.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.password1.id_for_label }}" class="form-label">Password</label>
+                    {{ form.password1|add_class:"form-control" }}
+                    {% for error in form.password1.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.password2.id_for_label }}" class="form-label">Confirm Password</label>
+                    {{ form.password2|add_class:"form-control" }}
+                    {% for error in form.password2.errors %}
+                        <div class="text-danger">{{ error }}</div>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="btn register-button">Sign Up</button>
+            </form>
+            <p class="text-center mt-3">Already have an account? <a href="{% url 'user_login' %}" class="text-primary">Login here</a></p>
+        </div>
     </div>
+</body>
 {% endblock %}
