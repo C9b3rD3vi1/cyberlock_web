@@ -15,55 +15,57 @@
 </head>
 
 <body>
-    <div class="container">
-        <div id="typed-output" class="text-center mt-4">
-            <h1 class="display-4">Join Us Today</h1>
-        </div>
+    <div class="register-page"> <!-- Add a unique wrapper class -->
+        <div class="container">
+            <div id="typed-output" class="text-center mt-4">
+                <h1 class="display-4">Join Us Today</h1>
+            </div>
 
-        <div class="register-container">
-            <h2 class="text-center">Register</h2>
-            
-            {% if messages %}
-                <ul class="messages">
-                    {% for message in messages %}
-                        <li class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-            
-            <form method="POST" class="mt-4">
-                {% csrf_token %}
-                <div class="mb-3">
-                    <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
-                    {{ form.username|add_class:"form-control" }}
-                    {% for error in form.username.errors %}
-                        <div class="text-danger">{{ error }}</div>
-                    {% endfor %}
-                </div>
-                <div class="mb-3">
-                    <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
-                    {{ form.email|add_class:"form-control" }}
-                    {% for error in form.email.errors %}
-                        <div class="text-danger">{{ error }}</div>
-                    {% endfor %}
-                </div>
-                <div class="mb-3">
-                    <label for="{{ form.password1.id_for_label }}" class="form-label">Password</label>
-                    {{ form.password1|add_class:"form-control" }}
-                    {% for error in form.password1.errors %}
-                        <div class="text-danger">{{ error }}</div>
-                    {% endfor %}
-                </div>
-                <div class="mb-3">
-                    <label for="{{ form.password2.id_for_label }}" class="form-label">Confirm Password</label>
-                    {{ form.password2|add_class:"form-control" }}
-                    {% for error in form.password2.errors %}
-                        <div class="text-danger">{{ error }}</div>
-                    {% endfor %}
-                </div>
-                <button type="submit" class="btn register-button">Sign Up</button>
-            </form>
-            <p class="text-center mt-3">Already have an account? <a href="{% url 'user_login' %}" class="text-primary">Login here</a></p>
+            <div class="register-container">
+                <h2 class="text-center">Register</h2>
+                
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+                        {{ form.username|add_class:"form-control" }}
+                        {% for error in form.username.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.email.id_for_label }}" class="form-label">Email</label>
+                        {{ form.email|add_class:"form-control" }}
+                        {% for error in form.email.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.password1.id_for_label }}" class="form-label">Password</label>
+                        {{ form.password1|add_class:"form-control" }}
+                        {% for error in form.password1.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.password2.id_for_label }}" class="form-label">Confirm Password</label>
+                        {{ form.password2|add_class:"form-control" }}
+                        {% for error in form.password2.errors %}
+                            <div class="text-danger">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    <button type="submit" class="btn register-button">Sign Up</button>
+                </form>
+                <p class="text-center mt-3">Already have an account? <a href="{% url 'user_login' %}" class="text-primary">Login here</a></p>
+            </div>
         </div>
     </div>
 </body>
