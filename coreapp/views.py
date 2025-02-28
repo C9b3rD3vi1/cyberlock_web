@@ -41,7 +41,7 @@ def home(request):
     services = Service.objects.filter(is_active=True)[:4]  # Get the latest 3 services
     projects = Project.objects.all()[:4]  # Get the latest 3 projects
     blog_posts = BlogPost.objects.all().order_by('-published_date')[:4]  # Get the latest 3 blog posts
-    testimonials = Testimonial.objects.all()[:4]  # Get the latest 3 testimonials
+    testimonials = Testimonial.objects.all()[:3]  # Get the latest 3 testimonials
 
     context = {
         'services': services,
