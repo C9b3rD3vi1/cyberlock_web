@@ -3,3 +3,4 @@ Django==4.2.19
 django_ckeditor==6.7.2
 is_safe_url==1.0
 python-decouple==3.8
+python-dotenv==1.0.1
