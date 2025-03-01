@@ -12,6 +12,25 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
+
+# Technology and Tech stack used in the company
+
+
+class Technology(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
+class TechStack(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    technologies = models.ManyToManyField(Technology, related_name="tech_stacks")
+
+    def __str__(self):
+        return self.name
+
+
+
 # 1. User Profile (Team members or clients)
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -97,6 +116,7 @@ class Service(models.Model):
     service_image = models.ImageField(upload_to='service_images/', blank=True)
    # slug = models.SlugField(unique=True, max_length=200, blank=True)
     is_active = models.BooleanField(default=True)
+    tech_stacks = models.ManyToManyField(TechStack, blank=True)  # Services can have many tech stacks
     service_type = models.CharField(max_length=10, choices=SERVICE_TYPE_CHOICES, default='standard')
 
     class Meta:
@@ -114,9 +134,26 @@ class Project(models.Model):
     description = RichTextUploadingField(null=True, blank=True)
     client = models.CharField(max_length=200)
     project_image = models.ImageField(upload_to='project_images/', blank=True)
+    slug = models.SlugField(unique=True, max_length=200, blank=False)
     completion_date = models.DateField()
     link = models.URLField(blank=True)
-    technologies_used = models.CharField(max_length=200, blank=True)
+    technologies_used = models.ManyToManyField(TechStack, max_length=200, blank=True)
+
+    # Custom save method to generate unique slug
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base_slug = slugify(self.title)
+            unique_slug = base_slug
+            counter = 1
+
+            while BlogPost.objects.filter(slug=unique_slug).exists():
+                unique_slug = f"{base_slug}-{counter}"
+                counter += 1
+
+            self.slug = unique_slug
+
+        super().save(*args, **kwargs) 
+
 
     def __str__(self):
         return self.title

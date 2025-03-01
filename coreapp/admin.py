@@ -4,7 +4,7 @@ from django.contrib.auth.admin import UserAdmin
 
 # import my models
 from django.db import models
-from . models import Project
+from . models import Project, Technology, TechStack
 from django import forms
 from . models import Testimonial, Profile, BlogPost
 from . models import Service, ContactMessage, Job, JobApplication
@@ -59,4 +59,19 @@ admin.site.unregister(User)  # Unregister the default User admin
 admin.site.register(User, UserAdmin)
 
 
+@admin.register(Technology)
+class TechnologyAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+    search_fields = ("name",)
 
+# 
+@admin.register(TechStack)
+class TechStackAdmin(admin.ModelAdmin):
+    list_display = ("name", "get_technologies")
+    search_fields = ("name",)
+    filter_horizontal = ("technologies",)
+
+    def get_technologies(self, obj):
+        return ", ".join([tech.name for tech in obj.technologies.all()])
+    
+    get_technologies.short_description = "Technologies"
