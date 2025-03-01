@@ -1,102 +1,208 @@
+/* Reset margin and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
 
+/* Login Page */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
 
-/* Styling for the login container */
+/* Login Container */
 .login-container {
-    max-width: 400px; /* Container width */
-    width: 100%;
-    margin: 50px auto; /* Center the container with some margin from top */
-    background-color: #fff; /* White background for the container */
-    padding: 30px; /* Padding inside the container */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around the container */
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
 }
 
-/* Title of the form */
 .login-container h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333; /* Dark color for the heading */
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
 }
 
-/* Styling for form groups */
-.login-container .form-group {
-    margin-bottom: 15px;
+/* Form Styling */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
-.login-container label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #555; /* Dark gray color for labels */
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
 }
 
-.login-container input[type="text"],
-.login-container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd; /* Light border color */
-    border-radius: 5px; /* Rounded corners for input fields */
-    font-size: 14px;
-    color: #333;
-    background-color: #f9f9f9; /* Light background for input fields */
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
 }
 
-.login-container input[type="text"]:focus,
-.login-container input[type="password"]:focus {
-    border-color: #007bff; /* Blue border on focus */
-    outline: none; /* Remove the default outline */
-    background-color: #fff; /* White background on focus */
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
-/* Styling for the 'Remember Me' checkbox section */
-.login-container .remember-me {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+/* Password Visibility Toggle */
+.password-wrapper {
+  position: relative;
 }
 
-.login-container .remember-me label {
-    font-size: 14px;
+.password-wrapper i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
 }
 
-/* Login button styles */
-.login-container .login-button {
-    width: 100%; /* Full width */
-    padding: 12px;
-    background-color: #007bff; /* Blue background */
-    color: white;
-    border: none;
-    border-radius: 5px; /* Rounded corners for the button */
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Remember Me Checkbox */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.login-container .login-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+.remember-me input[type="checkbox"] {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.login-container .login-button:active {
-    background-color: #003f7f; /* Even darker blue when button is clicked */
+.remember-me input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
-/* Extra links (e.g., Sign up, Forgot password) */
-.login-container .extra-links {
-    margin-top: 20px;
-    text-align: center;
+.remember-me input[type="checkbox"]:checked::after {
+  content: '\2713';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-.login-container .extra-links p {
-    font-size: 14px;
+.remember-me label {
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
 }
 
-.login-container .extra-links a {
-    color: #007bff; /* Blue color for links */
-    font-weight: bold;
+.remember-me label:hover {
+  color: #007bff;
 }
 
-.login-container .extra-links a:hover {
-    color: #0056b3; /* Darker blue on hover */
+/* Submit Button */
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #0057b3f1;
+}
+
+/* Loading Spinner */
+.spinner {
+  display: none;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Social Login Divider */
+.social-message {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: #555;
+}
+
+.social-message .line {
+  flex: 1;
+  height: 1px;
+  background-color: #ddd;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-icons .icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  font-size: 24px;
+  color: #555;
+}
+
+.social-icons .icon:hover {
+  transform: scale(1.1);
+}
+
+/* Extra Links */
+.extra-links {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.extra-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
 }

@@ -1,143 +1,225 @@
+:root {
+    --primary-color: #1b97fc;
+    --secondary-color: #e7edfa;
+    --hover-bg-color: #555;
+    --footer-bg: #333;
+    --footer-text: #e7edfa;
+    --spacing: 1rem;
+    --border-radius: 5px;
+    --font-family: 'Arial', sans-serif;
+}
 
-/* Styling for the navbar */
-.navbar {
-    background-color: #1f7cd9 !important; /* blue background for navbar */
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
-.navbar-brand, .nav-link {
-    color: #f8f9fa !important; /* White text for links */
-}
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-.nav-link:hover {
-    color: #35c55b !important; /* Light gray on hover */
-}
-.dropdown-menu {
-    background-color: #1011110d; /* Darker background for dropdown */
-}
-.dropdown-item {
-    color: #037df7 !important; /* White text for dropdown */
-}
-.dropdown-item:hover {
-    background-color: hsl(171, 16%, 91%); /* Darker gray on hover */
-    color: rgb(4, 61, 248) !important;
-}
-/* General body styling */
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9; /* Light background for body */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    color: var(--secondary-color);
 }
 
-
-/* Ensure the HTML and body occupy the full viewport height */
-html, body {
-height: 100%;
-margin: 0;
-display: flex;
-flex-direction: column;
+/* Flexbox Container for Page Layout */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* The main content area will stretch to push the footer down */
-.main-content {
-flex: 1;
+/* Content Wrapper */
+.content-wrap {
+    flex: 1; /* This makes the content take up the remaining space */
+    padding-top: 60px; /* Adjust for fixed navbar height */
 }
 
-.container {
-    max-width: 1250px; /* Reduced the width of the container */
-    margin: 0 auto; /* Center the container */
+/* Navbar Styling */
+.custom-navbar {
+    background-color: #333;
+    color: var(--secondary-color);
+    padding: var(--spacing);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #17e0f2;
+}
+
+.navbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+    background-color: var(--hover-bg-color);
+    border-radius: var(--border-radius);
+}
+
+/* Dropdown Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #e280ee;
 }
 
 /* Footer Styling */
-footer {
-    background-color: #333; /* Dark background color for the footer */
-    color: white; /* White text color */
-    padding: 50px 0; /* Reduced padding to make the footer shorter */
-    text-align: center; /* Center align text */
-    font-size: 1rem; /* Font size for text */
+.custom-footer {
+    background-color: rgb(233, 253, 251);
+    color: black;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    width: 100%; /* Full width */
+    margin-top: auto; /* Pushes the footer to the bottom */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Align content vertically */
+    height: 150px; /* Adjust height as needed */
+    z-index: 1000; /* Ensure it stays above other elements */
 }
 
-footer p {
-    margin: 5px 0; /* Reduced margin to make the footer more compact */
+.footer-container {
+    max-width: 1400px; /* Optional: Adjust as needed */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem; /* Space between footer sections */
+    text-align: center;
 }
 
-footer .container {
-    max-width: 1200px; /* Ensure the footer content doesn’t stretch too wide */
-    margin: 0 auto; /* Center the content */
+.footer-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
-footer .d-flex {
-    justify-content: center; /* Center the icons horizontally */
-    gap: 15px; /* Reduced space between the icons */
+.social-icons {
+    display: flex;
+    gap: 2rem;
 }
 
-footer .d-flex a {
-    font-size: 22px; /* Reduced icon size */
-    color: white; /* Default icon color */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effect */
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.5rem; /* Adjust icon size */
+    margin: 0 0.5rem; /* Add spacing between icons */
+    color: inherit; /* Ensure they inherit color if overridden */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
-footer .d-flex a:hover {
-    color: #00c6ff; /* Change color on hover */
-    transform: translateY(-3px); /* Slight lift effect on hover */
+.social-icons a.facebook {
+    color: #3b5998 !important; /* Facebook */
 }
 
-/* Specific Icon Colors */
-footer .fab.fa-facebook-f {
-    color: #3b5998; /* Facebook blue */
+.social-icons a.twitter {
+    color: #00acee !important; /* Twitter */
 }
 
-footer .fab.fa-twitter {
-    color: #1da1f2; /* Twitter blue */
+.social-icons a.linkedin {
+    color: #0e76a8 !important; /* LinkedIn */
 }
 
-footer .fab.fa-linkedin-in {
-    color: #0077b5; /* LinkedIn blue */
+.social-icons a.instagram {
+    color: #E4405F !important; /* Instagram */
 }
 
-footer .fab.fa-instagram {
-    color: #e1306c; /* Instagram pink */
+.social-icons a.youtube {
+    color: #FF0000 !important; /* YouTube */
 }
 
-footer .fab.fa-youtube {
-    color: #ff0000; /* YouTube red */
+.social-icons a:hover {
+    color: #00bcd4; /* Hover color for all icons */
 }
 
-footer .d-flex a:focus {
-    outline: none; /* Remove outline on focus */
+.footer-bottom {
+    font-size: 1rem;
+    opacity: 0.8;
 }
 
-/* Optional: Make the footer more compact on smaller screens */
+/* Responsive Design */
 @media (max-width: 768px) {
-    footer .d-flex {
-        flex-wrap: wrap; /* Stack icons vertically on small screens */
-        justify-content: center;
+    .navbar-menu {
+        display: none; /* Hide menu on smaller screens */
     }
-}
 
-
-/* Animation for Fade-in Effect */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+    .hamburger {
+        display: block;
+        cursor: pointer;
     }
-    to {
-        opacity: 1;
-    }
-}
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .footer {
-        padding-top: 15px; /* Reduced padding for smaller screens */
-        padding-bottom: 15px;
+    .footer-container {
+        text-align: center;
+        gap: 0.5rem;
     }
 
     .social-icons {
-        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .social-icons a {
-        margin-bottom: 10px;
+        font-size: 1rem;
     }
 }

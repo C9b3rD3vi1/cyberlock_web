@@ -1,137 +1,277 @@
 /* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    color: #c2c0c0e4;
-    line-height: 1.6;
+* {
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
+}
+
+/* Global Styles */
+html, body {
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0 auto;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #f8f9fa;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    max-width: 100%;
+
+}
+
+.container-fluid {
     padding: 0;
 }
 
-a {
-    text-decoration: none;
-}
-
-h1, h2, h3 {
-    font-weight: 700;
-}
-
-/* Hero Section Styling */
+/* Hero Section */
 .hero {
     background: linear-gradient(to right, #4c6ef5, #00c6ff);
     color: white;
-    padding: 40px 0;
+    padding: 80px 0;
     text-align: center;
     position: relative;
-    z-index: 1;
-}
-
-.hero .container {
-    max-width: 100%;
-    width: 750px;
-    margin: 0 auto;
-    padding: 20px 0;
 }
 
 .hero h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    animation: fadeInDown 2s ease-out;
     margin-bottom: 20px;
-    display: inline-block;
-    border-right: 3px solid white;
-    padding-right: 5px;
-    white-space: nowrap;
+    animation: fadeInDown 1s ease-out;
 }
 
 .hero p {
     font-size: 1.25rem;
     font-weight: 300;
     line-height: 1.6;
-    animation: fadeInUp 2s ease-out 2s forwards;
+    animation: fadeInUp 1s ease-out 1s forwards;
 }
 
-/* Sections */
-.services, .portfolio, .blog, .testimonials {
-    background-color: hsl(180, 5%, 4%);
+/* Services Section */
+.services {
+    margin: 0;
+    padding: 10px 0;
+    background-color: white;
 }
 
-.card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+.services h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #150808;
 }
 
+/* Card Styling */
 .card {
-    border: none;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    background-color: #000;
+    color: white;
     display: flex;
+    flex: 1 1 calc(25% - 15px);
+    box-sizing: border-box;
+    margin: 0;
     flex-direction: column;
     justify-content: space-between;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+.card img {
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
 }
 
 .card-body {
-    text-align: center;
     padding: 20px;
+    text-align: center;
+    overflow: visible; /* Ensure text stays visible */
 }
 
 .card-title {
-    font-size: 1.5rem;
-    color: black;
+    color: #08bef1;
+    font-size: 1.25rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    overflow: visible; /* Ensure text title stays visible */
 }
 
 .card-text {
-    color: #333;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-/* Testimonials */
-.testimonials .card {
-    background: #d2e3f4;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    text-align: center;
-}
-
-.testimonials .card-text {
-    font-style: italic;
     font-size: 1rem;
-    color: #555;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    z-index: 2; /* Ensure text is above background */
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
 
-    .hero p {
-        font-size: 1.1rem;
-    }
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+    z-index: -10;
+    pointer-events: none;
+}
 
-    .hero {
-        padding: 60px 0;
-    }
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    transform: scale(0.95);
+    filter: blur(20px);
+    z-index: -1;
+}
 
-    .col-md-4 {
-        flex: 0 0 100%;
-    }
-    .hero {
-        padding: 40px 0; /* Further reduced padding for smaller screens */
-    }
+/* Button Styling */
+/* From Uiverse.io by nikk7007 */ 
+.btn {
+    --color: #00A97F;
+    --color2: rgb(10, 25, 30);
+    padding: 0.8em 1.75em;
+    background-color: transparent;
+    border-radius: 6px;
+    border: .3px solid var(--color);
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 17px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+   }
+   
+   .btn::after, .btn::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color);
+   }
+   
+   .btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover {
+    color: var(--color2);
+   }
+   
+   .btn:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+   }
+   
+/* Portfolio Section */
+.portfolio {
+    padding: 60px 0;
+    background-color: #fff;
+}
 
+.portfolio h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Blog Section */
+.blog {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.blog h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 992px) { 
+    .card {
+        flex: 1 1 calc(33.33% - 15px);
+    }
+}
+
+@media (max-width: 768px) { 
+    .card {
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 576px) { 
+    .card {
+        flex: 1 1 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
