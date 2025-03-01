@@ -56,6 +56,7 @@ class BlogPost(models.Model):
     content = RichTextUploadingField(null=True, blank=False)
     #content = models.TextField()
     image = models.ImageField(upload_to='blog_images/', blank=True)
+    tech_stack = models.ForeignKey(TechStack, on_delete=models.CASCADE, related_name="blog_posts", null=True, blank=True)
     published_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     tags = models.CharField(max_length=100, blank=True)
@@ -116,7 +117,7 @@ class Service(models.Model):
     service_image = models.ImageField(upload_to='service_images/', blank=True)
    # slug = models.SlugField(unique=True, max_length=200, blank=True)
     is_active = models.BooleanField(default=True)
-    tech_stacks = models.ManyToManyField(TechStack, blank=True)  # Services can have many tech stacks
+    tech_stack = models.ForeignKey(TechStack, on_delete=models.CASCADE, related_name="services", null=True, blank=True)  # Services can have many tech stacks
     service_type = models.CharField(max_length=10, choices=SERVICE_TYPE_CHOICES, default='standard')
 
     class Meta:
@@ -137,7 +138,7 @@ class Project(models.Model):
     slug = models.SlugField(unique=True, max_length=200, blank=False)
     completion_date = models.DateField()
     link = models.URLField(blank=True)
-    technologies_used = models.ManyToManyField(TechStack, max_length=200, blank=True)
+    tech_stack = models.ForeignKey(TechStack, on_delete=models.CASCADE, related_name="projects", null=True, blank=True)
 
     # Custom save method to generate unique slug
     def save(self, *args, **kwargs):
