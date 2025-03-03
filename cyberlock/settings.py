@@ -363,7 +363,8 @@ JAZZMIN_UI_TWEAKS = {
     "dark_mode_theme": "darkly",
 }
 
-
+# Track user login sessions and login failed sessions attempts
+# The default django logging system configuration
 # ERROR LOG IN DJANGO
 LOGGING = {
     'version': 1,
