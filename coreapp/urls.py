@@ -60,7 +60,7 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 
     # project in details
-    path('project/<int:id>/', views.project_details, name='project_detail'),
+    path('project/<slug:slug>/', views.project_details, name='project_detail'),
 
     # blog in details
     path('blog/<slug:slug>/', views.blog_detail, name='blog_detail'),

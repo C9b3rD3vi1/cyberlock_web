@@ -135,7 +135,7 @@ class Project(models.Model):
     description = RichTextUploadingField(null=True, blank=True)
     client = models.CharField(max_length=200)
     project_image = models.ImageField(upload_to='project_images/', blank=True)
-    slug = models.SlugField(unique=True, max_length=200, blank=False)
+    slug = models.SlugField(unique=True, max_length=200, blank=True)
     completion_date = models.DateField()
     link = models.URLField(blank=True)
     tech_stack = models.ForeignKey(TechStack, on_delete=models.CASCADE, related_name="projects", null=True, blank=True)

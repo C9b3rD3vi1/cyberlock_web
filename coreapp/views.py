@@ -221,9 +221,9 @@ def blog_post_detail(request, pk):
     return render(request, 'blog_post_detail.html', {'post': post})
 
 
-def project_details(request, id):
+def project_details(request, slug):
     # Retrieve the project by ID
-    project = get_object_or_404(Project, id=id)
+    project = get_object_or_404(Project, slug=slug)
     return render(request, 'project_details.html', {'project': project})
 
 

@@ -34,7 +34,7 @@
         <div class="tech-stack text-center my-5">
             <h4 class="tech-stack-title">Technologies Used</h4>
             <div class="tech-stack-badges">
-                {% for tech in project.technologies_used.split %}
+                {% for tech in project.tech_stack.split %}
                     <span class="badge bg-primary">{{ tech }}</span>
                 {% endfor %}
             </div>
