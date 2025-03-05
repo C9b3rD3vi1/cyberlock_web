@@ -2,6 +2,7 @@
 # from django.shortcuts import render
 from django.urls import path
 from . import views
+from .views import robots_txt
 from django.contrib.auth import views as auth_views
 
 
@@ -28,6 +29,8 @@ urlpatterns = [
     path('testimonial-success/', views.testimonial_success, name='testimonial_success'),
     path('profile/', views.user_profile, name='user_profile'),
     path('edit-profile/', views.edit_profile, name='edit_profile'),
+    # robots.txt files are used to give instructions to web robots about the crawling and indexing of a webpage, domain, or website.
+   path('robots.txt', robots_txt),
     
 
     #path('accounts/logout/', views.user_logout, name='user_logout'),

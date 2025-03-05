@@ -1,5 +1,6 @@
 
 import logging
+from django.views import View
 from colorama import Fore, Style
 from django.urls import reverse
 from django.http import HttpResponse
@@ -436,13 +437,27 @@ def testimonial_success(request):
 
 # function to return  and render the website robots.txt file
 def robots_txt(request):
-    def get(self, request, *args, **kwargs):
-        content = "User-agent: *\n"
-        content += "Disallow: /admin/\n"
-        content += "Sitemap: " + reverse('sitemap') + "\n"
-        return HttpResponse(content, content_type='text/plain')
-        #return render(request, 'robots.txt', content_type='text/plain')
+    lines = [
+        "User-agent: *\n",
+        "Disallow: /admin/",
+        "Disallow: /private/",
+        "Disallow: /static/",
+        "Disallow: /media/",
+        "Disallow: /comments/",
+        "Disallow: /feeds/",
+        "Disallow: /newsletters/",
+        "Disallow: /search/",
+        "Disallow: /api/",
+        "Disallow: /profile/",
+        "Disallow: /password_change/",
+        "Disallow: /password_reset/",
+        "Disallow: /reset/\n",
 
+
+        "Allow: /",
+        "Sitemap: http://cyberlocktech.com/sitemap.xml",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
 
 # User profile creation and viewing
 @login_required
