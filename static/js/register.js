@@ -31,3 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
         strengthIndicator.style.color = colors[strength];
     });
 });
+
+// Username availability check
+document.getElementById("id_username").addEventListener("input", function () {
+    let username = this.value;
+    if (username.length > 3) {
+        fetch(`/check-username?username=${username}`)
+            .then(response => response.json())
+            .then(data => {
+                let message = document.getElementById("username-check");
+                if (data.available) {
+                    message.textContent = "✅ Username available";
+                    message.style.color = "green";
+                } else {
+                    message.textContent = "❌ Username taken";
+                    message.style.color = "red";
+                }
+            });
+    }
+});

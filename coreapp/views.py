@@ -3,7 +3,7 @@ import logging
 from django.views import View
 from colorama import Fore, Style
 from django.urls import reverse
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from is_safe_url import is_safe_url
 from .utils import save_contact_message
@@ -398,6 +398,11 @@ def user_register(request):
 
     return render(request, 'register.html', {'form': form})
 
+# check username availability
+def check_username(request):
+    username = request.GET.get("username", "")
+    available = not User.objects.filter(username=username).exists()
+    return JsonResponse({"available": available})
 
 
 # user logout functionality

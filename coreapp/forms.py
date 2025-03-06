@@ -7,8 +7,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from.models import JobApplication, Comment #Ticket, TicketComment
 from ckeditor.widgets import CKEditorWidget
-from captcha.fields import ReCaptchaField
-from captcha.widgets import ReCaptchaV2Checkbox
 
 
 # Contact form for sending messages to the company
