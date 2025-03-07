@@ -3,10 +3,12 @@ import logging
 from django.views import View
 from colorama import Fore, Style
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from is_safe_url import is_safe_url
 from .utils import save_contact_message
+from django.core.mail import send_mail
 from django.contrib.auth import logout
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -153,7 +155,7 @@ def job_list(request):
 
 # ----------------------------------------------------------------
 # Functions to allow logged-in users to apply for jobs
-@login_required
+@login_required(login_url='user_login')
 def apply_job(request, id):
     job = get_object_or_404(Job, id=id)  # Fetch the job using the job ID
 
@@ -232,38 +234,48 @@ def project_details(request, slug):
 
 
 # contant form for contactinfo and sending information to my company
+@login_required(login_url='user_login')
 def contact_form(request):
-    """
-    This function handles the contact form submission and rendering.
-    """
     if request.method == 'POST':
         form = ContactMessageForm(request.POST)
-        # validate the form
         if form.is_valid():
-            # Save the message and send an email
             save_contact_message(
                 name=form.cleaned_data['name'],
                 email=form.cleaned_data['email'],
                 subject=form.cleaned_data['subject'],
                 message=form.cleaned_data['message']
             )
+
+            # Send auto-reply email
+            send_mail(
+                "Thank You for Contacting Us",
+                "We've received your message and will get back to you soon.",
+                "support@cyberlocktech.com",
+                [form.cleaned_data['email']],
+                fail_silently=False,
+            )
+
+            messages.success(request, "Your message has been sent successfully!")
             return redirect('contact_success')
+    
     else:
-        form = ContactMessageForm()  # create form object
+        form = ContactMessageForm()
 
     return render(request, 'contact_form.html', {'form': form})
 
 
-
-
 # Return rresponse after successful contact and information sharing
+
 def contact_success(request):
+    """
+    Renders a success page after a successful contact form submission.
+    """
     return render(request, 'contact_success.html')
 
 
 
 # User should be logged in and have all permissions
-@login_required
+@login_required(login_url='user_login')
 @user_passes_test(is_staff_or_high_user)
 def blog_post_create(request):
     """
@@ -296,7 +308,7 @@ def blog_post_create(request):
 
 
  # User should be logged in and have all permissions
-@login_required
+@login_required(login_url='user_login')
 @user_passes_test(is_staff_or_high_user)
 def blog_post_update(request, pk):
     """
