@@ -260,6 +260,8 @@ def contact_form(request):
     
     else:
         form = ContactMessageForm()
+        print(Fore.RED + {form.errors})
+        print(Style.RESET_ALL)
 
     return render(request, 'contact_form.html', {'form': form})
 
