@@ -211,7 +211,7 @@ STATICFILES_DIRS = [
 ]
 
 # For production use, ensure you set up staticfiles storage correctly
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 
 # When collecting static files, for production use,
