@@ -12,14 +12,18 @@ html, body {
 .login-page {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  align-items: flex-start; /* Align to top instead of center */
+  min-height: auto; /* Remove full viewport height restriction */
   padding: 20px;
+  margin-top: -30px; /* Adjust as needed */
   background-color: #f5f5f5;
 }
 
+
+
 /* Login Container */
 .login-container {
+  background: rgba(0, 0, 0, 0.7); /* Adds a dark overlay for contrast */
   background: white;
   padding: 2rem;
   border-radius: 10px;
@@ -27,11 +31,16 @@ html, body {
   max-width: 400px;
   width: 100%;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+ 
 }
 
-.login-container h2 {
+.login-container h1, h2 {
   margin-bottom: 1.5rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #333;
 }
 
@@ -206,3 +215,148 @@ html, body {
 .extra-links a:hover {
   text-decoration: underline;
 }
+/* Hero Section Styles */
+.about-hero {
+  background: linear-gradient(135deg, hsl(201, 74%, 78%), #1c2d38); /* Gradient background */
+  padding: 30px 0; /* Adjust padding as needed */
+  color: #ffffff; /* White text color */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.about-hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-hero .hero-title {
+  font-size: 3rem; /* Large font size for the title */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+}
+
+.about-hero .hero-subtitle {
+  font-size: 1.5rem; /* Subtitle font size */
+  color: #ecf0f1; /* Light gray text color */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero .hero-title {
+      font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .about-hero .hero-subtitle {
+      font-size: 1.2rem; /* Smaller font size for mobile */
+  }
+}
+/* Wrapper to hold features & login side by side */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  gap: 50px; /* Space between sections */
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+/* Features & Services Section */
+.features-section {
+  flex: 1;
+  text-align: left;
+  max-width: 450px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 0 10px 10px 0;
+  margin-left: 0;
+  padding-left: 30px; /* Optional: Adds spacing from left edge */
+}
+
+.features-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.features-intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature i {
+  font-size: 2rem;
+  color: #007bff;
+  min-width: 40px;
+}
+
+.feature h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0 0;
+}
+
+/* Hover effect */
+.feature:hover {
+  transform: translateX(5px);
+  background: #e9ecef;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Make Features Section Stick to Left Edge */
+@media (min-width: 1024px) {
+  .login-wrapper {
+      max-width: 100%;
+      padding-left: 0;
+  }
+  
+  .features-section {
+      max-width: 700px;
+      margin-left: 0;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .login-wrapper {
+      flex-direction: column;
+      text-align: center;
+      padding-left: 10px;
+  }
+
+  .features-section {
+      max-width: 100%;
+      text-align: center;
+      border-radius: 10px;
+  }
+
+  .feature {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+
+

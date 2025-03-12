@@ -20,9 +20,10 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: center;
-    max-width: 100%;
-
+    justify-content: flex-start; /* Align cards to the start */
+    max-width: 1400px; /* Increase max-width of the flexbox container */
+    margin: 0 auto; /* Center the row on the page */
+    padding: 0 20px; /* Add padding to create space on both sides */
 }
 
 .container-fluid {
@@ -31,7 +32,7 @@ html, body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to right, #4c6ef5, #00c6ff);
+    background: linear-gradient(to right, #4cbaf5, hsl(193, 26%, 17%));
     color: white;
     padding: 80px 0;
     text-align: center;
@@ -72,7 +73,7 @@ html, body {
     background-color: #000;
     color: white;
     display: flex;
-    flex: 1 1 calc(25% - 15px);
+    flex: 1 1 32%; /* Increase card size slightly */
     box-sizing: border-box;
     margin: 0;
     flex-direction: column;
@@ -126,7 +127,7 @@ html, body {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+    background: linear-gradient(-45deg, #0646b6 0%, #7b9eea 100%);
     z-index: -10;
     pointer-events: none;
 }
@@ -135,18 +136,18 @@ html, body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    background: linear-gradient(-45deg, #182020 0%, #0247b7 100%);
     transform: scale(0.95);
     filter: blur(20px);
     z-index: -1;
 }
 
-/* Button Styling */
-/* From Uiverse.io by nikk7007 */ 
 .btn {
-    --color: #00A97F;
+    --color: #0766ea;
     --color2: rgb(10, 25, 30);
-    padding: 0.8em 1.75em;
+    padding: 0.01em 1.01em;
+    padding-bottom: 1.10em;
+    background-color: var(--color);
     background-color: transparent;
     border-radius: 6px;
     border: .3px solid var(--color);
@@ -160,9 +161,10 @@ html, body {
     font-family: 'Roboto', 'Segoe UI', sans-serif;
     text-transform: uppercase;
     color: var(--color);
-   }
-   
-   .btn::after, .btn::before {
+    transform: translateY(40px); /* Adjust this value to move the button down */
+}
+
+.btn::after, .btn::before {
     content: '';
     display: block;
     height: 100%;
@@ -174,31 +176,31 @@ html, body {
     z-index: -1;
     transition: .5s ease-out;
     background-color: var(--color);
-   }
-   
-   .btn::before {
+}
+
+.btn::before {
     top: -50%;
     left: -25%;
     transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
-   }
-   
-   .btn:hover::before {
+}
+
+.btn:hover::before {
     transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
-   }
-   
-   .btn:hover::after {
+}
+
+.btn:hover::after {
     transform: skew(45deg) translate(-50%, -50%);
-   }
-   
-   .btn:hover {
+}
+
+.btn:hover {
     color: var(--color2);
-   }
-   
-   .btn:active {
+}
+
+.btn:active {
     filter: brightness(.7);
     transform: scale(.98);
-   }
-   
+}
+
 /* Portfolio Section */
 .portfolio {
     padding: 60px 0;
@@ -235,21 +237,40 @@ html, body {
     margin-bottom: 30px;
 }
 
+.testimonials p {
+    color: hsl(204, 24%, 96%);
+    font-size: 1.0rem;
+    font-weight: 500;
+}
+    
+
+
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0d0d0d;
+    z-index: -1;
+}
+
+
+/* Media Queries */
 @media (max-width: 992px) { 
     .card {
-        flex: 1 1 calc(33.33% - 15px);
+        flex: 1 1 45%; /* 2 cards per row */
     }
 }
 
 @media (max-width: 768px) { 
     .card {
-        flex: 1 1 calc(50% - 15px);
+        flex: 1 1 45%; /* 2 cards per row */
     }
 }
 
 @media (max-width: 576px) { 
     .card {
-        flex: 1 1 100%;
+        flex: 1 1 100%; /* 1 card per row */
     }
 }
 

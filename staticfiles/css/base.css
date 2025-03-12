@@ -1,9 +1,9 @@
 :root {
     --primary-color: #1b97fc;
-    --secondary-color: #e7edfa;
+    --secondary-color: #91b2f8;
     --hover-bg-color: #555;
     --footer-bg: #333;
-    --footer-text: #e7edfa;
+    --footer-text: #0f0f10;
     --spacing: 1rem;
     --border-radius: 5px;
     --font-family: 'Arial', sans-serif;
@@ -121,13 +121,13 @@ body {
 }
 
 .dropdown-menu a:hover {
-    background-color: #e280ee;
+    background-color: #6998fc;
 }
 
 /* Footer Styling */
 .custom-footer {
-    background-color: rgb(233, 253, 251);
-    color: black;
+    background-color: rgb(8, 8, 8);
+    color: #f8f6f6;
     padding: 2rem;
     font-family: 'Arial', sans-serif;
     width: 100%; /* Full width */
@@ -170,25 +170,15 @@ body {
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
-.social-icons a.facebook {
-    color: #3b5998 !important; /* Facebook */
-}
+/* Social Icons Brand Colors */
+.social-icons a[aria-label="Facebook"] { background-color: #1877f2; } /* Facebook blue */
+.social-icons a[aria-label="Twitter"] { background-color: #1da1f2; } /* Twitter blue */
+.social-icons a[aria-label="LinkedIn"] { background-color: #0a66c2; } /* LinkedIn blue */
+.social-icons a[aria-label="Instagram"] { background-color: #e4405f; } /* Instagram pink */
+.social-icons a[aria-label="YouTube"] { background-color: #ff0000; } /* YouTube red */
+.social-icons a[aria-label="Pinterest"] { background-color: #bd081c; } /* Pinterest red */
+.social-icons a[aria-label="GitHub"] { background-color: #333; } /* GitHub black */
 
-.social-icons a.twitter {
-    color: #00acee !important; /* Twitter */
-}
-
-.social-icons a.linkedin {
-    color: #0e76a8 !important; /* LinkedIn */
-}
-
-.social-icons a.instagram {
-    color: #E4405F !important; /* Instagram */
-}
-
-.social-icons a.youtube {
-    color: #FF0000 !important; /* YouTube */
-}
 
 .social-icons a:hover {
     color: #00bcd4; /* Hover color for all icons */
