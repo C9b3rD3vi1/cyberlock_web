@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'ckeditor',
     'jazzmin',
+    'axes',
     'widget_tweaks',
     'rest_framework',
     'django.contrib.admin',
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'axes.middleware.AxesMiddleware',
 ]
 
 
@@ -354,6 +356,18 @@ JAZZMIN_UI_TWEAKS = {
     "theme": "darkly",
     "dark_mode_theme": "darkly",
 }
+
+
+# Django Axes configuration settings
+# Set the number of login attempts before blocking the user
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesBackend',  # Add this line
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+AXES_FAILURE_LIMIT = 5  # Number of failed login attempts before lockout
+AXES_COOLOFF_TIME = 1  # Lockout duration in hours
+
 
 # Track user login sessions and login failed sessions attempts
 # The default django logging system configuration
