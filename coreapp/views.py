@@ -1,6 +1,8 @@
 
 import logging
 from colorama import Fore, Style
+from django.urls import reverse
+from django.http import HttpResponse
 from django.contrib import messages
 from is_safe_url import is_safe_url
 from .utils import save_contact_message
@@ -431,6 +433,15 @@ def submit_testimonial(request):
 # success when user successfully submitted a testimonial
 def testimonial_success(request):
     return render(request, 'success_testimonial.html')
+
+# function to return  and render the website robots.txt file
+def robots_txt(request):
+    def get(self, request, *args, **kwargs):
+        content = "User-agent: *\n"
+        content += "Disallow: /admin/\n"
+        content += "Sitemap: " + reverse('sitemap') + "\n"
+        return HttpResponse(content, content_type='text/plain')
+        #return render(request, 'robots.txt', content_type='text/plain')
 
 
 # User profile creation and viewing

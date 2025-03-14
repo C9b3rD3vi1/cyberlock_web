@@ -1,7 +1,10 @@
-
 User-agent: *
-Disallow: /admin/,/media/
-    /private/
-    
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
 
 Allow: /
+
+"Sitemap: http://cyberlocktech.com/sitemap.xml",
