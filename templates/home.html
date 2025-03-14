@@ -27,7 +27,7 @@
                     <img src="{{ service.service_image.url }}" alt="{{ service.name }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ service.name }}</h5>
-                        <p class="card-text">{{ service.description|safe|truncatewords:30 }}</p>
+                        <p class="card-text">{{ service.description|safe|truncatewords:20 }}</p>
                         <a href="{% url 'service_list' %}" class="btn">Learn More</a>
                     </div>
                 </div>

@@ -452,6 +452,7 @@ def robots_txt(request):
         "Disallow: /password_change/",
         "Disallow: /password_reset/",
         "Disallow: /reset/\n",
+        "Disallow: /custom-dashboard/",
 
 
         "Allow: /",
