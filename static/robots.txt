@@ -3,6 +3,7 @@ User-agent: *
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
+Disallow: /custom-dashboard/
 
 
 Allow: /
