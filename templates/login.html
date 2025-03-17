@@ -15,15 +15,44 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 
+<!-- Hero Section -->
+<section class="about-hero bg-gradient-primary text-white py-6">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <h1 class="hero-title display-3 fw-bold animate__animated animate__fadeInDown">CyberLock Technologies</h1>
+                <p class="hero-subtitle lead mt-3 animate__animated animate__fadeInUp animate__delay-1s">Innovative Solutions for Your Digital Success</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="login-wrapper">
+    <!-- Features Section (Left Side) -->
+    <section class="features-section">
+        <div class="feature">
+            <i class="fas fa-lock"></i>
+            <h3>Advanced Security</h3>
+            <p>We use AI-driven security to keep your account safe.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-chart-line"></i>
+            <h3>Analytics Dashboard</h3>
+            <p>Get real-time insights on your performance.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-users"></i>
+            <h3>Team Collaboration</h3>
+            <p>Seamlessly work with your team across the globe.</p>
+        </div>
+    </section>
 
 <!-- Login Page -->
 <div class="login-page">
-    
     <!-- Centered Login Container -->
     <div class="login-container animate__animated animate__fadeIn" data-aos="zoom-in">
-
         <h1>Cyberlock Technologies</h1>
-        <h2 class="animate__animated animate__fadeInUp">login</h2>
+        <h2 class="animate__animated animate__fadeInUp">Login</h2>
 
         <!-- Messages -->
         {% if messages %}
@@ -67,23 +96,6 @@
                 <span id="loginSpinner" class="spinner"></span>
             </button>
         </form>
-
-        <!-- Social Login Divider
-            <div class="social-message">
-                <div class="line"></div>
-                <p class="message">Or login with</p>
-                <div class="line"></div>
-            </div>
-
-             Social Login Icons 
-            <div class="social-icons">
-                <h2>Login with Social Accounts</h2>
-
-                 GitHub Login Button 
-                <a href="{% provider_login_url 'github' %}" class="icon" aria-label="Log in with GitHub">
-                    <i class="fab fa-github"></i> Login with GitHub
-                </a>
-            </div> -->
 
         <!-- Extra Links -->
         <div class="extra-links">

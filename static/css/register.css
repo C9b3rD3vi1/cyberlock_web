@@ -10,11 +10,11 @@
 }
 
 .register-page .register-container {
-    background: #fff;
+    background: hsl(0, 9%, 98%);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
     margin: 2rem auto;
     text-align: left;
@@ -23,7 +23,7 @@
 .register-page .register-container h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #1a1a1a;
+    color: #0d0d0d;
 }
 
 .register-page .form-group {

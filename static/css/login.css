@@ -12,11 +12,13 @@ html, body {
 .login-page {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  align-items: flex-start; /* Align to top instead of center */
+  min-height: auto; /* Remove full viewport height restriction */
   padding: 20px;
+  margin-top: -30px; /* Adjust as needed */
   background-color: #f5f5f5;
 }
+
 
 
 /* Login Container */
@@ -29,6 +31,11 @@ html, body {
   max-width: 400px;
   width: 100%;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+ 
 }
 
 .login-container h1, h2 {
@@ -208,3 +215,94 @@ html, body {
 .extra-links a:hover {
   text-decoration: underline;
 }
+/* Hero Section Styles */
+.about-hero {
+  background: linear-gradient(135deg, hsl(201, 74%, 78%), #1c2d38); /* Gradient background */
+  padding: 30px 0; /* Adjust padding as needed */
+  color: #ffffff; /* White text color */
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.about-hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-hero .hero-title {
+  font-size: 3rem; /* Large font size for the title */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+}
+
+.about-hero .hero-subtitle {
+  font-size: 1.5rem; /* Subtitle font size */
+  color: #ecf0f1; /* Light gray text color */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero .hero-title {
+      font-size: 2rem; /* Smaller font size for mobile */
+  }
+
+  .about-hero .hero-subtitle {
+      font-size: 1.2rem; /* Smaller font size for mobile */
+  }
+}
+
+/* Wrapper to hold features & login side by side */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px; /* Space between sections */
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+/* Features Section - Left Side */
+.features-section {
+  flex: 1;
+  text-align: left; /* Align text to the left */
+  max-width: 450px;
+}
+
+.feature {
+  margin-bottom: 20px;
+}
+
+.feature i {
+  font-size: 2rem;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .login-wrapper {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .features-section {
+      max-width: 100%;
+      text-align: center;
+  }
+
+  .feature {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .feature i {
+      margin-bottom: 0;
+  }
+}
+

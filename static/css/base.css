@@ -1,9 +1,9 @@
 :root {
     --primary-color: #1b97fc;
-    --secondary-color: #e7edfa;
+    --secondary-color: #91b2f8;
     --hover-bg-color: #555;
     --footer-bg: #333;
-    --footer-text: #e7edfa;
+    --footer-text: #0f0f10;
     --spacing: 1rem;
     --border-radius: 5px;
     --font-family: 'Arial', sans-serif;
@@ -121,13 +121,13 @@ body {
 }
 
 .dropdown-menu a:hover {
-    background-color: #e280ee;
+    background-color: #6998fc;
 }
 
 /* Footer Styling */
 .custom-footer {
-    background-color: rgb(233, 253, 251);
-    color: black;
+    background-color: rgb(8, 8, 8);
+    color: #f8f6f6;
     padding: 2rem;
     font-family: 'Arial', sans-serif;
     width: 100%; /* Full width */
