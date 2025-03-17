@@ -255,54 +255,108 @@ html, body {
       font-size: 1.2rem; /* Smaller font size for mobile */
   }
 }
-
 /* Wrapper to hold features & login side by side */
 .login-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 40px; /* Space between sections */
-  max-width: 900px;
+  justify-content: flex-start; /* Align content to the left */
+  gap: 50px; /* Space between sections */
+  max-width: 1200px;
   margin: 50px auto;
 }
 
-/* Features Section - Left Side */
+/* Features & Services Section */
 .features-section {
   flex: 1;
-  text-align: left; /* Align text to the left */
+  text-align: left;
   max-width: 450px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 0 10px 10px 0;
+  margin-left: 0;
+  padding-left: 30px; /* Optional: Adds spacing from left edge */
+}
+
+.features-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.features-intro {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
 }
 
 .feature {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .feature i {
   font-size: 2rem;
   color: #007bff;
-  margin-right: 10px;
+  min-width: 40px;
 }
 
-/* Responsive for smaller screens */
+.feature h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0 0;
+}
+
+/* Hover effect */
+.feature:hover {
+  transform: translateX(5px);
+  background: #e9ecef;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Make Features Section Stick to Left Edge */
+@media (min-width: 1024px) {
+  .login-wrapper {
+      max-width: 100%;
+      padding-left: 0;
+  }
+  
+  .features-section {
+      max-width: 700px;
+      margin-left: 0;
+  }
+}
+
+/* Responsive Design for Mobile */
 @media (max-width: 768px) {
   .login-wrapper {
       flex-direction: column;
       text-align: center;
+      padding-left: 10px;
   }
 
   .features-section {
       max-width: 100%;
       text-align: center;
+      border-radius: 10px;
   }
 
   .feature {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-
-  .feature i {
-      margin-bottom: 0;
+      flex-direction: column;
+      text-align: center;
   }
 }
+
 
