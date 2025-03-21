@@ -127,7 +127,7 @@ html, body {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    background: linear-gradient(-45deg, #6cd3ed 0%, #21414e 100%);
+    background: linear-gradient(-45deg, #0646b6 0%, #0a4ee0 100%);
     z-index: -10;
     pointer-events: none;
 }
@@ -136,7 +136,7 @@ html, body {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(-45deg, #182020 0%, #00dbde 100%);
+    background: linear-gradient(-45deg, #182020 0%, #0247b7 100%);
     transform: scale(0.95);
     filter: blur(20px);
     z-index: -1;
@@ -144,7 +144,7 @@ html, body {
 
 /* Button Styling */
 .btn {
-    --color: #0989f1;
+    --color: #0766ea;
     --color2: rgb(10, 25, 30);
     padding: 0.8em 1.75em;
     background-color: transparent;

@@ -13,6 +13,7 @@ urlpatterns = [
     path('', include('coreapp.urls')),  # Include app's urls.py
     #path('ckeditor/', include('ckeditor_uploader.urls')),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')), # The CKEditor path
+    path('accounts/', include('allauth.urls')),  # Include allauth urls
 
 ]
 

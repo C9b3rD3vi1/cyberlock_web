@@ -46,6 +46,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # Required for allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',  # Optional: For social authenticati
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.twitter',
+    
 ]
 
 
@@ -115,6 +124,19 @@ DATABASES = {
     }
 }
 '''
+
+# allauth configuration settings
+SITE_ID = 1
+
+# Authentication backends
+# settings.py
+ACCOUNT_EMAIL_REQUIRED = True  # Require email for registration
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # Verify email addresses
+ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Use email for authentication
+ACCOUNT_UNIQUE_EMAIL = True  # Ensure emails are unique
+ACCOUNT_USERNAME_REQUIRED = False  # Do not require a username
+LOGIN_REDIRECT_URL = '/'  # Redirect after login
+LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
 
 
 
@@ -367,8 +389,10 @@ JAZZMIN_UI_TWEAKS = {
 AUTHENTICATION_BACKENDS = [
     'axes.backends.AxesBackend',  # Add this line
     'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+# AXE backend settings Configuration
 AXES_FAILURE_LIMIT = 5  # Number of failed login attempts before lockout
 AXES_COOLOFF_TIME = 1  # Lockout duration in hours
 
