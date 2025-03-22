@@ -343,7 +343,7 @@ def user_login(request):
         password = request.POST.get('password', '')
         remember_me = request.POST.get('remember_me') == 'on'  # Check if checkbox is checked
 
-        user = authenticate(username=username, password=password)
+        user = authenticate(request, username=username, password=password)
 
         if user is not None:
             if user.is_active:

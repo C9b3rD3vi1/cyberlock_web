@@ -60,9 +60,9 @@ admin.site.unregister(User)  # Unregister the default User admin
 admin.site.register(User, UserAdmin)
 
 # Register the SocialAccount model with the UserAdmin class to customize the admin interface.
-admin.site.register(SocialApp)
-admin.site.register(SocialAccount)
-admin.site.register(SocialToken)
+#admin.site.register(SocialApp)
+#admin.site.register(SocialAccount)
+#admin.site.register(SocialToken)
 
 
 @admin.register(Technology)
