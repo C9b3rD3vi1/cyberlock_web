@@ -9,6 +9,7 @@ from django import forms
 from . models import Testimonial, Profile, BlogPost
 from . models import Service, ContactMessage, Job, JobApplication
 from ckeditor.widgets import CKEditorWidget
+from allauth.socialaccount.models import SocialAccount, SocialToken, SocialApp
 
 
 class BlogPostAdmin(admin.ModelAdmin):  # Use the regular ModelAdmin
@@ -57,6 +58,11 @@ admin.site.register(JobApplication)
 # Register the User model with the UserAdmin class to customize the admin interface.
 admin.site.unregister(User)  # Unregister the default User admin
 admin.site.register(User, UserAdmin)
+
+# Register the SocialAccount model with the UserAdmin class to customize the admin interface.
+admin.site.register(SocialApp)
+admin.site.register(SocialAccount)
+admin.site.register(SocialToken)
 
 
 @admin.register(Technology)
