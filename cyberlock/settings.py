@@ -49,12 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.sites',  # Required for allauth
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',  # Optional: For social authenticati
+    'allauth.socialaccount',  # Optional: For social authentication
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.twitter',
-    
 ]
 
 
@@ -69,6 +68,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'axes.middleware.AxesMiddleware',
+    # Required for django-allauth
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 
@@ -130,14 +131,35 @@ SITE_ID = 1
 
 # Authentication backends
 # settings.py
-ACCOUNT_EMAIL_REQUIRED = True  # Require email for registration
+ACCOUNT_SIGNUP_FIELDS = ['email', 'password1', 'password2']  # Require email for registration
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # Verify email addresses
-ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Use email for authentication
+ACCOUNT_LOGIN_METHODS = ['email']  # Use email for authentication
 ACCOUNT_UNIQUE_EMAIL = True  # Ensure emails are unique
-ACCOUNT_USERNAME_REQUIRED = False  # Do not require a username
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'password1', 'password2']  # Do not require a username
 LOGIN_REDIRECT_URL = '/'  # Redirect after login
 LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
 
+
+# social account settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {'access_type': 'online'},
+    },
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+    },
+    'github': {
+        'SCOPE': ['user:email'],
+    },
+    'twitter': {
+        'SCOPE': ['email'],
+        'AUTH_PARAMS': {'include_email': 'true'},
+        'VERIFIED_EMAIL': False,
+    },
+}
 
 
 # Secure cookie congiration settings Set up secure cookies and HSTS # Disable SSL for local development
