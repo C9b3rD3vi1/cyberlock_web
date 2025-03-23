@@ -15,11 +15,15 @@
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
 </head>
 
+
 <!-- Login Page -->
 <div class="login-page">
+    
     <!-- Centered Login Container -->
     <div class="login-container animate__animated animate__fadeIn" data-aos="zoom-in">
-        <h2 class="animate__animated animate__fadeInUp">Login</h2>
+
+        <h1>Cyberlock Technologies</h1>
+        <h2 class="animate__animated animate__fadeInUp">login</h2>
 
         <!-- Messages -->
         {% if messages %}
@@ -64,14 +68,14 @@
             </button>
         </form>
 
-        <!-- Social Login Divider -->
+        <!-- Social Login Divider
             <div class="social-message">
                 <div class="line"></div>
                 <p class="message">Or login with</p>
                 <div class="line"></div>
             </div>
 
-            <!-- Social Login Icons 
+             Social Login Icons 
             <div class="social-icons">
                 <h2>Login with Social Accounts</h2>
 
@@ -79,13 +83,12 @@
                 <a href="{% provider_login_url 'github' %}" class="icon" aria-label="Log in with GitHub">
                     <i class="fab fa-github"></i> Login with GitHub
                 </a>
-            </div>
-        -->
+            </div> -->
 
         <!-- Extra Links -->
         <div class="extra-links">
             <p>Don't have an account? <a href="{% url 'user_register' %}">Sign up</a></p>
-            <p>Forgot your password? <a href="{% url 'password_reset' %}">Reset it</a></p>
+            <p>Forgot your password? <a href="{% url 'password_reset' %}">Reset</a></p>
         </div>
     </div>
 </div>
