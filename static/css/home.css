@@ -142,11 +142,12 @@ html, body {
     z-index: -1;
 }
 
-/* Button Styling */
 .btn {
     --color: #0766ea;
     --color2: rgb(10, 25, 30);
-    padding: 0.8em 1.75em;
+    padding: 0.01em 1.01em;
+    padding-bottom: 1.10em;
+    background-color: var(--color);
     background-color: transparent;
     border-radius: 6px;
     border: .3px solid var(--color);
@@ -160,6 +161,7 @@ html, body {
     font-family: 'Roboto', 'Segoe UI', sans-serif;
     text-transform: uppercase;
     color: var(--color);
+    transform: translateY(40px); /* Adjust this value to move the button down */
 }
 
 .btn::after, .btn::before {

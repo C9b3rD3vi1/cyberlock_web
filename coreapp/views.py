@@ -379,7 +379,13 @@ def user_register(request):
             user = form.save()
             username = form.cleaned_data.get('username')
 
-            login(request, user)
+            # specify the backend authentication system to use
+            backend='django.contrib.auth.backends.ModelBackend'
+
+            # Log the user in after registration
+            login(request, user, backend=backend)
+            
+            # Redirect to a success page or home page after registration
             messages.success(request, f"Account created successfully for {username}!")
             return redirect('home')
         else:
