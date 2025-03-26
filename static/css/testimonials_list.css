@@ -6,23 +6,28 @@ body {
     line-height: 1.6;
     padding: 20px;
     margin: 0;
+    transition: background 0.3s ease-in-out;
 }
 
 .page-header {
     text-align: center;
     margin-bottom: 2rem;
-    padding-top: 50px; /* Ensure header is visible */
+    padding-top: 50px;
 }
 
 .page-header h1 {
     font-size: 2.5rem;
     color: #2c3e50;
     margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
 }
 
 .page-header p {
     font-size: 1.1rem;
     color: #777;
+    font-weight: lighter;
 }
 
 /* Filters */
@@ -35,87 +40,101 @@ body {
     background: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
 }
 
 .filter-btn.active {
     background: #0056b3;
+    transform: scale(1.1);
 }
 
 .filter-btn:hover {
     background: #004080;
+    transform: scale(1.05);
 }
 
 /* Testimonial Carousel */
 .swiper-container {
     width: 100%;
-    padding: 20px 0;
+    padding: 40px 0;
+    margin-top: 20px;
 }
 
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: slideIn 0.5s ease-out;
 }
 
 .testimonial {
     background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    max-width: 400px;
+    max-width: 380px;
     margin: 0 auto;
+    position: relative;
 }
 
 .testimonial:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .testimonial-img {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     margin-bottom: 15px;
+    border: 4px solid #fff;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-img:hover {
+    transform: scale(1.1);
 }
 
 .testimonial h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: #2c3e50;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .company {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #777;
     margin-bottom: 15px;
 }
 
 .rating {
     color: #ffd700;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
 }
 
 .feedback {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #555;
-    line-height: 1.6;
+    line-height: 1.8;
     margin-bottom: 15px;
+    font-style: italic;
 }
 
 .read-more {
     background: #007bff;
     color: #fff;
     border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
+    padding: 8px 20px;
+    border-radius: 25px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
@@ -124,20 +143,23 @@ body {
     background: #0056b3;
 }
 
+/* Published Date */
 .published-date {
     font-size: 0.9rem;
     color: #888;
     margin-top: 15px;
+    font-weight: 300;
 }
 
+/* Social Share */
 .social-share {
     margin-top: 15px;
 }
 
 .social-share a {
     color: #007bff;
-    margin: 0 5px;
-    font-size: 1.2rem;
+    margin: 0 10px;
+    font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
@@ -147,26 +169,29 @@ body {
 
 /* Call-to-Action Section */
 .cta-section {
-    margin-bottom: 30px;
+    margin-top: 30px;
     text-align: center;
-    margin-top: 2rem;
 }
 
 .cta-text {
-    margin-bottom: 20px; /* Space between <p> and <a> */
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .cta-btn {
     background: #007bff;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 30px;
+    border-radius: 50px;
     text-decoration: none;
-    transition: background 0.3s ease;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .cta-btn:hover {
     background: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
@@ -176,6 +201,26 @@ body {
     }
 
     .testimonial {
-        padding: 15px;
+        padding: 20px;
+    }
+
+    .testimonial-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cta-btn {
+        padding: 12px 25px;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

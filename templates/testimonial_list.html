@@ -1,25 +1,27 @@
-{% extends 'base.html' %}
+
+{% extends "base.html" %}
 
 {% load static %}
 
-{% block title %}Testimonials{% endblock %}
-
 {% block content %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials</title>
+    
     <!-- Link to FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Link to the external CSS file -->
-    <link rel="stylesheet" href="{% static 'css/testimonials_list.css' %}">
+    
     <!-- Link to Swiper CSS for carousel -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Link to custom CSS specific to this page -->
+    <link rel="stylesheet" href="{% static 'css/testimonials_list.css' %}">
 </head>
 <body>
+
     <header class="page-header">
         <h1>What Our Clients Say</h1>
         <p>Read testimonials from our satisfied customers.</p>
@@ -53,13 +55,11 @@
                             {% else %}
                             ☆
                             {% endif %}
-
                         {% endfor %}
                     </div>
-
                     <p class="feedback">{{ testimonial.feedback|safe }}</p>
-
                     <p class="published-date"><em>Published on: {{ testimonial.published_date|safe }}</em></p>
+
                     <!-- Social Share Section -->
                     <div class="social-share">
                         <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook"></i></a>
@@ -74,6 +74,7 @@
             </div>
             {% endfor %}
         </div>
+
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
         <!-- Add Navigation -->
@@ -83,13 +84,14 @@
 
     <!-- Call-to-Action Section -->
     <div class="cta-section">
-    <p class="cta-text">Have feedback? Share your experience with us!</p>
-    <a href="{% url 'submit_testimonial' %}" class="cta-btn">Submit Your Testimonial</a>
-</div>
+        <p class="cta-text">Have feedback? Share your experience with us!</p>
+        <a href="{% url 'submit_testimonial' %}" class="cta-btn">Submit Your Testimonial</a>
+    </div>
 
     <!-- Link to Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- Link to custom JS -->
+
+    <!-- Custom JS -->
     <script src="{% static 'js/testimonials.js' %}"></script>
 </body>
 </html>
