@@ -1,20 +1,42 @@
+{% extends 'base.html' %}
 {% load static %}
 
 
-
+{% block title %}Contact Success{% endblock %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success</title>
-    <link rel="stylesheet" href="{% static 'css/contact_success.css' %}">  <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{% static 'css/contact_success.css' %}">
+    <script>
+        // Auto-redirect after 15 seconds
+        let countdown = 15; // Countdown in seconds
+        function updateCountdown() {
+            document.getElementById("countdown").innerText = countdown;
+            if (countdown === 0) {
+                window.location.href = "{% url 'home' %}";
+            } else {
+                countdown--;
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+        window.onload = updateCountdown;
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Thank You!</h1>
-        <p>Your message has been sent successfully.</p>
-        <a href="{% url 'home' %}" class="button">home page!</a>
+    <div class="contact-success-wrapper">
+        <div class="contact-success-container">
+            <h1>Thank You!</h1>
+            <p>Your message has been sent successfully. We will get back to you soon.</p>
+            <p class="countdown">Redirecting in <span id="countdown">15</span> seconds...</p>
+            <a href="{% url 'home' %}" class="contact-success-button">Return to Home Page</a>
+        </div>
     </div>
 </body>
 </html>
+
+
+{% endblock %}

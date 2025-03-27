@@ -162,26 +162,25 @@ def apply_job(request, id):
     # Check if the user has already applied for this job
     if JobApplication.objects.filter(user=request.user, job=job).exists():
         messages.warning(request, 'You have already applied for this job.')
-        return redirect('apply_job', id=job.id)  # Redirect to the job detail page
+        return redirect('job_list')  # Redirect to job detail instead of apply_job
 
     if request.method == 'POST':
         form = JobApplicationForm(request.POST, request.FILES)
         if form.is_valid():
-            # Save the form without committing to the database
             application = form.save(commit=False)
-            # Associate the application with the logged-in user and the job
             application.user = request.user
             application.job = job
-            application.save()  # Save the application to the database
+            application.save()
 
             messages.success(request, 'Your application has been submitted successfully!')
-            return redirect('apply_job', id=job.id)  # Redirect to the job detail page
+            return redirect('job_details', id=job.id)  # Redirect to job detail instead of apply_job
         else:
             messages.error(request, 'Please correct the errors below.')
     else:
         form = JobApplicationForm()
 
     return render(request, 'apply_job.html', {'form': form, 'job': job})
+
 
 # job details function
 def job_details(request, id):
@@ -255,12 +254,17 @@ def contact_form(request):
                 fail_silently=False,
             )
 
+            print("Form is valid, redirecting...")
             messages.success(request, "Your message has been sent successfully!")
             return redirect('contact_success')
     
     else:
         form = ContactMessageForm()
-        print(Fore.RED + {form.errors})
+    
+    # Error handling for debugging
+    if form.errors:
+        for field, errors in form.errors.items():
+            print(Fore.RED + f"Field: {field} - Errors: {', '.join(errors)}")
         print(Style.RESET_ALL)
 
     return render(request, 'contact_form.html', {'form': form})
@@ -442,7 +446,7 @@ def user_logout(request):
 
 
 # Allow users to create and submit forms for testimonies only while logged in.
-@login_required(login_url='/login/')
+@login_required(login_url='user_login')
 def submit_testimonial(request):
     if request.method == 'POST':
         form = TestimonialForm(request.POST, request.FILES)
@@ -486,7 +490,7 @@ def robots_txt(request):
     return HttpResponse("\n".join(lines), content_type="text/plain")
 
 # User profile creation and viewing
-@login_required
+@login_required(login_url='user_login')
 def user_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
     return render(request, 'profile.html', {'profile': profile})
@@ -494,7 +498,7 @@ def user_profile(request):
 
 
 # Function to allow users to submit and edit profile only when they are authenticated
-@login_required
+@login_required(login_url='user_login')
 def edit_profile(request):
     profile, created = Profile.objects.get_or_create(user=request.user)
 
