@@ -1,362 +1,255 @@
-/* Reset margin and padding */
-html, body {
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f7fa; /* Light background for a clean look */
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #ffffff;
+  opacity: 0.85;
+  animation: fadeInUp 1s ease-out 0.5s;
+}
+
+/* Features Section */
+.features-section {
+  padding: 3rem 1rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+.features-section p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 3rem;
+}
+
+.feature {
+  margin-bottom: 2rem;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature i {
+  font-size: 3rem;
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #7f8c8d;
 }
 
 /* Login Page */
 .login-page {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align to top instead of center */
-  min-height: auto; /* Remove full viewport height restriction */
-  padding: 20px;
-  margin-top: -30px; /* Adjust as needed */
-  background-color: #f5f5f5;
+  background-color: #ecf0f1;
+  padding: 5rem 0;
 }
 
-
-
-/* Login Container */
 .login-container {
-  background: rgba(0, 0, 0, 0.7); /* Adds a dark overlay for contrast */
-  background: white;
-  padding: 2rem;
+  background-color: #ffffff;
+  padding: 2.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-top: 0;
-  margin-bottom: 0;
- 
 }
 
-.login-container h1, h2 {
-  margin-bottom: 1.5rem;
+.login-container h1 {
+  font-size: 2.5rem;
+  color: #2980b9;
+  margin-bottom: 0.5rem;
+}
+
+.login-container h2 {
   font-size: 1.5rem;
-  color: #333;
+  color: #34495e;
+  margin-bottom: 2rem;
 }
 
-/* Form Styling */
 .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #555;
+  font-size: 1rem;
+  color: #34495e;
 }
 
 .form-group input {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 1rem;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 0.5rem;
 }
 
 .form-group input:focus {
-  border-color: #007bff;
+  border-color: #3498db;
   outline: none;
 }
 
-/* Password Visibility Toggle */
 .password-wrapper {
   position: relative;
 }
 
-.password-wrapper i {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  color: #555;
+.password-wrapper input {
+  padding-right: 2.5rem;
 }
 
-/* Remember Me Checkbox */
+.password-wrapper i {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 .remember-me {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
 }
 
-.remember-me input[type="checkbox"] {
-  appearance: none;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #007bff;
-  border-radius: 4px;
-  cursor: pointer;
-  position: relative;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+.remember-me input {
+  margin-right: 0.5rem;
 }
 
-.remember-me input[type="checkbox"]:checked {
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-.remember-me input[type="checkbox"]:checked::after {
-  content: '\2713';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.remember-me label {
-  font-size: 1rem;
-  color: #555;
-  cursor: pointer;
-}
-
-.remember-me label:hover {
-  color: #007bff;
-}
-
-/* Submit Button */
 .login-button {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: #007bff;
+  background-color: #3498db;
   color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 30px;
   cursor: pointer;
+  width: 100%;
   transition: background-color 0.3s ease;
 }
 
 .login-button:hover {
-  background-color: #0057b3f1;
+  background-color: #2980b9;
 }
 
-/* Loading Spinner */
-.spinner {
-  display: none;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #007bff;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Social Login Divider */
-.social-message {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin: 1.5rem 0;
-  color: #555;
-}
-
-.social-message .line {
-  flex: 1;
-  height: 1px;
-  background-color: #ddd;
-}
-
-/* Social Icons */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.social-icons .icon {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  font-size: 24px;
-  color: #555;
-}
-
-.social-icons .icon:hover {
-  transform: scale(1.1);
-}
-
-/* Extra Links */
 .extra-links {
-  text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
 .extra-links a {
-  color: #007bff;
-  text-decoration: none;
+  color: #2980b9;
+  transition: color 0.3s ease;
 }
 
 .extra-links a:hover {
-  text-decoration: underline;
-}
-/* Hero Section Styles */
-.about-hero {
-  background: linear-gradient(135deg, hsl(201, 74%, 78%), #1c2d38); /* Gradient background */
-  padding: 30px 0; /* Adjust padding as needed */
-  color: #ffffff; /* White text color */
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.about-hero .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.about-hero .hero-title {
-  font-size: 3rem; /* Large font size for the title */
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
-}
-
-.about-hero .hero-subtitle {
-  font-size: 1.5rem; /* Subtitle font size */
-  color: #ecf0f1; /* Light gray text color */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  color: #1abc9c;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .about-hero .hero-title {
-      font-size: 2rem; /* Smaller font size for mobile */
+  .hero-title {
+      font-size: 2.5rem;
   }
 
-  .about-hero .hero-subtitle {
-      font-size: 1.2rem; /* Smaller font size for mobile */
-  }
-}
-/* Wrapper to hold features & login side by side */
-.login-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Align content to the left */
-  gap: 50px; /* Space between sections */
-  max-width: 1200px;
-  margin: 50px auto;
-}
-
-/* Features & Services Section */
-.features-section {
-  flex: 1;
-  text-align: left;
-  max-width: 450px;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 0 10px 10px 0;
-  margin-left: 0;
-  padding-left: 30px; /* Optional: Adds spacing from left edge */
-}
-
-.features-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.features-intro {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  transition: 0.3s ease-in-out;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.feature i {
-  font-size: 2rem;
-  color: #007bff;
-  min-width: 40px;
-}
-
-.feature h3 {
-  font-size: 1.2rem;
-  margin: 0;
-  color: #333;
-}
-
-.feature p {
-  font-size: 1rem;
-  color: #555;
-  margin: 5px 0 0;
-}
-
-/* Hover effect */
-.feature:hover {
-  transform: translateX(5px);
-  background: #e9ecef;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Make Features Section Stick to Left Edge */
-@media (min-width: 1024px) {
-  .login-wrapper {
-      max-width: 100%;
-      padding-left: 0;
-  }
-  
-  .features-section {
-      max-width: 700px;
-      margin-left: 0;
-  }
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 768px) {
-  .login-wrapper {
-      flex-direction: column;
-      text-align: center;
-      padding-left: 10px;
+  .hero-subtitle {
+      font-size: 1.2rem;
   }
 
-  .features-section {
-      max-width: 100%;
-      text-align: center;
-      border-radius: 10px;
+  .login-container {
+      width: 90%;
   }
 
   .feature {
-      flex-direction: column;
-      text-align: center;
+      width: 100%;
+      max-width: none;
   }
 }
 
+@media (max-width: 576px) {
+  .hero-title {
+      font-size: 2rem;
+  }
 
+  .hero-subtitle {
+      font-size: 1rem;
+  }
+
+  .login-container {
+      width: 90%;
+      padding: 2rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
