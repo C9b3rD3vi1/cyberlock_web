@@ -1,3 +1,22 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+body {
+    background-image: url("{% static 'images/background.png' %}");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+/* Register Page */
 .register-page {
     height: 100vh;
     display: flex;
@@ -10,6 +29,7 @@
     color: white;
     position: relative;
     text-align: center;
+    padding: 0 15px;
 }
 
 @keyframes gradientAnimation {
@@ -18,38 +38,43 @@
     100% { background-position: 0% 50%; }
 }
 
+/* Logo */
 .logo {
     width: 120px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
+/* Call to Action Text */
 .cta-heading {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #00d4ff;
-    text-shadow: 0 0 10px #00d4ff;
-    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px #00d4ff;
+    margin-bottom: 0.75rem;
 }
 
 .cta-tagline {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: #ddd;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
+/* Form Container */
 .register-page .register-container {
     background: rgba(0, 0, 0, 0.85);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
-    max-width: 500px;
+    box-shadow: 0 4px 30px rgba(0, 212, 255, 0.3);
+    max-width: 600px;
     width: 100%;
     margin: 2rem auto;
     text-align: left;
     color: white;
     position: relative;
+    box-sizing: border-box;
 }
 
+/* Form Heading */
 .register-page .register-container h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -57,20 +82,22 @@
     text-shadow: 0 0 10px #00d4ff;
 }
 
+/* Form Group */
 .register-page .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
     text-align: left;
     position: relative;
 }
 
 .register-page .form-group label {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: #ddd;
 }
 
+/* Input Fields */
 .register-page .form-group input {
     width: 100%;
     padding: 0.75rem;
@@ -86,9 +113,10 @@
 .register-page .form-group input:focus {
     border-color: #00d4ff;
     outline: none;
-    box-shadow: 0 0 10px #00d4ff;
+    box-shadow: 0 0 12px #00d4ff;
 }
 
+/* Input Icons */
 .register-page .form-group i {
     position: absolute;
     left: 10px;
@@ -97,6 +125,7 @@
     color: #00d4ff;
 }
 
+/* Register Button */
 .register-page .register-button {
     width: 100%;
     padding: 0.75rem;
@@ -104,10 +133,10 @@
     color: #fff;
     border: none;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     text-shadow: 0 0 10px #00d4ff;
 }
 
@@ -116,6 +145,11 @@
     transform: scale(1.05);
 }
 
+.register-page .register-button:active {
+    transform: scale(1);
+}
+
+/* Additional Links */
 .register-page .additional-links {
     margin-top: 1.5rem;
     font-size: 0.9rem;
@@ -131,4 +165,58 @@
 
 .register-page .additional-links a:hover {
     text-decoration: underline;
+}
+
+/* Alerts */
+.messages {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.messages .alert {
+    font-size: 1rem;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.messages .alert-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.messages .alert-danger {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-page {
+        padding: 0 20px;
+    }
+
+    .register-page .register-container {
+        padding: 1.5rem;
+    }
+
+    .register-page .form-group label {
+        font-size: 1rem;
+    }
+
+    .register-page .register-button {
+        font-size: 1rem;
+    }
+
+    .cta-heading {
+        font-size: 2rem;
+    }
+
+    .cta-tagline {
+        font-size: 1.1rem;
+    }
 }

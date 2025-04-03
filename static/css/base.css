@@ -22,7 +22,11 @@ body {
     min-height: 100vh;
     font-family: var(--font-family);
     color: var(--secondary-color);
-    background-image: url("{% static '/images/background.png' %}");
+    background-image: url('/static/images/background1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 /* Flexbox Container for Page Layout */
