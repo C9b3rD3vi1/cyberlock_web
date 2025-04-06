@@ -9,7 +9,7 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f9; /* Slightly lighter background for less strain on eyes */
+    background-color: #3a4161; /* Dark background for contrast */
     padding-top: 50px; /* Account for fixed navbar */
 }
 

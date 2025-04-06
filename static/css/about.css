@@ -2,8 +2,8 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: black; /* Dark gray text for readability */
-    background-color: #232946; /* Light gray background for balance */
+    color: #ecf0f1; /* Lighter gray text for better visibility */
+    background-color: #3a4161; /* Dark background for contrast */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    color: #2c3e50; /* Dark Blue */
+    color:rgb(20, 15, 15); /* Light gray for headers to match text */
     text-align: center;
 }
 
@@ -28,9 +28,17 @@ a:hover {
     color: #2ecc71; /* Teal accent color for hover */
 }
 
+/* Paragraph Styles */
+p {
+    color: black; /* Light gray text for visibility */
+    font-size: 1.3rem; /* Slightly larger font for readability */
+    line-height: 1.8; /* Increased line-height for better spacing */
+    margin-bottom: 1rem; /* Spacing between paragraphs */
+}
+
 /* Hero Section */
 .about-hero {
-    background: linear-gradient(135deg, #3498db, #2c3e50); /* Blue gradient */
+    background: linear-gradient(135deg, #66cde1, #13181b);
     padding: 3rem 0;
     text-align: center;
     width: 100%;
@@ -74,7 +82,7 @@ a:hover {
 
 /* Add margin to the columns */
 .col-md-6 {
-    margin-bottom: 3rem; /* Adjust the value as needed */
+    margin-bottom: 3rem;
 }
 
 .col-12, .col-md-6, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-8, .col-lg-10 {
@@ -123,7 +131,7 @@ a:hover {
 /* Mission & Values Section */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 5rem; /* Increased margin for more space */
+    margin: 5rem;
     border: none;
     border-radius: 10px;
     overflow: hidden;
@@ -131,7 +139,7 @@ a:hover {
     max-width: 600px;
     margin: 2rem;
     text-align: center;
-    background: #fff; /* White background for cards */
+    background: #fff;
 }
 
 .card:hover {
