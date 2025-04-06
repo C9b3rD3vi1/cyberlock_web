@@ -7,8 +7,8 @@
 
 html, body {
     font-family: 'Inter', sans-serif; /* Clean, modern font */
-    background-color: #121212; /* Dark theme background */
-    color: #fff; /* Default text color */
+    background-color: #dee4ec; /* Dark Blue background */
+    color: #F1F1F1; /* Light Gray text */
     line-height: 1.6;
     margin: 0 auto;
     width: 100%;
@@ -58,7 +58,7 @@ html, body {
 
 /* Services Section */
 .services {
-    background-color: #1f1f1f; 
+    background-color: #1D3557; /* Dark Blue background */
     padding: 80px 0;
 }
 
@@ -66,14 +66,14 @@ html, body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #08bef1;
+    color: #F1C40F; /* Gold accent */
 }
 
 /* Card Styling */
 .card {
     position: relative;
-    background-color: #181818; 
-    color: white;
+    background-color: #3F4A57; /* Slate Blue background */
+    color: #F1F1F1; /* Light Gray text */
     display: flex;
     flex: 1 1 30%;
     box-sizing: border-box;
@@ -103,7 +103,7 @@ html, body {
 .card-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #08bef1;
+    color: #F1C40F; /* Gold accent */
 }
 
 .card-text {
@@ -131,7 +131,7 @@ html, body {
 /* Button Styles */
 .btn {
     padding: 12px 25px;
-    background: linear-gradient(45deg, #00D4FF, #090979);
+    background: linear-gradient(45deg, #F1C40F, #1D3557); /* Gold to Dark Blue gradient */
     color: white;
     border-radius: 8px;
     text-decoration: none;
@@ -143,45 +143,45 @@ html, body {
 }
 
 .btn:hover {
-    background: linear-gradient(45deg, #090979, #00D4FF);
+    background: linear-gradient(45deg, #1D3557, #F1C40F); /* Dark Blue to Gold gradient */
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn:focus {
     outline: none;
-    border: 2px solid #08bef1;
+    border: 2px solid #F1C40F; /* Gold border */
 }
 
 /* Portfolio Section */
 .portfolio {
     padding: 80px 0;
-    background-color: #181818;
+    background-color: #1D3557; /* Dark Blue background */
 }
 
 .portfolio h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #08bef1;
+    color: #F1C40F; /* Gold accent */
 }
 
 /* Blog Section */
 .blog {
     padding: 80px 0;
-    background-color: #2b2b2b;
+    background-color: #3F4A57; /* Slate Blue background */
 }
 
 .blog h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #08bef1;
+    color: #F1C40F; /* Gold accent */
 }
 
 /* Testimonials Section */
 .testimonials {
-    background-color: #181818;
+    background-color: #1D3557; /* Dark Blue background */
     padding: 80px 0;
 }
 
@@ -189,11 +189,11 @@ html, body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #08bef1;
+    color: #F1C40F; /* Gold accent */
 }
 
 .testimonials p {
-    color: #ccc;
+    color: #F1F1F1; /* Light Gray text */
     font-size: 1.2rem;
     font-weight: 500;
     text-align: center;
@@ -207,7 +207,7 @@ html, body {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: #0d0d0d;
+    background: #1D3557; /* Dark Blue background */
     z-index: -1;
 }
 
