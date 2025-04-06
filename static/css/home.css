@@ -32,7 +32,7 @@ html, body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #00D4FF, #090979);
+    background: linear-gradient(135deg, #66cde1, #13191e);
     color: white;
     padding: 90px 0;
     text-align: center;
