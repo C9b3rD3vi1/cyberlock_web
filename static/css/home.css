@@ -7,7 +7,7 @@
 
 html, body {
     font-family: 'Inter', sans-serif; /* Clean, modern font */
-    background-color: #dee4ec; /* Dark Blue background */
+    background-color: #232946; /* Dark Blue background */
     color: #F1F1F1; /* Light Gray text */
     line-height: 1.6;
     margin: 0 auto;
@@ -32,7 +32,7 @@ html, body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #66cde1, #13191e);
+    background: linear-gradient(135deg, #66cde1, #13181b);
     color: white;
     padding: 90px 0;
     text-align: center;
@@ -58,7 +58,7 @@ html, body {
 
 /* Services Section */
 .services {
-    background-color: #1D3557; /* Dark Blue background */
+    background-color: #375277; /* Dark Blue background */
     padding: 80px 0;
 }
 

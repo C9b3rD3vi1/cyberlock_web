@@ -22,7 +22,8 @@ body {
     min-height: 100vh;
     font-family: var(--font-family);
     color: var(--secondary-color);
-    background-image: url('/static/images/background1.png');
+    /* background-image: url('/static/images/background1.png'); */
+    background-color: #232946; /* Dark Blue background */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
