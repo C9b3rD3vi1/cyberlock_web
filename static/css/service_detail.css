@@ -153,7 +153,7 @@ body {
 
 /* Contact Button */
 .btn-contact {
-    background-color: #007bff;
+    background: linear-gradient(45deg, #F1C40F, #1D3557); /* Gold to Dark Blue gradient */
     border: none;
     padding: 12px 24px;
     font-size: 1rem;

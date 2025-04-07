@@ -142,7 +142,7 @@ body {
     display: flex;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Align content vertically */
-    height: 150px; /* Adjust height as needed */
+    height: 170px; /* Adjust height as needed */
     z-index: 1000; /* Ensure it stays above other elements */
 }
 
@@ -158,23 +158,38 @@ body {
 }
 
 .footer-content h4 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
 .social-icons {
+    margin-top: 1rem;
     display: flex;
-    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .social-icons a {
-    text-decoration: none;
-    font-size: 1.5rem; /* Adjust icon size */
-    margin: 0 0.5rem; /* Add spacing between icons */
-    color: inherit; /* Ensure they inherit color if overridden */
-    transition: color 0.3s ease; /* Smooth color transition */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #2c2c54;
+    color: #fff;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 1.2rem;
 }
+
+.social-icons a:hover {
+    background: #00bcd4;
+    transform: scale(1.1);
+}
+
 
 .message-container {
     width: 90%;
