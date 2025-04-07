@@ -103,7 +103,7 @@ h2 {
 }
 
 .btn {
-    background: #007bff;
+    background: linear-gradient(45deg, #F1C40F, #1D3557); /* Gold to Dark Blue gradient */
     color: #fff;
     border: none;
     padding: 0.8rem 1.5rem;
@@ -115,7 +115,7 @@ h2 {
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: linear-gradient(45deg, #1D3557, #F1C40F); /* Dark Blue to Gold gradient */
     color: #fff;
     transform: scale(1.05);
 }

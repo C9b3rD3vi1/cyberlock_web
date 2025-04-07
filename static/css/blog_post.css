@@ -26,7 +26,7 @@ a:hover {
 header {
     background-color: #ffffff;
     padding: 4rem 0;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 0px solid #e9ecef;
 }
 
 header h1 {
@@ -83,8 +83,15 @@ header p {
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border: none;
+    background: linear-gradient(45deg, #F1C40F, #1D3557); /* Gold to Dark Blue gradient */
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     padding: 0.5rem 1.25rem;
     font-size: 0.9rem;
     border-radius: 5px;
@@ -92,7 +99,9 @@ header p {
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background: linear-gradient(45deg, #1D3557, #F1C40F); /* Dark Blue to Gold gradient */
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Pagination */

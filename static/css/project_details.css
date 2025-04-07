@@ -124,18 +124,23 @@ a:hover {
 
 /* Call-to-Action Buttons */
 .btn-primary {
-    background: linear-gradient(135deg, #007bff, #00bfff);
-    border: none;
-    color: #fff;
-    padding: 0.75rem 2rem;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #F1C40F, #1D3557); /* Gold to Dark Blue gradient */
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
     font-size: 1rem;
-    border-radius: 50px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
+
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    background: linear-gradient(45deg, #1D3557, #F1C40F); /* Dark Blue to Gold gradient */
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-back {
