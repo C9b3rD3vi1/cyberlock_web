@@ -90,50 +90,40 @@ h2 {
     border-color: #007bff;
     box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
 }
-
-
 /* Star Rating */
 .star-rating {
-    align-items: center;
     display: flex;
-    justify-content: center; /* Aligns items at the centre */
+    justify-content: center; /* Aligns items at the center */
     gap: 6px; /* Adds space between the stars */
 }
 
 .star-rating input {
-    display: none; /* Hides the actual radio button */
+    display: none; /* Hide the radio buttons */
 }
 
 .star-rating .star {
     font-size: 2rem;
     cursor: pointer;
-    color: #ddd;
+    color: #ddd; /* Default color for the stars */
     transition: color 0.3s ease;
 }
 
-.star-rating input:checked ~ .star,
-.star-rating input:checked + label {
+/* When the input is checked (radio), color the label and all subsequent ones gold */
+.star-rating input:checked ~ .star {
     color: gold;
 }
 
+/* Hover effect: Change color to orange when hovered */
 .star-rating .star:hover,
 .star-rating .star:hover ~ .star {
     color: orange;
 }
 
-/* Active Star Color */
-.star-rating input:checked ~ label {
-    color: gold; /* Ensures all stars after the checked one are gold */
+/* Ensure the clicked star and all stars to the left turn gold */
+.star-rating input:checked + .star {
+    color: gold;
 }
 
-.star-rating input:checked + label {
-    color: gold; /* Ensures the clicked star gets gold color */
-}
-
-.star-rating .star:hover,
-.star-rating .star:hover ~ .star {
-    color: orange; /* Hover effect */
-}
 
 
 /* Submit Button */
