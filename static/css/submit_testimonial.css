@@ -51,7 +51,7 @@ h2 {
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     border-top: 4px solid #007bff; /* Blue accent border */
 }
@@ -72,7 +72,7 @@ h2 {
 .form-label {
     font-weight: 600;
     color: #333;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     display: block;
 }
 
