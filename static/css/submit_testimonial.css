@@ -91,16 +91,17 @@ h2 {
     box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
 }
 
+
 /* Star Rating */
 .star-rating {
+    align-items: center;
     display: flex;
-    justify-content: space-between;
-    max-width: 160px;
-    margin: 0 auto;
+    justify-content: center; /* Aligns items to the left */
+    gap: 5px; /* Adds space between the stars */
 }
 
 .star-rating input {
-    display: none;
+    display: none; /* Hides the actual radio button */
 }
 
 .star-rating .star {
@@ -120,6 +121,21 @@ h2 {
     color: orange;
 }
 
+/* Active Star Color */
+.star-rating input:checked ~ label {
+    color: gold; /* Ensures all stars after the checked one are gold */
+}
+
+.star-rating input:checked + label {
+    color: gold; /* Ensures the clicked star gets gold color */
+}
+
+.star-rating .star:hover,
+.star-rating .star:hover ~ .star {
+    color: orange; /* Hover effect */
+}
+
+
 /* Submit Button */
 .btn-primary {
     background-color: #007bff;
@@ -129,6 +145,10 @@ h2 {
     font-weight: bold;
     padding: 12px 25px;
     border-radius: 8px;
+    display: block;
+    width: 100%; /* Ensures it stretches across the full width */
+    max-width: 300px; /* Optional: limits the width */
+    margin: 20px auto 0; /* Center the button horizontally with auto margin */
 }
 
 .btn-primary:hover {
