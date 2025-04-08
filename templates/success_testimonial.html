@@ -1,25 +1,26 @@
-
-
+{% extends "base.html" %}
 {% load static %}
-{% include 'base.html' %}
 
-
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonial Submitted</title>
-    <link rel="stylesheet" href="{% static 'css/success_testimonial.css' %}">  <!-- Link to your CSS file -->
+
+    <!-- Link to the unique CSS for the success page -->
+    <link rel="stylesheet" href="{% static 'css/success_testimonial.css' %}">
 </head>
 <body>
-
-    <div class="success-message">
-        <h1>Thank You!</h1>
-        <p>Your testimonial has been submitted successfully.</p>
-        <p>We appreciate your feedback!</p>
-        <a href="{% url 'home' %}">Return to Home</a>  <!-- Change 'home' to your home URL name -->
+    <div class="success-page-wrapper">
+        <div class="success-message">
+            <h1>Thank You!</h1>
+            <p>Your testimonial has been submitted successfully.</p>
+            <p>We appreciate your feedback!</p>
+            <a href="{% url 'home' %}">Return to Home</a>
+        </div>
     </div>
-
 </body>
 </html>
+{% endblock %}
