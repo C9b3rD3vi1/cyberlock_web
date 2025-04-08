@@ -1,4 +1,3 @@
-
 {% extends "base.html" %}
 
 {% load static %}
@@ -6,6 +5,7 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,12 +16,14 @@
     
     <!-- Link to Swiper CSS for carousel -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
+    
     <!-- Link to custom CSS specific to this page -->
     <link rel="stylesheet" href="{% static 'css/testimonials_list.css' %}">
 </head>
+
 <body>
 
+    <!-- Page Header Section -->
     <header class="page-header">
         <h1>What Our Clients Say</h1>
         <p>Read testimonials from our satisfied customers.</p>
@@ -42,7 +44,7 @@
             <div class="swiper-slide">
                 <div class="testimonial" data-rating="{{ testimonial.rating }}">
                     {% if testimonial.profile_picture %}
-                    <img src="{{ testimonial.profile_picture.url }}" alt="{{ testimonial.name }}" class="testimonial-img">
+                    <img src="{{ testimonial.profile_picture.url }}" alt="Profile picture of {{ testimonial.name }}" class="testimonial-img" loading="lazy">
                     {% endif %}
                     <h3>{{ testimonial.name|safe }}</h3>
                     {% if testimonial.company %}
@@ -51,9 +53,9 @@
                     <div class="rating">
                         {% for i in "12345" %}
                             {% if i|slice:":1" <= testimonial.rating|stringformat:"i" %}
-                            ★
+                            <span class="filled">★</span>
                             {% else %}
-                            ☆
+                            <span>☆</span>
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -62,9 +64,9 @@
 
                     <!-- Social Share Section -->
                     <div class="social-share">
-                        <a href="#" aria-label="Share on Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Share on Facebook" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Share on Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Share on LinkedIn" class="social-icon"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -75,9 +77,8 @@
             {% endfor %}
         </div>
 
-        <!-- Add Pagination -->
+        <!-- Swiper Pagination and Navigation -->
         <div class="swiper-pagination"></div>
-        <!-- Add Navigation -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
@@ -90,10 +91,34 @@
 
     <!-- Link to Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Custom JS -->
+    
+    <!-- Custom JS for dynamic functionality -->
     <script src="{% static 'js/testimonials.js' %}"></script>
-</body>
-</html>
+    
+    <!-- Script for Swiper initialization -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
 
+        
+    </script>
+
+</body>
+
+</html>
 {% endblock %}
