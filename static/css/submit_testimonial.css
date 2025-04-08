@@ -96,8 +96,8 @@ h2 {
 .star-rating {
     align-items: center;
     display: flex;
-    justify-content: center; /* Aligns items to the left */
-    gap: 5px; /* Adds space between the stars */
+    justify-content: center; /* Aligns items at the centre */
+    gap: 6px; /* Adds space between the stars */
 }
 
 .star-rating input {
