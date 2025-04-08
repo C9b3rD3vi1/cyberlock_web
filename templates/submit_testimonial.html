@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+
 {% load static %}
+{% load widget_tweaks %}
 
 {% block title %}Submit Testimonial{% endblock %}
 
@@ -9,39 +11,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<section class="testimonial-section py-5 px-3" style="background: linear-gradient(to right, #0f2027, #203a43, #2c5364); min-height: 100vh;">
-    <div class="container d-flex justify-content-center align-items-center flex-column">
-        <div class="form-wrapper shadow-lg p-4 rounded-4 bg-white" style="max-width: 600px; width: 100%;">
-            <h2 class="text-center mb-4 text-primary fw-bold">Share Your Experience</h2>
+<section class="testimonial-section">
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center text-primary fw-bold mb-4">Share Your Experience</h2>
 
-            <form method="post" enctype="multipart/form-data" class="testimonial-form">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <!-- Name Field -->
                 <div class="mb-3">
-                    <label for="{{ form.name.id_for_label }}" class="form-label fw-medium">Name</label>
+                    <label for="{{ form.name.id_for_label }}" class="form-label">Your Name</label>
                     {{ form.name|add_class:"form-control shadow-sm" }}
                 </div>
 
                 <!-- Company Field -->
                 <div class="mb-3">
-                    <label for="{{ form.company.id_for_label }}" class="form-label fw-medium">Company</label>
+                    <label for="{{ form.company.id_for_label }}" class="form-label">Company/Organization</label>
                     {{ form.company|add_class:"form-control shadow-sm" }}
                 </div>
 
                 <!-- Feedback Field -->
                 <div class="mb-3">
-                    <label for="{{ form.feedback.id_for_label }}" class="form-label fw-medium">Feedback</label>
+                    <label for="{{ form.feedback.id_for_label }}" class="form-label">Your Feedback</label>
                     {{ form.feedback|add_class:"form-control shadow-sm" }}
                 </div>
 
                 <!-- Star Rating -->
                 <div class="mb-4">
-                    <label class="form-label fw-medium">Rating</label>
+                    <label class="form-label">Rating</label>
                     <div class="star-rating d-flex flex-row-reverse justify-content-start">
                         {% for i in "54321" %}
                         <input type="radio" id="star{{ i }}" name="rating" value="{{ i }}" />
-                        <label for="star{{ i }}" class="star fs-3 text-warning">★</label>
+                        <label for="star{{ i }}" class="star">★</label>
                         {% endfor %}
                     </div>
                 </div>
