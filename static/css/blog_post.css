@@ -6,6 +6,45 @@ body {
     background-color: #232946; /* Dark Blue background */
 }
 
+
+.custom-blog-bg {
+    background-color: #232946; /* Dark Blue background */
+    /* background-image: url('/static/images/background1.png'); /* Uncomment if you want to use a background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.blog-heading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #f1c40f, #1d3557);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 2rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+/* Optional underline glow */
+.blog-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #f1c40f;
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 8px #f1c40f;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif; /* Elegant font for headings */
     font-weight: 700;
@@ -25,7 +64,7 @@ a:hover {
 /* Header Section */
 header {
     background-color: #ffffff;
-    padding: 4rem 0;
+    padding: 1rem 0;
     border-bottom: 0px solid #e9ecef;
 }
 
@@ -111,7 +150,7 @@ header p {
 
 .page-item.active .page-link {
     background-color: #007bff;
-    border-color: #007bff;
+    border-color: #24dbbc;
 }
 
 .page-link {

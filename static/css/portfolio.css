@@ -85,7 +85,7 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
     letter-spacing: 0.5px;
 }
 
@@ -102,10 +102,10 @@ body {
 
 /* Button Styles */
 .btn {
-    background: #007bff; /* Maintain original blue */
+    background: linear-gradient(45deg, #F1C40F, #1D3557); /* Gold to Dark Blue gradient */
     color: #fff;
     border: none;
-    padding: 0.8rem 1.5rem;
+    padding: 0.3rem 1.5rem;
     font-size: 1rem;
     font-weight: 500;
     border-radius: 30px; /* Rounded corners for modern look */
@@ -114,7 +114,7 @@ body {
 }
 
 .btn:hover {
-    background: #0056b3; /* Darker blue on hover */
+    background: linear-gradient(45deg, #1D3557, #F1C40F); /* Darker gradient on hover */
     color: #fff;
     transform: scale(1.05); /* Slight scaling effect */
 }
