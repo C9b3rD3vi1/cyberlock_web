@@ -8,8 +8,7 @@ body {
 }
 
 body {
-    background-image: url('/static/images/background.png');
-    background-image: url('/static/images/background1.png');
+    background-image: url('/static/images/cyber-images.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

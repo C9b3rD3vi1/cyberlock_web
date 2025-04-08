@@ -32,16 +32,23 @@ body {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
 }
 
+
+/* Subtle Glow on Hover */
+.blog-heading:hover {
+    text-shadow: 0 0 8px rgba(241, 196, 15, 0.5), 0 0 12px rgba(29, 53, 87, 0.4);
+}
+
 /* Optional underline glow */
+/* Animated Underline */
 .blog-heading::after {
-    content: '';
+    content: "";
     display: block;
     width: 60px;
-    height: 3px;
-    background: #f1c40f;
-    margin: 0.5rem auto 0;
-    border-radius: 2px;
-    box-shadow: 0 0 8px #f1c40f;
+    height: 4px;
+    background: linear-gradient(90deg, #f1c40f, #1d3557);
+    margin: 0.75rem auto 0 auto;
+    border-radius: 4px;
+    animation: grow 1s ease-out forwards;
 }
 
 
@@ -55,27 +62,62 @@ a {
     text-decoration: none;
     color: #007bff;
     transition: color 0.3s ease;
+    position: relative;
 }
 
 a:hover {
     color: #0056b3;
 }
 
+a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: #F1C40F;
+    animation: underline-animation 0.3s ease;
+}
+
 /* Header Section */
-header {
-    background-color: #ffffff;
-    padding: 1rem 0;
-    border-bottom: 0px solid #e9ecef;
+.dynamic-header {
+    background-image: url('/static/images/cyberlock-dynamic.png'); /* Background image */
+    background-color: #ffffff; /* Light background */
+    padding: 3rem 1rem; /* Custom padding for spacing */
+    border-radius: 10px; /* Rounded corners for soft effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    height: 200px; /* Fixed height */
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+/* Heading Style */
+.header-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1D3557; /* Dark Blue color */
+    background: linear-gradient(45deg, #F1C40F, #1D3557); /* Gold to Dark Blue gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-header p {
+.header-title:hover {
+    text-shadow: 0 0 8px rgba(241, 196, 15, 0.4), 0 0 12px rgba(29, 53, 87, 0.3); /* Subtle glow effect */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Subtitle Style */
+.header-subtitle {
     font-size: 1.25rem;
-    color: #6c757d;
+    color: rgb(249, 184, 6); /* Muted text color */
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+
+/* Smooth transition for the typing effect */
+#typed-output {
+    transition: opacity 0.3s ease;
 }
 
 /* Blog Cards */
@@ -202,5 +244,28 @@ header p {
 
     .card-img-top {
         height: 180px;
+    }
+}
+
+
+@keyframes grow {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 60px;
+        opacity: 1;
+    }
+}
+
+/* Ensure Responsiveness */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
     }
 }
