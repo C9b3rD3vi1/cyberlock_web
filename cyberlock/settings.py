@@ -147,6 +147,7 @@ LOGIN_REDIRECT_URL = '/'  # Redirect after login
 LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
 
 
+
 # social account settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -177,7 +178,8 @@ SECURE_HSTS_SECONDS = 31536000  # 1 year
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
-X_FRAME_OPTIONS = 'DENY'
+FRAME_OPTIONS = 'DENY'
+CURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 
@@ -271,7 +273,7 @@ EMAIL_HOST = env('EMAIL_HOST')  # SMTP host, e.g., 'smtp.cyberlocktech.com'
 EMAIL_PORT = env.int('EMAIL_PORT', 465)  # Default to 465 if not specified
 EMAIL_USE_SSL = env.bool('EMAIL_USE_SSL', True)  # True or False
 EMAIL_USE_TLS = False  # If SSL is enabled, TLS should be False
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')  # 'support@cyberlocktech.com'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')  # 'Email address to use for sending emails'
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')  # Email password
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')  # Default 'From' email address
 

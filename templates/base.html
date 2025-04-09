@@ -54,8 +54,8 @@
                     <li><a href="{% url 'blog_list' %}" class="{% if request.resolver_match.url_name == 'blog_list' %}active{% endif %}">Blog</a></li>
 
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'testimonial_list' %}" class="{% if request.resolver_match.url_name == 'testimonial_list' %}active{% endif %}">Testimonies</a></li>
-                        <li><a href="{% url 'job_list' %}" class="{% if request.resolver_match.url_name == 'job_list' %}active{% endif %}">Jobs</a></li>
+                        <!--<a href="{% url 'testimonial_list' %}" class="{% if request.resolver_match.url_name == 'testimonial_list' %}active{% endif %}">Testimonies</a></li>
+                        <li><a href="{% url 'job_list' %}" class="{% if request.resolver_match.url_name == 'job_list' %}active{% endif %}">Jobs</a></li>-->
                         <li><a href="{% url 'contact_form' %}" class="{% if request.resolver_match.url_name == 'contact_form' %}active{% endif %}">Contact Us</a></li>
                         <li><a href="{% url 'user_profile' %}" class="{% if request.resolver_match.url_name == 'user_profile' %}active{% endif %}">Profile</a></li>
                         <li><a href="{% url 'user_logout' %}">Logout</a></li>

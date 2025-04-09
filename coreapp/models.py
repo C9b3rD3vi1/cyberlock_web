@@ -219,8 +219,8 @@ class ContactMessage(models.Model):
 
     def clean(self):
         # Custom validation for message length
-        if len(self.message) < 10:
-            raise ValidationError("Message must be at least 10 characters long.")
+        if len(self.message) < 0:
+            raise ValidationError("Message field cannot be empty.")
 
 
 # Save job application  and allowing user to make job application
