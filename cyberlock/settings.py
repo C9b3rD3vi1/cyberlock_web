@@ -7,6 +7,13 @@ from decouple import config
 from dotenv import load_dotenv
 load_dotenv()
 
+# Import the environment variables
+import environ
+
+# Initialize environment variables
+env = environ.Env()
+environ.Env.read_env()  
+
 
 # Quick-start development settings - unsuitable for production
 
@@ -255,15 +262,18 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For testing
 
 
 # The default django mailing system configuration
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv('EMAIL_HOST')                  # Get email host from .env
-EMAIL_PORT = os.getenv('EMAIL_PORT')              # Get email port from .env
-EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL')       # Get SSL setting from .env
-EMAIL_USE_TLS = False                           # SSL is enabled, so TLS is disabled
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')        # Get email user from .env
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')# Get email password from .env
-DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')  # Get default email from .env
+# Get email configurations from .env file
 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_BACKEND = env('EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')  # Use SMTP backend
+EMAIL_HOST = env('EMAIL_HOST')  # SMTP host, e.g., 'smtp.cyberlocktech.com'
+EMAIL_PORT = env.int('EMAIL_PORT', 465)  # Default to 465 if not specified
+EMAIL_USE_SSL = env.bool('EMAIL_USE_SSL', True)  # True or False
+EMAIL_USE_TLS = False  # If SSL is enabled, TLS should be False
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')  # 'support@cyberlocktech.com'
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')  # Email password
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')  # Default 'From' email address
 
 
 
