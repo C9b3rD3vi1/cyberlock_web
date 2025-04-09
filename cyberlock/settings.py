@@ -163,9 +163,14 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 # Secure cookie congiration settings Set up secure cookies and HSTS # Disable SSL for local development
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
+SECURE_SSL_REDIRECT = True if not DEBUG else False
+SESSION_COOKIE_SECURE = True if not DEBUG else False
+CSRF_COOKIE_SECURE = True if not DEBUG else False
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
 
 
 
@@ -249,17 +254,18 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For testing
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # For production
 
 
-'''
 # The default django mailing system configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # e.g., smtp.gmail.com # email address providers
-EMAIL_PORT = 587  # Common ports are 587 (TLS) or 465 (SSL)
-EMAIL_USE_TLS = True  # Use TLS if supported
-EMAIL_HOST_USER = 'your_email@example.com'  # Your email address
-EMAIL_HOST_PASSWORD = 'your_email_password'  # Your email password
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST = os.getenv('EMAIL_HOST')                  # Get email host from .env
+EMAIL_PORT = os.getenv('EMAIL_PORT')              # Get email port from .env
+EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL')       # Get SSL setting from .env
+EMAIL_USE_TLS = False                           # SSL is enabled, so TLS is disabled
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')        # Get email user from .env
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')# Get email password from .env
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')  # Get default email from .env
 
-'''
+
+
 
 '''
 # content displayed and styled from backend using ckeditor framework
