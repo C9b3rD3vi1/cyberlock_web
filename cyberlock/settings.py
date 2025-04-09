@@ -147,7 +147,6 @@ LOGIN_REDIRECT_URL = '/'  # Redirect after login
 LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
 
 
-
 # social account settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
