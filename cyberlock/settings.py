@@ -355,6 +355,3 @@ JAZZMIN_UI_TWEAKS = {
     "theme": "darkly",
     "dark_mode_theme": "darkly",
 }
-
-# Path for storing uploaded files using ckeditor
-#CKEDITOR_UPLOAD_PATH = "uploads/"
